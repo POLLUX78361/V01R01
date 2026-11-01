@@ -12,27 +12,28 @@
 body{
     margin:0;
     font-family:Georgia, serif;
-    background:#f8f8f6;
-    color:#2f2f2f;
+    background:#fdfbf7;
+    color:#3d342d;
 }
 
 header{
-    background:linear-gradient(135deg,#1e293b,#334155);
-    color:white;
+    background:linear-gradient(135deg,#2c1810,#5a3e2b);
+    color:#f7f2e8;
     text-align:center;
     padding:80px 20px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.2);
+    box-shadow:0 4px 15px rgba(0,0,0,0.20);
 }
 
 .bandeau-construction{
     background:#d4af37;
-    color:#1e293b;
+    color:#2c1810;
     max-width:900px;
     margin:0 auto 30px auto;
     padding:15px 25px;
     border-radius:10px;
     font-size:20px;
     font-weight:bold;
+    box-shadow:0 3px 10px rgba(0,0,0,0.15);
 }
 
 header h1{
@@ -45,17 +46,18 @@ header p{
 }
 
 nav{
-    background:#0f172a;
+    background:#3b2618;
     text-align:center;
     padding:18px;
 }
 
 nav a{
-    color:#e2e8f0;
+    color:#f7f2e8;
     text-decoration:none;
     margin:0 20px;
     font-weight:bold;
     letter-spacing:1px;
+    transition:0.3s;
 }
 
 nav a:hover{
@@ -69,20 +71,20 @@ section{
 }
 
 .card{
-    background:white;
+    background:#ffffff;
     padding:35px;
     border-radius:15px;
+    border-left:6px solid #d4af37;
     box-shadow:0 5px 20px rgba(0,0,0,0.08);
-    border-left:5px solid #d4af37;
 }
 
 h2{
-    color:#1e293b;
+    color:#2c1810;
 }
 
 footer{
-    background:#0f172a;
-    color:#e2e8f0;
+    background:#2c1810;
+    color:#f7f2e8;
     text-align:center;
     padding:25px;
     margin-top:30px;
@@ -92,13 +94,14 @@ footer{
     text-align:center;
     padding:18px;
     background:#ffffff;
+    color:#2c1810;
     font-size:18px;
     font-weight:bold;
-    color:#1e293b;
     border-top:2px solid #d4af37;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -117,10 +120,10 @@ Les recherches, photographies et documents d'archives sont ajoutés au fur et à
 </header>
 
 <nav>
-<a href="arbre.html">Arbre</a>
-<a href="ancetres.html">Ancêtres</a>
-<a href="chronologie.html">Chronologie</a>
-<a href="photos.html">Photos</a>
+    <a href="arbre.html">Arbre</a>
+    <a href="ancetres.html">Ancêtres</a>
+    <a href="chronologie.html">Chronologie</a>
+    <a href="photos.html">Photos</a>
 </nav>
 
 <section>
@@ -160,10 +163,10 @@ les différentes rubriques du site.
 fetch('https://api.countapi.xyz/hit/famille-andrey-genealogie/visites')
 .then(response => response.json())
 .then(data => {
-document.getElementById('compteur').textContent = data.value;
+    document.getElementById('compteur').textContent = data.value;
 })
 .catch(() => {
-document.getElementById('compteur').textContent = '0';
+    document.getElementById('compteur').textContent = '0';
 });
 </script>
 
