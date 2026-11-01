@@ -38,10 +38,15 @@ nav{
     display:flex;
     justify-content:center;
     align-items:center;
-    gap:8px;
-    padding:15px 10px;
+    gap:5px;
+    padding:12px 5px;
     overflow-x:auto;
     white-space:nowrap;
+    scrollbar-width:none;
+}
+
+nav::-webkit-scrollbar{
+    display:none;
 }
 
 nav a{
@@ -49,7 +54,8 @@ nav a{
     color:#f7f2e8;
     text-decoration:none;
     font-weight:bold;
-    padding:10px 15px;
+    font-size:15px;
+    padding:10px 12px;
     border-radius:6px;
     transition:all .3s ease;
     flex-shrink:0;
@@ -61,7 +67,7 @@ nav a:hover{
 }
 
 section{
-    max-width:1200px;
+    max-width:1100px;
     margin:auto;
     padding:60px 20px;
 }
@@ -122,12 +128,13 @@ footer{
 
 <h1>Arbre généalogique</h1>
 
-<p>Famille ANDREY</p>
+<p>Base généalogique de la famille ANDREY</p>
 
 </header>
 
 <nav>
     <a href="index.html">Accueil</a>
+    <a href="armoiries.html">Armoiries</a>
     <a href="ancetres.html">Ancêtres</a>
     <a href="chronologie.html">Chronologie</a>
     <a href="photos.html">Photos</a>
@@ -137,13 +144,11 @@ footer{
 
 <div class="card">
 
-<h2>Arbre généalogique familial</h2>
+<h2>Base généalogique familiale</h2>
 
 <div style="text-align:center;">
 
-<a href="famille_andrey.ged"
-   download
-   class="bouton-gedcom">
+<a href="famille_andrey.ged" download class="bouton-gedcom">
 📥 Télécharger le fichier GEDCOM
 </a>
 
@@ -151,24 +156,29 @@ footer{
 
 <div class="arbre-zone">
 
-<h3>Base généalogique de la famille ANDREY</h3>
+<h3>Fichier généalogique principal</h3>
 
 <p>
-Le fichier GEDCOM regroupe l'ensemble des personnes,
-des filiations et des informations généalogiques
-actuellement recensées pour la famille ANDREY.
+Le fichier GEDCOM contient l'ensemble des individus,
+des liens de parenté et des informations généalogiques
+actuellement recensés pour la famille ANDREY.
 </p>
 
 <p>
-Ce fichier peut être ouvert avec la majorité des logiciels
-de généalogie tels que Heredis, Généatique, Geneanet,
-Family Tree Builder ou d'autres logiciels compatibles GEDCOM.
+Ce fichier est compatible avec la plupart des logiciels
+de généalogie tels que Heredis, Généatique,
+Family Tree Builder ou Geneanet.
 </p>
 
 <p>
-Les recherches étant en constante évolution,
+Les recherches étant toujours en cours,
 le contenu du fichier est régulièrement enrichi
-par de nouvelles découvertes et de nouveaux documents d'archives.
+par de nouvelles découvertes et de nouveaux documents.
+</p>
+
+<p>
+Dernière mise à jour : consulter la version disponible
+au téléchargement ci-dessus.
 </p>
 
 </div>
