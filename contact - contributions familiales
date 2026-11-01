@@ -1,1 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chronologie familiale - Famille ANDREY</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Georgia, serif;
+    background:#fdfbf7;
+    color:#3d342d;
+}
+
+header{
+    background:linear-gradient(135deg,#2c1810,#5a3e2b);
+    color:#f7f2e8;
+    text-align:center;
+    padding:80px 20px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.20);
+}
+
+header h1{
+    margin:0;
+    font-size:3em;
+}
+
+header p{
+    font-size:1.3em;
+    line-height:1.6;
+}
+
+nav{
+    background:#3b2618;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:nowrap;
+    gap:5px;
+    padding:12px 5px;
+    overflow-x:auto;
+    white-space:nowrap;
+    scrollbar-width:none;
+}
+
+nav::-webkit-scrollbar{
+    display:none;
+}
+
+nav a{
+    display:inline-block;
+    color:#f7f2e8;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:15px;
+    padding:10px 12px;
+    border-radius:6px;
+    transition:0.3s;
+    flex-shrink:0;
+}
+
+nav a:hover{
+    background:#d4af37;
+    color:#2c1810;
+}
+
+section{
+    max-width:1000px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+.card{
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    border-left:6px solid #d4af37;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+h2{
+    text-align:center;
+    color:#2c1810;
+    margin-bottom:50px;
+}
+
+/* Frise */
+
+.timeline{
+    position:relative;
+    margin:0 auto;
+    padding-left:50px;
+    border-left:4px solid #d4af37;
+}
+
+.event{
+    position:relative;
+    margin-bottom:40px;
+    padding-left:25px;
+}
+
+.event::before{
+    content:"";
+    position:absolute;
+    left:-39px;
+    top:5px;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:#d4af37;
+    border:3px solid white;
+    box-shadow:0 0 0 2px #b8921f;
+}
+
+.date{
+    font-size:24px;
+    font-weight:bold;
+    color:#5a3e2b;
+    margin-bottom:10px;
+}
+
+.description{
+    background:#fdf8ef;
+    padding:18px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.05);
+}
+
+footer{
+    background:#2c1810;
+    color:#f7f2e8;
+    text-align:center;
+    padding:25px;
+    margin-top:30px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Chronologie familiale</h1>
+
+<p>
+L'histoire des familles ANDREY<br>
+de Suisse et de France
+</p>
+
+</header>
+
+<nav>
+    <a href="index.html">Accueil</a>
+    <a href="arbre.html">Arbre</a>
+    <a href="ancetres.html">Ancêtres</a>
+    <a href="armoiries.html">Armoiries</a>
+    <a href="Documents.html">Documents</a>
+    <a href="localisation.html">Localisation</a>
+    <a href="patronyme.html">Patronyme</a>
+    <a href="photos.html">Photos</a>
+    <a href="sources.html">Sources</a>
+</nav>
+
+<section>
+
+<div class="card">
+
+<h2>Frise chronologique familiale</h2>
+
+<div class="timeline">
+
+<div class="event">
+<div class="date">Origines</div>
+<div class="description">
+Premières traces connues du patronyme ANDREY dans les archives
+et les registres historiques consultés.
+</div>
+</div>
+
+<div class="event">
+<div class="date">Cerniat et la Gruyère</div>
+<div class="description">
+Développement des branches familiales dans le canton de Fribourg,
+notamment à Cerniat, Bulle, Hauteville et dans les communes voisines.
+</div>
+</div>
+
+<div class="event">
+<div class="date">Implantation en France</div>
+<div class="description">
+Présence progressive du patronyme ANDREY dans plusieurs régions
+françaises, notamment dans le Doubs, le Jura et la Haute-Saône.
+</div>
+</div>
+
+<div class="event">
+<div class="date">XIXe siècle</div>
+<div class="description">
+Évolution des familles au rythme des changements sociaux,
+agricoles, artisanaux et industriels de l'époque.
+</div>
+</div>
+
+<div class="event">
+<div class="date">XXe siècle</div>
+<div class="description">
+Les deux conflits mondiaux et les transformations de la société
+marquent profondément la vie des différentes générations.
+</div>
+</div>
+
+<div class="event">
+<div class="date">Période contemporaine</div>
+<div class="description">
+Conservation des souvenirs, photographies et archives familiales
+afin de préserver la mémoire des générations passées.
+</div>
+</div>
+
+<div class="event">
+<div class="date">Aujourd'hui</div>
+<div class="description">
+Les recherches généalogiques se poursuivent afin d'enrichir
+la connaissance des familles ANDREY de Suisse et de France.
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Famille ANDREY - Site généalogique familial
+</footer>
+
+</body>
+
+</html>
