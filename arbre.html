@@ -1,3 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Arbre généalogique - Famille ANDREY</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Georgia, serif;
+    background:#fdfbf7;
+    color:#3d342d;
+}
+
+header{
+    background:linear-gradient(135deg,#2c1810,#5a3e2b);
+    color:#f7f2e8;
+    text-align:center;
+    padding:80px 20px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.20);
+}
+
+header h1{
+    margin:0;
+    font-size:3em;
+}
+
+header p{
+    font-size:1.3em;
+}
+
+nav{
+    background:#3b2618;
+    text-align:center;
+    padding:18px;
+}
+
+nav a{
+    color:#f7f2e8;
+    text-decoration:none;
+    margin:0 20px;
+    font-weight:bold;
+    letter-spacing:1px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#d4af37;
+}
+
+section{
+    max-width:1200px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+.arbre{
+    text-align:center;
+}
+
+.personne{
+    display:inline-block;
+    background:#ffffff;
+    padding:15px 25px;
+    margin:10px;
+    border-radius:10px;
+    border-left:5px solid #d4af37;
+    box-shadow:0 3px 12px rgba(0,0,0,0.10);
+    font-weight:bold;
+}
+
+.card{
+    background:#ffffff;
+    padding:35px;
+    border-radius:15px;
+    border-left:6px solid #d4af37;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+h2{
+    color:#2c1810;
+    text-align:center;
+}
+
+footer{
+    background:#2c1810;
+    color:#f7f2e8;
+    text-align:center;
+    padding:25px;
+    margin-top:30px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Arbre généalogique</h1>
+
+<p>Famille ANDREY</p>
+
+</header>
+
 <nav>
     <a href="index.html">Accueil</a>
     <a href="ancetres.html">Ancêtres</a>
@@ -5,14 +115,13 @@
     <a href="photos.html">Photos</a>
 </nav>
 
-<header>
-    <h1>Arbre généalogique</h1>
-    <p>Famille ANDREY</p>
-</header>
-
 <section>
 
+<div class="card">
+
 <h2>Arbre familial</h2>
+
+<div class="arbre">
 
 <div class="personne">Arrière-grand-père</div>
 <div class="personne">Arrière-grand-mère</div>
@@ -30,4 +139,16 @@
 
 <div class="personne">Descendants</div>
 
+</div>
+
+</div>
+
 </section>
+
+<footer>
+© 2026 Famille ANDREY - Site généalogique familial
+</footer>
+
+</body>
+
+</html>
