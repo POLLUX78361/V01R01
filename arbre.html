@@ -1,171 +1,33 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Famille ANDREY - Accueil</title>
-
-<style>
-
-body{
-    margin:0;
-    font-family:Georgia, serif;
-    background:#f8f8f6;
-    color:#2f2f2f;
-}
-
-header{
-    background:linear-gradient(135deg,#1e293b,#334155);
-    color:white;
-    text-align:center;
-    padding:80px 20px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.2);
-}
-
-.bandeau-construction{
-    background:#d4af37;
-    color:#1e293b;
-    max-width:900px;
-    margin:0 auto 30px auto;
-    padding:15px 25px;
-    border-radius:10px;
-    font-size:20px;
-    font-weight:bold;
-}
-
-header h1{
-    margin:0;
-    font-size:3em;
-}
-
-header p{
-    font-size:1.3em;
-}
-
-nav{
-    background:#0f172a;
-    text-align:center;
-    padding:18px;
-}
-
-nav a{
-    color:#e2e8f0;
-    text-decoration:none;
-    margin:0 20px;
-    font-weight:bold;
-    letter-spacing:1px;
-}
-
-nav a:hover{
-    color:#d4af37;
-}
-
-section{
-    max-width:1100px;
-    margin:auto;
-    padding:60px 20px;
-}
-
-.card{
-    background:white;
-    padding:35px;
-    border-radius:15px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
-    border-left:5px solid #d4af37;
-}
-
-h2{
-    color:#1e293b;
-}
-
-footer{
-    background:#0f172a;
-    color:#e2e8f0;
-    text-align:center;
-    padding:25px;
-    margin-top:30px;
-}
-
-#visiteur-compteur{
-    text-align:center;
-    padding:18px;
-    background:#ffffff;
-    font-size:18px;
-    font-weight:bold;
-    color:#1e293b;
-    border-top:2px solid #d4af37;
-}
-
-</style>
-</head>
-
-<body>
+<nav>
+    <a href="index.html">Accueil</a>
+    <a href="ancetres.html">Ancêtres</a>
+    <a href="chronologie.html">Chronologie</a>
+    <a href="photos.html">Photos</a>
+</nav>
 
 <header>
-
-<div class="bandeau-construction">
-📜 Projet généalogique en cours de réalisation.<br>
-Les recherches, photographies et documents d'archives sont ajoutés au fur et à mesure de leur découverte.
-</div>
-
-<h1>Famille ANDREY</h1>
-
-<p>Histoire, mémoire et généalogie familiale</p>
-
+    <h1>Arbre généalogique</h1>
+    <p>Famille ANDREY</p>
 </header>
-
-<nav>
-<a href="arbre.html">Arbre</a>
-<a href="ancetres.html">Ancêtres</a>
-<a href="chronologie.html">Chronologie</a>
-<a href="photos.html">Photos</a>
-</nav>
 
 <section>
 
-<div class="card">
+<h2>Arbre familial</h2>
 
-<h2>Bienvenue</h2>
+<div class="personne">Arrière-grand-père</div>
+<div class="personne">Arrière-grand-mère</div>
 
-<p>
-Bienvenue sur le site de la famille ANDREY.
-</p>
+<br><br>
 
-<p>
-Ce site est consacré à la préservation de la mémoire familiale,
-à la recherche généalogique et à la conservation des archives,
-photographies et documents retraçant l'histoire de la famille.
-</p>
+<div class="personne">Grand-père</div>
+<div class="personne">Grand-mère</div>
 
-<p>
-Au fil des découvertes, de nouvelles informations viendront enrichir
-les différentes rubriques du site.
-</p>
+<br><br>
 
-</div>
+<div class="personne">Parents</div>
+
+<br><br>
+
+<div class="personne">Descendants</div>
 
 </section>
-
-<footer>
-© 2026 Famille ANDREY - Site généalogique familial
-</footer>
-
-<div id="visiteur-compteur">
-📜 Ce site a reçu <span id="compteur">...</span> visites
-</div>
-
-<script>
-fetch('https://api.countapi.xyz/hit/famille-andrey-genealogie/visites')
-.then(response => response.json())
-.then(data => {
-document.getElementById('compteur').textContent = data.value;
-})
-.catch(() => {
-document.getElementById('compteur').textContent = '0';
-});
-</script>
-
-</body>
-</html>
