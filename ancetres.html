@@ -35,21 +35,29 @@ header p{
 
 nav{
     background:#3b2618;
-    text-align:center;
-    padding:18px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+    padding:15px 10px;
+    overflow-x:auto;
+    white-space:nowrap;
 }
 
 nav a{
+    display:inline-block;
     color:#f7f2e8;
     text-decoration:none;
-    margin:0 20px;
     font-weight:bold;
-    letter-spacing:1px;
-    transition:0.3s;
+    padding:10px 15px;
+    border-radius:6px;
+    transition:all .3s ease;
+    flex-shrink:0;
 }
 
 nav a:hover{
-    color:#d4af37;
+    background:#d4af37;
+    color:#2c1810;
 }
 
 section{
@@ -68,6 +76,15 @@ section{
 
 h2{
     color:#2c1810;
+    margin-top:0;
+}
+
+.sous-section{
+    margin-top:30px;
+    padding:20px;
+    background:#fdf8ef;
+    border-left:4px solid #d4af37;
+    border-radius:8px;
 }
 
 footer{
@@ -103,25 +120,55 @@ footer{
 
 <div class="card">
 
-<h2>Origines familiales</h2>
+<h2>Recherche généalogique</h2>
 
 <p>
-Cette rubrique est consacrée aux ancêtres de la famille ANDREY.
-Elle regroupera progressivement les actes d'état civil, les lieux
-de naissance, les mariages, les professions exercées ainsi que les
-documents historiques retrouvés au cours des recherches.
+Cette rubrique est consacrée à l'identification et à l'étude des ancêtres
+de la famille ANDREY. Elle rassemble progressivement les informations
+issues des registres d'état civil, des archives paroissiales,
+des recensements de population et des documents historiques.
 </p>
 
 <p>
-Chaque nouvelle découverte permettra d'enrichir l'histoire familiale
-et de mieux comprendre les parcours de vie des générations passées.
+Chaque découverte permet de compléter l'histoire familiale et
+de mieux comprendre les parcours de vie des générations précédentes.
 </p>
 
+<div class="sous-section">
+
+<h3>Origines familiales</h3>
+
 <p>
-Les archives présentées dans cette section pourront provenir des
-registres paroissiaux, des recensements, des actes notariés,
-des archives militaires ou encore des photographies anciennes.
+Cette section présentera les différentes branches de la famille ANDREY,
+leurs lieux d'origine, les dates importantes et les liens de parenté
+identifiés au cours des recherches.
 </p>
+
+</div>
+
+<div class="sous-section">
+
+<h3>Documents et archives</h3>
+
+<p>
+Les actes de naissance, de mariage, de décès, les documents militaires,
+les archives notariales et les photographies anciennes seront
+progressivement ajoutés afin de constituer une mémoire familiale durable.
+</p>
+
+</div>
+
+<div class="sous-section">
+
+<h3>Évolution des recherches</h3>
+
+<p>
+Les informations publiées sur ce site sont régulièrement mises à jour
+au fur et à mesure des découvertes effectuées dans les fonds d'archives
+et les collections familiales.
+</p>
+
+</div>
 
 </div>
 
