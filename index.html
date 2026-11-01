@@ -43,6 +43,7 @@ header h1{
 .sous-titre{
     font-size:1.3em;
     margin-top:15px;
+    line-height:1.6;
 }
 
 .devise{
@@ -57,6 +58,7 @@ nav{
     display:flex;
     justify-content:center;
     align-items:center;
+    flex-wrap:nowrap;
     gap:5px;
     padding:12px 5px;
     overflow-x:auto;
@@ -145,13 +147,14 @@ footer{
 
 <div class="bandeau-construction">
 📜 Projet généalogique en cours de réalisation.<br>
-Les recherches et archives sont ajoutées progressivement.
+Les recherches, photographies et documents d'archives sont ajoutés progressivement.
 </div>
 
 <h1>Famille ANDREY</h1>
 
 <p class="sous-titre">
-Archives familiales et généalogie des familles ANDREY de Suisse et de France
+Archives familiales et généalogie<br>
+des familles ANDREY de Suisse et de France
 </p>
 
 <p class="devise">
@@ -163,80 +166,4 @@ Archives familiales et généalogie des familles ANDREY de Suisse et de France
 <nav>
     <a href="arbre.html">Arbre</a>
     <a href="armoiries.html">Armoiries</a>
-    <a href="ancetres.html">Ancêtres</a>
-    <a href="chronologie.html">Chronologie</a>
-    <a href="photos.html">Photos</a>
-    <a href="sources.html">Sources</a>
-</nav>
-
-<section>
-
-<div class="card">
-
-<h2>Bienvenue</h2>
-
-<p>
-Bienvenue sur le site généalogique de la famille ANDREY.
-</p>
-
-<p>
-Ce site a pour objectif de préserver et transmettre la mémoire familiale
-à travers les générations, en regroupant les recherches effectuées en
-Suisse et en France.
-</p>
-
-<p>
-Vous y trouverez les armoiries familiales, l'arbre généalogique,
-les archives, les photographies, les documents historiques ainsi que les
-sources utilisées pour les recherches.
-</p>
-
-<div class="stats">
-
-<div class="stat">
-👤 <strong>Individus recensés</strong><br>
-Données en cours d'inventaire
-</div>
-
-<div class="stat">
-📜 <strong>Documents d'archives</strong><br>
-Collection évolutive
-</div>
-
-<div class="stat">
-📸 <strong>Photographies</strong><br>
-Ajouts réguliers
-</div>
-
-<div class="stat">
-🌳 <strong>Base généalogique</strong><br>
-Disponible au format GEDCOM
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<footer>
-© 2026 Famille ANDREY - Site généalogique familial
-</footer>
-
-<div id="visiteur-compteur">
-📜 Ce site a reçu <span id="compteur">...</span> visites
-</div>
-
-<script>
-fetch('https://api.countapi.xyz/hit/famille-andrey-genealogie/visites')
-.then(response => response.json())
-.then(data => {
-document.getElementById('compteur').textContent = data.value;
-})
-.catch(() => {
-document.getElementById('compteur').textContent = '0';
-});
-</script>
-
-</body>
-</html>
+    <
