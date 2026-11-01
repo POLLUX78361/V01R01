@@ -21,6 +21,7 @@ header{
     color:#f7f2e8;
     text-align:center;
     padding:80px 20px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.20);
 }
 
 header h1{
@@ -30,6 +31,7 @@ header h1{
 
 header p{
     font-size:1.3em;
+    line-height:1.6;
 }
 
 nav{
@@ -37,18 +39,28 @@ nav{
     display:flex;
     justify-content:center;
     align-items:center;
+    flex-wrap:nowrap;
     gap:5px;
     padding:12px 5px;
     overflow-x:auto;
     white-space:nowrap;
+    scrollbar-width:none;
+}
+
+nav::-webkit-scrollbar{
+    display:none;
 }
 
 nav a{
+    display:inline-block;
     color:#f7f2e8;
     text-decoration:none;
     font-weight:bold;
+    font-size:15px;
     padding:10px 12px;
     border-radius:6px;
+    transition:0.3s;
+    flex-shrink:0;
 }
 
 nav a:hover{
@@ -63,23 +75,29 @@ section{
 }
 
 .card{
-    background:#ffffff;
+    background:white;
     padding:35px;
     border-radius:15px;
     border-left:6px solid #d4af37;
     box-shadow:0 5px 20px rgba(0,0,0,0.08);
 }
 
+h2{
+    color:#2c1810;
+    margin-top:0;
+}
+
 .source{
-    background:#fdf8ef;
+    margin-top:25px;
     padding:20px;
-    margin-top:20px;
+    background:#fdf8ef;
     border-left:4px solid #d4af37;
     border-radius:8px;
 }
 
-h2,h3{
-    color:#2c1810;
+.source h3{
+    margin-top:0;
+    color:#5a3e2b;
 }
 
 footer{
@@ -100,7 +118,10 @@ footer{
 
 <h1>Sources et Archives</h1>
 
-<p>Références utilisées pour les recherches généalogiques</p>
+<p>
+Sources documentaires utilisées<br>
+pour les recherches sur les familles ANDREY
+</p>
 
 </header>
 
@@ -111,6 +132,7 @@ footer{
     <a href="ancetres.html">Ancêtres</a>
     <a href="chronologie.html">Chronologie</a>
     <a href="photos.html">Photos</a>
+    <a href="localisation.html">Localisation</a>
 </nav>
 
 <section>
@@ -120,65 +142,116 @@ footer{
 <h2>Références documentaires</h2>
 
 <p>
-Les informations publiées sur ce site sont issues de recherches réalisées
-à partir de documents historiques, archives officielles et collections
-familiales privées.
+Les informations présentées sur ce site sont issues de travaux de recherche
+généalogique réalisés à partir d'archives publiques, de documents familiaux
+et de sources historiques relatives aux familles ANDREY de Suisse et de France.
 </p>
 
 <div class="source">
+
 <h3>📜 État civil</h3>
+
 <ul>
 <li>Actes de naissance</li>
 <li>Actes de mariage</li>
 <li>Actes de décès</li>
 <li>Tables décennales</li>
+<li>Registres d'état civil communaux</li>
 </ul>
+
 </div>
 
 <div class="source">
+
 <h3>⛪ Registres paroissiaux</h3>
+
 <ul>
-<li>Baptêmes</li>
-<li>Mariages religieux</li>
-<li>Sépultures</li>
-<li>Registres anciens des paroisses</li>
+<li>Registres de baptêmes</li>
+<li>Registres de mariages religieux</li>
+<li>Registres de sépultures</li>
+<li>Archives paroissiales anciennes</li>
 </ul>
+
 </div>
 
 <div class="source">
-<h3>🏛 Archives publiques</h3>
+
+<h3>🏛 Archives publiques suisses</h3>
+
 <ul>
 <li>Archives de l'État de Fribourg</li>
-<li>Archives communales</li>
-<li>Recensements de population</li>
+<li>Archives communales de la Gruyère</li>
 <li>Cadastres historiques</li>
+<li>Recensements de population</li>
+<li>Documents administratifs cantonaux</li>
 </ul>
+
 </div>
 
 <div class="source">
+
+<h3>🇫🇷 Archives publiques françaises</h3>
+
+<ul>
+<li>Archives départementales du Doubs</li>
+<li>Archives départementales du Jura</li>
+<li>Archives départementales de la Haute-Saône</li>
+<li>Registres communaux</li>
+<li>Recensements de population</li>
+</ul>
+
+</div>
+
+<div class="source">
+
 <h3>🎖 Archives militaires</h3>
+
 <ul>
 <li>Registres militaires</li>
 <li>Livrets militaires</li>
 <li>Fiches matricules</li>
 <li>Documents relatifs aux conflits mondiaux</li>
 </ul>
+
 </div>
 
 <div class="source">
+
 <h3>📸 Archives familiales</h3>
+
 <ul>
 <li>Photographies privées</li>
 <li>Correspondances familiales</li>
-<li>Carnets et documents personnels</li>
+<li>Documents manuscrits</li>
+<li>Livrets de famille</li>
 <li>Témoignages transmis au sein de la famille</li>
 </ul>
+
 </div>
 
-<p style="margin-top:30px;">
-Les recherches sont en constante évolution. Cette page sera enrichie
-au fur et à mesure de l'identification de nouvelles sources.
+<div class="source">
+
+<h3>🌳 Base généalogique</h3>
+
+<p>
+L'arbre généalogique du site est régulièrement mis à jour à partir
+du fichier GEDCOM principal et des nouvelles découvertes réalisées
+dans les archives.
 </p>
+
+</div>
+
+<div class="source">
+
+<h3>🔎 Travaux en cours</h3>
+
+<p>
+Les recherches demeurent évolutives. Cette rubrique sera régulièrement
+enrichie au fur et à mesure de l'identification de nouvelles sources,
+documents ou archives relatives aux familles ANDREY de Suisse et de France.
+</p>
+
+</div>
 
 </div>
 
