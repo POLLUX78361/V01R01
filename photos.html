@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Galerie photographique - Famille ANDREY</title>
+<title>Photographies et Archives - Famille ANDREY</title>
 
 <style>
 
@@ -31,6 +31,7 @@ header h1{
 
 header p{
     font-size:1.3em;
+    line-height:1.6;
 }
 
 nav{
@@ -38,6 +39,7 @@ nav{
     display:flex;
     justify-content:center;
     align-items:center;
+    flex-wrap:nowrap;
     gap:5px;
     padding:12px 5px;
     overflow-x:auto;
@@ -57,7 +59,7 @@ nav a{
     font-size:15px;
     padding:10px 12px;
     border-radius:6px;
-    transition:all .3s ease;
+    transition:0.3s;
     flex-shrink:0;
 }
 
@@ -73,7 +75,7 @@ section{
 }
 
 .card{
-    background:#ffffff;
+    background:white;
     padding:35px;
     border-radius:15px;
     border-left:6px solid #d4af37;
@@ -82,37 +84,44 @@ section{
 
 h2{
     color:#2c1810;
-    margin-top:0;
     text-align:center;
+}
+
+.categorie{
+    margin-top:25px;
+    padding:20px;
+    background:#fdf8ef;
+    border-left:4px solid #d4af37;
+    border-radius:8px;
+}
+
+.categorie h3{
+    margin-top:0;
+    color:#5a3e2b;
 }
 
 .gallery{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:25px;
+    margin-top:20px;
 }
 
 .gallery img{
     width:100%;
     border-radius:12px;
     box-shadow:0 3px 12px rgba(0,0,0,0.15);
-    transition:all 0.3s ease;
+    transition:all .3s ease;
 }
 
 .gallery img:hover{
     transform:scale(1.05);
-    cursor:pointer;
-}
-
-figure{
-    margin:0;
 }
 
 figcaption{
     text-align:center;
     margin-top:10px;
     font-style:italic;
-    color:#5a3e2b;
 }
 
 footer{
@@ -131,9 +140,12 @@ footer{
 
 <header>
 
-<h1>Galerie photographique</h1>
+<h1>Photographies et Archives</h1>
 
-<p>Souvenirs et archives familiales</p>
+<p>
+Mémoire visuelle des familles ANDREY<br>
+de Suisse et de France
+</p>
 
 </header>
 
@@ -143,35 +155,89 @@ footer{
     <a href="armoiries.html">Armoiries</a>
     <a href="ancetres.html">Ancêtres</a>
     <a href="chronologie.html">Chronologie</a>
+    <a href="sources.html">Sources</a>
+    <a href="localisation.html">Localisation</a>
 </nav>
 
 <section>
 
 <div class="card">
 
-<h2>Photographies et archives</h2>
+<h2>Galerie familiale</h2>
 
 <p style="text-align:center;">
-Cette galerie a pour vocation de conserver et partager les photographies,
-documents anciens et souvenirs de la famille ANDREY.
+Cette galerie rassemble les photographies, documents et souvenirs
+conservés dans le cadre des recherches sur les familles ANDREY.
 </p>
+
+<div class="categorie">
+
+<h3>👨‍👩‍👧 Famille</h3>
 
 <div class="gallery">
 
 <figure>
-<img src="https://via.placeholder.com/600x400?text=Photo+Familiale+1" alt="Photo familiale 1">
+<img src="https://via.placeholder.com/600x400?text=Photo+de+Famille" alt="Photo familiale">
 <figcaption>Photographie familiale</figcaption>
 </figure>
 
-<figure>
-<img src="https://via.placeholder.com/600x400?text=Archive+Historique" alt="Archive historique">
-<figcaption>Document d'archive</figcaption>
-</figure>
+</div>
+
+</div>
+
+<div class="categorie">
+
+<h3>📜 Documents anciens</h3>
+
+<div class="gallery">
 
 <figure>
-<img src="https://via.placeholder.com/600x400?text=Souvenir+Ancien" alt="Souvenir ancien">
-<figcaption>Souvenir historique</figcaption>
+<img src="https://via.placeholder.com/600x400?text=Acte+Ancien" alt="Document d'archive">
+<figcaption>Acte ou registre ancien</figcaption>
 </figure>
+
+</div>
+
+</div>
+
+<div class="categorie">
+
+<h3>🏡 Cerniat et la Gruyère</h3>
+
+<div class="gallery">
+
+<figure>
+<img src="https://via.placeholder.com/600x400?text=Cerniat" alt="Cerniat">
+<figcaption>Commune de Cerniat</figcaption>
+</figure>
+
+</div>
+
+</div>
+
+<div class="categorie">
+
+<h3>🪖 Archives historiques</h3>
+
+<div class="gallery">
+
+<figure>
+<img src="https://via.placeholder.com/600x400?text=Archives" alt="Archive historique">
+<figcaption>Document historique</figcaption>
+</figure>
+
+</div>
+
+</div>
+
+<div class="categorie">
+
+<h3>📸 Recherches en cours</h3>
+
+<p>
+De nouvelles photographies et archives seront ajoutées progressivement
+au fur et à mesure des découvertes et des contributions familiales.
+</p>
 
 </div>
 
@@ -186,3 +252,4 @@ documents anciens et souvenirs de la famille ANDREY.
 </body>
 
 </html>
+
