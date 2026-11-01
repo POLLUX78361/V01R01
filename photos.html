@@ -38,10 +38,15 @@ nav{
     display:flex;
     justify-content:center;
     align-items:center;
-    gap:8px;
-    padding:15px 10px;
+    gap:5px;
+    padding:12px 5px;
     overflow-x:auto;
     white-space:nowrap;
+    scrollbar-width:none;
+}
+
+nav::-webkit-scrollbar{
+    display:none;
 }
 
 nav a{
@@ -49,7 +54,8 @@ nav a{
     color:#f7f2e8;
     text-decoration:none;
     font-weight:bold;
-    padding:10px 15px;
+    font-size:15px;
+    padding:10px 12px;
     border-radius:6px;
     transition:all .3s ease;
     flex-shrink:0;
@@ -90,11 +96,12 @@ h2{
     width:100%;
     border-radius:12px;
     box-shadow:0 3px 12px rgba(0,0,0,0.15);
-    transition:transform 0.3s ease;
+    transition:all 0.3s ease;
 }
 
 .gallery img:hover{
-    transform:scale(1.03);
+    transform:scale(1.05);
+    cursor:pointer;
 }
 
 figure{
@@ -103,7 +110,7 @@ figure{
 
 figcaption{
     text-align:center;
-    margin-top:8px;
+    margin-top:10px;
     font-style:italic;
     color:#5a3e2b;
 }
@@ -133,6 +140,7 @@ footer{
 <nav>
     <a href="index.html">Accueil</a>
     <a href="arbre.html">Arbre</a>
+    <a href="armoiries.html">Armoiries</a>
     <a href="ancetres.html">Ancêtres</a>
     <a href="chronologie.html">Chronologie</a>
 </nav>
@@ -143,20 +151,25 @@ footer{
 
 <h2>Photographies et archives</h2>
 
+<p style="text-align:center;">
+Cette galerie a pour vocation de conserver et partager les photographies,
+documents anciens et souvenirs de la famille ANDREY.
+</p>
+
 <div class="gallery">
 
 <figure>
-<img src="https://via.placeholder.com/600x400?text=Photo+1" alt="Photo 1">
+<img src="https://via.placeholder.com/600x400?text=Photo+Familiale+1" alt="Photo familiale 1">
 <figcaption>Photographie familiale</figcaption>
 </figure>
 
 <figure>
-<img src="https://via.placeholder.com/600x400?text=Photo+2" alt="Photo 2">
+<img src="https://via.placeholder.com/600x400?text=Archive+Historique" alt="Archive historique">
 <figcaption>Document d'archive</figcaption>
 </figure>
 
 <figure>
-<img src="https://via.placeholder.com/600x400?text=Photo+3" alt="Photo 3">
+<img src="https://via.placeholder.com/600x400?text=Souvenir+Ancien" alt="Souvenir ancien">
 <figcaption>Souvenir historique</figcaption>
 </figure>
 
