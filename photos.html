@@ -1,3 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Galerie photographique - Famille ANDREY</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Georgia, serif;
+    background:#fdfbf7;
+    color:#3d342d;
+}
+
+header{
+    background:linear-gradient(135deg,#2c1810,#5a3e2b);
+    color:#f7f2e8;
+    text-align:center;
+    padding:80px 20px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.20);
+}
+
+header h1{
+    margin:0;
+    font-size:3em;
+}
+
+header p{
+    font-size:1.3em;
+}
+
+nav{
+    background:#3b2618;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+    padding:15px 10px;
+    overflow-x:auto;
+    white-space:nowrap;
+}
+
+nav a{
+    display:inline-block;
+    color:#f7f2e8;
+    text-decoration:none;
+    font-weight:bold;
+    padding:10px 15px;
+    border-radius:6px;
+    transition:all .3s ease;
+    flex-shrink:0;
+}
+
+nav a:hover{
+    background:#d4af37;
+    color:#2c1810;
+}
+
+section{
+    max-width:1200px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+.card{
+    background:#ffffff;
+    padding:35px;
+    border-radius:15px;
+    border-left:6px solid #d4af37;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+h2{
+    color:#2c1810;
+    margin-top:0;
+    text-align:center;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:12px;
+    box-shadow:0 3px 12px rgba(0,0,0,0.15);
+    transition:transform 0.3s ease;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+}
+
+figure{
+    margin:0;
+}
+
+figcaption{
+    text-align:center;
+    margin-top:8px;
+    font-style:italic;
+    color:#5a3e2b;
+}
+
+footer{
+    background:#2c1810;
+    color:#f7f2e8;
+    text-align:center;
+    padding:25px;
+    margin-top:30px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Galerie photographique</h1>
+
+<p>Souvenirs et archives familiales</p>
+
+</header>
+
 <nav>
     <a href="index.html">Accueil</a>
     <a href="arbre.html">Arbre</a>
@@ -5,23 +137,39 @@
     <a href="chronologie.html">Chronologie</a>
 </nav>
 
-<header>
-    <h1>Galerie photographique</h1>
-    <p>Souvenirs et archives familiales</p>
-</header>
-
 <section>
 
-<h2>Photographies</h2>
+<div class="card">
+
+<h2>Photographies et archives</h2>
 
 <div class="gallery">
 
-<img src="https://via.placeholder.com/400x300?text=Photo+1" alt="Photo 1">
+<figure>
+<img src="https://via.placeholder.com/600x400?text=Photo+1" alt="Photo 1">
+<figcaption>Photographie familiale</figcaption>
+</figure>
 
-<img src="https://via.placeholder.com/400x300?text=Photo+2" alt="Photo 2">
+<figure>
+<img src="https://via.placeholder.com/600x400?text=Photo+2" alt="Photo 2">
+<figcaption>Document d'archive</figcaption>
+</figure>
 
-<img src="https://via.placeholder.com/400x300?text=Photo+3" alt="Photo 3">
+<figure>
+<img src="https://via.placeholder.com/600x400?text=Photo+3" alt="Photo 3">
+<figcaption>Souvenir historique</figcaption>
+</figure>
+
+</div>
 
 </div>
 
 </section>
+
+<footer>
+© 2026 Famille ANDREY - Site généalogique familial
+</footer>
+
+</body>
+
+</html>
