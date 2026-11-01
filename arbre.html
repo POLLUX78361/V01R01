@@ -79,13 +79,33 @@ h2{
     text-align:center;
 }
 
-.arbre{
+.bouton-gedcom{
+    display:inline-block;
+    background:#d4af37;
+    color:#2c1810;
+    text-decoration:none;
+    padding:12px 25px;
+    border-radius:8px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.bouton-gedcom:hover{
+    background:#b8921f;
+}
+
+.arbre-zone{
+    margin-top:30px;
+    padding:40px;
     text-align:center;
+    border:2px dashed #d4af37;
+    border-radius:10px;
+    background:#fdf8ef;
 }
 
 .personne{
     display:inline-block;
-    background:#ffffff;
+    background:white;
     padding:15px 25px;
     margin:10px;
     border-radius:10px;
@@ -129,7 +149,17 @@ footer{
 
 <h2>Arbre familial</h2>
 
-<div class="arbre">
+<div style="text-align:center;">
+
+<a href="famille_andrey.ged" download class="bouton-gedcom">
+📥 Télécharger le fichier GEDCOM
+</a>
+
+</div>
+
+<div class="arbre-zone">
+
+<h3>Structure familiale</h3>
 
 <div class="personne">Arrière-grand-père</div>
 <div class="personne">Arrière-grand-mère</div>
@@ -146,6 +176,11 @@ footer{
 <br><br>
 
 <div class="personne">Descendants</div>
+
+<p style="margin-top:30px;">
+Ajoutez votre fichier <strong>famille_andrey.ged</strong>
+à la racine du dépôt GitHub pour permettre son téléchargement.
+</p>
 
 </div>
 
