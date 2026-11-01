@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Famille ANDREY - Accueil</title>
 
 <style>
+
 body{
     margin:0;
-    font-family:Georgia,serif;
+    font-family:Georgia, serif;
     background:#f5e9d3;
     color:#4a3b2a;
 }
@@ -18,6 +21,17 @@ header{
     color:white;
     text-align:center;
     padding:80px 20px;
+}
+
+.bandeau-construction{
+    background:#f0d9a7;
+    color:#6b1e1e;
+    max-width:900px;
+    margin:0 auto 30px auto;
+    padding:15px 25px;
+    border-radius:10px;
+    font-size:22px;
+    font-weight:bold;
 }
 
 nav{
@@ -33,32 +47,53 @@ nav a{
     font-weight:bold;
 }
 
+nav a:hover{
+    color:#f0d9a7;
+}
+
 section{
     max-width:1100px;
     margin:auto;
-    padding:40px 20px;
+    padding:50px 20px;
 }
 
 .card{
     background:white;
     padding:25px;
     border-radius:12px;
+    box-shadow:0 2px 10px rgba(0,0,0,.10);
 }
 
 footer{
     background:#6b1e1e;
     color:white;
     text-align:center;
-    padding:20px;
+    padding:30px;
 }
+
+#visiteur-compteur{
+    text-align:center;
+    padding:15px;
+    background:#f0d9a7;
+    color:#6b1e1e;
+    font-weight:bold;
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
+
+<div class="bandeau-construction">
+📜 Projet généalogique en cours de réalisation.<br>
+Les recherches, photographies et documents d'archives sont ajoutés au fur et à mesure de leur découverte.
+</div>
+
 <h1>Famille ANDREY</h1>
 <p>Histoire, mémoire et généalogie familiale</p>
+
 </header>
 
 <nav>
@@ -70,15 +105,40 @@ footer{
 </nav>
 
 <section>
+
 <div class="card">
+
 <h2>Bienvenue</h2>
-<p>Bienvenue sur le site de la famille ANDREY.</p>
+
+<p>
+Bienvenue sur le site de la famille ANDREY.
+Ce site a pour objectif de préserver la mémoire familiale,
+de présenter les ancêtres, les archives historiques,
+les photographies ainsi que l'arbre généalogique.
+</p>
+
 </div>
+
 </section>
 
 <footer>
-© 2026 Famille ANDREY
+© 2026 Famille ANDREY - Site généalogique familial
 </footer>
+
+<div id="visiteur-compteur">
+📜 Ce site a reçu <span id="compteur">...</span> visites
+</div>
+
+<script>
+fetch('https://api.countapi.xyz/hit/famille-andrey-genealogie/visites')
+.then(response => response.json())
+.then(data => {
+document.getElementById('compteur').textContent = data.value;
+})
+.catch(() => {
+document.getElementById('compteur').textContent = '0';
+});
+</script>
 
 </body>
 </html>
