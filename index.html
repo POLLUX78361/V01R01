@@ -33,7 +33,6 @@ header{
     border-radius:10px;
     font-size:20px;
     font-weight:bold;
-    box-shadow:0 3px 10px rgba(0,0,0,0.15);
 }
 
 header h1{
@@ -41,8 +40,16 @@ header h1{
     font-size:3em;
 }
 
-header p{
+.sous-titre{
     font-size:1.3em;
+    margin-top:15px;
+}
+
+.devise{
+    color:#d4af37;
+    font-style:italic;
+    font-size:1.1em;
+    margin-top:10px;
 }
 
 nav{
@@ -69,7 +76,7 @@ nav a{
     font-size:15px;
     padding:10px 12px;
     border-radius:6px;
-    transition:all .3s ease;
+    transition:0.3s;
     flex-shrink:0;
 }
 
@@ -121,7 +128,7 @@ footer{
 #visiteur-compteur{
     text-align:center;
     padding:18px;
-    background:#ffffff;
+    background:white;
     color:#2c1810;
     font-size:18px;
     font-weight:bold;
@@ -138,12 +145,18 @@ footer{
 
 <div class="bandeau-construction">
 📜 Projet généalogique en cours de réalisation.<br>
-Les recherches, photographies et documents d'archives sont ajoutés au fur et à mesure de leur découverte.
+Les recherches et archives sont ajoutées progressivement.
 </div>
 
 <h1>Famille ANDREY</h1>
 
-<p>Archives familiales et généalogie de la famille ANDREY</p>
+<p class="sous-titre">
+Archives familiales et généalogie des familles ANDREY de Suisse et de France
+</p>
+
+<p class="devise">
+« Mémoire du passé, héritage de l'avenir »
+</p>
 
 </header>
 
@@ -153,6 +166,7 @@ Les recherches, photographies et documents d'archives sont ajoutés au fur et à
     <a href="ancetres.html">Ancêtres</a>
     <a href="chronologie.html">Chronologie</a>
     <a href="photos.html">Photos</a>
+    <a href="sources.html">Sources</a>
 </nav>
 
 <section>
@@ -162,31 +176,31 @@ Les recherches, photographies et documents d'archives sont ajoutés au fur et à
 <h2>Bienvenue</h2>
 
 <p>
-Bienvenue sur le site de la famille ANDREY.
+Bienvenue sur le site généalogique de la famille ANDREY.
 </p>
 
 <p>
-Ce site a pour vocation de préserver la mémoire familiale,
-de rassembler les archives, les photographies, les actes d'état civil
-et les informations généalogiques relatives à la famille ANDREY.
+Ce site a pour objectif de préserver et transmettre la mémoire familiale
+à travers les générations, en regroupant les recherches effectuées en
+Suisse et en France.
 </p>
 
 <p>
-Au fil des recherches, les différentes rubriques du site seront enrichies
-afin de transmettre aux générations futures l'histoire et les origines
-de la famille.
+Vous y trouverez les armoiries familiales, l'arbre généalogique,
+les archives, les photographies, les documents historiques ainsi que les
+sources utilisées pour les recherches.
 </p>
 
 <div class="stats">
 
 <div class="stat">
 👤 <strong>Individus recensés</strong><br>
-En cours d'inventaire
+Données en cours d'inventaire
 </div>
 
 <div class="stat">
 📜 <strong>Documents d'archives</strong><br>
-Collection en évolution
+Collection évolutive
 </div>
 
 <div class="stat">
@@ -195,7 +209,7 @@ Ajouts réguliers
 </div>
 
 <div class="stat">
-🌳 <strong>Arbre généalogique</strong><br>
+🌳 <strong>Base généalogique</strong><br>
 Disponible au format GEDCOM
 </div>
 
@@ -217,10 +231,10 @@ Disponible au format GEDCOM
 fetch('https://api.countapi.xyz/hit/famille-andrey-genealogie/visites')
 .then(response => response.json())
 .then(data => {
-    document.getElementById('compteur').textContent = data.value;
+document.getElementById('compteur').textContent = data.value;
 })
 .catch(() => {
-    document.getElementById('compteur').textContent = '0';
+document.getElementById('compteur').textContent = '0';
 });
 </script>
 
