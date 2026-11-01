@@ -31,6 +31,7 @@ header h1{
 
 header p{
     font-size:1.3em;
+    line-height:1.6;
 }
 
 nav{
@@ -38,6 +39,7 @@ nav{
     display:flex;
     justify-content:center;
     align-items:center;
+    flex-wrap:nowrap;
     gap:5px;
     padding:12px 5px;
     overflow-x:auto;
@@ -57,7 +59,7 @@ nav a{
     font-size:15px;
     padding:10px 12px;
     border-radius:6px;
-    transition:all .3s ease;
+    transition:0.3s;
     flex-shrink:0;
 }
 
@@ -83,6 +85,7 @@ section{
 h2{
     color:#2c1810;
     text-align:center;
+    margin-top:0;
 }
 
 .bouton-gedcom{
@@ -102,12 +105,20 @@ h2{
 }
 
 .arbre-zone{
-    margin-top:30px;
-    padding:40px;
+    margin-top:25px;
+    padding:30px;
     text-align:center;
-    border:2px dashed #d4af37;
-    border-radius:10px;
     background:#fdf8ef;
+    border-left:4px solid #d4af37;
+    border-radius:10px;
+}
+
+.info{
+    margin-top:25px;
+    padding:20px;
+    background:#fdf8ef;
+    border-left:4px solid #d4af37;
+    border-radius:8px;
 }
 
 footer{
@@ -128,7 +139,10 @@ footer{
 
 <h1>Arbre généalogique</h1>
 
-<p>Base généalogique de la famille ANDREY</p>
+<p>
+Les familles ANDREY<br>
+de Suisse et de France
+</p>
 
 </header>
 
@@ -138,6 +152,7 @@ footer{
     <a href="ancetres.html">Ancêtres</a>
     <a href="chronologie.html">Chronologie</a>
     <a href="photos.html">Photos</a>
+    <a href="sources.html">Sources</a>
 </nav>
 
 <section>
@@ -145,6 +160,11 @@ footer{
 <div class="card">
 
 <h2>Base généalogique familiale</h2>
+
+<p style="text-align:center;">
+Cette rubrique donne accès à la base généalogique de la famille ANDREY,
+issue des recherches effectuées en Suisse et en France.
+</p>
 
 <div style="text-align:center;">
 
@@ -159,26 +179,48 @@ footer{
 <h3>Fichier généalogique principal</h3>
 
 <p>
-Le fichier GEDCOM contient l'ensemble des individus,
-des liens de parenté et des informations généalogiques
-actuellement recensés pour la famille ANDREY.
+Le fichier GEDCOM regroupe les individus, les filiations,
+les unions et les informations actuellement recensés
+dans le cadre des recherches familiales.
 </p>
 
 <p>
-Ce fichier est compatible avec la plupart des logiciels
-de généalogie tels que Heredis, Généatique,
-Family Tree Builder ou Geneanet.
+Il peut être consulté avec la plupart des logiciels de généalogie :
+Heredis, Généatique, Geneanet, Family Tree Builder et autres logiciels compatibles GEDCOM.
+</p>
+
+</div>
+
+<div class="info">
+
+<h3>🌳 Périmètre des recherches</h3>
+
+<p>
+Les recherches concernent principalement les branches ANDREY
+originaires du canton de Fribourg en Suisse,
+notamment à Cerniat, Bulle, Hauteville et dans les communes voisines.
 </p>
 
 <p>
-Les recherches étant toujours en cours,
-le contenu du fichier est régulièrement enrichi
-par de nouvelles découvertes et de nouveaux documents.
+Elles s'étendent également aux branches établies en France,
+en particulier dans le Doubs, le Jura et la Haute-Saône.
+</p>
+
+</div>
+
+<div class="info">
+
+<h3>🔄 Mise à jour des données</h3>
+
+<p>
+La base généalogique est régulièrement enrichie grâce à la consultation
+des archives publiques, des registres paroissiaux,
+des actes d'état civil et des documents familiaux.
 </p>
 
 <p>
-Dernière mise à jour : consulter la version disponible
-au téléchargement ci-dessus.
+Chaque nouvelle découverte contribue à compléter l'histoire
+des familles ANDREY de Suisse et de France.
 </p>
 
 </div>
