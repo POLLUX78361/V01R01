@@ -50,10 +50,15 @@ nav{
     display:flex;
     justify-content:center;
     align-items:center;
-    gap:8px;
-    padding:15px 10px;
+    gap:5px;
+    padding:12px 5px;
     overflow-x:auto;
     white-space:nowrap;
+    scrollbar-width:none;
+}
+
+nav::-webkit-scrollbar{
+    display:none;
 }
 
 nav a{
@@ -61,7 +66,8 @@ nav a{
     color:#f7f2e8;
     text-decoration:none;
     font-weight:bold;
-    padding:10px 15px;
+    font-size:15px;
+    padding:10px 12px;
     border-radius:6px;
     transition:all .3s ease;
     flex-shrink:0;
@@ -88,6 +94,20 @@ section{
 
 h2{
     color:#2c1810;
+}
+
+.stats{
+    margin-top:30px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.stat{
+    background:#fdf8ef;
+    border-left:4px solid #d4af37;
+    padding:15px;
+    border-radius:8px;
 }
 
 footer{
@@ -129,6 +149,7 @@ Les recherches, photographies et documents d'archives sont ajoutés au fur et à
 
 <nav>
     <a href="arbre.html">Arbre</a>
+    <a href="armoiries.html">Armoiries</a>
     <a href="ancetres.html">Ancêtres</a>
     <a href="chronologie.html">Chronologie</a>
     <a href="photos.html">Photos</a>
@@ -145,15 +166,40 @@ Bienvenue sur le site de la famille ANDREY.
 </p>
 
 <p>
-Ce site est consacré à la préservation de la mémoire familiale,
-à la recherche généalogique et à la conservation des archives,
-photographies et documents retraçant l'histoire de la famille.
+Ce site a pour vocation de préserver la mémoire familiale,
+de rassembler les archives, les photographies, les actes d'état civil
+et les informations généalogiques relatives à la famille ANDREY.
 </p>
 
 <p>
-Au fil des découvertes, de nouvelles informations viendront enrichir
-les différentes rubriques du site.
+Au fil des recherches, les différentes rubriques du site seront enrichies
+afin de transmettre aux générations futures l'histoire et les origines
+de la famille.
 </p>
+
+<div class="stats">
+
+<div class="stat">
+👤 <strong>Individus recensés</strong><br>
+En cours d'inventaire
+</div>
+
+<div class="stat">
+📜 <strong>Documents d'archives</strong><br>
+Collection en évolution
+</div>
+
+<div class="stat">
+📸 <strong>Photographies</strong><br>
+Ajouts réguliers
+</div>
+
+<div class="stat">
+🌳 <strong>Arbre généalogique</strong><br>
+Disponible au format GEDCOM
+</div>
+
+</div>
 
 </div>
 
