@@ -127,6 +127,15 @@ footer {
     padding: 30px;
 }
 
+#visiteur-compteur{
+    text-align:center;
+    padding:15px;
+    background:#f0d9a7;
+    color:#6b1e1e;
+    font-size:18px;
+    font-weight:bold;
+}
+
 </style>
 </head>
 
@@ -265,6 +274,21 @@ footer {
 <footer>
     © 2026 Famille ANDREY - Site généalogique familial
 </footer>
+
+<div id="visiteur-compteur">
+    📜 Ce site a reçu <span id="compteur">...</span> visites
+</div>
+
+<script>
+fetch('https://api.countapi.xyz/hit/famille-andrey-genealogie/visites')
+.then(response => response.json())
+.then(data => {
+    document.getElementById('compteur').textContent = data.value;
+})
+.catch(() => {
+    document.getElementById('compteur').textContent = '0';
+});
+</script>
 
 </body>
 </html>
