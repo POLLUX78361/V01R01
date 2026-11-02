@@ -2,16 +2,19 @@
 <html lang="fr">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Arbre généalogique - Famille ANDREY</title>
 
+<script src="https://balkan.app/js/FamilyTree.js"></script>
+
 <style>
 
 body{
     margin:0;
-    font-family:Georgia, serif;
+    font-family:Georgia,serif;
     background:#fdfbf7;
     color:#3d342d;
 }
@@ -20,8 +23,7 @@ header{
     background:linear-gradient(135deg,#2c1810,#5a3e2b);
     color:#f7f2e8;
     text-align:center;
-    padding:80px 20px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.20);
+    padding:70px 20px;
 }
 
 header h1{
@@ -30,95 +32,46 @@ header h1{
 }
 
 header p{
-    font-size:1.3em;
-    line-height:1.6;
+    font-size:1.2em;
 }
 
 nav{
     background:#3b2618;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:nowrap;
-    gap:5px;
-    padding:12px 5px;
+    padding:12px;
     overflow-x:auto;
     white-space:nowrap;
-    scrollbar-width:none;
-}
-
-nav::-webkit-scrollbar{
-    display:none;
+    text-align:center;
 }
 
 nav a{
-    display:inline-block;
     color:#f7f2e8;
     text-decoration:none;
+    margin:0 8px;
     font-weight:bold;
-    font-size:15px;
-    padding:10px 12px;
-    border-radius:6px;
-    transition:0.3s;
-    flex-shrink:0;
 }
 
 nav a:hover{
-    background:#d4af37;
-    color:#2c1810;
+    color:#d4af37;
 }
 
-section{
-    max-width:1100px;
-    margin:auto;
-    padding:60px 20px;
+.search-box{
+    max-width:600px;
+    margin:25px auto;
+    padding:0 20px;
 }
 
-.card{
-    background:#ffffff;
-    padding:35px;
-    border-radius:15px;
-    border-left:6px solid #d4af37;
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
-}
-
-h2{
-    color:#2c1810;
-    text-align:center;
-    margin-top:0;
-}
-
-.bouton-gedcom{
-    display:inline-block;
-    background:#d4af37;
-    color:#2c1810;
-    text-decoration:none;
-    padding:15px 25px;
+.search-box input{
+    width:100%;
+    padding:14px;
+    border:1px solid #ccc;
     border-radius:8px;
-    font-weight:bold;
-    margin:20px 0;
-    transition:0.3s;
+    font-size:16px;
 }
 
-.bouton-gedcom:hover{
-    background:#b8921f;
-}
-
-.arbre-zone{
-    margin-top:25px;
-    padding:30px;
-    text-align:center;
-    background:#fdf8ef;
-    border-left:4px solid #d4af37;
-    border-radius:10px;
-}
-
-.info{
-    margin-top:25px;
-    padding:20px;
-    background:#fdf8ef;
-    border-left:4px solid #d4af37;
-    border-radius:8px;
+#tree{
+    width:100%;
+    height:850px;
+    border-top:4px solid #d4af37;
 }
 
 footer{
@@ -126,7 +79,6 @@ footer{
     color:#f7f2e8;
     text-align:center;
     padding:25px;
-    margin-top:30px;
 }
 
 </style>
@@ -140,103 +92,182 @@ footer{
 <h1>Arbre généalogique</h1>
 
 <p>
-Les familles ANDREY<br>
-de Suisse et de France
+Familles ANDREY de Suisse et de France
 </p>
 
 </header>
 
 <nav>
-    <a href="index.html">Accueil</a>
-    <a href="ancetres.html">Ancêtres</a>
-    <a href="arbre.html">Arbre</a>
-    <a href="armoiries.html">Armoiries</a>
-    <a href="Contact.html">Contact/Contributions familiales</a>
-    <a href="chronologie.html">Chronologie</a>
-    <a href="Documents.html">Documents</a>
-    <a href="localisation.html">Localisation</a>
-    <a href="patronyme.html">Patronyme</a>
-    <a href="photos.html">Photos</a>
-    <a href="sources.html">Sources</a>
+
+<a href="index.html">Accueil</a>
+<a href="ancetres.html">Ancêtres</a>
+<a href="arbre.html">Arbre</a>
+<a href="armoiries.html">Armoiries</a>
+<a href="chronologie.html">Chronologie</a>
+<a href="documents.html">Documents</a>
+<a href="photos.html">Photos</a>
+<a href="localisation.html">Localisation</a>
+<a href="patronyme.html">Patronyme</a>
+<a href="sources.html">Sources</a>
+<a href="contact.html">Contact</a>
+
 </nav>
 
-<section>
+<div class="search-box">
 
-<div class="card">
-
-<h2>Base généalogique familiale</h2>
-
-<p style="text-align:center;">
-Cette rubrique donne accès à la base généalogique de la famille ANDREY,
-issue des recherches effectuées en Suisse et en France.
-</p>
-
-<div style="text-align:center;">
-
-<a href="famille_andrey.ged" download class="bouton-gedcom">
-📥 Télécharger le fichier GEDCOM
-</a>
+<input
+id="search"
+placeholder="Rechercher une personne..."
+>
 
 </div>
 
-<div class="arbre-zone">
-
-<h3>Fichier généalogique principal</h3>
-
-<p>
-Le fichier GEDCOM regroupe les individus, les filiations,
-les unions et les informations actuellement recensés
-dans le cadre des recherches familiales.
-</p>
-
-<p>
-Il peut être consulté avec la plupart des logiciels de généalogie :
-Heredis, Généatique, Geneanet, Family Tree Builder et autres logiciels compatibles GEDCOM.
-</p>
-
-</div>
-
-<div class="info">
-
-<h3>🌳 Périmètre des recherches</h3>
-
-<p>
-Les recherches concernent principalement les branches ANDREY
-originaires du canton de Fribourg en Suisse,
-notamment à Cerniat, Bulle, Hauteville et dans les communes voisines.
-</p>
-
-<p>
-Elles s'étendent également aux branches établies en France,
-en particulier dans le Doubs, le Jura et la Haute-Saône.
-</p>
-
-</div>
-
-<div class="info">
-
-<h3>🔄 Mise à jour des données</h3>
-
-<p>
-La base généalogique est régulièrement enrichie grâce à la consultation
-des archives publiques, des registres paroissiaux,
-des actes d'état civil et des documents familiaux.
-</p>
-
-<p>
-Chaque nouvelle découverte contribue à compléter l'histoire
-des familles ANDREY de Suisse et de France.
-</p>
-
-</div>
-
-</div>
-
-</section>
+<div id="tree"></div>
 
 <footer>
-© 2026 Famille ANDREY - Site généalogique familial
+
+© 2025-2026 Famille ANDREY - Site généalogique familial
+
 </footer>
+
+<script>
+
+function nettoyerPersonne(p){
+
+    if(!p.birthYear){
+        return null;
+    }
+
+    if(p.birthYear > 1926){
+        return null;
+    }
+
+    if(p.deathYear){
+
+        if(
+            p.deathYear < 1000 ||
+            p.deathYear > 2026
+        ){
+            p.deathYear = null;
+        }
+    }
+
+    let titre = "";
+
+    if(p.birthYear){
+        titre += p.birthYear;
+    }
+
+    if(p.deathYear){
+        titre += " - " + p.deathYear;
+    }
+
+    return {
+
+        id:p.id,
+
+        fid:p.fid || null,
+
+        mid:p.mid || null,
+
+        name:p.name,
+
+        title:titre
+
+    };
+}
+
+fetch("data/famille.json")
+
+.then(response => response.json())
+
+.then(data => {
+
+    data = data
+        .map(nettoyerPersonne)
+        .filter(Boolean);
+
+    const tree =
+        new FamilyTree(
+            document.getElementById("tree"),
+            {
+
+                enableSearch:true,
+
+                nodeBinding:{
+
+                    field_0:"name",
+
+                    field_1:"title"
+
+                },
+
+                toolbar:{
+
+                    zoom:true,
+
+                    fit:true,
+
+                    expandAll:true
+
+                },
+
+                nodeMenu:{},
+
+                menu:{},
+
+                editForm:{
+                    readOnly:true
+                },
+
+                scaleInitial:
+                    FamilyTree.match.boundary
+            }
+        );
+
+    tree.load(data);
+
+    document
+    .getElementById("search")
+    .addEventListener(
+        "keyup",
+        function(){
+
+            tree.search(
+                this.value
+            );
+
+        }
+    );
+
+});
+
+window.addEventListener(
+    "keydown",
+    function(e){
+
+        if(e.ctrlKey){
+
+            const k =
+                e.key.toLowerCase();
+
+            if(
+                k==="s" ||
+                k==="p"
+            ){
+
+                e.preventDefault();
+            }
+        }
+    }
+);
+
+window.oncontextmenu =
+    function(){
+        return false;
+    };
+
+</script>
 
 </body>
 
