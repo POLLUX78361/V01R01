@@ -186,6 +186,7 @@ fetch("famille.json")
     data = data
         .map(nettoyerPersonne)
         .filter(Boolean);
+    alert("Personnes trouvées : " + data.length);
 
     const tree =
         new FamilyTree(
