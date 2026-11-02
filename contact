@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Contact/Contributions familiales - Famille ANDREY</title>
+<title>Chronologie familiale - Famille ANDREY</title>
 
 <style>
 
@@ -69,41 +69,65 @@ nav a:hover{
 }
 
 section{
-    max-width:1100px;
+    max-width:1000px;
     margin:auto;
     padding:60px 20px;
 }
 
 .card{
     background:white;
-    padding:35px;
+    padding:40px;
     border-radius:15px;
     border-left:6px solid #d4af37;
     box-shadow:0 5px 20px rgba(0,0,0,0.08);
 }
 
 h2{
-    color:#2c1810;
-    margin-top:0;
-}
-
-.zone{
-    margin-top:25px;
-    padding:20px;
-    background:#fdf8ef;
-    border-left:4px solid #d4af37;
-    border-radius:8px;
-}
-
-.zone h3{
-    margin-top:0;
-    color:#5a3e2b;
-}
-
-.carte{
     text-align:center;
-    font-size:90px;
-    margin:30px 0;
+    color:#2c1810;
+    margin-bottom:50px;
+}
+
+/* Frise */
+
+.timeline{
+    position:relative;
+    margin:0 auto;
+    padding-left:50px;
+    border-left:4px solid #d4af37;
+}
+
+.event{
+    position:relative;
+    margin-bottom:40px;
+    padding-left:25px;
+}
+
+.event::before{
+    content:"";
+    position:absolute;
+    left:-39px;
+    top:5px;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:#d4af37;
+    border:3px solid white;
+    box-shadow:0 0 0 2px #b8921f;
+}
+
+.date{
+    font-size:24px;
+    font-weight:bold;
+    color:#5a3e2b;
+    margin-bottom:10px;
+}
+
+.description{
+    background:#fdf8ef;
+    padding:18px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.05);
 }
 
 footer{
@@ -122,11 +146,11 @@ footer{
 
 <header>
 
-<h1>Contact/Contributions familiale</h1>
+<h1>Chronologie familiale</h1>
 
 <p>
-Présence des familles ANDREY<br>
-en Suisse et en France
+L'histoire des familles ANDREY<br>
+de Suisse et de France
 </p>
 
 </header>
@@ -149,75 +173,65 @@ en Suisse et en France
 
 <div class="card">
 
-<h2>Implantation géographique</h2>
+<h2>Frise chronologique familiale</h2>
 
-<p>
-Les recherches généalogiques mettent en évidence une forte présence
-du patronyme ANDREY de part et d'autre de la frontière franco-suisse,
-avec un ancrage historique particulièrement important dans le canton
-de Fribourg.
-</p>
+<div class="timeline">
 
-<div class="carte">
-🗺️
+<div class="event">
+<div class="date">Origines</div>
+<div class="description">
+Premières traces connues du patronyme ANDREY dans les archives
+et les registres historiques consultés.
+</div>
 </div>
 
-<div class="zone">
-
-<h3>🇨🇭 Suisse</h3>
-
-<p>
-Les principales localités actuellement identifiées sont :
-</p>
-
-<ul>
-<li>Cerniat</li>
-<li>Bulle</li>
-<li>Hauteville</li>
-<li>Broc</li>
-<li>Crésuz</li>
-<li>Fribourg</li>
-</ul>
-
-<p>
-Ces communes de la Gruyère constituent le cœur historique
-de plusieurs branches de la famille ANDREY.
-</p>
-
+<div class="event">
+<div class="date">Cerniat et la Gruyère</div>
+<div class="description">
+Développement des branches familiales dans le canton de Fribourg,
+notamment à Cerniat, Bulle, Hauteville et dans les communes voisines.
+</div>
 </div>
 
-<div class="zone">
-
-<h3>🇫🇷 France</h3>
-
-<p>
-Des branches familiales portant le patronyme ANDREY sont également
-présentes en France.
-</p>
-
-<ul>
-<li>Doubs</li>
-<li>Jura</li>
-<li>Haute-Saône</li>
-</ul>
-
-<p>
-Les échanges historiques entre la Suisse romande et les régions
-frontalières françaises expliquent l'implantation du patronyme
-dans ces territoires.
-</p>
-
+<div class="event">
+<div class="date">Implantation en France</div>
+<div class="description">
+Présence progressive du patronyme ANDREY dans plusieurs régions
+françaises, notamment dans le Doubs, le Jura et la Haute-Saône.
+</div>
 </div>
 
-<div class="zone">
+<div class="event">
+<div class="date">XIXe siècle</div>
+<div class="description">
+Évolution des familles au rythme des changements sociaux,
+agricoles, artisanaux et industriels de l'époque.
+</div>
+</div>
 
-<h3>📍 Recherches futures</h3>
+<div class="event">
+<div class="date">XXe siècle</div>
+<div class="description">
+Les deux conflits mondiaux et les transformations de la société
+marquent profondément la vie des différentes générations.
+</div>
+</div>
 
-<p>
-Cette page sera enrichie progressivement avec des cartes,
-des lieux de résidence, des migrations familiales et des
-localisations historiques identifiées dans les archives.
-</p>
+<div class="event">
+<div class="date">Période contemporaine</div>
+<div class="description">
+Conservation des souvenirs, photographies et archives familiales
+afin de préserver la mémoire des générations passées.
+</div>
+</div>
+
+<div class="event">
+<div class="date">Aujourd'hui</div>
+<div class="description">
+Les recherches généalogiques se poursuivent afin d'enrichir
+la connaissance des familles ANDREY de Suisse et de France.
+</div>
+</div>
 
 </div>
 
@@ -232,4 +246,4 @@ localisations historiques identifiées dans les archives.
 </body>
 
 </html>
-
+  
