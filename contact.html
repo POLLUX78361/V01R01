@@ -5,7 +5,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Chronologie familiale - Famille ANDREY</title>
+<title>Contact & Contributions familiales - Famille ANDREY</title>
+
+<meta name="description" content="Contact et contributions familiales pour enrichir la généalogie de la famille ANDREY.">
+
+<meta name="keywords" content="ANDREY, généalogie, contact, archives familiales, contributions, photos, documents">
+
+<meta name="author" content="Famille ANDREY">
 
 <style>
 
@@ -14,24 +20,25 @@ body{
     font-family:Georgia, serif;
     background:#fdfbf7;
     color:#3d342d;
+    line-height:1.7;
 }
 
 header{
     background:linear-gradient(135deg,#2c1810,#5a3e2b);
     color:#f7f2e8;
     text-align:center;
-    padding:80px 20px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.20);
+    padding:90px 20px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.25);
 }
 
 header h1{
     margin:0;
-    font-size:3em;
+    font-size:3.2em;
 }
 
 header p{
-    font-size:1.3em;
-    line-height:1.6;
+    font-size:1.25em;
+    margin-top:15px;
 }
 
 nav{
@@ -40,11 +47,10 @@ nav{
     justify-content:center;
     align-items:center;
     flex-wrap:nowrap;
-    gap:5px;
-    padding:12px 5px;
     overflow-x:auto;
     white-space:nowrap;
     scrollbar-width:none;
+    padding:12px 5px;
 }
 
 nav::-webkit-scrollbar{
@@ -52,11 +58,9 @@ nav::-webkit-scrollbar{
 }
 
 nav a{
-    display:inline-block;
     color:#f7f2e8;
     text-decoration:none;
     font-weight:bold;
-    font-size:15px;
     padding:10px 12px;
     border-radius:6px;
     transition:0.3s;
@@ -69,7 +73,7 @@ nav a:hover{
 }
 
 section{
-    max-width:1000px;
+    max-width:1200px;
     margin:auto;
     padding:60px 20px;
 }
@@ -77,57 +81,84 @@ section{
 .card{
     background:white;
     padding:40px;
-    border-radius:15px;
+    border-radius:18px;
     border-left:6px solid #d4af37;
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    box-shadow:0 6px 20px rgba(0,0,0,0.08);
 }
 
 h2{
     text-align:center;
     color:#2c1810;
-    margin-bottom:50px;
 }
 
-/* Frise */
-
-.timeline{
-    position:relative;
-    margin:0 auto;
-    padding-left:50px;
-    border-left:4px solid #d4af37;
+.introduction{
+    text-align:center;
+    max-width:850px;
+    margin:0 auto 40px auto;
 }
 
-.event{
-    position:relative;
-    margin-bottom:40px;
-    padding-left:25px;
+.infos-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
 }
 
-.event::before{
-    content:"";
-    position:absolute;
-    left:-39px;
-    top:5px;
-    width:18px;
-    height:18px;
-    border-radius:50%;
-    background:#d4af37;
-    border:3px solid white;
-    box-shadow:0 0 0 2px #b8921f;
-}
-
-.date{
-    font-size:24px;
-    font-weight:bold;
-    color:#5a3e2b;
-    margin-bottom:10px;
-}
-
-.description{
+.info{
+    padding:25px;
     background:#fdf8ef;
-    padding:18px;
-    border-radius:10px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.05);
+    border-left:4px solid #d4af37;
+    border-radius:12px;
+}
+
+.info h3{
+    margin-top:0;
+    color:#5a3e2b;
+}
+
+.formulaire{
+    margin-top:40px;
+    padding:30px;
+    background:#fdf8ef;
+    border-radius:12px;
+}
+
+.formulaire label{
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+.formulaire input,
+.formulaire textarea{
+    width:100%;
+    padding:12px;
+    margin-top:6px;
+    border:1px solid #d0c5b8;
+    border-radius:6px;
+    box-sizing:border-box;
+    font-family:inherit;
+}
+
+.formulaire textarea{
+    min-height:160px;
+    resize:vertical;
+}
+
+.btn{
+    margin-top:20px;
+    display:inline-block;
+    padding:12px 25px;
+    background:#d4af37;
+    color:#2c1810;
+    border:none;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#b99320;
 }
 
 footer{
@@ -135,7 +166,7 @@ footer{
     color:#f7f2e8;
     text-align:center;
     padding:25px;
-    margin-top:30px;
+    margin-top:40px;
 }
 
 </style>
@@ -146,11 +177,11 @@ footer{
 
 <header>
 
-<h1>Chronologie familiale</h1>
+<h1>Contact & Contributions familiales</h1>
 
 <p>
-L'histoire des familles ANDREY<br>
-de Suisse et de France
+Participer à la mémoire familiale<br>
+et enrichir les recherches généalogiques
 </p>
 
 </header>
@@ -160,7 +191,7 @@ de Suisse et de France
     <a href="ancetres.html">Ancêtres</a>
     <a href="arbre.html">Arbre</a>
     <a href="armoiries.html">Armoiries</a>
-    <a href="contact.html">Contact/Contributions familiales</a>
+    <a href="contact.html">Contact / Contributions</a>
     <a href="chronologie.html">Chronologie</a>
     <a href="documents.html">Documents</a>
     <a href="localisation.html">Localisation</a>
@@ -173,65 +204,106 @@ de Suisse et de France
 
 <div class="card">
 
-<h2>Frise chronologique familiale</h2>
+<h2>Participez à l'histoire de la famille ANDREY</h2>
 
-<div class="timeline">
+<p class="introduction">
+Les recherches généalogiques progressent grâce aux échanges entre les membres
+de la famille et les descendants des différentes branches. Toute information,
+photographie, document ou témoignage peut contribuer à compléter et préserver
+notre patrimoine familial.
+</p>
 
-<div class="event">
-<div class="date">Origines</div>
-<div class="description">
-Premières traces connues du patronyme ANDREY dans les archives
-et les registres historiques consultés.
-</div>
-</div>
+<div class="infos-grid">
 
-<div class="event">
-<div class="date">Cerniat et la Gruyère</div>
-<div class="description">
-Développement des branches familiales dans le canton de Fribourg,
-notamment à Cerniat, Bulle, Hauteville et dans les communes voisines.
-</div>
-</div>
+<div class="info">
+<h3>📷 Photographies anciennes</h3>
 
-<div class="event">
-<div class="date">Implantation en France</div>
-<div class="description">
-Présence progressive du patronyme ANDREY dans plusieurs régions
-françaises, notamment dans le Doubs, le Jura et la Haute-Saône.
-</div>
+<p>
+Portraits de famille, photographies de groupes, maisons familiales,
+événements ou souvenirs de générations passées.
+</p>
 </div>
 
-<div class="event">
-<div class="date">XIXe siècle</div>
-<div class="description">
-Évolution des familles au rythme des changements sociaux,
-agricoles, artisanaux et industriels de l'époque.
-</div>
+<div class="info">
+<h3>📜 Documents généalogiques</h3>
+
+<p>
+Actes de naissance, mariage ou décès, livrets de famille,
+testaments, correspondances et archives privées.
+</p>
 </div>
 
-<div class="event">
-<div class="date">XXe siècle</div>
-<div class="description">
-Les deux conflits mondiaux et les transformations de la société
-marquent profondément la vie des différentes générations.
-</div>
+<div class="info">
+<h3>🗣 Témoignages familiaux</h3>
+
+<p>
+Récits transmis oralement, souvenirs d'anciens membres de la famille,
+traditions locales ou anecdotes historiques.
+</p>
 </div>
 
-<div class="event">
-<div class="date">Période contemporaine</div>
-<div class="description">
-Conservation des souvenirs, photographies et archives familiales
-afin de préserver la mémoire des générations passées.
-</div>
+<div class="info">
+<h3>🌳 Corrections et compléments</h3>
+
+<p>
+Signalement d'erreurs, ajout de nouvelles branches familiales,
+dates manquantes ou informations inédites.
+</p>
 </div>
 
-<div class="event">
-<div class="date">Aujourd'hui</div>
-<div class="description">
-Les recherches généalogiques se poursuivent afin d'enrichir
-la connaissance des familles ANDREY de Suisse et de France.
 </div>
+
+<div class="formulaire">
+
+<h3>✉ Formulaire de contact</h3>
+
+<form>
+
+<label for="nom">Nom et prénom</label>
+<input type="text" id="nom" name="nom">
+
+<label for="email">Adresse e-mail</label>
+<input type="email" id="email" name="email">
+
+<label for="objet">Objet du message</label>
+<input type="text" id="objet" name="objet">
+
+<label for="message">Votre message</label>
+<textarea id="message" name="message"></textarea>
+
+<button type="submit" class="btn">
+Envoyer
+</button>
+
+</form>
+
 </div>
+
+<div class="info" style="margin-top:30px;">
+
+<h3>🔒 Protection des données</h3>
+
+<p>
+Les informations communiquées par les visiteurs sont utilisées uniquement
+dans le cadre des recherches généalogiques et de la conservation du patrimoine
+familial. Aucune donnée personnelle n'est cédée à des tiers.
+</p>
+
+</div>
+
+<div class="info" style="margin-top:30px;">
+
+<h3>🙏 Remerciements</h3>
+
+<p>
+La famille remercie chaleureusement toutes les personnes qui contribuent
+à la préservation de la mémoire familiale en partageant leurs documents,
+leurs souvenirs et leurs recherches.
+</p>
+
+<p style="text-align:center;font-style:italic;">
+« La mémoire des générations passées éclaire le chemin des générations futures. »
+</p>
 
 </div>
 
@@ -240,9 +312,8 @@ la connaissance des familles ANDREY de Suisse et de France.
 </section>
 
 <footer>
-© 2026 Famille ANDREY - Site généalogique familial
+© 2026 Famille ANDREY • Contact & Contributions familiales
 </footer>
 
 </body>
-
 </html>
