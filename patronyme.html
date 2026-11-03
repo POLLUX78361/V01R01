@@ -2,48 +2,48 @@
 <html lang="fr">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Patronyme ANDREY - Famille ANDREY</title>
 
+<meta name="description" content="Origine, signification et histoire du patronyme ANDREY.">
+
 <style>
 
 body{
     margin:0;
-    font-family:Georgia, serif;
+    font-family:Georgia,serif;
     background:#fdfbf7;
     color:#3d342d;
+    line-height:1.7;
 }
 
 header{
     background:linear-gradient(135deg,#2c1810,#5a3e2b);
     color:#f7f2e8;
     text-align:center;
-    padding:80px 20px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.20);
+    padding:90px 20px;
+    box-shadow:0 4px 15px rgba(0,0,0,.25);
 }
 
 header h1{
     margin:0;
-    font-size:3em;
+    font-size:3.2em;
 }
 
 header p{
-    font-size:1.3em;
-    line-height:1.6;
+    font-size:1.25em;
 }
 
 nav{
     background:#3b2618;
     display:flex;
     justify-content:center;
-    align-items:center;
-    flex-wrap:nowrap;
-    gap:5px;
-    padding:12px 5px;
     overflow-x:auto;
     white-space:nowrap;
+    padding:12px 5px;
     scrollbar-width:none;
 }
 
@@ -52,15 +52,12 @@ nav::-webkit-scrollbar{
 }
 
 nav a{
-    display:inline-block;
     color:#f7f2e8;
     text-decoration:none;
     font-weight:bold;
-    font-size:15px;
     padding:10px 12px;
     border-radius:6px;
-    transition:0.3s;
-    flex-shrink:0;
+    transition:.3s;
 }
 
 nav a:hover{
@@ -69,32 +66,66 @@ nav a:hover{
 }
 
 section{
-    max-width:1100px;
+    max-width:1200px;
     margin:auto;
     padding:60px 20px;
 }
 
 .card{
     background:white;
-    padding:35px;
-    border-radius:15px;
     border-left:6px solid #d4af37;
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    border-radius:18px;
+    padding:40px;
+    box-shadow:0 6px 20px rgba(0,0,0,.08);
 }
 
 h2{
+    text-align:center;
     color:#2c1810;
 }
 
-.bloc{
-    margin-top:25px;
-    padding:20px;
-    background:#fdf8ef;
-    border-left:4px solid #d4af37;
-    border-radius:8px;
+.intro{
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+    margin-bottom:40px;
 }
 
-.bloc h3{
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-bottom:40px;
+}
+
+.stat{
+    background:#fdf8ef;
+    border-top:4px solid #d4af37;
+    border-radius:12px;
+    text-align:center;
+    padding:25px;
+}
+
+.stat h3{
+    margin:0;
+    font-size:2em;
+    color:#5a3e2b;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.info{
+    background:#fdf8ef;
+    border-left:4px solid #d4af37;
+    border-radius:12px;
+    padding:25px;
+}
+
+.info h3{
     margin-top:0;
     color:#5a3e2b;
 }
@@ -104,7 +135,7 @@ footer{
     color:#f7f2e8;
     text-align:center;
     padding:25px;
-    margin-top:30px;
+    margin-top:40px;
 }
 
 </style>
@@ -115,94 +146,189 @@ footer{
 
 <header>
 
-<h1>Le patronyme ANDREY</h1>
+<h1>Le Patronyme ANDREY</h1>
 
 <p>
-Origines et implantation<br>
-du nom ANDREY en Suisse et en France
+Origine, histoire et transmission<br>
+du nom de famille ANDREY
 </p>
 
 </header>
 
 <nav>
-    <a href="index.html">Accueil</a>
-    <a href="ancetres.html">Ancêtres</a>
-    <a href="arbre.html">Arbre</a>
-    <a href="armoiries.html">Armoiries</a>
-    <a href="contact.html">Contact/Contributions familiales</a>
-    <a href="chronologie.html">Chronologie</a>
-    <a href="documents.html">Documents</a>
-    <a href="localisation.html">Localisation</a>
-    <a href="patronyme.html">Patronyme</a>
-    <a href="photos.html">Photos</a>
-    <a href="sources.html">Sources</a>
+<a href="index.html">Accueil</a>
+<a href="ancetres.html">Ancêtres</a>
+<a href="arbre.html">Arbre</a>
+<a href="armoiries.html">Armoiries</a>
+<a href="contact.html">Contact</a>
+<a href="chronologie.html">Chronologie</a>
+<a href="documents.html">Documents</a>
+<a href="localisation.html">Localisation</a>
+<a href="patronyme.html">Patronyme</a>
+<a href="photos.html">Photos</a>
+<a href="sources.html">Sources</a>
 </nav>
 
 <section>
 
 <div class="card">
 
-<h2>Origine du nom</h2>
+<h2>À l'origine du nom ANDREY</h2>
 
-<p>
-Le patronyme ANDREY est présent depuis plusieurs siècles
-en Suisse romande et dans différentes régions françaises.
-Il est généralement considéré comme une variante régionale
-du prénom André, issu du grec « Andreas » signifiant
-« homme » ou « courageux ».
+<p class="intro">
+Le patronyme ANDREY constitue un élément essentiel de l'identité familiale.
+Transmis de génération en génération, il reflète une histoire pluriséculaire
+et un enracinement particulier dans les régions francophones de Suisse et de France.
 </p>
 
-<div class="bloc">
+<div class="stats">
 
-<h3>🇨🇭 En Suisse</h3>
+<div class="stat">
+<h3>400+</h3>
+<p>Ans d'histoire familiale</p>
+</div>
+
+<div class="stat">
+<h3>🇨🇭</h3>
+<p>Origines suisses</p>
+</div>
+
+<div class="stat">
+<h3>🇫🇷</h3>
+<p>Présence française</p>
+</div>
+
+<div class="stat">
+<h3>∞</h3>
+<p>Transmission familiale</p>
+</div>
+
+</div>
+
+<div class="grid">
+
+<div class="info">
+
+<h3>📖 Étymologie</h3>
 
 <p>
-Les recherches généalogiques mettent en évidence une forte présence
-historique du patronyme dans le canton de Fribourg,
-notamment dans la région de la Gruyère et les communes de
-Cerniat, Bulle, Hauteville, Broc et Crésuz.
+Le nom ANDREY est généralement rattaché au prénom André,
+issu du prénom grec <em>Andreas</em>, signifiant
+« homme », « courageux » ou « valeureux ».
+</p>
+
+<p>
+Comme de nombreux patronymes européens,
+il s'est progressivement fixé comme nom de famille
+au cours des siècles.
 </p>
 
 </div>
 
-<div class="bloc">
+<div class="info">
 
-<h3>🇫🇷 En France</h3>
-
-<p>
-Le patronyme ANDREY est également représenté dans plusieurs
-départements français, particulièrement dans le Doubs,
-le Jura et la Haute-Saône.
-</p>
+<h3>🏔 Implantation historique</h3>
 
 <p>
-Les échanges économiques, les mariages et les migrations
-entre la Suisse romande et les régions frontalières françaises
-ont contribué à l'implantation du nom des deux côtés
-de la frontière.
+Les recherches généalogiques orientent principalement vers le canton
+de Fribourg et la région de la Gruyère en Suisse romande,
+où plusieurs générations de familles ANDREY sont attestées.
 </p>
 
 </div>
 
-<div class="bloc">
+<div class="info">
 
-<h3>🌳 Répartition familiale</h3>
+<h3>🌍 Diffusion géographique</h3>
 
 <p>
-Les différentes branches recensées à ce jour témoignent
-de l'ancienneté du patronyme et de son enracinement dans
-l'espace franco-suisse.
+Au fil du temps, certaines branches familiales ont quitté
+leur commune d'origine pour s'établir dans d'autres régions de Suisse
+ou dans les départements français voisins.
 </p>
 
 </div>
 
-<div class="bloc">
+<div class="info">
 
-<h3>📖 Recherches en cours</h3>
+<h3>✍ Variantes orthographiques</h3>
 
 <p>
-Cette page sera enrichie au fur et à mesure des découvertes
-effectuées dans les archives civiles, religieuses et familiales.
+Les archives anciennes peuvent parfois présenter des variantes
+d'écriture liées aux usages locaux ou à la transcription
+par les officiers d'état civil et les curés.
+</p>
+
+<p>
+Les recherches doivent tenir compte de ces variations possibles.
+</p>
+
+</div>
+
+<div class="info">
+
+<h3>👨‍👩‍👧‍👦 Transmission familiale</h3>
+
+<p>
+Le patronyme constitue un lien entre les différentes générations.
+Il permet de suivre les filiations et de reconstituer
+l'histoire familiale au travers des actes et des archives.
+</p>
+
+</div>
+
+<div class="info">
+
+<h3>📚 Intérêt généalogique</h3>
+
+<p>
+L'étude du patronyme aide à identifier les branches familiales,
+les migrations, les alliances et les zones d'implantation
+au cours des différentes périodes historiques.
+</p>
+
+</div>
+
+</div>
+
+<div class="info" style="margin-top:30px;">
+
+<h3>🇨🇭 Le nom ANDREY en Gruyère</h3>
+
+<p>
+La région de la Gruyère occupe une place centrale dans les recherches
+concernant la famille ANDREY. Les communes de Cerniat, Bulle,
+Hauteville et Broc apparaissent régulièrement dans les archives
+consultées jusqu'à présent.
+</p>
+
+</div>
+
+<div class="info" style="margin-top:30px;">
+
+<h3>🇫🇷 Le nom ANDREY en France</h3>
+
+<p>
+Plusieurs branches familiales sont également présentes en France,
+notamment dans les territoires frontaliers de la Suisse,
+où les échanges économiques, sociaux et familiaux ont favorisé
+la circulation du patronyme.
+</p>
+
+</div>
+
+<div class="info" style="margin-top:30px;">
+
+<h3>📜 Héritage identitaire</h3>
+
+<p>
+Au-delà d'un simple nom, le patronyme ANDREY représente un héritage,
+une histoire collective et un lien entre les générations passées,
+présentes et futures.
+</p>
+
+<p style="text-align:center;font-style:italic;">
+« Fidélité • Mémoire • Transmission »
 </p>
 
 </div>
@@ -212,9 +338,11 @@ effectuées dans les archives civiles, religieuses et familiales.
 </section>
 
 <footer>
-© 2026 Famille ANDREY - Site généalogique familial
+© 2026 Famille ANDREY • Histoire et origine du patronyme
 </footer>
 
 </body>
-
 </html>
+
+
+
