@@ -2,65 +2,57 @@
 <html lang="fr">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Localisation - Famille ANDREY</title>
 
+<meta name="description" content="Localisation des origines et des implantations de la famille ANDREY en Suisse et en France.">
+
 <style>
 
 body{
     margin:0;
-    font-family:Georgia, serif;
+    font-family:Georgia,serif;
     background:#fdfbf7;
     color:#3d342d;
+    line-height:1.7;
 }
 
 header{
     background:linear-gradient(135deg,#2c1810,#5a3e2b);
     color:#f7f2e8;
     text-align:center;
-    padding:80px 20px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.20);
+    padding:90px 20px;
+    box-shadow:0 4px 15px rgba(0,0,0,.25);
 }
 
 header h1{
     margin:0;
-    font-size:3em;
+    font-size:3.2em;
 }
 
 header p{
-    font-size:1.3em;
-    line-height:1.6;
+    font-size:1.25em;
 }
 
 nav{
     background:#3b2618;
     display:flex;
     justify-content:center;
-    align-items:center;
-    flex-wrap:nowrap;
-    gap:5px;
-    padding:12px 5px;
     overflow-x:auto;
     white-space:nowrap;
-    scrollbar-width:none;
-}
-
-nav::-webkit-scrollbar{
-    display:none;
+    padding:12px 5px;
 }
 
 nav a{
-    display:inline-block;
     color:#f7f2e8;
     text-decoration:none;
     font-weight:bold;
-    font-size:15px;
     padding:10px 12px;
     border-radius:6px;
-    transition:0.3s;
-    flex-shrink:0;
+    transition:.3s;
 }
 
 nav a:hover{
@@ -69,41 +61,82 @@ nav a:hover{
 }
 
 section{
-    max-width:1100px;
+    max-width:1200px;
     margin:auto;
     padding:60px 20px;
 }
 
 .card{
     background:white;
-    padding:35px;
-    border-radius:15px;
     border-left:6px solid #d4af37;
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    border-radius:18px;
+    padding:40px;
+    box-shadow:0 6px 20px rgba(0,0,0,.08);
 }
 
 h2{
+    text-align:center;
     color:#2c1810;
-    margin-top:0;
 }
 
-.zone{
-    margin-top:25px;
-    padding:20px;
+.intro{
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+    margin-bottom:40px;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-bottom:40px;
+}
+
+.stat{
+    background:#fdf8ef;
+    border-top:4px solid #d4af37;
+    border-radius:12px;
+    padding:25px;
+    text-align:center;
+}
+
+.stat h3{
+    margin:0;
+    color:#5a3e2b;
+    font-size:2em;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.lieu{
     background:#fdf8ef;
     border-left:4px solid #d4af37;
-    border-radius:8px;
+    border-radius:12px;
+    padding:25px;
+    transition:.3s;
 }
 
-.zone h3{
+.lieu:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 15px rgba(0,0,0,.10);
+}
+
+.lieu h3{
     margin-top:0;
     color:#5a3e2b;
 }
 
-.carte{
-    text-align:center;
-    font-size:90px;
-    margin:30px 0;
+.info{
+    margin-top:30px;
+    background:#fdf8ef;
+    border-left:4px solid #d4af37;
+    border-radius:12px;
+    padding:25px;
 }
 
 footer{
@@ -111,7 +144,7 @@ footer{
     color:#f7f2e8;
     text-align:center;
     padding:25px;
-    margin-top:30px;
+    margin-top:40px;
 }
 
 </style>
@@ -122,101 +155,183 @@ footer{
 
 <header>
 
-<h1>Localisation familiale</h1>
+<h1>Localisation Familiale</h1>
 
 <p>
-Présence des familles ANDREY<br>
-en Suisse et en France
+Origines, migrations et implantations<br>
+de la famille ANDREY
 </p>
 
 </header>
 
 <nav>
-    <a href="index.html">Accueil</a>
-    <a href="ancetres.html">Ancêtres</a>
-    <a href="arbre.html">Arbre</a>
-    <a href="armoiries.html">Armoiries</a>
-    <a href="contact.html">Contact/Contributions familiales</a>
-    <a href="chronologie.html">Chronologie</a>
-    <a href="documents.html">Documents</a>
-    <a href="localisation.html">Localisation</a>
-    <a href="patronyme.html">Patronyme</a>
-    <a href="photos.html">Photos</a>
-    <a href="sources.html">Sources</a>
+<a href="index.html">Accueil</a>
+<a href="ancetres.html">Ancêtres</a>
+<a href="arbre.html">Arbre</a>
+<a href="armoiries.html">Armoiries</a>
+<a href="contact.html">Contact</a>
+<a href="chronologie.html">Chronologie</a>
+<a href="documents.html">Documents</a>
+<a href="localisation.html">Localisation</a>
+<a href="patronyme.html">Patronyme</a>
+<a href="photos.html">Photos</a>
+<a href="sources.html">Sources</a>
 </nav>
 
 <section>
 
 <div class="card">
 
-<h2>Implantation géographique</h2>
+<h2>Géographie de la famille ANDREY</h2>
 
-<p>
-Les recherches généalogiques mettent en évidence une forte présence
-du patronyme ANDREY de part et d'autre de la frontière franco-suisse,
-avec un ancrage historique particulièrement important dans le canton
-de Fribourg.
+<p class="intro">
+L'histoire de la famille ANDREY est étroitement liée à plusieurs territoires
+de Suisse romande et de France. Au fil des générations, les déplacements
+familiaux ont contribué à l'expansion du patronyme tout en conservant un fort
+attachement à ses terres d'origine.
 </p>
 
-<div class="carte">
-🗺️
+<div class="stats">
+
+<div class="stat">
+<h3>🇨🇭</h3>
+<p>Suisse romande</p>
 </div>
 
-<div class="zone">
+<div class="stat">
+<h3>🇫🇷</h3>
+<p>France voisine</p>
+</div>
 
-<h3>🇨🇭 Suisse</h3>
+<div class="stat">
+<h3>5+</h3>
+<p>Communes d'origine connues</p>
+</div>
 
-<p>
-Les principales localités actuellement identifiées sont :
-</p>
-
-<ul>
-<li>Cerniat</li>
-<li>Bulle</li>
-<li>Hauteville</li>
-<li>Broc</li>
-<li>Crésuz</li>
-<li>Fribourg</li>
-</ul>
-
-<p>
-Ces communes de la Gruyère constituent le cœur historique
-de plusieurs branches de la famille ANDREY.
-</p>
+<div class="stat">
+<h3>400+</h3>
+<p>Années de présence documentée</p>
+</div>
 
 </div>
 
-<div class="zone">
+<div class="grid">
 
-<h3>🇫🇷 France</h3>
+<div class="lieu">
 
-<p>
-Des branches familiales portant le patronyme ANDREY sont également
-présentes en France.
-</p>
-
-<ul>
-<li>Doubs</li>
-<li>Jura</li>
-<li>Haute-Saône</li>
-</ul>
+<h3>🏔 Cerniat (Fribourg)</h3>
 
 <p>
-Les échanges historiques entre la Suisse romande et les régions
-frontalières françaises expliquent l'implantation du patronyme
-dans ces territoires.
+Cerniat constitue l'un des principaux lieux associés aux premières
+générations connues de la famille ANDREY dans la région de la Gruyère.
 </p>
 
 </div>
 
-<div class="zone">
+<div class="lieu">
 
-<h3>📍 Recherches futures</h3>
+<h3>🏘 Bulle</h3>
 
 <p>
-Cette page sera enrichie progressivement avec des cartes,
-des lieux de résidence, des migrations familiales et des
-localisations historiques identifiées dans les archives.
+Centre historique et économique de la Gruyère, Bulle apparaît régulièrement
+dans les recherches généalogiques liées aux différentes branches familiales.
+</p>
+
+</div>
+
+<div class="lieu">
+
+<h3>🌳 Hauteville</h3>
+
+<p>
+Cette commune fribourgeoise est associée à plusieurs familles et unions
+retrouvées dans les archives anciennes.
+</p>
+
+</div>
+
+<div class="lieu">
+
+<h3>⛰ Broc</h3>
+
+<p>
+Broc fait partie des localités où des membres de la famille ont vécu ou
+transité au cours de leur histoire.
+</p>
+
+</div>
+
+<div class="lieu">
+
+<h3>🇫🇷 Doubs</h3>
+
+<p>
+Les échanges entre la Suisse romande et la Franche-Comté ont favorisé
+l'installation de certaines branches familiales dans le Doubs.
+</p>
+
+</div>
+
+<div class="lieu">
+
+<h3>🇫🇷 Jura et Haute-Saône</h3>
+
+<p>
+Plusieurs descendants portant le patronyme ANDREY sont recensés dans ces
+territoires au cours des périodes les plus récentes.
+</p>
+
+</div>
+
+</div>
+
+<div class="info">
+
+<h3>🗺 Principales zones d'implantation</h3>
+
+<p>
+Les recherches réalisées à ce jour montrent une forte concentration historique
+du patronyme dans la région de la Gruyère, avant une diffusion progressive
+vers d'autres cantons suisses puis vers les départements frontaliers français.
+</p>
+
+</div>
+
+<div class="info">
+
+<h3>🚶 Les migrations familiales</h3>
+
+<p>
+Comme de nombreuses familles européennes, les ANDREY ont connu des périodes
+de mobilité liées aux mariages, aux activités professionnelles, aux héritages
+et aux opportunités économiques.
+</p>
+
+<p>
+Ces déplacements expliquent la présence actuelle du patronyme dans plusieurs
+régions de Suisse et de France.
+</p>
+
+</div>
+
+<div class="info">
+
+<h3>📍 Carte familiale</h3>
+
+<p>
+Cette rubrique pourra être enrichie ultérieurement par l'intégration de cartes,
+de repères géographiques interactifs et de localisations précises des lieux
+de naissance, mariage et décès recensés dans les archives familiales.
+</p>
+
+</div>
+
+<div class="info">
+
+<h3>📜 Devise familiale</h3>
+
+<p style="text-align:center;font-style:italic;">
+« Fidélité • Mémoire • Transmission »
 </p>
 
 </div>
@@ -226,9 +341,10 @@ localisations historiques identifiées dans les archives.
 </section>
 
 <footer>
-© 2026 Famille ANDREY - Site généalogique familial
+© 2026 Famille ANDREY • Origines et implantations géographiques
 </footer>
 
 </body>
-
 </html>
+
+
