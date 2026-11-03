@@ -2,65 +2,57 @@
 <html lang="fr">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Photographies et Archives - Famille ANDREY</title>
+<title>Photos - Famille ANDREY</title>
+
+<meta name="description" content="Galerie photographique et souvenirs de la famille ANDREY.">
 
 <style>
 
 body{
     margin:0;
-    font-family:Georgia, serif;
+    font-family:Georgia,serif;
     background:#fdfbf7;
     color:#3d342d;
+    line-height:1.7;
 }
 
 header{
     background:linear-gradient(135deg,#2c1810,#5a3e2b);
     color:#f7f2e8;
     text-align:center;
-    padding:80px 20px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.20);
+    padding:90px 20px;
+    box-shadow:0 4px 15px rgba(0,0,0,.25);
 }
 
 header h1{
     margin:0;
-    font-size:3em;
+    font-size:3.2em;
 }
 
 header p{
-    font-size:1.3em;
-    line-height:1.6;
+    font-size:1.25em;
 }
 
 nav{
     background:#3b2618;
     display:flex;
     justify-content:center;
-    align-items:center;
-    flex-wrap:nowrap;
-    gap:5px;
-    padding:12px 5px;
     overflow-x:auto;
     white-space:nowrap;
-    scrollbar-width:none;
-}
-
-nav::-webkit-scrollbar{
-    display:none;
+    padding:12px 5px;
 }
 
 nav a{
-    display:inline-block;
     color:#f7f2e8;
     text-decoration:none;
     font-weight:bold;
-    font-size:15px;
     padding:10px 12px;
     border-radius:6px;
-    transition:0.3s;
-    flex-shrink:0;
+    transition:.3s;
 }
 
 nav a:hover{
@@ -76,27 +68,42 @@ section{
 
 .card{
     background:white;
-    padding:35px;
-    border-radius:15px;
     border-left:6px solid #d4af37;
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    border-radius:18px;
+    padding:40px;
+    box-shadow:0 6px 20px rgba(0,0,0,.08);
 }
 
 h2{
-    color:#2c1810;
     text-align:center;
+    color:#2c1810;
 }
 
-.categorie{
-    margin-top:25px;
-    padding:20px;
+.intro{
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+    margin-bottom:40px;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-bottom:40px;
+}
+
+.stat{
     background:#fdf8ef;
-    border-left:4px solid #d4af37;
-    border-radius:8px;
+    border-top:4px solid #d4af37;
+    border-radius:12px;
+    text-align:center;
+    padding:25px;
 }
 
-.categorie h3{
-    margin-top:0;
+.stat h3{
+    margin:0;
+    font-size:2em;
     color:#5a3e2b;
 }
 
@@ -104,24 +111,45 @@ h2{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:25px;
-    margin-top:20px;
 }
 
-.gallery img{
-    width:100%;
+.photo{
+    background:#fdf8ef;
     border-radius:12px;
-    box-shadow:0 3px 12px rgba(0,0,0,0.15);
-    transition:all .3s ease;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,.08);
+    transition:.3s;
 }
 
-.gallery img:hover{
-    transform:scale(1.05);
+.photo:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 18px rgba(0,0,0,.12);
 }
 
-figcaption{
-    text-align:center;
-    margin-top:10px;
-    font-style:italic;
+.placeholder{
+    height:220px;
+    background:linear-gradient(135deg,#d7ccb8,#f1e8d5);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:4em;
+}
+
+.photo-content{
+    padding:20px;
+}
+
+.photo-content h3{
+    margin-top:0;
+    color:#5a3e2b;
+}
+
+.info{
+    margin-top:35px;
+    padding:25px;
+    background:#fdf8ef;
+    border-left:4px solid #d4af37;
+    border-radius:12px;
 }
 
 footer{
@@ -129,7 +157,7 @@ footer{
     color:#f7f2e8;
     text-align:center;
     padding:25px;
-    margin-top:30px;
+    margin-top:40px;
 }
 
 </style>
@@ -140,107 +168,194 @@ footer{
 
 <header>
 
-<h1>Photographies et Archives</h1>
+<h1>Galerie Photographique</h1>
 
 <p>
-Mémoire visuelle des familles ANDREY<br>
-de Suisse et de France
+Images, souvenirs et mémoire visuelle<br>
+de la famille ANDREY
 </p>
 
 </header>
 
 <nav>
-    <a href="index.html">Accueil</a>
-    <a href="ancetres.html">Ancêtres</a>
-    <a href="arbre.html">Arbre</a>
-    <a href="armoiries.html">Armoiries</a>
-    <a href="contact.html">Contact/Contributions familiales</a>
-    <a href="chronologie.html">Chronologie</a>
-    <a href="documents.html">Documents</a>
-    <a href="localisation.html">Localisation</a>
-    <a href="patronyme.html">Patronyme</a>
-    <a href="photos.html">Photos</a>
-    <a href="sources.html">Sources</a>
+<a href="index.html">Accueil</a>
+<a href="ancetres.html">Ancêtres</a>
+<a href="arbre.html">Arbre</a>
+<a href="armoiries.html">Armoiries</a>
+<a href="contact.html">Contact</a>
+<a href="chronologie.html">Chronologie</a>
+<a href="documents.html">Documents</a>
+<a href="localisation.html">Localisation</a>
+<a href="patronyme.html">Patronyme</a>
+<a href="photos.html">Photos</a>
+<a href="sources.html">Sources</a>
 </nav>
 
 <section>
 
 <div class="card">
 
-<h2>Galerie familiale</h2>
+<h2>Albums familiaux</h2>
 
-<p style="text-align:center;">
-Cette galerie rassemble les photographies, documents et souvenirs
-conservés dans le cadre des recherches sur les familles ANDREY.
+<p class="intro">
+Les photographies constituent un témoignage précieux de l'histoire familiale.
+Elles permettent de mettre un visage sur les noms, de revivre les événements
+marquants et de transmettre la mémoire des générations passées.
 </p>
 
-<div class="categorie">
+<div class="stats">
 
-<h3>👨‍👩‍👧 Famille</h3>
+<div class="stat">
+<h3>📷</h3>
+<p>Portraits de famille</p>
+</div>
+
+<div class="stat">
+<h3>🏡</h3>
+<p>Lieux de vie</p>
+</div>
+
+<div class="stat">
+<h3>👰</h3>
+<p>Événements familiaux</p>
+</div>
+
+<div class="stat">
+<h3>🕰</h3>
+<p>Mémoire visuelle</p>
+</div>
+
+</div>
 
 <div class="gallery">
 
-<figure>
-<img src="https://via.placeholder.com/600x400?text=Photo+de+Famille" alt="Photo familiale">
-<figcaption>Photographie familiale</figcaption>
-</figure>
+<div class="photo">
 
+<div class="placeholder">👨‍👩‍👧‍👦</div>
+
+<div class="photo-content">
+<h3>Portraits de famille</h3>
+<p>
+Collection de portraits individuels et photographies de groupes
+représentant différentes générations de la famille ANDREY.
+</p>
 </div>
 
 </div>
 
-<div class="categorie">
+<div class="photo">
 
-<h3>📜 Documents anciens</h3>
+<div class="placeholder">🏡</div>
 
-<div class="gallery">
-
-<figure>
-<img src="https://via.placeholder.com/600x400?text=Acte+Ancien" alt="Document d'archive">
-<figcaption>Acte ou registre ancien</figcaption>
-</figure>
-
+<div class="photo-content">
+<h3>Maisons familiales</h3>
+<p>
+Photographies des habitations, fermes et lieux de résidence
+ayant marqué l'histoire familiale.
+</p>
 </div>
 
 </div>
 
-<div class="categorie">
+<div class="photo">
 
-<h3>🏡 Cerniat et la Gruyère</h3>
+<div class="placeholder">💍</div>
 
-<div class="gallery">
-
-<figure>
-<img src="https://via.placeholder.com/600x400?text=Cerniat" alt="Cerniat">
-<figcaption>Commune de Cerniat</figcaption>
-</figure>
-
+<div class="photo-content">
+<h3>Mariages et célébrations</h3>
+<p>
+Souvenirs des unions, fêtes familiales et événements marquants.
+</p>
 </div>
 
 </div>
 
-<div class="categorie">
+<div class="photo">
 
-<h3>🪖 Archives historiques</h3>
+<div class="placeholder">👶</div>
 
-<div class="gallery">
-
-<figure>
-<img src="https://via.placeholder.com/600x400?text=Archives" alt="Archive historique">
-<figcaption>Document historique</figcaption>
-</figure>
-
+<div class="photo-content">
+<h3>Nouvelles générations</h3>
+<p>
+Naissances, baptêmes et photographies des plus jeunes membres
+de la famille.
+</p>
 </div>
 
 </div>
 
-<div class="categorie">
+<div class="photo">
 
-<h3>📸 Recherches en cours</h3>
+<div class="placeholder">🎖</div>
+
+<div class="photo-content">
+<h3>Souvenirs historiques</h3>
+<p>
+Photographies anciennes, documents illustrés et clichés
+représentant différentes époques.
+</p>
+</div>
+
+</div>
+
+<div class="photo">
+
+<div class="placeholder">🌄</div>
+
+<div class="photo-content">
+<h3>Lieux d'origine</h3>
+<p>
+Images des communes, paysages et villages associés
+à l'histoire de la famille ANDREY.
+</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="info">
+
+<h3>📚 Importance des photographies</h3>
 
 <p>
-De nouvelles photographies et archives seront ajoutées progressivement
-au fur et à mesure des découvertes et des contributions familiales.
+Chaque photographie constitue une archive historique à part entière.
+Elle permet de préserver les souvenirs familiaux, de transmettre les
+visages et de documenter les évolutions au fil des générations.
+</p>
+
+</div>
+
+<div class="info">
+
+<h3>🤝 Contribution des descendants</h3>
+
+<p>
+Vous possédez des photographies anciennes ou des albums de famille ?
+Vos documents peuvent enrichir cette galerie et contribuer à la
+préservation du patrimoine familial.
+</p>
+
+</div>
+
+<div class="info">
+
+<h3>🖼 Numérisation recommandée</h3>
+
+<p>
+Afin de préserver les originaux, il est conseillé de numériser les
+photographies anciennes en haute définition et de conserver plusieurs
+copies de sauvegarde.
+</p>
+
+</div>
+
+<div class="info">
+
+<h3>📜 Devise familiale</h3>
+
+<p style="text-align:center;font-style:italic;">
+« Fidélité • Mémoire • Transmission »
 </p>
 
 </div>
@@ -250,10 +365,12 @@ au fur et à mesure des découvertes et des contributions familiales.
 </section>
 
 <footer>
-© 2026 Famille ANDREY - Site généalogique familial
+© 2026 Famille ANDREY • Galerie photographique familiale
 </footer>
 
 </body>
-
 </html>
+
+
+
 
