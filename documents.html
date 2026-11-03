@@ -5,62 +5,53 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Armoiries - Famille ANDREY</title>
+<title>Archives et Documents - Famille ANDREY</title>
+
+<meta name="description" content="Archives, actes, photographies et documents historiques de la famille ANDREY.">
 
 <style>
 
 body{
     margin:0;
-    font-family:Georgia, serif;
+    font-family:Georgia,serif;
     background:#fdfbf7;
     color:#3d342d;
+    line-height:1.7;
 }
 
 header{
     background:linear-gradient(135deg,#2c1810,#5a3e2b);
     color:#f7f2e8;
     text-align:center;
-    padding:80px 20px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.20);
+    padding:90px 20px;
+    box-shadow:0 4px 15px rgba(0,0,0,.25);
 }
 
 header h1{
     margin:0;
-    font-size:3em;
+    font-size:3.2em;
 }
 
 header p{
-    font-size:1.3em;
-    line-height:1.6;
+    font-size:1.25em;
 }
 
 nav{
     background:#3b2618;
     display:flex;
     justify-content:center;
-    align-items:center;
-    flex-wrap:nowrap;
-    gap:5px;
-    padding:12px 5px;
     overflow-x:auto;
     white-space:nowrap;
-    scrollbar-width:none;
-}
-
-nav::-webkit-scrollbar{
-    display:none;
+    padding:12px 5px;
 }
 
 nav a{
-    display:inline-block;
     color:#f7f2e8;
     text-decoration:none;
     font-weight:bold;
-    font-size:15px;
     padding:10px 12px;
     border-radius:6px;
-    transition:0.3s;
-    flex-shrink:0;
+    transition:.3s;
 }
 
 nav a:hover{
@@ -69,39 +60,97 @@ nav a:hover{
 }
 
 section{
-    max-width:1100px;
+    max-width:1200px;
     margin:auto;
     padding:60px 20px;
 }
 
 .card{
     background:white;
-    padding:35px;
-    border-radius:15px;
     border-left:6px solid #d4af37;
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
-}
-
-.blason{
-    text-align:center;
-    margin:40px 0;
+    border-radius:18px;
+    padding:40px;
+    box-shadow:0 6px 20px rgba(0,0,0,.08);
 }
 
 h2{
+    text-align:center;
     color:#2c1810;
 }
 
-.info{
-    margin-top:25px;
-    padding:20px;
-    background:#fdf8ef;
-    border-left:4px solid #d4af37;
-    border-radius:8px;
+.intro{
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+    margin-bottom:40px;
 }
 
-.info h3{
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+    margin-bottom:40px;
+}
+
+.stat{
+    background:#fdf8ef;
+    border-radius:12px;
+    text-align:center;
+    padding:25px;
+    border-top:4px solid #d4af37;
+}
+
+.stat h3{
+    margin:0;
+    font-size:2em;
+    color:#5a3e2b;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.doc{
+    background:#fdf8ef;
+    border-left:4px solid #d4af37;
+    border-radius:12px;
+    padding:25px;
+    transition:.3s;
+}
+
+.doc:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 15px rgba(0,0,0,.10);
+}
+
+.doc h3{
     margin-top:0;
     color:#5a3e2b;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:15px;
+    background:#d4af37;
+    color:#2c1810;
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:6px;
+    font-weight:bold;
+}
+
+.btn:hover{
+    background:#b99320;
+}
+
+.info{
+    margin-top:35px;
+    padding:25px;
+    background:#fdf8ef;
+    border-left:4px solid #d4af37;
+    border-radius:12px;
 }
 
 footer{
@@ -109,7 +158,7 @@ footer{
     color:#f7f2e8;
     text-align:center;
     padding:25px;
-    margin-top:30px;
+    margin-top:40px;
 }
 
 </style>
@@ -120,153 +169,179 @@ footer{
 
 <header>
 
-<h1>Armoiries familiales</h1>
+<h1>Archives & Documents</h1>
 
 <p>
-Tradition héraldique des familles ANDREY<br>
-de Suisse et de France
+Conserver, transmettre et partager<br>
+la mémoire de la famille ANDREY
 </p>
 
 </header>
 
 <nav>
-    <a href="index.html">Accueil</a>
-    <a href="ancetres.html">Ancêtres</a>
-    <a href="arbre.html">Arbre</a>
-    <a href="armoiries.html">Armoiries</a>
-    <a href="contact.html">Contact/Contributions familiales</a>
-    <a href="chronologie.html">Chronologie</a>
-    <a href="documents.html">Documents</a>
-    <a href="localisation.html">Localisation</a>
-    <a href="patronyme.html">Patronyme</a>
-    <a href="photos.html">Photos</a>
-    <a href="sources.html">Sources</a>
+<a href="index.html">Accueil</a>
+<a href="ancetres.html">Ancêtres</a>
+<a href="arbre.html">Arbre</a>
+<a href="armoiries.html">Armoiries</a>
+<a href="contact.html">Contact</a>
+<a href="chronologie.html">Chronologie</a>
+<a href="documents.html">Documents</a>
+<a href="localisation.html">Localisation</a>
+<a href="patronyme.html">Patronyme</a>
+<a href="photos.html">Photos</a>
+<a href="sources.html">Sources</a>
 </nav>
 
 <section>
 
 <div class="card">
 
-<h2>Blason de la famille ANDREY</h2>
+<h2>Collection documentaire familiale</h2>
 
-<div class="blason">
+<p class="intro">
+Cette bibliothèque numérique rassemble les documents utilisés pour la
+reconstitution de l'histoire de la famille ANDREY. Chaque archive contribue
+à la préservation et à la transmission de la mémoire familiale.
+</p>
 
-<svg width="320" height="420" viewBox="0 0 320 420">
+<div class="stats">
 
-<path
-d="M40 30
-L280 30
-L280 180
-C280 300 220 360 160 390
-C100 360 40 300 40 180
-Z"
-fill="#0f4c9a"
-stroke="#222"
-stroke-width="4"
-/>
+<div class="stat">
+<h3>150+</h3>
+<p>Documents numérisés</p>
+</div>
 
-<line x1="75" y1="95" x2="245" y2="265"
-stroke="#ffffff"
-stroke-width="22"/>
+<div class="stat">
+<h3>300+</h3>
+<p>Actes recensés</p>
+</div>
 
-<line x1="245" y1="95" x2="75" y2="265"
-stroke="#ffffff"
-stroke-width="22"/>
+<div class="stat">
+<h3>12</h3>
+<p>Communes étudiées</p>
+</div>
 
-<polygon
-points="
-160,55
-170,80
-198,80
-176,96
-184,122
-160,106
-136,122
-144,96
-122,80
-150,80"
-fill="#d4af37"/>
-
-</svg>
+<div class="stat">
+<h3>400 ans</h3>
+<p>D'histoire familiale</p>
+</div>
 
 </div>
 
-<p style="text-align:center;">
-Représentation héraldique traditionnelle associée aux familles ANDREY
-originaires du canton de Fribourg.
-</p>
+<div class="grid">
 
-<div class="info">
-
-<h3>🛡 Description héraldique</h3>
-
+<div class="doc">
+<h3>📜 Actes de naissance</h3>
 <p>
-Le blason est constitué d'un champ d'azur (bleu)
-chargé d'un sautoir d'argent (croix en diagonale)
-et accompagné d'une étoile d'or en chef.
+Registres paroissiaux et actes d'état civil permettant de retracer les lignées familiales.
 </p>
-
+<a href="#" class="btn">Consulter</a>
 </div>
 
-<div class="info">
-
-<h3>⭐ Symbolique</h3>
-
+<div class="doc">
+<h3>💍 Actes de mariage</h3>
 <p>
-Le bleu représente traditionnellement la fidélité,
-la loyauté et la persévérance.
+Unions familiales, filiations et alliances entre différentes familles.
 </p>
-
-<p>
-Le sautoir évoque la protection, l'honneur
-et la solidité des liens familiaux.
-</p>
-
-<p>
-L'étoile symbolise l'espérance, la transmission
-et le rayonnement à travers les générations.
-</p>
-
+<a href="#" class="btn">Consulter</a>
 </div>
 
-<div class="info">
-
-<h3>🇨🇭 Origines suisses</h3>
-
+<div class="doc">
+<h3>✝️ Actes de décès</h3>
 <p>
-Les recherches conduisent principalement vers le canton de Fribourg,
-et tout particulièrement vers Cerniat, Bulle, Hauteville,
-Broc et les communes de la Gruyère.
+Archives permettant de compléter les chronologies et les générations.
 </p>
-
+<a href="#" class="btn">Consulter</a>
 </div>
 
-<div class="info">
-
-<h3>🇫🇷 Présence en France</h3>
-
+<div class="doc">
+<h3>📖 Livrets de famille</h3>
 <p>
-Des familles portant le patronyme ANDREY sont également établies
-dans plusieurs départements français, notamment le Doubs,
-le Jura et la Haute-Saône.
+Documents familiaux conservés et transmis entre générations.
 </p>
+<a href="#" class="btn">Consulter</a>
+</div>
 
+<div class="doc">
+<h3>📷 Archives photographiques</h3>
 <p>
-Les migrations et les échanges entre la Suisse romande
-et les régions frontalières françaises ont favorisé
-la diffusion du patronyme au fil des siècles.
+Portraits de famille, événements et souvenirs anciens.
 </p>
+<a href="#" class="btn">Consulter</a>
+</div>
+
+<div class="doc">
+<h3>🗺 Cartes et plans historiques</h3>
+<p>
+Localisation des communes, propriétés et lieux d'origine.
+</p>
+<a href="#" class="btn">Consulter</a>
+</div>
+
+<div class="doc">
+<h3>🏛 Archives communales</h3>
+<p>
+Documents administratifs et historiques issus des communes d'origine.
+</p>
+<a href="#" class="btn">Consulter</a>
+</div>
+
+<div class="doc">
+<h3>🛡 Documents héraldiques</h3>
+<p>
+Études relatives aux armoiries et à l'histoire du patronyme ANDREY.
+</p>
+<a href="#" class="btn">Consulter</a>
+</div>
 
 </div>
 
 <div class="info">
 
-<h3>📖 Histoire familiale</h3>
+<h3>📚 Origine des archives</h3>
 
 <p>
-Les armoiries constituent un élément du patrimoine historique
-de la famille et s'intègrent aux recherches généalogiques,
-aux archives et aux documents présentés sur ce site.
+Les documents proviennent notamment des archives cantonales de Fribourg,
+des registres paroissiaux, des archives communales, de l'état civil suisse
+et français ainsi que des collections privées familiales.
+</p>
+
+</div>
+
+<div class="info">
+
+<h3>🔍 Objectif des recherches</h3>
+
+<p>
+Ces archives permettent de documenter les filiations, les migrations,
+les métiers exercés, les lieux de résidence et les événements marquants
+de l'histoire de la famille ANDREY.
+</p>
+
+</div>
+
+<div class="info">
+
+<h3>🤝 Contribution familiale</h3>
+
+<p>
+Vous possédez un acte ancien, une photographie, une lettre ou tout autre
+document concernant la famille ANDREY ?
+</p>
+
+<p>
+Votre aide est précieuse pour enrichir cette base documentaire et préserver
+la mémoire collective des générations passées.
+</p>
+
+</div>
+
+<div class="info">
+
+<h3>📜 Devise familiale</h3>
+
+<p style="text-align:center;font-style:italic;">
+« Fidélité • Mémoire • Transmission »
 </p>
 
 </div>
@@ -276,11 +351,8 @@ aux archives et aux documents présentés sur ce site.
 </section>
 
 <footer>
-© 2026 Famille ANDREY - Site généalogique familial
+© 2026 Famille ANDREY • Bibliothèque généalogique et archives familiales
 </footer>
 
 </body>
-
 </html>
-
-
