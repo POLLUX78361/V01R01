@@ -14,7 +14,7 @@
 
 body{
     margin:0;
-    font-family:Georgia,serif;
+    font-family:Georgia, serif;
     background:#fdfbf7;
     color:#3d342d;
 }
@@ -55,22 +55,23 @@ nav a:hover{
 }
 
 .search-box{
-    max-width:600px;
+    max-width:700px;
     margin:25px auto;
     padding:0 20px;
 }
 
 .search-box input{
     width:100%;
-    padding:14px;
-    border:1px solid #ccc;
+    padding:15px;
+    border:1px solid #d4af37;
     border-radius:8px;
     font-size:16px;
+    box-sizing:border-box;
 }
 
 #tree{
     width:100%;
-    height:850px;
+    height:900px;
     border-top:4px solid #d4af37;
 }
 
@@ -92,7 +93,7 @@ footer{
 <h1>Arbre généalogique</h1>
 
 <p>
-Familles ANDREY de Suisse et de France
+Famille ANDREY • Suisse & France
 </p>
 
 </header>
@@ -104,21 +105,21 @@ Familles ANDREY de Suisse et de France
 <a href="arbre.html">Arbre</a>
 <a href="armoiries.html">Armoiries</a>
 <a href="chronologie.html">Chronologie</a>
-<a href="contact.html">Contact</a> 
+<a href="contact.html">Contact</a>
 <a href="documents.html">Documents</a>
 <a href="photos.html">Photos</a>
 <a href="localisation.html">Localisation</a>
 <a href="patronyme.html">Patronyme</a>
 <a href="sources.html">Sources</a>
-    
+
 </nav>
 
 <div class="search-box">
 
 <input
 id="search"
-placeholder="Rechercher une personne..."
->
+type="text"
+placeholder="🔍 Rechercher un nom ou prénom...">
 
 </div>
 
@@ -134,22 +135,15 @@ placeholder="Rechercher une personne..."
 
 function nettoyerPersonne(p){
 
-    if(!p.birthYear){
+    if(!p.name){
         return null;
     }
 
-    if(p.birthYear > 1926){
+    if(
+        p.birthYear &&
+        p.birthYear > 1926
+    ){
         return null;
-    }
-
-    if(p.deathYear){
-
-        if(
-            p.deathYear < 1000 ||
-            p.deathYear > 2026
-        ){
-            p.deathYear = null;
-        }
     }
 
     let titre = "";
@@ -159,7 +153,13 @@ function nettoyerPersonne(p){
     }
 
     if(p.deathYear){
-        titre += " - " + p.deathYear;
+
+        if(
+            p.deathYear > 1000 &&
+            p.deathYear <= 2026
+        ){
+            titre += " - " + p.deathYear;
+        }
     }
 
     return {
@@ -186,59 +186,81 @@ fetch("famille.json")
     data = data
         .map(nettoyerPersonne)
         .filter(Boolean);
-  
 
-    const tree =
-        new FamilyTree(
-            document.getElementById("tree"),
-            {
+    const tree = new FamilyTree(
+        document.getElementById("tree"),
+        {
 
-                enableSearch:true,
+            enableSearch:false,
 
-                nodeBinding:{
+            nodeBinding:{
+                field_0:"name",
+                field_1:"title"
+            },
 
-                    field_0:"name",
+            toolbar:{
+                zoom:true,
+                fit:true,
+                expandAll:true
+            },
 
-                    field_1:"title"
+            nodeMenu:{},
 
-                },
+            menu:{},
 
-                toolbar:{
+            editForm:{
+                readOnly:true
+            },
 
-                    zoom:true,
+            scaleInitial:
+                FamilyTree.match.boundary
 
-                    fit:true,
-
-                    expandAll:true
-
-                },
-
-                nodeMenu:{},
-
-                menu:{},
-
-                editForm:{
-                    readOnly:true
-                },
-
-                scaleInitial:
-                    FamilyTree.match.boundary
-            }
-        );
+        }
+    );
 
     tree.load(data);
 
     document
     .getElementById("search")
-    .addEventListener(
-        "keyup",
-        function(){
+    .addEventListener("input", function(){
 
-            tree.search(
-                this.value
+        const texte =
+            this.value
+            .trim()
+            .toLowerCase();
+
+        if(texte === ""){
+            tree.clearSearch();
+            return;
+        }
+
+        const resultats =
+            data.filter(personne =>
+                personne.name
+                .toLowerCase()
+                .includes(texte)
             );
 
+        if(resultats.length > 0){
+
+            tree.selectNode(
+                resultats[0].id
+            );
+
+            tree.center(
+                resultats[0].id
+            );
         }
+
+    });
+
+})
+
+.catch(error => {
+
+    console.error(
+        "Erreur chargement JSON :",
+        error
     );
 
 });
@@ -249,14 +271,13 @@ window.addEventListener(
 
         if(e.ctrlKey){
 
-            const k =
+            const touche =
                 e.key.toLowerCase();
 
             if(
-                k==="s" ||
-                k==="p"
+                touche === "s" ||
+                touche === "p"
             ){
-
                 e.preventDefault();
             }
         }
@@ -271,5 +292,4 @@ window.oncontextmenu =
 </script>
 
 </body>
-
 </html>
