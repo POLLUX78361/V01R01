@@ -22,38 +22,6 @@
     "deces": 1995,
     "fid": "I27",
     "mid": "I28"
-  },
-  {
-    "id": "I32",
-    "nom": "André THOMAS",
-    "naissance": 1904,
-    "deces": 2008,
-    "fid": "I1114620440",
-    "mid": "I1114620441"
-  },
-  {
-    "id": "I33",
-    "nom": "François Georges ANDRE",
-    "naissance": 1838,
-    "deces": 1866,
-    "fid": "I35",
-    "mid": "I39"
-  },
-  {
-    "id": "I34",
-    "nom": "Marie Catherine MASSENET",
-    "naissance": 1843,
-    "deces": 1918,
-    "fid": "I155",
-    "mid": "I156"
-  },
-  {
-    "id": "I35",
-    "nom": "Jean-Claude ANDRE",
-    "naissance": 1805,
-    "deces": 1876,
-    "fid": "I43",
-    "mid": "I44"
   }
 
 ]
