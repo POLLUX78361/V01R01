@@ -135,57 +135,68 @@ placeholder="🔍 Rechercher un nom ou prénom...">
 
 function nettoyerPersonne(p){
 
-    if(!p.name){
-        return null;
-    }
-
-    if(
-        p.birthYear &&
-        p.birthYear > 1926
-    ){
+    if(!p.nom){
         return null;
     }
 
     let titre = "";
 
-    if(p.birthYear){
-        titre += p.birthYear;
+    if(p.naissance){
+        titre += p.naissance;
     }
 
-    if(p.deathYear){
-
-        if(
-            p.deathYear > 1000 &&
-            p.deathYear <= 2026
-        ){
-            titre += " - " + p.deathYear;
-        }
+    if(
+        p.deces &&
+        p.deces > 1000 &&
+        p.deces <= 2026
+    ){
+        titre += " - " + p.deces;
     }
 
     return {
 
-        id:p.id,
+        id: p.id,
 
-        fid:p.fid || null,
+        fid: p.fid || null,
 
-        mid:p.mid || null,
+        mid: p.mid || null,
 
-        name:p.name,
+        nom: p.nom,
 
-        title:titre
+        titre: titre
 
     };
 }
 
 fetch("famille.json")
 
-.then(response => response.json())
+.then(response => {
+
+    if(!response.ok){
+        throw new Error(
+            "Impossible de charger famille.json"
+        );
+    }
+
+    return response.json();
+
+})
 
 .then(data => {
+
+    console.log(
+        "Nombre d'individus chargés :",
+        data.length
+    );
 
     data = data
         .map(nettoyerPersonne)
         .filter(Boolean);
+
+    console.log(
+        "Nombre d'individus affichés :",
+        data.length
+    );
 
     const tree = new FamilyTree(
         document.getElementById("tree"),
@@ -194,8 +205,8 @@ fetch("famille.json")
             enableSearch:false,
 
             nodeBinding:{
-                field_0:"name",
-                field_1:"title"
+                field_0:"nom",
+                field_1:"titre"
             },
 
             toolbar:{
@@ -230,15 +241,17 @@ fetch("famille.json")
             .toLowerCase();
 
         if(texte === ""){
+
             tree.clearSearch();
+
             return;
         }
 
         const resultats =
             data.filter(personne =>
-                personne.name
-                .toLowerCase()
-                .includes(texte)
+                personne.nom
+                    .toLowerCase()
+                    .includes(texte)
             );
 
         if(resultats.length > 0){
@@ -262,6 +275,18 @@ fetch("famille.json")
         "Erreur chargement JSON :",
         error
     );
+
+    document
+    .getElementById("tree")
+    .innerHTML =
+    `<div style="
+        padding:40px;
+        text-align:center;
+        color:#8b0000;
+        font-size:20px;
+    ">
+        Erreur : ${error.message}
+    </div>`;
 
 });
 
