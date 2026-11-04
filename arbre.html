@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
 
 <meta charset="UTF-8">
@@ -14,7 +13,7 @@
 
 body{
     margin:0;
-    font-family:Georgia, serif;
+    font-family:Georgia,serif;
     background:#fdfbf7;
     color:#3d342d;
 }
@@ -29,10 +28,6 @@ header{
 header h1{
     margin:0;
     font-size:3em;
-}
-
-header p{
-    font-size:1.2em;
 }
 
 nav{
@@ -89,17 +84,11 @@ footer{
 <body>
 
 <header>
-
 <h1>Arbre généalogique</h1>
-
-<p>
-Famille ANDREY • Suisse & France
-</p>
-
+<p>Famille ANDREY • Suisse & France</p>
 </header>
 
 <nav>
-
 <a href="index.html">Accueil</a>
 <a href="ancetres.html">Ancêtres</a>
 <a href="arbre.html">Arbre</a>
@@ -111,71 +100,29 @@ Famille ANDREY • Suisse & France
 <a href="localisation.html">Localisation</a>
 <a href="patronyme.html">Patronyme</a>
 <a href="sources.html">Sources</a>
-
 </nav>
 
 <div class="search-box">
-
 <input
 id="search"
 type="text"
 placeholder="🔍 Rechercher un nom ou prénom...">
-
 </div>
 
 <div id="tree"></div>
 
 <footer>
-
 © 2025-2026 Famille ANDREY - Site généalogique familial
-
 </footer>
 
 <script>
-
-function nettoyerPersonne(p){
-
-    if(!p.nom){
-        return null;
-    }
-
-    let titre = "";
-
-    if(p.naissance){
-        titre += p.naissance;
-    }
-
-    if(
-        p.deces &&
-        p.deces > 1000 &&
-        p.deces <= 2026
-    ){
-        titre += " - " + p.deces;
-    }
-
-    return {
-
-        id: p.id,
-
-        fid: p.fid || null,
-
-        mid: p.mid || null,
-
-        nom: p.nom,
-
-        titre: titre
-
-    };
-}
 
 fetch("famille.json")
 
 .then(response => {
 
     if(!response.ok){
-        throw new Error(
-            "Impossible de charger famille.json"
-        );
+        throw new Error("Impossible de charger famille.json");
     }
 
     return response.json();
@@ -184,52 +131,55 @@ fetch("famille.json")
 
 .then(data => {
 
-    console.log(
-        "Nombre d'individus chargés :",
-        data.length
-    );
+    const personnes = data.map(p => {
 
-    data = data
-        .map(nettoyerPersonne)
-        .filter(Boolean);
+        let titre = "";
 
-    console.log(
-        "Nombre d'individus affichés :",
-        data.length
-    );
+        if(p.naissance){
+            titre += p.naissance;
+        }
+
+        if(p.deces){
+            titre += " - " + p.deces;
+        }
+
+        return {
+
+            id: p.id,
+
+            pid: p.fid || null,
+
+            mid: p.mid || null,
+
+            nom: p.nom,
+
+            titre: titre
+
+        };
+
+    });
 
     const tree = new FamilyTree(
         document.getElementById("tree"),
         {
 
-            enableSearch:false,
-
-            nodeBinding:{
-                field_0:"nom",
-                field_1:"titre"
+            nodeBinding: {
+                field_0: "nom",
+                field_1: "titre"
             },
 
-            toolbar:{
-                zoom:true,
-                fit:true,
-                expandAll:true
+            toolbar: {
+                zoom: true,
+                fit: true,
+                expandAll: true
             },
 
-            nodeMenu:{},
-
-            menu:{},
-
-            editForm:{
-                readOnly:true
-            },
-
-            scaleInitial:
-                FamilyTree.match.boundary
+            scaleInitial: FamilyTree.match.boundary
 
         }
     );
 
-    tree.load(data);
+    tree.load(personnes);
 
     document
     .getElementById("search")
@@ -240,29 +190,23 @@ fetch("famille.json")
             .trim()
             .toLowerCase();
 
-        if(texte === ""){
-
-            tree.clearSearch();
-
+        if(!texte){
             return;
         }
 
-        const resultats =
-            data.filter(personne =>
-                personne.nom
-                    .toLowerCase()
-                    .includes(texte)
+        const personne =
+            personnes.find(p =>
+                p.nom
+                 .toLowerCase()
+                 .includes(texte)
             );
 
-        if(resultats.length > 0){
+        if(personne){
 
-            tree.selectNode(
-                resultats[0].id
-            );
+            tree.selectNode(personne.id);
 
-            tree.center(
-                resultats[0].id
-            );
+            tree.center(personne.id);
+
         }
 
     });
@@ -271,48 +215,14 @@ fetch("famille.json")
 
 .catch(error => {
 
-    console.error(
-        "Erreur chargement JSON :",
-        error
-    );
+    document.getElementById("tree").innerHTML =
+    "<div style='padding:40px;color:red;text-align:center'>" +
+    error.message +
+    "</div>";
 
-    document
-    .getElementById("tree")
-    .innerHTML =
-    `<div style="
-        padding:40px;
-        text-align:center;
-        color:#8b0000;
-        font-size:20px;
-    ">
-        Erreur : ${error.message}
-    </div>`;
+    console.error(error);
 
 });
-
-window.addEventListener(
-    "keydown",
-    function(e){
-
-        if(e.ctrlKey){
-
-            const touche =
-                e.key.toLowerCase();
-
-            if(
-                touche === "s" ||
-                touche === "p"
-            ){
-                e.preventDefault();
-            }
-        }
-    }
-);
-
-window.oncontextmenu =
-    function(){
-        return false;
-    };
 
 </script>
 
