@@ -4,125 +4,358 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Famille ANDREY</title>
+<title>Famille ANDREY - Généalogie</title>
 
-<link rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/treant-js@1.0.0/Treant.css">
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 
 <style>
+
 body{
     margin:0;
-    font-family:Arial, sans-serif;
+    overflow:hidden;
+    font-family:Arial,sans-serif;
     background:#f5f5f5;
 }
 
-#tree{
-    width:100%;
-    height:100vh;
-    overflow:auto;
-}
-
-.node{
-    padding:8px;
-    border:1px solid #ccc;
+#toolbar{
+    position:fixed;
+    top:10px;
+    left:10px;
+    z-index:1000;
+    background:#fff;
+    padding:10px;
     border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
+
+#toolbar button,
+#toolbar input{
+    margin:3px;
+    padding:8px;
+}
+
+#tree{
+    width:100vw;
+    height:100vh;
+}
+
+#details{
+    position:fixed;
+    right:0;
+    top:0;
+    width:300px;
+    height:100%;
     background:white;
-    min-width:200px;
-    text-align:center;
-    box-shadow:0 2px 8px rgba(0,0,0,.15);
+    border-left:1px solid #ccc;
+    padding:15px;
+    overflow:auto;
+    z-index:999;
 }
 
-.node .title{
-    font-weight:bold;
-    color:#1f2937;
-    font-size:14px;
+.node rect{
+    stroke:#444;
+    stroke-width:1px;
+    rx:8;
+    ry:8;
 }
 
-.node .date{
-    color:#666;
-    font-size:12px;
+.male{
+    fill:#d6e8ff;
 }
+
+.female{
+    fill:#ffd9ec;
+}
+
+.link{
+    fill:none;
+    stroke:#999;
+    stroke-width:2;
+}
+
 </style>
 </head>
 
 <body>
 
-<div id="tree"></div>
+<div id="toolbar">
 
-<script src="https://cdn.jsdelivr.net/npm/raphael@2.3.0/raphael.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/treant-js@1.0.0/Treant.min.js"></script>
+<button onclick="location.reload()">
+🏠 Eric ANDRE
+</button>
+
+<input
+id="search"
+placeholder="Rechercher">
+
+</div>
+
+<div id="details">
+
+<h2>Famille ANDREY</h2>
+
+<div id="personInfo">
+Cliquez sur une personne
+</div>
+
+</div>
+
+<svg id="tree"></svg>
 
 <script>
 
-fetch("famille.json")
-.then(response => response.json())
-.then(data => {
+const persons={};
+const families={};
 
-    const persons = {};
-    let root = null;
+async function init(){
 
-    data.forEach(person => {
+const response=
+await fetch("famille.ged");
 
-        persons[person.id] = {
-            text: {
-                name: person.name || person.nom || "Inconnu",
-                title:
-                    (person.birth || person.naissance || "") +
-                    ((person.death || person.deces) ?
-                    " - " + (person.death || person.deces) : "")
-            },
-            children: []
-        };
+const text=
+await response.text();
 
-    });
+parseGedcom(text);
 
-    data.forEach(person => {
+buildTree("@I1@");
 
-        let parentId =
-            person.pid ||
-            person.fid ||
-            person.parentId;
+}
 
-        if(parentId && persons[parentId]) {
+function parseGedcom(text){
 
-            persons[parentId]
-                .children
-                .push(persons[person.id]);
+const lines=text.split(/\r?\n/);
 
-        } else {
+let current=null;
+let mode=null;
 
-            root = persons[person.id];
-        }
+for(const line of lines){
 
-    });
+let m;
 
-    const config = {
+if(m=line.match(/^0 (@I.+@) INDI$/)){
 
-        chart: {
-            container: "#tree",
-            rootOrientation: "WEST",
-            levelSeparation: 50,
-            siblingSeparation: 30,
-            subTeeSeparation: 30,
-            connectors: {
-                type: "step"
-            },
-            animateOnInit: true,
-            scrollbar: "native"
-        },
+current=m[1];
 
-        nodeStructure: root
+persons[current]={
+id:current,
+name:"",
+sex:"",
+birth:"",
+death:"",
+famc:[],
+fams:[]
+};
 
-    };
+mode="INDI";
+continue;
+}
 
-    new Treant(config);
+if(m=line.match(/^0 (@F.+@) FAM$/)){
 
-})
-.catch(err => {
-    console.error(err);
-    document.getElementById("tree").innerHTML =
-        "<h2>Erreur de chargement du fichier famille.json</h2>";
+current=m[1];
+
+families[current]={
+id:current,
+husband:null,
+wife:null,
+children:[]
+};
+
+mode="FAM";
+continue;
+}
+
+if(mode==="INDI"){
+
+if(line.startsWith("1 NAME "))
+persons[current].name=
+line.substring(7)
+.replace(/\//g,"");
+
+if(line.startsWith("1 SEX "))
+persons[current].sex=
+line.substring(6);
+
+if(line.startsWith("1 FAMS "))
+persons[current].fams.push(
+line.substring(7)
+);
+
+if(line.startsWith("1 FAMC "))
+persons[current].famc.push(
+line.substring(7)
+);
+
+}
+
+if(mode==="FAM"){
+
+if(line.startsWith("1 CHIL "))
+families[current]
+.children
+.push(line.substring(7));
+
+}
+
+}
+
+}
+
+function buildNode(id){
+
+const person=persons[id];
+
+if(!person)
+return null;
+
+const node={
+
+id:id,
+
+name:person.name,
+
+sex:person.sex,
+
+children:[]
+};
+
+person.fams.forEach(famId=>{
+
+const fam=families[famId];
+
+if(!fam)
+return;
+
+fam.children.forEach(childId=>{
+
+const child=
+buildNode(childId);
+
+if(child)
+node.children.push(child);
+
 });
+
+});
+
+return node;
+}
+
+function buildTree(rootId){
+
+const data=
+buildNode(rootId);
+
+const svg=
+d3.select("#tree");
+
+svg.selectAll("*").remove();
+
+const container=
+svg.append("g");
+
+svg.call(
+d3.zoom()
+.scaleExtent([0.1,5])
+.on("zoom",
+e=>{
+container.attr(
+"transform",
+e.transform
+);
+})
+);
+
+const root=
+d3.hierarchy(data);
+
+const tree=
+d3.tree()
+.nodeSize([80,250]);
+
+tree(root);
+
+container
+.selectAll(".link")
+.data(root.links())
+.enter()
+.append("path")
+.attr("class","link")
+.attr("d",
+d3.linkHorizontal()
+.x(d=>d.y)
+.y(d=>d.x)
+);
+
+const node=
+container
+.selectAll(".node")
+.data(root.descendants())
+.enter()
+.append("g")
+.attr("class","node")
+.attr("transform",
+d=>
+`translate(${d.y},${d.x})`
+);
+
+node
+.append("rect")
+.attr("x",-90)
+.attr("y",-25)
+.attr("width",180)
+.attr("height",50)
+.attr("class",
+d=>
+d.data.sex==="F"
+? "female"
+: "male"
+);
+
+node
+.append("text")
+.attr("text-anchor","middle")
+.text(d=>d.data.name);
+
+node.on("click",function(e,d){
+
+document
+.getElementById("personInfo")
+.innerHTML=`
+
+<h3>${d.data.name}</h3>
+<p>ID : ${d.data.id}</p>
+<p>Sexe : ${d.data.sex}</p>
+
+`;
+
+});
+
+document
+.getElementById("search")
+.addEventListener(
+"input",
+function(){
+
+const v=
+this.value
+.toLowerCase();
+
+node.style(
+"display",
+d=>
+d.data.name
+.toLowerCase()
+.includes(v)
+? null
+: "none"
+);
+
+});
+
+}
+
+init();
 
 </script>
 
