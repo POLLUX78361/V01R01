@@ -163,24 +163,30 @@ console.log(data);
     });
 
     const tree = new FamilyTree(
-        document.getElementById("tree"),
-        {
+    document.getElementById("tree"),
+    {
 
-            nodeBinding: {
-                field_0: "nom",
-                field_1: "titre"
-            },
+        nodeBinding: {
+            field_0: "nom",
+            field_1: "titre"
+        },
 
-            toolbar: {
-                zoom: true,
-                fit: true,
-                expandAll: true
-            },
+        toolbar: {
+            zoom: true,
+            fit: true,
+            expandAll: true
+        },
 
-            scaleInitial: FamilyTree.match.boundary
+        mouseScrool: FamilyTree.action.zoom,
 
-        }
-    );
+        scaleInitial: FamilyTree.match.boundary,
+
+        enableSearch: false
+
+    }
+);
+
+console.log("Nombre de personnes :", personnes.length);
 
 
 
