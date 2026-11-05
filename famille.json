@@ -2,7 +2,7 @@
   {
     "id": "I1",
     "nom": "Pierre ANDRE",
-    "naissance": null,
+    "naissance": 1777,
     "deces": 1800,
     "fid": "I4",
     "mid": "I5"
