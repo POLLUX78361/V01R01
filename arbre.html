@@ -130,7 +130,10 @@ fetch("famille.json")
 })
 
 .then(data => {
+    
+console.log(data);
 
+    const personnes = data.map(p => {
     const personnes = data.map(p => {
 
         let titre = "";
