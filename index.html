@@ -1,324 +1,130 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Famille ANDREY - Généalogie et Histoire Familiale</title>
+<title>Famille ANDREY</title>
 
-<meta name="description" content="Site généalogique consacré à l'histoire, aux origines et au patrimoine de la famille ANDREY en Suisse et en France.">
-
-<meta name="keywords" content="ANDREY, généalogie, famille ANDREY, Fribourg, Suisse, histoire familiale">
-
-<meta name="author" content="Famille ANDREY">
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/treant-js@1.0.0/Treant.css">
 
 <style>
-
 body{
     margin:0;
-    font-family:Georgia, serif;
-    background:#fdfbf7;
-    color:#3d342d;
-    line-height:1.7;
+    font-family:Arial, sans-serif;
+    background:#f5f5f5;
 }
 
-header{
-    background:linear-gradient(135deg,#2c1810,#5a3e2b);
-    color:#f7f2e8;
-    text-align:center;
-    padding:100px 20px;
-    box-shadow:0 4px 15px rgba(0,0,0,.25);
+#tree{
+    width:100%;
+    height:100vh;
+    overflow:auto;
 }
 
-header h1{
-    margin:0;
-    font-size:3.8em;
-    letter-spacing:2px;
-}
-
-header p{
-    font-size:1.3em;
-    margin-top:15px;
-}
-
-nav{
-    background:#3b2618;
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    padding:12px 5px;
-}
-
-nav a{
-    color:#f7f2e8;
-    text-decoration:none;
-    font-weight:bold;
-    padding:10px 15px;
-    border-radius:6px;
-    transition:.3s;
-}
-
-nav a:hover{
-    background:#d4af37;
-    color:#2c1810;
-}
-
-section{
-    max-width:1200px;
-    margin:auto;
-    padding:60px 20px;
-}
-
-.card{
+.node{
+    padding:8px;
+    border:1px solid #ccc;
+    border-radius:10px;
     background:white;
-    border-left:6px solid #d4af37;
-    border-radius:18px;
-    padding:40px;
-    box-shadow:0 6px 20px rgba(0,0,0,.08);
-}
-
-.hero{
+    min-width:200px;
     text-align:center;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
 }
 
-.hero h2{
-    color:#2c1810;
-    margin-top:0;
-}
-
-.hero p{
-    max-width:900px;
-    margin:20px auto;
-}
-
-.btn{
-    display:inline-block;
-    margin-top:20px;
-    padding:14px 24px;
-    background:#d4af37;
-    color:#2c1810;
-    text-decoration:none;
-    border-radius:8px;
+.node .title{
     font-weight:bold;
-    transition:.3s;
+    color:#1f2937;
+    font-size:14px;
 }
 
-.btn:hover{
-    background:#b99320;
+.node .date{
+    color:#666;
+    font-size:12px;
 }
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-    margin-top:35px;
-}
-
-.box{
-    background:#fdf8ef;
-    border-left:4px solid #d4af37;
-    border-radius:12px;
-    padding:25px;
-    transition:.3s;
-}
-
-.box:hover{
-    transform:translateY(-5px);
-    box-shadow:0 8px 15px rgba(0,0,0,.10);
-}
-
-.box h3{
-    margin-top:0;
-    color:#5a3e2b;
-}
-
-.info{
-    margin-top:50px;
-    padding:30px;
-    background:#fdf8ef;
-    border-left:4px solid #d4af37;
-    border-radius:12px;
-}
-
-.citation{
-    text-align:center;
-    margin-top:40px;
-    font-style:italic;
-    color:#5a3e2b;
-    font-size:1.1em;
-}
-
-footer{
-    background:#2c1810;
-    color:#f7f2e8;
-    text-align:center;
-    padding:25px;
-    margin-top:60px;
-}
-
-@media(max-width:768px){
-
-header h1{
-    font-size:2.7em;
-}
-
-nav{
-    justify-content:flex-start;
-}
-
-}
-
 </style>
-
 </head>
 
 <body>
 
-<header>
+<div id="tree"></div>
 
-<h1>Famille ANDREY</h1>
+<script src="https://cdn.jsdelivr.net/npm/raphael@2.3.0/raphael.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/treant-js@1.0.0/Treant.min.js"></script>
 
-<p>
-Généalogie et histoire de la famille ANDREY<br>
-Entre la Suisse et la France
-</p>
+<script>
 
-</header>
+fetch("famille.json")
+.then(response => response.json())
+.then(data => {
 
-<nav>
-<a href="index.html">Accueil</a>
-<a href="arbre.html">Arbre</a>
-<a href="chronologie.html">Histoire</a>
-<a href="armoiries.html">Armoiries</a>
-<a href="localisation.html">Origines</a>
-<a href="photos.html">Archives</a>
-<a href="patronyme.html">Patronyme</a>
-<a href="sources.html">Sources</a>
-<a href="contact.html">Contact</a>
-</nav>
+    const persons = {};
+    let root = null;
 
-<section>
+    data.forEach(person => {
 
-<div class="card">
+        persons[person.id] = {
+            text: {
+                name: person.name || person.nom || "Inconnu",
+                title:
+                    (person.birth || person.naissance || "") +
+                    ((person.death || person.deces) ?
+                    " - " + (person.death || person.deces) : "")
+            },
+            children: []
+        };
 
-<div class="hero">
+    });
 
-<h2>Bienvenue sur le site généalogique de la famille ANDREY</h2>
+    data.forEach(person => {
 
-<p>
-Ce site rassemble les recherches consacrées aux différentes branches
-de la famille ANDREY, à leurs ancêtres et aux documents permettant
-de retracer plusieurs siècles d'histoire familiale entre la Suisse
-et la France.
-</p>
+        let parentId =
+            person.pid ||
+            person.fid ||
+            person.parentId;
 
-<p>
-Découvrez les lignées familiales, les archives, l'origine du nom,
-les lieux de vie des ancêtres ainsi que les éléments historiques
-qui ont façonné l'histoire de la famille.
-</p>
+        if(parentId && persons[parentId]) {
 
-<a href="arbre.html" class="btn">
-🌳 Explorer la généalogie
-</a>
+            persons[parentId]
+                .children
+                .push(persons[person.id]);
 
-</div>
+        } else {
 
-<h2 style="text-align:center;margin-top:60px;">
-Les 6 thèmes de recherche
-</h2>
+            root = persons[person.id];
+        }
 
-<div class="grid">
+    });
 
-<div class="box">
-<h3>🌳 Généalogie familiale</h3>
-<p>
-Reconstitution des lignées ANDREY, des filiations connues et des
-différentes branches identifiées au fil des générations.
-</p>
-<a href="arbre.html" class="btn">Découvrir</a>
-</div>
+    const config = {
 
-<div class="box">
-<h3>📜 Histoire familiale</h3>
-<p>
-Les événements, parcours de vie et faits marquants qui ont façonné
-l'histoire de la famille à travers les siècles.
-</p>
-<a href="chronologie.html" class="btn">Découvrir</a>
-</div>
+        chart: {
+            container: "#tree",
+            rootOrientation: "WEST",
+            levelSeparation: 50,
+            siblingSeparation: 30,
+            subTeeSeparation: 30,
+            connectors: {
+                type: "step"
+            },
+            animateOnInit: true,
+            scrollbar: "native"
+        },
 
-<div class="box">
-<h3>🛡️ Armoiries et héraldique</h3>
-<p>
-Étude des blasons, symboles, sceaux et traditions héraldiques pouvant
-être associés au patronyme ANDREY.
-</p>
-<a href="armoiries.html" class="btn">Découvrir</a>
-</div>
+        nodeStructure: root
 
-<div class="box">
-<h3>🗺️ Origines et localisation</h3>
-<p>
-Villages d'origine, migrations familiales et implantation géographique
-de la famille en Suisse, en France et ailleurs.
-</p>
-<a href="localisation.html" class="btn">Découvrir</a>
-</div>
+    };
 
-<div class="box">
-<h3>📸 Archives et photographies</h3>
-<p>
-Photos anciennes, actes d'état civil, registres paroissiaux,
-documents historiques et souvenirs familiaux.
-</p>
-<a href="photos.html" class="btn">Découvrir</a>
-</div>
+    new Treant(config);
 
-<div class="box">
-<h3>📖 Patronyme ANDREY</h3>
-<p>
-Origine du nom de famille, étymologie, variantes orthographiques
-et diffusion du patronyme dans le temps.
-</p>
-<a href="patronyme.html" class="btn">Découvrir</a>
-</div>
+})
+.catch(err => {
+    console.error(err);
+    document.getElementById("tree").innerHTML =
+        "<h2>Erreur de chargement du fichier famille.json</h2>";
+});
 
-</div>
-
-<div class="info">
-
-<h3>Un patrimoine familial à préserver</h3>
-
-<p>
-L'objectif de ce site est de conserver et transmettre la mémoire
-de la famille ANDREY à travers les générations, en réunissant les
-archives, témoignages et recherches généalogiques disponibles.
-</p>
-
-<p>
-Chaque document, photographie ou information contribue à enrichir
-la connaissance de notre histoire familiale commune.
-</p>
-
-</div>
-
-<div class="citation">
-« Chaque famille porte en elle une part de l'histoire des hommes. »
-</div>
-
-</div>
-
-</section>
-
-<footer>
-
-© 2025 - Famille ANDREY<br>
-Site consacré à la généalogie et à l'histoire familiale.
-
-</footer>
+</script>
 
 </body>
-
 </html>
