@@ -12,15 +12,15 @@
     "nom": "Marie Catherine MASSENET",
     "naissance": 1806,
     "deces": 1918,
-    "fid": "I155",
-    "mid": "I156"
+    "fid": "null",
+    "mid": "null"
   },
   {
     "id": "I35",
     "nom": "Jean-Claude ANDRE",
     "naissance": 1805,
     "deces": 1876,
-    "fid": "I43",
-    "mid": "I44"
+    "fid": "null",
+    "mid": "null"
   }
   ]
