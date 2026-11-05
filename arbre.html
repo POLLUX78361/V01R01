@@ -119,52 +119,7 @@ placeholder="🔍 Rechercher un nom ou prénom...">
 fetch("famille.json")
 
 .then(response => {
-
-    tree.load(personnes);
-
-    document
-    .getElementById("search")
-    .addEventListener("input", function(){
-
-        const texte =
-            this.value
-            .trim()
-            .toLowerCase();
-
-        if(!texte){
-            return;
-        }
-
-        const personne =
-            personnes.find(p =>
-                p.nom
-                 .toLowerCase()
-                 .includes(texte)
-            );
-
-        if(personne){
-
-            tree.selectNode(personne.id);
-
-            tree.center(personne.id);
-
-        }
-
-    });
-
-})
-
-.catch(error => {
-
-    document.getElementById("tree").innerHTML =
-    "<div style='padding:40px;color:red;text-align:center'>" +
-    error.message +
-    "</div>";
-
-    console.error(error);
-
-});
-
+   
 </script>
 
 </body>
