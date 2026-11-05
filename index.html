@@ -1,359 +1,70 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Famille ANDREY - Généalogie</title>
-
-<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-
-<style>
-
-body{
-    margin:0;
-    overflow:hidden;
-    font-family:Arial,sans-serif;
-    background:#f5f5f5;
-}
-
-#toolbar{
-    position:fixed;
-    top:10px;
-    left:10px;
-    z-index:1000;
-    background:#fff;
-    padding:10px;
-    border-radius:10px;
-    box-shadow:0 3px 10px rgba(0,0,0,.2);
-}
-
-#toolbar button,
-#toolbar input{
-    margin:3px;
-    padding:8px;
-}
-
-#tree{
-    width:100vw;
-    height:100vh;
-}
-
-#details{
-    position:fixed;
-    right:0;
-    top:0;
-    width:300px;
-    height:100%;
-    background:white;
-    border-left:1px solid #ccc;
-    padding:15px;
-    overflow:auto;
-    z-index:999;
-}
-
-.node rect{
-    stroke:#444;
-    stroke-width:1px;
-    rx:8;
-    ry:8;
-}
-
-.male{
-    fill:#d6e8ff;
-}
-
-.female{
-    fill:#ffd9ec;
-}
-
-.link{
-    fill:none;
-    stroke:#999;
-    stroke-width:2;
-}
-
-</style>
-</head>
-
-<body>
-
-<div id="toolbar">
-
-<button onclick="location.reload()">
-🏠 Eric ANDRE
-</button>
-
-<input
-id="search"
-placeholder="Rechercher">
-
-</div>
-
-<div id="details">
-
-<h2>Famille ANDREY</h2>
-
-<div id="personInfo">
-Cliquez sur une personne
-</div>
-
-</div>
-
-<svg id="tree"></svg>
-
-<script>
-
-const persons={};
-const families={};
-
-async function init(){
-
-const response=
-await fetch("famille.ged");
-
-const text=
-await response.text();
-
-parseGedcom(text);
-
-buildTree("@I1@");
-
-}
-
-function parseGedcom(text){
-
-const lines=text.split(/\r?\n/);
-
-let current=null;
-let mode=null;
-
-for(const line of lines){
-
-let m;
-
-if(m=line.match(/^0 (@I.+@) INDI$/)){
-
-current=m[1];
-
-persons[current]={
-id:current,
-name:"",
-sex:"",
-birth:"",
-death:"",
-famc:[],
-fams:[]
-};
-
-mode="INDI";
-continue;
-}
-
-if(m=line.match(/^0 (@F.+@) FAM$/)){
-
-current=m[1];
-
-families[current]={
-id:current,
-husband:null,
-wife:null,
-children:[]
-};
-
-mode="FAM";
-continue;
-}
-
-if(mode==="INDI"){
-
-if(line.startsWith("1 NAME "))
-persons[current].name=
-line.substring(7)
-.replace(/\//g,"");
-
-if(line.startsWith("1 SEX "))
-persons[current].sex=
-line.substring(6);
-
-if(line.startsWith("1 FAMS "))
-persons[current].fams.push(
-line.substring(7)
-);
-
-if(line.startsWith("1 FAMC "))
-persons[current].famc.push(
-line.substring(7)
-);
-
-}
-
-if(mode==="FAM"){
-
-if(line.startsWith("1 CHIL "))
-families[current]
-.children
-.push(line.substring(7));
-
-}
-
-}
-
-}
-
-function buildNode(id){
-
-const person=persons[id];
-
-if(!person)
-return null;
-
-const node={
-
-id:id,
-
-name:person.name,
-
-sex:person.sex,
-
-children:[]
-};
-
-person.fams.forEach(famId=>{
-
-const fam=families[famId];
-
-if(!fam)
-return;
-
-fam.children.forEach(childId=>{
-
-const child=
-buildNode(childId);
-
-if(child)
-node.children.push(child);
-
-});
-
-});
-
-return node;
-}
-
-function buildTree(rootId){
-
-const data=
-buildNode(rootId);
-
-const svg=
-d3.select("#tree");
-
-svg.selectAll("*").remove();
-
-const container=
-svg.append("g");
-
-svg.call(
-d3.zoom()
-.scaleExtent([0.1,5])
-.on("zoom",
-e=>{
-container.attr(
-"transform",
-e.transform
-);
-})
-);
-
-const root=
-d3.hierarchy(data);
-
-const tree=
-d3.tree()
-.nodeSize([80,250]);
-
-tree(root);
-
-container
-.selectAll(".link")
-.data(root.links())
-.enter()
-.append("path")
-.attr("class","link")
-.attr("d",
-d3.linkHorizontal()
-.x(d=>d.y)
-.y(d=>d.x)
-);
-
-const node=
-container
-.selectAll(".node")
-.data(root.descendants())
-.enter()
-.append("g")
-.attr("class","node")
-.attr("transform",
-d=>
-`translate(${d.y},${d.x})`
-);
-
-node
-.append("rect")
-.attr("x",-90)
-.attr("y",-25)
-.attr("width",180)
-.attr("height",50)
-.attr("class",
-d=>
-d.data.sex==="F"
-? "female"
-: "male"
-);
-
-node
-.append("text")
-.attr("text-anchor","middle")
-.text(d=>d.data.name);
-
-node.on("click",function(e,d){
-
-document
-.getElementById("personInfo")
-.innerHTML=`
-
-<h3>${d.data.name}</h3>
-<p>ID : ${d.data.id}</p>
-<p>Sexe : ${d.data.sex}</p>
-
-`;
-
-});
-
-document
-.getElementById("search")
-.addEventListener(
 "input",
 function(){
 
-const v=
-this.value
-.toLowerCase();
+const value=
+this.value.toLowerCase();
 
-node.style(
+if(!window.currentNodes)
+return;
+
+window.currentNodes.style(
 "display",
 d=>
 d.data.name
 .toLowerCase()
-.includes(v)
+.includes(value)
 ? null
 : "none"
 );
 
 });
 
-}
+document
+.getElementById("homeBtn")
+.onclick=()=>{
+
+buildTree("@I1@");
+
+};
+
+document
+.getElementById("zoomIn")
+.onclick=()=>{
+
+d3.select("#tree")
+.transition()
+.call(
+zoom.scaleBy,
+1.2
+);
+
+};
+
+document
+.getElementById("zoomOut")
+.onclick=()=>{
+
+d3.select("#tree")
+.transition()
+.call(
+zoom.scaleBy,
+0.8
+);
+
+};
+
+document
+.getElementById("resetZoom")
+.onclick=()=>{
+
+d3.select("#tree")
+.transition()
+.call(
+zoom.transform,
+d3.zoomIdentity
+);
+
+};
 
 init();
 
