@@ -117,15 +117,15 @@ placeholder="🔍 Rechercher un nom ou prénom...">
 
 <script>
 
-fetch("famille.ged")
+fetch("famille.json")
 
 .then(response => {
 
     if(!response.ok){
-        throw new Error("Impossible de charger famille.ged");
+        throw new Error("Impossible de charger famille.json");
     }
 
-    return response.gged();
+    return response.json();
 
 })
 
