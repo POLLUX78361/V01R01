@@ -115,9 +115,119 @@ placeholder="🔍 Rechercher un nom ou prénom...">
 © 2025-2026 Famille ANDREY - Site généalogique familial
 </footer>
 
+<script>
+
 fetch("famille.json")
 
 .then(response => {
-   
+
+    if(!response.ok){
+        throw new Error("Impossible de charger famille.json");
+    }
+
+    return response.json();
+
+})
+
+.then(data => {
+
+    const personnes = data.map(p => {
+
+        let titre = "";
+
+        if(p.naissance){
+            titre += p.naissance;
+        }
+
+        if(p.deces){
+            titre += " - " + p.deces;
+        }
+
+        return {
+
+            id: p.id,
+
+            pid: p.fid || null,
+
+            mid: p.mid || null,
+
+            nom: p.nom,
+
+            titre: titre
+
+        };
+
+    });
+
+    const tree = new FamilyTree(
+        document.getElementById("tree"),
+        {
+
+            nodeBinding: {
+                field_0: "nom",
+                field_1: "titre"
+            },
+
+            toolbar: {
+                zoom: true,
+                fit: true,
+                expandAll: true
+            },
+
+            scaleInitial: FamilyTree.match.boundary
+
+        }
+    );
+
+
+
+    
+    tree.load(personnes);
+
+    document
+    .getElementById("search")
+    .addEventListener("input", function(){
+
+        const texte =
+            this.value
+            .trim()
+            .toLowerCase();
+
+        if(!texte){
+            return;
+        }
+
+        const personne =
+            personnes.find(p =>
+                p.nom
+                 .toLowerCase()
+                 .includes(texte)
+            );
+
+        if(personne){
+
+            tree.selectNode(personne.id);
+
+            tree.center(personne.id);
+
+        }
+
+    });
+
+})
+
+.catch(error => {
+
+    document.getElementById("tree").innerHTML =
+    "<div style='padding:40px;color:red;text-align:center'>" +
+    error.message +
+    "</div>";
+
+    console.error(error);
+
+});
+
+</script>
+
 </body>
 </html>
