@@ -22,54 +22,141 @@ header{
     color:#f7f2e8;
     text-align:center;
     padding:90px 20px;
+    box-shadow:0 4px 15px rgba(0,0,0,.25);
 }
 
 header h1{
     margin:0;
-    font-size:3em;
+    font-size:3.2em;
+}
+
+header p{
+    font-size:1.25em;
+}
+
+nav{
+    background:#3b2618;
+    padding:12px;
+    overflow-x:auto;
+    white-space:nowrap;
+    text-align:center;
+}
+
+nav a{
+    color:#f7f2e8;
+    text-decoration:none;
+    margin:0 8px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#d4af37;
+}
+
+.search-box{
+    max-width:700px;
+    margin:25px auto;
+    padding:0 20px;
+}
+
+.search-box input{
+    width:100%;
+    padding:15px;
+    border:1px solid #d4af37;
+    border-radius:8px;
+    font-size:16px;
+    box-sizing:border-box;
+}
+
+#resultats{
+    max-width:700px;
+    margin:10px auto;
+    padding:10px;
+    border:1px solid #d4af37;
+    border-radius:8px;
+    background:#fff8e7;
+    display:none;
 }
 
 #tree{
     width:100%;
     height:900px;
+    border-top:4px solid #d4af37;
+}
+
+/* Cache la recherche native FamilyTree */
+
+.bft-search,
+.bft-search-container,
+.bft-search-box,
+.bft-search-result,
+.bft-search-results,
+.bft-toolbar-search,
+[data-search]{
+    display:none !important;
+    visibility:hidden !important;
 }
 
 footer{
     background:#2c1810;
     color:#f7f2e8;
     text-align:center;
-    padding:20px;
-}
-
-.bft-search,
-.bft-search-container,
-.bft-search-box,
-.bft-search-result,
-.bft-search-results{
-    display:none !important;
+    padding:25px;
 }
 
 </style>
-
 </head>
 
 <body>
 
 <header>
-    <h1>Arbre généalogique</h1>
-    <p>Famille ANDREY de la Suisse vers la France</p>
+<h1>Arbre généalogique</h1>
+<p>Famille ANDREY de la Suisse vers la France</p>
 </header>
+
+<nav>
+<a href="index.html">Accueil</a>
+<a href="ancetres.html">Ancêtres</a>
+<a href="arbre.html">Arbre</a>
+<a href="armoiries.html">Armoiries</a>
+<a href="chronologie.html">Chronologie</a>
+<a href="contact.html">Contact</a>
+<a href="documents.html">Documents</a>
+<a href="photos.html">Photos</a>
+<a href="localisation.html">Localisation</a>
+<a href="patronyme.html">Patronyme</a>
+<a href="sources.html">Sources</a>
+</nav>
+
+<div class="search-box">
+<input
+id="search"
+type="text"
+placeholder="🔍 Rechercher un nom ou prénom...">
+</div>
+
+<div id="resultats"></div>
 
 <div id="tree"></div>
 
 <footer>
-© 2026 Famille ANDREY
+© 2026 Famille ANDREY - Site généalogique familial
 </footer>
 
 <script>
 
 fetch("famille.json")
-.then(response => response.json())
+
+.then(response => {
+
+    if(!response.ok){
+        throw new Error("Impossible de charger famille.json");
+    }
+
+    return response.json();
+
+})
+
 .then(data => {
 
     const nodes = data.map(personne => ({
@@ -89,11 +176,10 @@ fetch("famille.json")
     }));
 
 
-    var tree = new FamilyTree(
+
+    const tree = new FamilyTree(
         document.getElementById("tree"),
         {
-
-            scaleInitial: FamilyTree.match.boundary,
 
             nodeBinding: {
                 field_0: "name",
@@ -104,7 +190,9 @@ fetch("famille.json")
                 zoom: true,
                 fit: true,
                 expandAll: true
-            }
+            },
+
+            scaleInitial: FamilyTree.match.boundary
 
         }
     );
@@ -113,7 +201,72 @@ fetch("famille.json")
 
     tree.fit();
 
+
+
+    function normaliser(texte){
+
+        return (texte || "")
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g,"");
+
+    }
+
+
+
+    const zone =
+        document.getElementById("resultats");
+
+
+
+    document
+    .getElementById("search")
+    .addEventListener("input", function(){
+
+        const recherche =
+            normaliser(this.value.trim());
+
+        zone.innerHTML = "";
+        zone.style.display = "none";
+
+        if(!recherche){
+            return;
+        }
+
+        const trouves = nodes.filter(personne =>
+            normaliser(personne.name)
+                .includes(recherche)
+        );
+
+        zone.style.display = "block";
+
+        if(trouves.length === 0){
+
+            zone.innerHTML =
+                "<strong>Aucun résultat trouvé</strong>";
+
+            return;
+
+        }
+
+        zone.innerHTML =
+            "<strong>" +
+            trouves.length +
+            " résultat(s) trouvé(s)</strong><br><br>";
+
+        trouves.forEach(personne => {
+
+            zone.innerHTML +=
+                "• " +
+                personne.name +
+                "<br>";
+
+        });
+
+    });
+
 })
+
 .catch(error => {
 
     console.error(error);
