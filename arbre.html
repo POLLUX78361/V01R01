@@ -275,47 +275,37 @@ fetch("famille.json")
                 personne.name;
 
 
+ligne.onclick = function () {
+    const noeud = document.querySelector('[data-n-id="' + personne.id + '"]');
 
-            ligne.onclick = function(){
+    if (noeud) {
+        zone.style.display = "none";
 
-                const noeud =
-                    document.querySelector(
-                        '[data-n-id="' +
-                        personne.id +
-                        '"]'
-                    );
+        noeud.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+            inline: "center"
+        });
 
-                if(noeud){
+        const cadre = noeud.querySelector("rect");
 
-                    zone.style.display =
-                        "none";
+        if (cadre) {
+            const ancienStroke = cadre.getAttribute("stroke") || "black";
+            const ancienneLargeur = cadre.getAttribute("stroke-width") || "1";
 
-                    noeud.scrollIntoView({
-                        behavior: "smooth",
-                        block: "center",
-                        inline: "center"
-                    });
+            // Mise en évidence
+            cadre.setAttribute("stroke", "#d4af37");
+            cadre.setAttribute("stroke-width", "4");
 
-                    const cadre =
-                        noeud.querySelector("rect");
-
-                    if(cadre){
-
-                        const ancienStroke =
-                            cadre.getAttribute("stroke");
-
-                        const ancienneLargeur =
-                            cadre.getAttribute("stroke-width");
-
-                        cadre.setAttribute(
-                            "stroke",
-                            "#d4af37"
-                        );
-
-                        cadre.setAttribute(
-                            "stroke-width",
-                            "4"
-                        );
+            // Restauration après 1,5 seconde
+            setTimeout(() => {
+                cadre.setAttribute("stroke", ancienStroke);
+                cadre.setAttribute("stroke-width", ancienneLargeur);
+            }, 1500);
+        }
+    }
+};
+            
 
                         setTimeout(() => {
 
