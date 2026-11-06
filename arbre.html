@@ -126,7 +126,7 @@ fetch("famille.json")
 
 .then(response => {
 
-    if(!response.ok){
+    if (!response.ok) {
         throw new Error("Impossible de charger famille.json");
     }
 
@@ -136,47 +136,45 @@ fetch("famille.json")
 
 .then(data => {
 
-    const personnes = data.map(p => {
+    const nodes = data.map(personne => ({
 
-        let titre = "";
+        id: personne.id,
 
-        if(p.naissance){
-            titre += p.naissance;
-        }
+        fid: personne.fid || undefined,
 
-        if(p.deces){
-            titre += " - " + p.deces;
-        }
+        mid: personne.mid || undefined,
 
-        return {
+        name: personne.nom,
 
-            id: p.id,
+        naissance: personne.naissance || "",
 
-            pid: p.fid || null,
+        deces: personne.deces || "",
 
-            mid: p.mid || null,
+        title:
+            (personne.naissance || "") +
+            (personne.deces ? " - " + personne.deces : "")
 
-            nom: p.nom,
+    }));
 
-            titre: titre
 
-        };
-
-    });
 
     const tree = new FamilyTree(
         document.getElementById("tree"),
         {
 
-            nodeBinding: {
-                field_0: "nom",
-                field_1: "titre"
-            },
+            enableSearch: false,
+
+            searchFields: [],
 
             toolbar: {
                 zoom: true,
                 fit: true,
                 expandAll: true
+            },
+
+            nodeBinding: {
+                field_0: "name",
+                field_1: "title"
             },
 
             scaleInitial: FamilyTree.match.boundary
@@ -186,36 +184,182 @@ fetch("famille.json")
 
 
 
-    
-    tree.load(personnes);
+    tree.load(nodes);
+
+    tree.fit();
+
+
+
+    setInterval(() => {
+
+        document.querySelectorAll(
+            ".bft-search," +
+            ".bft-search-holder," +
+            ".bft-search-container," +
+            ".bft-search-box," +
+            ".bft-search-results," +
+            ".bft-search-result," +
+            ".bft-toolbar-search"
+        ).forEach(e => e.remove());
+
+
+
+        document
+        .querySelectorAll("#tree text")
+        .forEach(el => {
+
+            const txt =
+                (el.textContent || "").trim();
+
+            if(
+                txt === "Search" ||
+                txt.includes("type ?") ||
+                txt.includes("help")
+            ){
+                el.remove();
+            }
+
+        });
+
+    },500);
+
+
+
+
+    function normaliser(txt){
+
+        return (txt || "")
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g,"");
+
+    }
+
+
+
+    const zone =
+        document.getElementById("resultats");
+
+
 
     document
     .getElementById("search")
     .addEventListener("input", function(){
 
-        const texte =
-            this.value
-            .trim()
-            .toLowerCase();
+        const recherche =
+            normaliser(this.value.trim());
 
-        if(!texte){
+        zone.innerHTML = "";
+        zone.style.display = "none";
+
+        if(!recherche){
             return;
         }
 
-        const personne =
-            personnes.find(p =>
-                p.nom
-                 .toLowerCase()
-                 .includes(texte)
+        const resultat =
+            nodes.filter(personne =>
+                normaliser(personne.name)
+                    .includes(recherche)
             );
 
-        if(personne){
+        zone.style.display = "block";
 
-            tree.selectNode(personne.id);
+        if(resultat.length === 0){
 
-            tree.center(personne.id);
+            zone.innerHTML =
+                "<strong>Aucun résultat trouvé</strong>";
+
+            return;
 
         }
+
+        zone.innerHTML =
+            "<strong>" +
+            resultat.length +
+            " résultat(s) trouvé(s)</strong><br><br>";
+
+
+
+        resultat.forEach(personne => {
+
+            const ligne =
+                document.createElement("div");
+
+            ligne.className =
+                "resultat-personne";
+
+            ligne.textContent =
+                personne.name;
+
+
+
+            ligne.onclick = function(){
+
+                const noeud =
+                    document.querySelector(
+                        '[data-n-id="' +
+                        personne.id +
+                        '"]'
+                    );
+
+                if(!noeud){
+                    return;
+                }
+
+                zone.style.display = "none";
+
+                noeud.scrollIntoView({
+                    behavior:"smooth",
+                    block:"center",
+                    inline:"center"
+                });
+
+
+
+                const rect =
+                    noeud.querySelector("rect");
+
+                if(rect){
+
+                    const ancienStroke =
+                        rect.getAttribute("stroke");
+
+                    const ancienneLargeur =
+                        rect.getAttribute("stroke-width");
+
+                    rect.setAttribute(
+                        "stroke",
+                        "#d4af37"
+                    );
+
+                    rect.setAttribute(
+                        "stroke-width",
+                        "5"
+                    );
+
+                    setTimeout(() => {
+
+                        rect.setAttribute(
+                            "stroke",
+                            ancienStroke || "#aeaeae"
+                        );
+
+                        rect.setAttribute(
+                            "stroke-width",
+                            ancienneLargeur || "1"
+                        );
+
+                    },3000);
+
+                }
+
+            };
+
+
+
+            zone.appendChild(ligne);
+
+        });
 
     });
 
@@ -223,16 +367,20 @@ fetch("famille.json")
 
 .catch(error => {
 
-    document.getElementById("tree").innerHTML =
-    "<div style='padding:40px;color:red;text-align:center'>" +
-    error.message +
-    "</div>";
-
     console.error(error);
+
+    document.getElementById("tree").innerHTML =
+        "<div style='padding:30px;color:red;text-align:center'>" +
+        error.message +
+        "</div>";
 
 });
 
 </script>
+
+ 
+
+
 
 </body>
 </html>
