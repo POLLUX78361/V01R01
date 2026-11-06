@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -21,16 +22,22 @@ header{
     background:linear-gradient(135deg,#2c1810,#5a3e2b);
     color:#f7f2e8;
     text-align:center;
-    padding:60px 20px;
+    padding:90px 20px;
+    box-shadow:0 4px 15px rgba(0,0,0,.25);
 }
 
 header h1{
     margin:0;
+    font-size:3.2em;
+}
+
+header p{
+    font-size:1.25em;
 }
 
 .search-box{
     max-width:700px;
-    margin:20px auto;
+    margin:25px auto;
     padding:0 20px;
 }
 
@@ -43,12 +50,6 @@ header h1{
     box-sizing:border-box;
 }
 
-#tree{
-    width:100%;
-    height:900px;
-    border-top:4px solid #d4af37;
-}
-
 #resultats{
     max-width:700px;
     margin:10px auto;
@@ -59,21 +60,28 @@ header h1{
     display:none;
 }
 
+#tree{
+    width:100%;
+    height:900px;
+    border-top:4px solid #d4af37;
+}
+
 footer{
     background:#2c1810;
     color:#f7f2e8;
     text-align:center;
-    padding:20px;
+    padding:25px;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
     <h1>Arbre généalogique</h1>
-    <p>Famille ANDREY</p>
+    <p>Famille ANDREY de la Suisse vers la France</p>
 </header>
 
 <div class="search-box">
@@ -119,51 +127,56 @@ fetch("famille.json")
 
         name: p.nom,
 
-        titre:
+        title:
             (p.naissance || "") +
             (p.deces ? " - " + p.deces : "")
 
     }));
 
 
-    const arbre = new FamilyTree(
+    const tree = new FamilyTree(
         document.getElementById("tree"),
         {
 
             nodeBinding: {
                 field_0: "name",
-                field_1: "titre"
+                field_1: "title"
             },
 
             toolbar: {
                 zoom: true,
                 fit: true,
                 expandAll: true
-            }
+            },
+
+            scaleInitial: FamilyTree.match.boundary
 
         }
     );
 
-    arbre.load(nodes);
+    tree.load(nodes);
+
 
     const zone =
         document.getElementById("resultats");
 
-    function normaliser(texte){
 
-        return (texte || "")
+    function normaliser(txt){
+
+        return (txt || "")
             .toLowerCase()
             .normalize("NFD")
             .replace(/[\u0300-\u036f]/g,"");
 
     }
 
+
     document
     .getElementById("search")
     .addEventListener("input", function(){
 
         const recherche =
-            normaliser(this.value);
+            normaliser(this.value.trim());
 
         zone.innerHTML = "";
         zone.style.display = "none";
@@ -172,27 +185,29 @@ fetch("famille.json")
             return;
         }
 
-        const trouves = nodes.filter(personne =>
-            normaliser(personne.name)
+        const resultat =
+            nodes.filter(personne =>
+                normaliser(personne.name)
                 .includes(recherche)
-        );
+            );
 
         zone.style.display = "block";
 
-        if(trouves.length === 0){
+        if(resultat.length === 0){
 
             zone.innerHTML =
                 "<strong>Aucun résultat trouvé</strong>";
 
             return;
+
         }
 
         zone.innerHTML =
             "<strong>" +
-            trouves.length +
+            resultat.length +
             " résultat(s) trouvé(s)</strong><br><br>";
 
-        trouves.forEach(personne => {
+        resultat.forEach(personne => {
 
             zone.innerHTML +=
                 "• " +
