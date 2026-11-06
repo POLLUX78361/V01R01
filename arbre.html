@@ -151,7 +151,7 @@ fetch("famille.json")
 
 .then(response => {
 
-    if(!response.ok){
+    if (!response.ok) {
         throw new Error("Impossible de charger famille.json");
     }
 
@@ -171,6 +171,10 @@ fetch("famille.json")
 
         name: personne.nom,
 
+        naissance: personne.naissance || "",
+
+        deces: personne.deces || "",
+
         title:
             (personne.naissance || "") +
             (personne.deces ? " - " + personne.deces : "")
@@ -183,10 +187,9 @@ fetch("famille.json")
         document.getElementById("tree"),
         {
 
-            nodeBinding: {
-                field_0: "name",
-                field_1: "title"
-            },
+            enableSearch: false,
+
+            searchFields: [],
 
             toolbar: {
                 zoom: true,
@@ -194,14 +197,57 @@ fetch("famille.json")
                 expandAll: true
             },
 
+            nodeBinding: {
+                field_0: "name",
+                field_1: "title"
+            },
+
             scaleInitial: FamilyTree.match.boundary
 
         }
     );
 
+
+
     tree.load(nodes);
 
     tree.fit();
+
+
+
+    setInterval(() => {
+
+        document.querySelectorAll(
+            ".bft-search," +
+            ".bft-search-holder," +
+            ".bft-search-container," +
+            ".bft-search-box," +
+            ".bft-search-results," +
+            ".bft-search-result," +
+            ".bft-toolbar-search"
+        ).forEach(e => e.remove());
+
+
+
+        document
+        .querySelectorAll("#tree text")
+        .forEach(el => {
+
+            const txt =
+                (el.textContent || "").trim();
+
+            if(
+                txt === "Search" ||
+                txt.includes("type ?") ||
+                txt.includes("help")
+            ){
+                el.remove();
+            }
+
+        });
+
+    },500);
+
 
 
 
@@ -238,7 +284,7 @@ fetch("famille.json")
         const resultat =
             nodes.filter(personne =>
                 normaliser(personne.name)
-                .includes(recherche)
+                    .includes(recherche)
             );
 
         zone.style.display = "block";
@@ -261,35 +307,82 @@ fetch("famille.json")
 
         resultat.forEach(personne => {
 
-            zone.innerHTML +=
-                '<div class="resultat-personne" ' +
-                'data-id="' + personne.id + '">' +
-                personne.name +
-                '</div>';
+            const ligne =
+                document.createElement("div");
 
-        });
+            ligne.className =
+                "resultat-personne";
+
+            ligne.textContent =
+                personne.name;
 
 
 
-        document
-        .querySelectorAll(".resultat-personne")
-        .forEach(element => {
+            ligne.onclick = function(){
 
-            element.addEventListener("click", function(){
+                const noeud =
+                    document.querySelector(
+                        '[data-n-id="' +
+                        personne.id +
+                        '"]'
+                    );
 
-                const id =
-                    this.getAttribute("data-id");
+                if(!noeud){
+                    return;
+                }
 
-                const personne =
-                    nodes.find(p => p.id === id);
+                zone.style.display = "none";
 
-                alert(
-                    personne.name +
-                    "\n\n" +
-                    personne.title
-                );
+                noeud.scrollIntoView({
+                    behavior:"smooth",
+                    block:"center",
+                    inline:"center"
+                });
 
-            });
+
+
+                const rect =
+                    noeud.querySelector("rect");
+
+                if(rect){
+
+                    const ancienStroke =
+                        rect.getAttribute("stroke");
+
+                    const ancienneLargeur =
+                        rect.getAttribute("stroke-width");
+
+                    rect.setAttribute(
+                        "stroke",
+                        "#d4af37"
+                    );
+
+                    rect.setAttribute(
+                        "stroke-width",
+                        "5"
+                    );
+
+                    setTimeout(() => {
+
+                        rect.setAttribute(
+                            "stroke",
+                            ancienStroke || "#aeaeae"
+                        );
+
+                        rect.setAttribute(
+                            "stroke-width",
+                            ancienneLargeur || "1"
+                        );
+
+                    },3000);
+
+                }
+
+            };
+
+
+
+            zone.appendChild(ligne);
 
         });
 
@@ -309,6 +402,5 @@ fetch("famille.json")
 });
 
 </script>
-
 </body>
 </html>
