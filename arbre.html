@@ -123,15 +123,7 @@ placeholder="🔍 Rechercher un nom ou prénom...">
 <script>
 
 fetch("famille.json")
-.then(response => {
-
-    if (!response.ok) {
-        throw new Error("Impossible de charger famille.json");
-    }
-
-    return response.json();
-
-})
+.then(response => response.json())
 .then(data => {
 
     const nodes = data.map(p => ({
@@ -139,14 +131,12 @@ fetch("famille.json")
         fid: p.fid && p.fid !== "null" ? p.fid : undefined,
         mid: p.mid && p.mid !== "null" ? p.mid : undefined,
         name: p.nom,
-        titre:
-            (p.naissance || "") +
-            (p.deces ? " - " + p.deces : "")
+        titre: (p.naissance || "") +
+               (p.deces ? " - " + p.deces : "")
     }));
 
 
-    window.myTree = new FamilyTree(
-       window.myTree.load(nodes); 
+    const familyTree = new FamilyTree(
         document.getElementById("tree"),
         {
             nodeBinding: {
@@ -167,29 +157,24 @@ fetch("famille.json")
         }
     );
 
-    window.myTree.load(nodes);
-    console.log("Nodes chargés");
-console.log(window.myTree);
+    familyTree.load(nodes);
 
 
     function normalizeText(text) {
-
-        return String(text || "")
+        return (text || "")
             .toLowerCase()
             .normalize("NFD")
             .replace(/[\u0300-\u036f]/g, "");
-
     }
 
 
-    let resultatDiv =
-        document.getElementById("resultats-recherche");
+    let resultatDiv = document.getElementById("resultats-recherche");
 
     if (!resultatDiv) {
 
         resultatDiv = document.createElement("div");
-
         resultatDiv.id = "resultats-recherche";
+
         resultatDiv.style.maxWidth = "700px";
         resultatDiv.style.margin = "10px auto";
         resultatDiv.style.padding = "10px";
@@ -204,9 +189,8 @@ console.log(window.myTree);
     }
 
 
-    document
-    .getElementById("search")
-    .addEventListener("input", function () {
+    document.getElementById("search")
+    .addEventListener("input", function() {
 
         const recherche =
             normalizeText(this.value.trim());
@@ -214,12 +198,12 @@ console.log(window.myTree);
         resultatDiv.innerHTML = "";
         resultatDiv.style.display = "none";
 
-        if (!recherche) {
+        if (recherche === "") {
             return;
         }
 
-        const resultats = nodes.filter(node =>
-            normalizeText(node.name)
+        const resultats = nodes.filter(personne =>
+            normalizeText(personne.name)
                 .includes(recherche)
         );
 
@@ -236,10 +220,16 @@ console.log(window.myTree);
         resultatDiv.innerHTML =
             "<strong>" +
             resultats.length +
-            " résultat(s) trouvé(s)</strong><br><br>" +
-            resultats.map(r =>
-                "• " + r.name
-            ).join("<br>");
+            " résultat(s) trouvé(s)</strong><br><br>";
+
+        resultats.forEach(personne => {
+
+            resultatDiv.innerHTML +=
+                "• " +
+                personne.name +
+                "<br>";
+
+        });
 
     });
 
@@ -249,14 +239,13 @@ console.log(window.myTree);
     console.error(error);
 
     document.getElementById("tree").innerHTML =
-        "<div style='padding:40px;color:red;text-align:center'>" +
+        "<div style='padding:30px;color:red;text-align:center'>" +
         error.message +
         "</div>";
 
 });
 
 </script>
-
     
 </body>
 </html>
