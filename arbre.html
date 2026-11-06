@@ -119,15 +119,18 @@ placeholder="🔍 Rechercher un nom ou prénom...">
 <footer>
 © 2026 Famille ANDREY - Site généalogique familial
 </footer>
-
- <script>
+    
+<script>
 
 fetch("famille.json")
 .then(response => {
+
     if (!response.ok) {
         throw new Error("Impossible de charger famille.json");
     }
+
     return response.json();
+
 })
 .then(data => {
 
@@ -135,9 +138,13 @@ fetch("famille.json")
 
         id: p.id,
 
-        fid: p.fid && p.fid !== "null" ? p.fid : undefined,
+        fid: p.fid && p.fid !== "null"
+            ? p.fid
+            : undefined,
 
-        mid: p.mid && p.mid !== "null" ? p.mid : undefined,
+        mid: p.mid && p.mid !== "null"
+            ? p.mid
+            : undefined,
 
         name: p.nom,
 
@@ -174,50 +181,74 @@ fetch("famille.json")
     tree.load(nodes);
 
 
+    function normalizeText(text) {
+
+        return String(text || "")
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+
+    }
+
+
+    let resultatDiv = document.createElement("div");
+
+    resultatDiv.id = "resultats-recherche";
+
+    resultatDiv.style.maxWidth = "700px";
+    resultatDiv.style.margin = "10px auto";
+    resultatDiv.style.padding = "10px";
+    resultatDiv.style.background = "#fff8e7";
+    resultatDiv.style.border = "1px solid #d4af37";
+    resultatDiv.style.borderRadius = "8px";
+    resultatDiv.style.display = "none";
+
     document
-    .getElementById("search")
-    .addEventListener("input", function () {
+        .querySelector(".search-box")
+        .appendChild(resultatDiv);
 
-        const texte =
-            this.value
-                .trim()
-                .toLowerCase();
 
-        if (texte === "") {
-            return;
-        }
+    document
+        .getElementById("search")
+        .addEventListener("input", function () {
 
-        const personne = nodes.find(node =>
-            node.name
-                .toLowerCase()
-                .includes(texte)
-        );
+            const recherche =
+                normalizeText(this.value.trim());
 
-        if (personne) {
+            if (!recherche) {
 
-            tree.select(personne.id);
+                resultatDiv.style.display = "none";
+                resultatDiv.innerHTML = "";
 
-            setTimeout(() => {
+                return;
+            }
 
-                const element = document.querySelector(
-                    '[data-n-id="' + personne.id + '"]'
-                );
+            const resultats = nodes.filter(node =>
+                normalizeText(node.name)
+                    .includes(recherche)
+            );
 
-                if (element) {
+            if (resultats.length > 0) {
 
-                    element.scrollIntoView({
-                        behavior: "smooth",
-                        block: "center",
-                        inline: "center"
-                    });
+                resultatDiv.style.display = "block";
 
-                }
+                resultatDiv.innerHTML =
+                    "<strong>" +
+                    resultats.length +
+                    " résultat(s) trouvé(s)</strong><br><br>" +
+                    resultats.map(r => r.name).join("<br>");
 
-            }, 300);
+            }
+            else {
 
-        }
+                resultatDiv.style.display = "block";
 
-    });
+                resultatDiv.innerHTML =
+                    "<strong>Aucun résultat trouvé</strong>";
+
+            }
+
+        });
 
 })
 .catch(error => {
@@ -231,7 +262,11 @@ fetch("famille.json")
 
 });
 
-</script>   
+</script>
 
+
+
+
+    
 </body>
 </html>
