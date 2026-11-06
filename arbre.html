@@ -68,108 +68,118 @@ body{
 <script>
 
 fetch("famille.json")
-.then(response => response.json())
+.then(response => {
+    if (!response.ok) {
+        throw new Error("Impossible de charger famille.json");
+    }
+    return response.json();
+})
 .then(data => {
 
     const nodes = data.map(p => ({
-
         id: p.id,
-
-        fid: p.fid && p.fid !== "null"
-            ? p.fid
-            : undefined,
-
-        mid: p.mid && p.mid !== "null"
-            ? p.mid
-            : undefined,
-
+        fid: p.fid && p.fid !== "null" ? p.fid : undefined,
+        mid: p.mid && p.mid !== "null" ? p.mid : undefined,
         name: p.nom,
-
         titre:
             (p.naissance || "") +
             (p.deces ? " - " + p.deces : "")
-
     }));
 
 
     const arbre = new FamilyTree(
         document.getElementById("tree"),
         {
-
             nodeBinding: {
                 field_0: "name",
                 field_1: "titre"
             },
 
-            enableSearch: false,
-
-            searchFields: [],
-
             toolbar: {
                 zoom: true,
                 fit: true,
                 expandAll: true
-            }
+            },
 
+            searchFields: [],
+            enableSearch: false,
+            showSearch: false
         }
     );
 
     arbre.load(nodes);
 
 
-    function normaliser(texte){
+    let zoneResultats =
+        document.getElementById("resultats");
 
-        return texte
+    if (!zoneResultats) {
+
+        zoneResultats =
+            document.createElement("div");
+
+        zoneResultats.id = "resultats";
+
+        zoneResultats.style.maxWidth = "700px";
+        zoneResultats.style.margin = "10px auto";
+        zoneResultats.style.padding = "10px";
+        zoneResultats.style.background = "#fff8e7";
+        zoneResultats.style.border = "1px solid #d4af37";
+        zoneResultats.style.borderRadius = "8px";
+        zoneResultats.style.display = "none";
+
+        document
+            .querySelector(".search-box")
+            .after(zoneResultats);
+    }
+
+
+    function normaliser(texte) {
+
+        return (texte || "")
             .toLowerCase()
             .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g,"");
+            .replace(/[\u0300-\u036f]/g, "");
 
     }
 
 
-    const zone =
-        document.getElementById("resultats");
+    document.getElementById("search")
+    .addEventListener("input", function() {
 
-
-    document
-    .getElementById("search")
-    .addEventListener("input", function(){
+        zoneResultats.innerHTML = "";
+        zoneResultats.style.display = "none";
 
         const recherche =
             normaliser(this.value.trim());
 
-        zone.innerHTML = "";
-        zone.style.display = "none";
-
-        if(!recherche){
+        if (!recherche) {
             return;
         }
 
-        const resultats =
-            nodes.filter(personne =>
-                normaliser(personne.name)
-                    .includes(recherche)
-            );
+        const resultats = nodes.filter(personne =>
+            normaliser(personne.name)
+                .includes(recherche)
+        );
 
-        zone.style.display = "block";
+        zoneResultats.style.display = "block";
 
-        if(resultats.length === 0){
+        if (resultats.length === 0) {
 
-            zone.innerHTML =
-                "<strong>Aucun résultat trouvé</strong>";
+            zoneResultats.innerHTML =
+                "Aucun résultat trouvé";
 
             return;
-
         }
 
-        zone.innerHTML =
+        zoneResultats.innerHTML =
             "<strong>" +
             resultats.length +
             " résultat(s) trouvé(s)</strong><br><br>";
 
         resultats.forEach(personne => {
 
-            zone.innerHTML +=
+            zoneResultats.innerHTML +=
                 "• " +
                 personne.name +
                 "<br>";
