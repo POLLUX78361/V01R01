@@ -169,30 +169,26 @@ fetch("famille.json")
             ligne.textContent =
                 personne.name;
 
+ligne.onclick = function(){
 
+    try {
 
-            ligne.onclick = function(){
+        tree.center(personne.id);
 
-                const noeud =
-                    document.querySelector(
-                        '[data-n-id="' +
-                        personne.id +
-                        '"]'
-                    );
+        tree.select(personne.id);
 
-                if(!noeud){
-                    return;
-                }
+        zone.style.display = "none";
 
-                zone.style.display = "none";
+        setTimeout(() => {
 
-                noeud.scrollIntoView({
-                    behavior:"smooth",
-                    block:"center",
-                    inline:"center"
-                });
+            const noeud =
+                document.querySelector(
+                    '[data-n-id="' +
+                    personne.id +
+                    '"]'
+                );
 
-
+            if(noeud){
 
                 const rect =
                     noeud.querySelector("rect");
@@ -202,7 +198,7 @@ fetch("famille.json")
                     const ancienStroke =
                         rect.getAttribute("stroke");
 
-                    const ancienneLargeur =
+                    const ancienneEpaisseur =
                         rect.getAttribute("stroke-width");
 
                     rect.setAttribute(
@@ -224,28 +220,26 @@ fetch("famille.json")
 
                         rect.setAttribute(
                             "stroke-width",
-                            ancienneLargeur || "1"
+                            ancienneEpaisseur || "1"
                         );
 
                     },3000);
 
                 }
 
-            };
+            }
 
+        },500);
 
+    }
+    catch(error){
 
-            zone.appendChild(ligne);
+        console.error(error);
 
-        });
+    }
 
-    });
-
-})
-
-.catch(error => {
-
-    console.error(error);
+};
+            
 
     document.getElementById("tree").innerHTML =
         "<div style='padding:30px;color:red;text-align:center'>" +
