@@ -13,7 +13,7 @@
 
 body{
     margin:0;
-    font-family:Georgia, serif;
+    font-family:Georgia,serif;
     background:#fdfbf7;
     color:#3d342d;
 }
@@ -35,6 +35,25 @@ header p{
     font-size:1.25em;
 }
 
+nav{
+    background:#3b2618;
+    padding:12px;
+    overflow-x:auto;
+    white-space:nowrap;
+    text-align:center;
+}
+
+nav a{
+    color:#f7f2e8;
+    text-decoration:none;
+    margin:0 8px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#d4af37;
+}
+
 .search-box{
     max-width:700px;
     margin:25px auto;
@@ -48,16 +67,6 @@ header p{
     border-radius:8px;
     font-size:16px;
     box-sizing:border-box;
-}
-
-#resultats{
-    max-width:700px;
-    margin:10px auto;
-    padding:10px;
-    background:#fff8e7;
-    border:1px solid #d4af37;
-    border-radius:8px;
-    display:none;
 }
 
 #tree{
@@ -80,28 +89,41 @@ footer{
 <body>
 
 <header>
-    <h1>Arbre généalogique</h1>
-    <p>Famille ANDREY de la Suisse vers la France</p>
+<h1>Arbre généalogique</h1>
+<p>Famille ANDREY de la Suisse vers la France</p>
 </header>
 
-<div class="search-box">
-    <input
-        id="search"
-        type="text"
-        placeholder="🔍 Rechercher un nom ou prénom...">
-</div>
+<nav>
+<a href="index.html">Accueil</a>
+<a href="ancetres.html">Ancêtres</a>
+<a href="arbre.html">Arbre</a>
+<a href="armoiries.html">Armoiries</a>
+<a href="chronologie.html">Chronologie</a>
+<a href="contact.html">Contact</a>
+<a href="documents.html">Documents</a>
+<a href="photos.html">Photos</a>
+<a href="localisation.html">Localisation</a>
+<a href="patronyme.html">Patronyme</a>
+<a href="sources.html">Sources</a>
+</nav>
 
-<div id="resultats"></div>
+<div class="search-box">
+<input
+id="search"
+type="text"
+placeholder="🔍 Rechercher un nom ou prénom...">
+</div>
 
 <div id="tree"></div>
 
 <footer>
-© 2026 Famille ANDREY
+© 2026 Famille ANDREY - Site généalogique familial
 </footer>
 
 <script>
 
 fetch("famille.json")
+
 .then(response => {
 
     if(!response.ok){
@@ -111,36 +133,44 @@ fetch("famille.json")
     return response.json();
 
 })
+
 .then(data => {
 
-    const nodes = data.map(p => ({
+    const personnes = data.map(p => {
 
-        id: p.id,
+        let titre = "";
 
-        fid: p.fid && p.fid !== "null"
-            ? p.fid
-            : undefined,
+        if(p.naissance){
+            titre += p.naissance;
+        }
 
-        mid: p.mid && p.mid !== "null"
-            ? p.mid
-            : undefined,
+        if(p.deces){
+            titre += " - " + p.deces;
+        }
 
-        name: p.nom,
+        return {
 
-        title:
-            (p.naissance || "") +
-            (p.deces ? " - " + p.deces : "")
+            id: p.id,
 
-    }));
+            pid: p.fid || null,
 
+            mid: p.mid || null,
+
+            nom: p.nom,
+
+            titre: titre
+
+        };
+
+    });
 
     const tree = new FamilyTree(
         document.getElementById("tree"),
         {
 
             nodeBinding: {
-                field_0: "name",
-                field_1: "title"
+                field_0: "nom",
+                field_1: "titre"
             },
 
             toolbar: {
@@ -154,79 +184,51 @@ fetch("famille.json")
         }
     );
 
-    tree.load(nodes);
 
 
-    const zone =
-        document.getElementById("resultats");
-
-
-    function normaliser(txt){
-
-        return (txt || "")
-            .toLowerCase()
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g,"");
-
-    }
-
+    
+    tree.load(personnes);
 
     document
     .getElementById("search")
     .addEventListener("input", function(){
 
-        const recherche =
-            normaliser(this.value.trim());
+        const texte =
+            this.value
+            .trim()
+            .toLowerCase();
 
-        zone.innerHTML = "";
-        zone.style.display = "none";
-
-        if(!recherche){
+        if(!texte){
             return;
         }
 
-        const resultat =
-            nodes.filter(personne =>
-                normaliser(personne.name)
-                .includes(recherche)
+        const personne =
+            personnes.find(p =>
+                p.nom
+                 .toLowerCase()
+                 .includes(texte)
             );
 
-        zone.style.display = "block";
+        if(personne){
 
-        if(resultat.length === 0){
+            tree.selectNode(personne.id);
 
-            zone.innerHTML =
-                "<strong>Aucun résultat trouvé</strong>";
-
-            return;
+            tree.center(personne.id);
 
         }
-
-        zone.innerHTML =
-            "<strong>" +
-            resultat.length +
-            " résultat(s) trouvé(s)</strong><br><br>";
-
-        resultat.forEach(personne => {
-
-            zone.innerHTML +=
-                "• " +
-                personne.name +
-                "<br>";
-
-        });
 
     });
 
 })
+
 .catch(error => {
 
-    console.error(error);
-
     document.getElementById("tree").innerHTML =
-        "<div style='padding:30px;color:red;text-align:center'>" +
-        error.message +
-        "</div>";
+    "<div style='padding:40px;color:red;text-align:center'>" +
+    error.message +
+    "</div>";
+
+    console.error(error);
 
 });
 
