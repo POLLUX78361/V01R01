@@ -119,57 +119,42 @@ placeholder="🔍 Rechercher un nom ou prénom...">
 <footer>
 © 2026 Famille ANDREY - Site généalogique familial
 </footer>
-
 <script>
 
 fetch("famille.json")
-
 .then(response => {
 
-    if(!response.ok){
+    if (!response.ok) {
         throw new Error("Impossible de charger famille.json");
     }
 
     return response.json();
 
 })
-
 .then(data => {
 
-    const personnes = data.map(p => {
+    const nodes = data.map(p => ({
 
-        let titre = "";
+        id: p.id,
 
-        if(p.naissance){
-            titre += p.naissance;
-        }
+        fid: p.fid || undefined,
 
-        if(p.deces){
-            titre += " - " + p.deces;
-        }
+        mid: p.mid || undefined,
 
-        return {
+        name: p.nom,
 
-            id: p.id,
+        titre:
+            (p.naissance || "") +
+            (p.deces ? " - " + p.deces : "")
 
-            pid: p.fid || null,
-
-            mid: p.mid || null,
-
-            nom: p.nom,
-
-            titre: titre
-
-        };
-
-    });
+    }));
 
     const tree = new FamilyTree(
         document.getElementById("tree"),
         {
 
             nodeBinding: {
-                field_0: "nom",
+                field_0: "name",
                 field_1: "titre"
             },
 
@@ -184,34 +169,26 @@ fetch("famille.json")
         }
     );
 
-
-
-    
-    tree.load(personnes);
+    tree.load(nodes);
 
     document
     .getElementById("search")
-    .addEventListener("input", function(){
+    .addEventListener("input", function () {
 
-        const texte =
+        const recherche =
             this.value
             .trim()
             .toLowerCase();
 
-        if(!texte){
-            return;
-        }
+        if (!recherche) return;
 
-        const personne =
-            personnes.find(p =>
-                p.nom
-                 .toLowerCase()
-                 .includes(texte)
-            );
+        const personne = nodes.find(n =>
+            n.name.toLowerCase().includes(recherche)
+        );
 
-        if(personne){
+        if (personne) {
 
-            tree.selectNode(personne.id);
+            tree.select(personne.id);
 
             tree.center(personne.id);
 
@@ -220,15 +197,14 @@ fetch("famille.json")
     });
 
 })
-
 .catch(error => {
 
-    document.getElementById("tree").innerHTML =
-    "<div style='padding:40px;color:red;text-align:center'>" +
-    error.message +
-    "</div>";
-
     console.error(error);
+
+    document.getElementById("tree").innerHTML =
+        "<div style='padding:40px;text-align:center;color:red'>" +
+        error.message +
+        "</div>";
 
 });
 
