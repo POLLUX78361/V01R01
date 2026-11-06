@@ -121,6 +121,7 @@ placeholder="🔍 Rechercher un nom ou prénom...">
 </footer>
     
 <script>
+
 fetch("famille.json")
 .then(response => {
 
@@ -182,7 +183,7 @@ fetch("famille.json")
 
     function normalizeText(text) {
 
-        return text
+        return String(text || "")
             .toLowerCase()
             .normalize("NFD")
             .replace(/[\u0300-\u036f]/g, "");
@@ -190,53 +191,64 @@ fetch("famille.json")
     }
 
 
-    document.getElementById("search")
-    .addEventListener("input", function () {
+    let resultatDiv = document.createElement("div");
 
-        const recherche =
-            normalizeText(this.value.trim());
+    resultatDiv.id = "resultats-recherche";
 
-        if (!recherche) return;
+    resultatDiv.style.maxWidth = "700px";
+    resultatDiv.style.margin = "10px auto";
+    resultatDiv.style.padding = "10px";
+    resultatDiv.style.background = "#fff8e7";
+    resultatDiv.style.border = "1px solid #d4af37";
+    resultatDiv.style.borderRadius = "8px";
+    resultatDiv.style.display = "none";
 
-        const resultats = nodes.filter(node =>
-            normalizeText(node.name)
-                .includes(recherche)
-        );
+    document
+        .querySelector(".search-box")
+        .appendChild(resultatDiv);
 
-        const ancienneZone =
-            document.getElementById("resultats-recherche");
 
-        if (ancienneZone) {
-            ancienneZone.remove();
-        }
+    document
+        .getElementById("search")
+        .addEventListener("input", function () {
 
-        if (resultats.length > 0) {
+            const recherche =
+                normalizeText(this.value.trim());
 
-            const div =
-                document.createElement("div");
+            if (!recherche) {
 
-            div.id = "resultats-recherche";
+                resultatDiv.style.display = "none";
+                resultatDiv.innerHTML = "";
 
-            div.style.maxWidth = "700px";
-            div.style.margin = "10px auto";
-            div.style.padding = "10px";
-            div.style.background = "#fff8e7";
-            div.style.border = "1px solid #d4af37";
-            div.style.borderRadius = "8px";
+                return;
+            }
 
-            div.innerHTML =
-                "<strong>" +
-                resultats.length +
-                " résultat(s) :</strong><br><br>" +
-                resultats.map(r => r.name).join("<br>");
+            const resultats = nodes.filter(node =>
+                normalizeText(node.name)
+                    .includes(recherche)
+            );
 
-            document
-                .querySelector(".search-box")
-                .after(div);
+            if (resultats.length > 0) {
 
-        }
+                resultatDiv.style.display = "block";
 
-    });
+                resultatDiv.innerHTML =
+                    "<strong>" +
+                    resultats.length +
+                    " résultat(s) trouvé(s)</strong><br><br>" +
+                    resultats.map(r => r.name).join("<br>");
+
+            }
+            else {
+
+                resultatDiv.style.display = "block";
+
+                resultatDiv.innerHTML =
+                    "<strong>Aucun résultat trouvé</strong>";
+
+            }
+
+        });
 
 })
 .catch(error => {
@@ -251,6 +263,7 @@ fetch("famille.json")
 });
 
 </script>
+
 
 
 
