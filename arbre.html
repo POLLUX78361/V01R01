@@ -159,7 +159,7 @@ fetch("famille.json")
     }));
 
 
-    const tree = new FamilyTree(
+        window.tree = new FamilyTree(
         document.getElementById("tree"),
         {
             nodeBinding: {
@@ -180,7 +180,7 @@ fetch("famille.json")
         }
     );
 
-    tree.load(nodes);
+window.tree.load(nodes);   
 console.log(tree);
 
     function normalizeText(text) {
