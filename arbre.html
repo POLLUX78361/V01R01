@@ -119,17 +119,15 @@ placeholder="🔍 Rechercher un nom ou prénom...">
 <footer>
 © 2026 Famille ANDREY - Site généalogique familial
 </footer>
-<script>
+
+ <script>
 
 fetch("famille.json")
 .then(response => {
-
     if (!response.ok) {
         throw new Error("Impossible de charger famille.json");
     }
-
     return response.json();
-
 })
 .then(data => {
 
@@ -137,9 +135,9 @@ fetch("famille.json")
 
         id: p.id,
 
-        fid: p.fid || undefined,
+        fid: p.fid && p.fid !== "null" ? p.fid : undefined,
 
-        mid: p.mid || undefined,
+        mid: p.mid && p.mid !== "null" ? p.mid : undefined,
 
         name: p.nom,
 
@@ -148,6 +146,7 @@ fetch("famille.json")
             (p.deces ? " - " + p.deces : "")
 
     }));
+
 
     const tree = new FamilyTree(
         document.getElementById("tree"),
@@ -164,6 +163,8 @@ fetch("famille.json")
                 expandAll: true
             },
 
+            enableSearch: false,
+
             scaleInitial: FamilyTree.match.boundary
 
         }
@@ -171,26 +172,47 @@ fetch("famille.json")
 
     tree.load(nodes);
 
+
     document
     .getElementById("search")
     .addEventListener("input", function () {
 
-        const recherche =
+        const texte =
             this.value
-            .trim()
-            .toLowerCase();
+                .trim()
+                .toLowerCase();
 
-        if (!recherche) return;
+        if (texte === "") {
+            return;
+        }
 
-        const personne = nodes.find(n =>
-            n.name.toLowerCase().includes(recherche)
+        const personne = nodes.find(node =>
+            node.name
+                .toLowerCase()
+                .includes(texte)
         );
 
         if (personne) {
 
             tree.select(personne.id);
 
-            tree.center(personne.id);
+            setTimeout(() => {
+
+                const element = document.querySelector(
+                    '[data-n-id="' + personne.id + '"]'
+                );
+
+                if (element) {
+
+                    element.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center",
+                        inline: "center"
+                    });
+
+                }
+
+            }, 300);
 
         }
 
@@ -202,13 +224,13 @@ fetch("famille.json")
     console.error(error);
 
     document.getElementById("tree").innerHTML =
-        "<div style='padding:40px;text-align:center;color:red'>" +
+        "<div style='padding:40px;color:red;text-align:center'>" +
         error.message +
         "</div>";
 
 });
 
-</script>
+</script>   
 
 </body>
 </html>
