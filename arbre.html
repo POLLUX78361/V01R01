@@ -13,7 +13,7 @@
 
 body{
     margin:0;
-    font-family:Georgia,serif;
+    font-family:Georgia, serif;
     background:#fdfbf7;
     color:#3d342d;
 }
@@ -35,25 +35,6 @@ header p{
     font-size:1.25em;
 }
 
-nav{
-    background:#3b2618;
-    padding:12px;
-    overflow-x:auto;
-    white-space:nowrap;
-    text-align:center;
-}
-
-nav a{
-    color:#f7f2e8;
-    text-decoration:none;
-    margin:0 8px;
-    font-weight:bold;
-}
-
-nav a:hover{
-    color:#d4af37;
-}
-
 .search-box{
     max-width:700px;
     margin:25px auto;
@@ -73,23 +54,10 @@ nav a:hover{
     max-width:700px;
     margin:10px auto;
     padding:10px;
+    background:#fff8e7;
     border:1px solid #d4af37;
     border-radius:8px;
-    background:#fff8e7;
     display:none;
-}
-
-.resultat-personne{
-    padding:8px;
-    margin:4px 0;
-    cursor:pointer;
-    color:#004a99;
-    font-weight:bold;
-}
-
-.resultat-personne:hover{
-    background:#f5f5f5;
-    text-decoration:underline;
 }
 
 #tree{
@@ -112,29 +80,15 @@ footer{
 <body>
 
 <header>
-<h1>Arbre généalogique</h1>
-<p>Famille ANDREY de la Suisse vers la France</p>
+    <h1>Arbre généalogique</h1>
+    <p>Famille ANDREY de la Suisse vers la France</p>
 </header>
 
-<nav>
-<a href="index.html">Accueil</a>
-<a href="ancetres.html">Ancêtres</a>
-<a href="arbre.html">Arbre</a>
-<a href="armoiries.html">Armoiries</a>
-<a href="chronologie.html">Chronologie</a>
-<a href="contact.html">Contact</a>
-<a href="documents.html">Documents</a>
-<a href="photos.html">Photos</a>
-<a href="localisation.html">Localisation</a>
-<a href="patronyme.html">Patronyme</a>
-<a href="sources.html">Sources</a>
-</nav>
-
 <div class="search-box">
-<input
-id="search"
-type="text"
-placeholder="🔍 Rechercher un nom ou prénom...">
+    <input
+        id="search"
+        type="text"
+        placeholder="🔍 Rechercher un nom ou prénom...">
 </div>
 
 <div id="resultats"></div>
@@ -142,54 +96,52 @@ placeholder="🔍 Rechercher un nom ou prénom...">
 <div id="tree"></div>
 
 <footer>
-© 2026 Famille ANDREY - Site généalogique familial
+© 2026 Famille ANDREY
 </footer>
 
 <script>
 
 fetch("famille.json")
-
 .then(response => {
 
-    if (!response.ok) {
+    if(!response.ok){
         throw new Error("Impossible de charger famille.json");
     }
 
     return response.json();
 
 })
-
 .then(data => {
 
-    const nodes = data.map(personne => ({
+    const nodes = data.map(p => ({
 
-        id: personne.id,
+        id: p.id,
 
-        fid: personne.fid || undefined,
+        fid: p.fid && p.fid !== "null"
+            ? p.fid
+            : undefined,
 
-        mid: personne.mid || undefined,
+        mid: p.mid && p.mid !== "null"
+            ? p.mid
+            : undefined,
 
-        name: personne.nom,
-
-        naissance: personne.naissance || "",
-
-        deces: personne.deces || "",
+        name: p.nom,
 
         title:
-            (personne.naissance || "") +
-            (personne.deces ? " - " + personne.deces : "")
+            (p.naissance || "") +
+            (p.deces ? " - " + p.deces : "")
 
     }));
-
 
 
     const tree = new FamilyTree(
         document.getElementById("tree"),
         {
 
-            enableSearch: false,
-
-            searchFields: [],
+            nodeBinding: {
+                field_0: "name",
+                field_1: "title"
+            },
 
             toolbar: {
                 zoom: true,
@@ -197,58 +149,16 @@ fetch("famille.json")
                 expandAll: true
             },
 
-            nodeBinding: {
-                field_0: "name",
-                field_1: "title"
-            },
-
             scaleInitial: FamilyTree.match.boundary
 
         }
     );
 
-
-
     tree.load(nodes);
 
-    tree.fit();
 
-
-
-    setInterval(() => {
-
-        document.querySelectorAll(
-            ".bft-search," +
-            ".bft-search-holder," +
-            ".bft-search-container," +
-            ".bft-search-box," +
-            ".bft-search-results," +
-            ".bft-search-result," +
-            ".bft-toolbar-search"
-        ).forEach(e => e.remove());
-
-
-
-        document
-        .querySelectorAll("#tree text")
-        .forEach(el => {
-
-            const txt =
-                (el.textContent || "").trim();
-
-            if(
-                txt === "Search" ||
-                txt.includes("type ?") ||
-                txt.includes("help")
-            ){
-                el.remove();
-            }
-
-        });
-
-    },500);
-
-
+    const zone =
+        document.getElementById("resultats");
 
 
     function normaliser(txt){
@@ -259,12 +169,6 @@ fetch("famille.json")
             .replace(/[\u0300-\u036f]/g,"");
 
     }
-
-
-
-    const zone =
-        document.getElementById("resultats");
-
 
 
     document
@@ -284,7 +188,7 @@ fetch("famille.json")
         const resultat =
             nodes.filter(personne =>
                 normaliser(personne.name)
-                    .includes(recherche)
+                .includes(recherche)
             );
 
         zone.style.display = "block";
@@ -303,93 +207,18 @@ fetch("famille.json")
             resultat.length +
             " résultat(s) trouvé(s)</strong><br><br>";
 
-
-
         resultat.forEach(personne => {
 
-            const ligne =
-                document.createElement("div");
-
-            ligne.className =
-                "resultat-personne";
-
-            ligne.textContent =
-                personne.name;
-
-
-
-            ligne.onclick = function(){
-
-                const noeud =
-                    document.querySelector(
-                        '[data-n-id="' +
-                        personne.id +
-                        '"]'
-                    );
-
-                if(!noeud){
-                    return;
-                }
-
-                zone.style.display = "none";
-
-                noeud.scrollIntoView({
-                    behavior:"smooth",
-                    block:"center",
-                    inline:"center"
-                });
-
-
-
-                const rect =
-                    noeud.querySelector("rect");
-
-                if(rect){
-
-                    const ancienStroke =
-                        rect.getAttribute("stroke");
-
-                    const ancienneLargeur =
-                        rect.getAttribute("stroke-width");
-
-                    rect.setAttribute(
-                        "stroke",
-                        "#d4af37"
-                    );
-
-                    rect.setAttribute(
-                        "stroke-width",
-                        "5"
-                    );
-
-                    setTimeout(() => {
-
-                        rect.setAttribute(
-                            "stroke",
-                            ancienStroke || "#aeaeae"
-                        );
-
-                        rect.setAttribute(
-                            "stroke-width",
-                            ancienneLargeur || "1"
-                        );
-
-                    },3000);
-
-                }
-
-            };
-
-
-
-            zone.appendChild(ligne);
+            zone.innerHTML +=
+                "• " +
+                personne.name +
+                "<br>";
 
         });
 
     });
 
 })
-
 .catch(error => {
 
     console.error(error);
@@ -402,5 +231,6 @@ fetch("famille.json")
 });
 
 </script>
+
 </body>
 </html>
