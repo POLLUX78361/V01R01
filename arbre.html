@@ -174,46 +174,47 @@ fetch("famille.json")
     tree.load(nodes);
 
 
-    document
-    .getElementById("search")
+    function normalizeText(str) {
+        return str
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+    }
+
+
+    document.getElementById("search")
     .addEventListener("input", function () {
 
-        const texte =
-            this.value
-                .trim()
-                .toLowerCase();
+        const recherche = normalizeText(this.value.trim());
 
-        if (texte === "") {
+        if (!recherche) {
             return;
         }
 
         const personne = nodes.find(node =>
-            node.name
-                .toLowerCase()
-                .includes(texte)
+            normalizeText(node.name).includes(recherche)
         );
 
         if (personne) {
 
             tree.select(personne.id);
 
-            setTimeout(() => {
-
-                const element = document.querySelector(
+            const nodeElement =
+                document.querySelector(
                     '[data-n-id="' + personne.id + '"]'
                 );
 
-                if (element) {
+            if (nodeElement) {
 
-                    element.scrollIntoView({
-                        behavior: "smooth",
-                        block: "center",
-                        inline: "center"
-                    });
+                nodeElement.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                    inline: "center"
+                });
 
-                }
+            }
 
-            }, 300);
+            console.log("Trouvé :", personne.name);
 
         }
 
@@ -231,7 +232,6 @@ fetch("famille.json")
 
 });
 
-</script>   
-
+</script>
 </body>
 </html>
