@@ -1,10 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Arbre généalogique - Famille ANDREY</title>
+
+<script src="https://balkan.app/js/FamilyTree.js"></script>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Georgia,serif;
+    background:#fdfbf7;
+    color:#3d342d;
+}
+
+header{
+    background:linear-gradient(135deg,#2c1810,#5a3e2b);
+    color:#f7f2e8;
+    text-align:center;
+    padding:90px 20px;
+    box-shadow:0 4px 15px rgba(0,0,0,.25);
+}
+
+header h1{
+    margin:0;
+    font-size:3.2em;
+}
+
+header p{
+    font-size:1.25em;
+}
+
+nav{
+    background:#3b2618;
+    padding:12px;
+    overflow-x:auto;
+    white-space:nowrap;
+    text-align:center;
+}
+
+nav a{
+    color:#f7f2e8;
+    text-decoration:none;
+    margin:0 8px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#d4af37;
+}
+
+.search-box{
+    max-width:700px;
+    margin:25px auto;
+    padding:0 20px;
+}
+
+.search-box input{
+    width:100%;
+    padding:15px;
+    border:1px solid #d4af37;
+    border-radius:8px;
+    font-size:16px;
+    box-sizing:border-box;
+}
+
+#resultats{
+    max-width:700px;
+    margin:10px auto;
+    padding:10px;
+    border:1px solid #d4af37;
+    border-radius:8px;
+    background:#fff8e7;
+    display:none;
+}
+
+.resultat-personne{
+    padding:8px;
+    margin:4px 0;
+    cursor:pointer;
+    color:#004a99;
+    font-weight:bold;
+}
+
+.resultat-personne:hover{
+    background:#f5f5f5;
+    text-decoration:underline;
+}
+
+#tree{
+    width:100%;
+    height:900px;
+    border-top:4px solid #d4af37;
+}
+
+footer{
+    background:#2c1810;
+    color:#f7f2e8;
+    text-align:center;
+    padding:25px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Arbre généalogique</h1>
+<p>Famille ANDREY de la Suisse vers la France</p>
+</header>
+
+<nav>
+<a href="index.html">Accueil</a>
+<a href="ancetres.html">Ancêtres</a>
+<a href="arbre.html">Arbre</a>
+<a href="armoiries.html">Armoiries</a>
+<a href="chronologie.html">Chronologie</a>
+<a href="contact.html">Contact</a>
+<a href="documents.html">Documents</a>
+<a href="photos.html">Photos</a>
+<a href="localisation.html">Localisation</a>
+<a href="patronyme.html">Patronyme</a>
+<a href="sources.html">Sources</a>
+</nav>
+
+<div class="search-box">
+<input
+id="search"
+type="text"
+placeholder="🔍 Rechercher un nom ou prénom...">
+</div>
+
+<div id="resultats"></div>
+
+<div id="tree"></div>
+
+<footer>
+© 2026 Famille ANDREY - Site généalogique familial
+</footer>
+
 <script>
 
 fetch("famille.json")
 
 .then(response => {
 
-    if (!response.ok) {
+    if(!response.ok){
         throw new Error("Impossible de charger famille.json");
     }
 
@@ -24,10 +171,6 @@ fetch("famille.json")
 
         name: personne.nom,
 
-        naissance: personne.naissance || "",
-
-        deces: personne.deces || "",
-
         title:
             (personne.naissance || "") +
             (personne.deces ? " - " + personne.deces : "")
@@ -40,9 +183,10 @@ fetch("famille.json")
         document.getElementById("tree"),
         {
 
-            enableSearch: false,
-
-            searchFields: [],
+            nodeBinding: {
+                field_0: "name",
+                field_1: "title"
+            },
 
             toolbar: {
                 zoom: true,
@@ -50,57 +194,14 @@ fetch("famille.json")
                 expandAll: true
             },
 
-            nodeBinding: {
-                field_0: "name",
-                field_1: "title"
-            },
-
             scaleInitial: FamilyTree.match.boundary
 
         }
     );
 
-
-
     tree.load(nodes);
 
     tree.fit();
-
-
-
-    setInterval(() => {
-
-        document.querySelectorAll(
-            ".bft-search," +
-            ".bft-search-holder," +
-            ".bft-search-container," +
-            ".bft-search-box," +
-            ".bft-search-results," +
-            ".bft-search-result," +
-            ".bft-toolbar-search"
-        ).forEach(e => e.remove());
-
-
-
-        document
-        .querySelectorAll("#tree text")
-        .forEach(el => {
-
-            const txt =
-                (el.textContent || "").trim();
-
-            if(
-                txt === "Search" ||
-                txt.includes("type ?") ||
-                txt.includes("help")
-            ){
-                el.remove();
-            }
-
-        });
-
-    },500);
-
 
 
 
@@ -137,7 +238,7 @@ fetch("famille.json")
         const resultat =
             nodes.filter(personne =>
                 normaliser(personne.name)
-                    .includes(recherche)
+                .includes(recherche)
             );
 
         zone.style.display = "block";
@@ -160,86 +261,45 @@ fetch("famille.json")
 
         resultat.forEach(personne => {
 
-            const ligne =
-                document.createElement("div");
+            zone.innerHTML +=
+                '<div class="resultat-personne" ' +
+                'data-id="' + personne.id + '">' +
+                personne.name +
+                '</div>';
 
-            ligne.className =
-                "resultat-personne";
+        });
 
-            ligne.textContent =
-                personne.name;
 
-ligne.onclick = function(){
 
-    try {
+        document
+        .querySelectorAll(".resultat-personne")
+        .forEach(element => {
 
-        tree.center(personne.id);
+            element.addEventListener("click", function(){
 
-        tree.select(personne.id);
+                const id =
+                    this.getAttribute("data-id");
 
-        zone.style.display = "none";
+                const personne =
+                    nodes.find(p => p.id === id);
 
-        setTimeout(() => {
-
-            const noeud =
-                document.querySelector(
-                    '[data-n-id="' +
-                    personne.id +
-                    '"]'
+                alert(
+                    personne.name +
+                    "\n\n" +
+                    personne.title
                 );
 
-            if(noeud){
+            });
 
-                const rect =
-                    noeud.querySelector("rect");
+        });
 
-                if(rect){
+    });
 
-                    const ancienStroke =
-                        rect.getAttribute("stroke");
+})
 
-                    const ancienneEpaisseur =
-                        rect.getAttribute("stroke-width");
+.catch(error => {
 
-                    rect.setAttribute(
-                        "stroke",
-                        "#d4af37"
-                    );
-
-                    rect.setAttribute(
-                        "stroke-width",
-                        "5"
-                    );
-
-                    setTimeout(() => {
-
-                        rect.setAttribute(
-                            "stroke",
-                            ancienStroke || "#aeaeae"
-                        );
-
-                        rect.setAttribute(
-                            "stroke-width",
-                            ancienneEpaisseur || "1"
-                        );
-
-                    },3000);
-
-                }
-
-            }
-
-        },500);
-
-    }
-    catch(error){
-
-        console.error(error);
-
-    }
-
-};
-            
+    console.error(error);
 
     document.getElementById("tree").innerHTML =
         "<div style='padding:30px;color:red;text-align:center'>" +
@@ -249,3 +309,6 @@ ligne.onclick = function(){
 });
 
 </script>
+
+</body>
+</html>
