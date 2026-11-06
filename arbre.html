@@ -124,42 +124,25 @@ placeholder="🔍 Rechercher un nom ou prénom...">
 
 fetch("famille.json")
 .then(response => {
-
     if (!response.ok) {
         throw new Error("Impossible de charger famille.json");
     }
-
     return response.json();
-
 })
 .then(data => {
 
     const nodes = data.map(p => ({
-
         id: p.id,
-
-        fid: p.fid && p.fid !== "null"
-            ? p.fid
-            : undefined,
-
-        mid: p.mid && p.mid !== "null"
-            ? p.mid
-            : undefined,
-
+        fid: p.fid && p.fid !== "null" ? p.fid : undefined,
+        mid: p.mid && p.mid !== "null" ? p.mid : undefined,
         name: p.nom,
-
-        naissance: p.naissance || "",
-
-        deces: p.deces || "",
-
         titre:
             (p.naissance || "") +
             (p.deces ? " - " + p.deces : "")
-
     }));
 
 
-        window.tree = new FamilyTree(
+    const tree = new FamilyTree(
         document.getElementById("tree"),
         {
             nodeBinding: {
@@ -180,16 +163,14 @@ fetch("famille.json")
         }
     );
 
-window.tree.load(nodes);   
-console.log(tree);
+    tree.load(nodes);
+
 
     function normalizeText(text) {
-
         return String(text || "")
             .toLowerCase()
             .normalize("NFD")
             .replace(/[\u0300-\u036f]/g, "");
-
     }
 
 
@@ -201,7 +182,6 @@ console.log(tree);
         resultatDiv = document.createElement("div");
 
         resultatDiv.id = "resultats-recherche";
-
         resultatDiv.style.maxWidth = "700px";
         resultatDiv.style.margin = "10px auto";
         resultatDiv.style.padding = "10px";
@@ -231,7 +211,7 @@ console.log(tree);
 
         const resultats = nodes.filter(node =>
             normalizeText(node.name)
-            .includes(recherche)
+                .includes(recherche)
         );
 
         resultatDiv.style.display = "block";
@@ -247,40 +227,10 @@ console.log(tree);
         resultatDiv.innerHTML =
             "<strong>" +
             resultats.length +
-            " résultat(s) trouvé(s)</strong><br><br>";
-
-        resultats.forEach(personne => {
-
-            const ligne =
-                document.createElement("div");
-
-            ligne.style.padding = "8px";
-            ligne.style.cursor = "pointer";
-            ligne.style.borderBottom =
-                "1px solid #ddd";
-
-            ligne.style.color = "#003366";
-
-            ligne.innerHTML =
-                "<strong>" +
-                personne.name +
-                "</strong>";
-
-            ligne.onclick = function () {
-
-                alert(
-                    personne.name +
-                    "\n\nNaissance : " +
-                    personne.naissance +
-                    "\nDécès : " +
-                    personne.deces
-                );
-
-            };
-
-            resultatDiv.appendChild(ligne);
-
-        });
+            " résultat(s) trouvé(s)</strong><br><br>" +
+            resultats.map(r =>
+                "• " + r.name
+            ).join("<br>");
 
     });
 
