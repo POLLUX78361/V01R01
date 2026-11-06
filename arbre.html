@@ -69,29 +69,6 @@ nav a:hover{
     box-sizing:border-box;
 }
 
-#resultats{
-    max-width:700px;
-    margin:10px auto;
-    padding:10px;
-    border:1px solid #d4af37;
-    border-radius:8px;
-    background:#fff8e7;
-    display:none;
-}
-
-.resultat-personne{
-    padding:8px;
-    margin:4px 0;
-    cursor:pointer;
-    color:#004a99;
-    font-weight:bold;
-}
-
-.resultat-personne:hover{
-    background:#f5f5f5;
-    text-decoration:underline;
-}
-
 #tree{
     width:100%;
     height:900px;
@@ -137,58 +114,34 @@ type="text"
 placeholder="🔍 Rechercher un nom ou prénom...">
 </div>
 
-<div id="resultats"></div>
-
 <div id="tree"></div>
 
 <footer>
 © 2026 Famille ANDREY - Site généalogique familial
 </footer>
+    
 <script>
 
 fetch("famille.json")
-
-.then(response => {
-
-    if (!response.ok) {
-        throw new Error("Impossible de charger famille.json");
-    }
-
-    return response.json();
-
-})
-
+.then(response => response.json())
 .then(data => {
 
-    const nodes = data.map(personne => ({
-
-        id: personne.id,
-
-        fid: personne.fid || undefined,
-
-        mid: personne.mid || undefined,
-
-        name: personne.nom,
-
-        naissance: personne.naissance || "",
-
-        deces: personne.deces || "",
-
-        title:
-            (personne.naissance || "") +
-            (personne.deces ? " - " + personne.deces : "")
-
+    const nodes = data.map(p => ({
+        id: p.id,
+        name: p.nom,
+        titre:
+            (p.naissance || "") +
+            (p.deces ? " - " + p.deces : "")
     }));
-
 
 
     const tree = new FamilyTree(
         document.getElementById("tree"),
         {
-
-            enableSearch: false,
-
-            searchFields: [],
+            nodeBinding: {
+                field_0: "name",
+                field_1: "titre"
+            },
 
             toolbar: {
                 zoom: true,
@@ -196,199 +149,71 @@ fetch("famille.json")
                 expandAll: true
             },
 
-            nodeBinding: {
-                field_0: "name",
-                field_1: "title"
-            },
-
-            scaleInitial: FamilyTree.match.boundary
-
+            enableSearch: false,
+            searchFields: []
         }
     );
 
-
-
     tree.load(nodes);
 
-    tree.fit();
 
+    const resultatDiv = document.createElement("div");
 
-
-    setInterval(() => {
-
-        document.querySelectorAll(
-            ".bft-search," +
-            ".bft-search-holder," +
-            ".bft-search-container," +
-            ".bft-search-box," +
-            ".bft-search-results," +
-            ".bft-search-result," +
-            ".bft-toolbar-search"
-        ).forEach(e => e.remove());
-
-
-
-        document
-        .querySelectorAll("#tree text")
-        .forEach(el => {
-
-            const txt =
-                (el.textContent || "").trim();
-
-            if(
-                txt === "Search" ||
-                txt.includes("type ?") ||
-                txt.includes("help")
-            ){
-                el.remove();
-            }
-
-        });
-
-    },500);
-
-
-
-
-    function normaliser(txt){
-
-        return (txt || "")
-            .toLowerCase()
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g,"");
-
-    }
-
-
-
-    const zone =
-        document.getElementById("resultats");
-
-
+    resultatDiv.id = "resultats";
+    resultatDiv.style.maxWidth = "700px";
+    resultatDiv.style.margin = "10px auto";
+    resultatDiv.style.padding = "10px";
+    resultatDiv.style.background = "#fff8e7";
+    resultatDiv.style.border = "1px solid #d4af37";
+    resultatDiv.style.borderRadius = "8px";
+    resultatDiv.style.display = "none";
 
     document
-    .getElementById("search")
-    .addEventListener("input", function(){
+        .querySelector(".search-box")
+        .appendChild(resultatDiv);
 
-        const recherche =
-            normaliser(this.value.trim());
 
-        zone.innerHTML = "";
-        zone.style.display = "none";
+    document.getElementById("search")
+    .addEventListener("input", function () {
 
-        if(!recherche){
+        const texte = this.value.trim().toLowerCase();
+
+        resultatDiv.innerHTML = "";
+        resultatDiv.style.display = "none";
+
+        if (texte === "") {
             return;
         }
 
-        const resultat =
-            nodes.filter(personne =>
-                normaliser(personne.name)
-                    .includes(recherche)
-            );
+        const resultats = nodes.filter(n =>
+            n.name.toLowerCase().includes(texte)
+        );
 
-        zone.style.display = "block";
+        resultatDiv.style.display = "block";
 
-        if(resultat.length === 0){
+        if (resultats.length === 0) {
 
-            zone.innerHTML =
+            resultatDiv.innerHTML =
                 "<strong>Aucun résultat trouvé</strong>";
 
             return;
-
         }
 
-        zone.innerHTML =
+        resultatDiv.innerHTML =
             "<strong>" +
-            resultat.length +
+            resultats.length +
             " résultat(s) trouvé(s)</strong><br><br>";
 
+        resultats.forEach(r => {
 
-
-        resultat.forEach(personne => {
-
-            const ligne =
-                document.createElement("div");
-
-            ligne.className =
-                "resultat-personne";
-
-            ligne.textContent =
-                personne.name;
-
-
-
-            ligne.onclick = function(){
-
-                const noeud =
-                    document.querySelector(
-                        '[data-n-id="' +
-                        personne.id +
-                        '"]'
-                    );
-
-                if(!noeud){
-                    return;
-                }
-
-                zone.style.display = "none";
-
-                noeud.scrollIntoView({
-                    behavior:"smooth",
-                    block:"center",
-                    inline:"center"
-                });
-
-
-
-                const rect =
-                    noeud.querySelector("rect");
-
-                if(rect){
-
-                    const ancienStroke =
-                        rect.getAttribute("stroke");
-
-                    const ancienneLargeur =
-                        rect.getAttribute("stroke-width");
-
-                    rect.setAttribute(
-                        "stroke",
-                        "#d4af37"
-                    );
-
-                    rect.setAttribute(
-                        "stroke-width",
-                        "5"
-                    );
-
-                    setTimeout(() => {
-
-                        rect.setAttribute(
-                            "stroke",
-                            ancienStroke || "#aeaeae"
-                        );
-
-                        rect.setAttribute(
-                            "stroke-width",
-                            ancienneLargeur || "1"
-                        );
-
-                    },3000);
-
-                }
-
-            };
-
-
-
-            zone.appendChild(ligne);
+            resultatDiv.innerHTML +=
+                "• " + r.name + "<br>";
 
         });
 
     });
 
 })
-
 .catch(error => {
 
     console.error(error);
@@ -401,7 +226,6 @@ fetch("famille.json")
 });
 
 </script>
-
     
 </body>
 </html>
