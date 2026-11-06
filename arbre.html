@@ -129,8 +129,9 @@ fetch("famille.json")
     const nodes = data.map(p => ({
         id: p.id,
         name: p.nom,
-        titre: (p.naissance || "") +
-               (p.deces ? " - " + p.deces : "")
+        titre:
+            (p.naissance || "") +
+            (p.deces ? " - " + p.deces : "")
     }));
 
 
@@ -140,32 +141,75 @@ fetch("famille.json")
             nodeBinding: {
                 field_0: "name",
                 field_1: "titre"
-            }
+            },
+
+            toolbar: {
+                zoom: true,
+                fit: true,
+                expandAll: true
+            },
+
+            enableSearch: false,
+            searchFields: []
         }
     );
 
     tree.load(nodes);
 
-    const recherche = document.getElementById("search");
 
-    recherche.addEventListener("input", function () {
+    const resultatDiv = document.createElement("div");
 
-        const texte = this.value.toLowerCase();
+    resultatDiv.id = "resultats";
+    resultatDiv.style.maxWidth = "700px";
+    resultatDiv.style.margin = "10px auto";
+    resultatDiv.style.padding = "10px";
+    resultatDiv.style.background = "#fff8e7";
+    resultatDiv.style.border = "1px solid #d4af37";
+    resultatDiv.style.borderRadius = "8px";
+    resultatDiv.style.display = "none";
+
+    document
+        .querySelector(".search-box")
+        .appendChild(resultatDiv);
+
+
+    document.getElementById("search")
+    .addEventListener("input", function () {
+
+        const texte = this.value.trim().toLowerCase();
+
+        resultatDiv.innerHTML = "";
+        resultatDiv.style.display = "none";
+
+        if (texte === "") {
+            return;
+        }
 
         const resultats = nodes.filter(n =>
             n.name.toLowerCase().includes(texte)
         );
 
-        console.clear();
+        resultatDiv.style.display = "block";
 
-        console.log(
-            "Résultats trouvés :",
-            resultats.length
-        );
+        if (resultats.length === 0) {
 
-        resultats.forEach(r =>
-            console.log(r.name)
-        );
+            resultatDiv.innerHTML =
+                "<strong>Aucun résultat trouvé</strong>";
+
+            return;
+        }
+
+        resultatDiv.innerHTML =
+            "<strong>" +
+            resultats.length +
+            " résultat(s) trouvé(s)</strong><br><br>";
+
+        resultats.forEach(r => {
+
+            resultatDiv.innerHTML +=
+                "• " + r.name + "<br>";
+
+        });
 
     });
 
@@ -173,6 +217,11 @@ fetch("famille.json")
 .catch(error => {
 
     console.error(error);
+
+    document.getElementById("tree").innerHTML =
+        "<div style='padding:30px;color:red;text-align:center'>" +
+        error.message +
+        "</div>";
 
 });
 
