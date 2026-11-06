@@ -124,10 +124,13 @@ placeholder="🔍 Rechercher un nom ou prénom...">
 
 fetch("famille.json")
 .then(response => {
+
     if (!response.ok) {
         throw new Error("Impossible de charger famille.json");
     }
+
     return response.json();
+
 })
 .then(data => {
 
@@ -142,7 +145,7 @@ fetch("famille.json")
     }));
 
 
-    const tree = new FamilyTree(
+    window.myTree = new FamilyTree(
         document.getElementById("tree"),
         {
             nodeBinding: {
@@ -163,14 +166,16 @@ fetch("famille.json")
         }
     );
 
-    tree.load(nodes);
+    window.myTree.load(nodes);
 
 
     function normalizeText(text) {
+
         return String(text || "")
             .toLowerCase()
             .normalize("NFD")
             .replace(/[\u0300-\u036f]/g, "");
+
     }
 
 
@@ -196,7 +201,8 @@ fetch("famille.json")
     }
 
 
-    document.getElementById("search")
+    document
+    .getElementById("search")
     .addEventListener("input", function () {
 
         const recherche =
@@ -247,7 +253,6 @@ fetch("famille.json")
 });
 
 </script>
-
 
     
 </body>
