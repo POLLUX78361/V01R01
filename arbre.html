@@ -205,6 +205,17 @@ const personne = nodes.find(node =>
 
 console.log("Résultat :", personne);
 
+console.log("Texte recherché :", recherche);
+console.log("Nodes :", nodes);
+
+const personne = nodes.find(node =>
+    normalizeText(node.name).includes(recherche)
+);
+
+console.log("Personne trouvée :", personne);
+
+        
+
 if (personne) {
     alert("Trouvé : " + personne.name);
 }
