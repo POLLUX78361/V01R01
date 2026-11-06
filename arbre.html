@@ -243,7 +243,7 @@ fetch("famille.json")
         const resultat =
             nodes.filter(personne =>
                 normaliser(personne.name)
-                .includes(recherche)
+                    .includes(recherche)
             );
 
         zone.style.display = "block";
@@ -254,7 +254,6 @@ fetch("famille.json")
                 "<strong>Aucun résultat trouvé</strong>";
 
             return;
-
         }
 
         zone.innerHTML =
@@ -272,20 +271,73 @@ fetch("famille.json")
             ligne.className =
                 "resultat-personne";
 
-            ligne.innerHTML =
+            ligne.textContent =
                 personne.name;
+
+
 
             ligne.onclick = function(){
 
-                alert(
-                    personne.name +
-                    "\n\nNaissance : " +
-                    personne.naissance +
-                    "\nDécès : " +
-                    personne.deces
-                );
+                const noeud =
+                    document.querySelector(
+                        '[data-n-id="' +
+                        personne.id +
+                        '"]'
+                    );
+
+                if(noeud){
+
+                    zone.style.display =
+                        "none";
+
+                    noeud.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center",
+                        inline: "center"
+                    });
+
+                    const cadre =
+                        noeud.querySelector("rect");
+
+                    if(cadre){
+
+                        const ancienStroke =
+                            cadre.getAttribute("stroke");
+
+                        const ancienneLargeur =
+                            cadre.getAttribute("stroke-width");
+
+                        cadre.setAttribute(
+                            "stroke",
+                            "#d4af37"
+                        );
+
+                        cadre.setAttribute(
+                            "stroke-width",
+                            "4"
+                        );
+
+                        setTimeout(() => {
+
+                            cadre.setAttribute(
+                                "stroke",
+                                ancienStroke || "#aeaeae"
+                            );
+
+                            cadre.setAttribute(
+                                "stroke-width",
+                                ancienneLargeur || "1"
+                            );
+
+                        },3000);
+
+                    }
+
+                }
 
             };
+
+
 
             zone.appendChild(ligne);
 
