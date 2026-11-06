@@ -197,16 +197,28 @@ fetch("famille.json")
             .includes(recherche)
         );
 
-        if (personne) {
+        console.log("Recherche :", recherche);
 
-            alert(
-                "Trouvé : " +
-                personne.name +
-                "\n\n" +
-                personne.titre
-            );
+const personne = nodes.find(node =>
+    normalizeText(node.name).includes(recherche)
+);
 
-        }
+console.log("Résultat :", personne);
+
+if (personne) {
+    alert("Trouvé : " + personne.name);
+}
+
+       * if (personne) {
+
+      *      alert(
+       *         "Trouvé : " +
+       *         personne.name +
+       *         "\n\n" +
+       *         personne.titre
+       *     );
+
+       * }
 
     });
 
