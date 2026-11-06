@@ -124,21 +124,34 @@ placeholder="🔍 Rechercher un nom ou prénom...">
 
 fetch("famille.json")
 .then(response => {
+
     if (!response.ok) {
         throw new Error("Impossible de charger famille.json");
     }
+
     return response.json();
+
 })
 .then(data => {
 
     const nodes = data.map(p => ({
+
         id: p.id,
-        fid: p.fid && p.fid !== "null" ? p.fid : undefined,
-        mid: p.mid && p.mid !== "null" ? p.mid : undefined,
+
+        fid: p.fid && p.fid !== "null"
+            ? p.fid
+            : undefined,
+
+        mid: p.mid && p.mid !== "null"
+            ? p.mid
+            : undefined,
+
         name: p.nom,
+
         titre:
             (p.naissance || "") +
             (p.deces ? " - " + p.deces : "")
+
     }));
 
 
@@ -167,68 +180,75 @@ fetch("famille.json")
 
 
     function normalizeText(text) {
+
         return String(text || "")
             .toLowerCase()
             .normalize("NFD")
             .replace(/[\u0300-\u036f]/g, "");
+
     }
 
 
-    const resultatDiv = document.createElement("div");
+    let resultatDiv =
+        document.getElementById("resultats-recherche");
 
-    resultatDiv.id = "resultats-recherche";
-    resultatDiv.style.maxWidth = "700px";
-    resultatDiv.style.margin = "10px auto";
-    resultatDiv.style.padding = "10px";
-    resultatDiv.style.background = "#fff8e7";
-    resultatDiv.style.border = "1px solid #d4af37";
-    resultatDiv.style.borderRadius = "8px";
-    resultatDiv.style.display = "none";
+    if (!resultatDiv) {
 
-    document
-        .querySelector(".search-box")
-        .appendChild(resultatDiv);
+        resultatDiv = document.createElement("div");
+
+        resultatDiv.id = "resultats-recherche";
+
+        resultatDiv.style.maxWidth = "700px";
+        resultatDiv.style.margin = "10px auto";
+        resultatDiv.style.padding = "10px";
+        resultatDiv.style.background = "#fff8e7";
+        resultatDiv.style.border = "1px solid #d4af37";
+        resultatDiv.style.borderRadius = "8px";
+        resultatDiv.style.display = "none";
+
+        document
+            .querySelector(".search-box")
+            .appendChild(resultatDiv);
+    }
 
 
-    document
-        .getElementById("search")
-        .addEventListener("input", function () {
+    document.getElementById("search")
+    .addEventListener("input", function () {
 
-            const recherche =
-                normalizeText(this.value.trim());
+        const recherche =
+            normalizeText(this.value.trim());
 
-            if (!recherche) {
-                resultatDiv.style.display = "none";
-                resultatDiv.innerHTML = "";
-                return;
-            }
+        resultatDiv.innerHTML = "";
+        resultatDiv.style.display = "none";
 
-            const resultats = nodes.filter(node =>
-                normalizeText(node.name)
-                    .includes(recherche)
-            );
+        if (!recherche) {
+            return;
+        }
 
-            if (resultats.length > 0) {
+        const resultats = nodes.filter(node =>
+            normalizeText(node.name)
+                .includes(recherche)
+        );
 
-                resultatDiv.style.display = "block";
+        resultatDiv.style.display = "block";
 
-                resultatDiv.innerHTML =
-                    "<strong>" +
-                    resultats.length +
-                    " résultat(s) trouvé(s)</strong><br><br>" +
-                    resultats.map(r =>
-                        "• " + r.name
-                    ).join("<br>");
+        if (resultats.length === 0) {
 
-            } else {
+            resultatDiv.innerHTML =
+                "<strong>Aucun résultat trouvé</strong>";
 
-                resultatDiv.style.display = "block";
+            return;
+        }
 
-                resultatDiv.innerHTML =
-                    "<strong>Aucun résultat trouvé</strong>";
-            }
+        resultatDiv.innerHTML =
+            "<strong>" +
+            resultats.length +
+            " résultat(s) trouvé(s)</strong><br><br>" +
+            resultats.map(r =>
+                "• " + r.name
+            ).join("<br>");
 
-        });
+    });
 
 })
 .catch(error => {
@@ -243,7 +263,6 @@ fetch("famille.json")
 });
 
 </script>
-
 
 
     
