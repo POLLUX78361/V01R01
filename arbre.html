@@ -18,42 +18,6 @@ body{
     color:#3d342d;
 }
 
-header{
-    background:linear-gradient(135deg,#2c1810,#5a3e2b);
-    color:#f7f2e8;
-    text-align:center;
-    padding:90px 20px;
-    box-shadow:0 4px 15px rgba(0,0,0,.25);
-}
-
-header h1{
-    margin:0;
-    font-size:3.2em;
-}
-
-header p{
-    font-size:1.25em;
-}
-
-nav{
-    background:#3b2618;
-    padding:12px;
-    overflow-x:auto;
-    white-space:nowrap;
-    text-align:center;
-}
-
-nav a{
-    color:#f7f2e8;
-    text-decoration:none;
-    margin:0 8px;
-    font-weight:bold;
-}
-
-nav a:hover{
-    color:#d4af37;
-}
-
 .search-box{
     max-width:700px;
     margin:25px auto;
@@ -69,17 +33,19 @@ nav a:hover{
     box-sizing:border-box;
 }
 
+#resultats{
+    max-width:700px;
+    margin:10px auto;
+    padding:10px;
+    display:none;
+    background:#fff8e7;
+    border:1px solid #d4af37;
+    border-radius:8px;
+}
+
 #tree{
     width:100%;
     height:900px;
-    border-top:4px solid #d4af37;
-}
-
-footer{
-    background:#2c1810;
-    color:#f7f2e8;
-    text-align:center;
-    padding:25px;
 }
 
 </style>
@@ -88,38 +54,17 @@ footer{
 
 <body>
 
-<header>
-<h1>Arbre généalogique</h1>
-<p>Famille ANDREY de la Suisse vers la France</p>
-</header>
-
-<nav>
-<a href="index.html">Accueil</a>
-<a href="ancetres.html">Ancêtres</a>
-<a href="arbre.html">Arbre</a>
-<a href="armoiries.html">Armoiries</a>
-<a href="chronologie.html">Chronologie</a>
-<a href="contact.html">Contact</a>
-<a href="documents.html">Documents</a>
-<a href="photos.html">Photos</a>
-<a href="localisation.html">Localisation</a>
-<a href="patronyme.html">Patronyme</a>
-<a href="sources.html">Sources</a>
-</nav>
-
 <div class="search-box">
-<input
-id="search"
-type="text"
-placeholder="🔍 Rechercher un nom ou prénom...">
+    <input
+        id="search"
+        type="text"
+        placeholder="🔍 Rechercher un nom ou prénom...">
 </div>
+
+<div id="resultats"></div>
 
 <div id="tree"></div>
 
-<footer>
-© 2026 Famille ANDREY - Site généalogique familial
-</footer>
-    
 <script>
 
 fetch("famille.json")
@@ -127,87 +72,107 @@ fetch("famille.json")
 .then(data => {
 
     const nodes = data.map(p => ({
+
         id: p.id,
+
+        fid: p.fid && p.fid !== "null"
+            ? p.fid
+            : undefined,
+
+        mid: p.mid && p.mid !== "null"
+            ? p.mid
+            : undefined,
+
         name: p.nom,
+
         titre:
             (p.naissance || "") +
             (p.deces ? " - " + p.deces : "")
+
     }));
 
 
-    const tree = new FamilyTree(
+    const arbre = new FamilyTree(
         document.getElementById("tree"),
         {
+
             nodeBinding: {
                 field_0: "name",
                 field_1: "titre"
             },
 
+            enableSearch: false,
+
+            searchFields: [],
+
             toolbar: {
                 zoom: true,
                 fit: true,
                 expandAll: true
-            },
+            }
 
-            enableSearch: false,
-            searchFields: []
         }
     );
 
-    tree.load(nodes);
+    arbre.load(nodes);
 
 
-    const resultatDiv = document.createElement("div");
+    function normaliser(texte){
 
-    resultatDiv.id = "resultats";
-    resultatDiv.style.maxWidth = "700px";
-    resultatDiv.style.margin = "10px auto";
-    resultatDiv.style.padding = "10px";
-    resultatDiv.style.background = "#fff8e7";
-    resultatDiv.style.border = "1px solid #d4af37";
-    resultatDiv.style.borderRadius = "8px";
-    resultatDiv.style.display = "none";
+        return texte
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g,"");
+
+    }
+
+
+    const zone =
+        document.getElementById("resultats");
+
 
     document
-        .querySelector(".search-box")
-        .appendChild(resultatDiv);
+    .getElementById("search")
+    .addEventListener("input", function(){
 
+        const recherche =
+            normaliser(this.value.trim());
 
-    document.getElementById("search")
-    .addEventListener("input", function () {
+        zone.innerHTML = "";
+        zone.style.display = "none";
 
-        const texte = this.value.trim().toLowerCase();
-
-        resultatDiv.innerHTML = "";
-        resultatDiv.style.display = "none";
-
-        if (texte === "") {
+        if(!recherche){
             return;
         }
 
-        const resultats = nodes.filter(n =>
-            n.name.toLowerCase().includes(texte)
-        );
+        const resultats =
+            nodes.filter(personne =>
+                normaliser(personne.name)
+                    .includes(recherche)
+            );
 
-        resultatDiv.style.display = "block";
+        zone.style.display = "block";
 
-        if (resultats.length === 0) {
+        if(resultats.length === 0){
 
-            resultatDiv.innerHTML =
+            zone.innerHTML =
                 "<strong>Aucun résultat trouvé</strong>";
 
             return;
+
         }
 
-        resultatDiv.innerHTML =
+        zone.innerHTML =
             "<strong>" +
             resultats.length +
             " résultat(s) trouvé(s)</strong><br><br>";
 
-        resultats.forEach(r => {
+        resultats.forEach(personne => {
 
-            resultatDiv.innerHTML +=
-                "• " + r.name + "<br>";
+            zone.innerHTML +=
+                "• " +
+                personne.name +
+                "<br>";
 
         });
 
@@ -219,13 +184,13 @@ fetch("famille.json")
     console.error(error);
 
     document.getElementById("tree").innerHTML =
-        "<div style='padding:30px;color:red;text-align:center'>" +
+        "<div style='padding:20px;color:red'>" +
         error.message +
         "</div>";
 
 });
 
 </script>
-    
+
 </body>
 </html>
