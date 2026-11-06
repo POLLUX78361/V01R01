@@ -146,6 +146,7 @@ fetch("famille.json")
 
 
     window.myTree = new FamilyTree(
+       window.myTree.load(nodes); 
         document.getElementById("tree"),
         {
             nodeBinding: {
@@ -167,6 +168,8 @@ fetch("famille.json")
     );
 
     window.myTree.load(nodes);
+    console.log("Nodes chargés");
+console.log(window.myTree);
 
 
     function normalizeText(text) {
