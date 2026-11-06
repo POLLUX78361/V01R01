@@ -26,11 +26,7 @@ header{
 
 header h1{
     margin:0;
-    font-size:3.2em;
-}
-
-header p{
-    font-size:1.25em;
+    font-size:3em;
 }
 
 #tree{
@@ -38,38 +34,36 @@ header p{
     height:900px;
 }
 
-/* SUPPRESSION DE LA RECHERCHE FAMILYTREE */
+footer{
+    background:#2c1810;
+    color:#f7f2e8;
+    text-align:center;
+    padding:20px;
+}
 
 .bft-search,
 .bft-search-container,
 .bft-search-box,
 .bft-search-result,
-.bft-search-results,
-[data-search]{
+.bft-search-results{
     display:none !important;
 }
 
-footer{
-    background:#2c1810;
-    color:#f7f2e8;
-    text-align:center;
-    padding:25px;
-}
-
 </style>
+
 </head>
 
 <body>
 
 <header>
-<h1>Arbre généalogique</h1>
-<p>Famille ANDREY de la Suisse vers la France</p>
+    <h1>Arbre généalogique</h1>
+    <p>Famille ANDREY de la Suisse vers la France</p>
 </header>
 
 <div id="tree"></div>
 
 <footer>
-© 2026 Famille ANDREY - Site généalogique familial
+© 2026 Famille ANDREY
 </footer>
 
 <script>
@@ -78,30 +72,28 @@ fetch("famille.json")
 .then(response => response.json())
 .then(data => {
 
-    const nodes = data.map(p => ({
+    const nodes = data.map(personne => ({
 
-        id: p.id,
+        id: personne.id,
 
-        fid: p.fid && p.fid !== "null"
-            ? p.fid
-            : undefined,
+        fid: personne.fid || undefined,
 
-        mid: p.mid && p.mid !== "null"
-            ? p.mid
-            : undefined,
+        mid: personne.mid || undefined,
 
-        name: p.nom,
+        name: personne.nom,
 
         title:
-            (p.naissance || "") +
-            (p.deces ? " - " + p.deces : "")
+            (personne.naissance || "") +
+            (personne.deces ? " - " + personne.deces : "")
 
     }));
 
 
-    const tree = new FamilyTree(
+    var tree = new FamilyTree(
         document.getElementById("tree"),
         {
+
+            scaleInitial: FamilyTree.match.boundary,
 
             nodeBinding: {
                 field_0: "name",
@@ -112,24 +104,24 @@ fetch("famille.json")
                 zoom: true,
                 fit: true,
                 expandAll: true
-            },
-
-            scaleInitial: FamilyTree.match.boundary
+            }
 
         }
     );
 
     tree.load(nodes);
 
+    tree.fit();
+
 })
 .catch(error => {
+
+    console.error(error);
 
     document.getElementById("tree").innerHTML =
         "<div style='padding:30px;color:red;text-align:center'>" +
         error.message +
         "</div>";
-
-    console.error(error);
 
 });
 
