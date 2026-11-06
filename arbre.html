@@ -120,7 +120,6 @@ placeholder="🔍 Rechercher un nom ou prénom...">
 © 2026 Famille ANDREY - Site généalogique familial
 </footer>
 
-
 <script>
 
 fetch("famille.json")
@@ -292,26 +291,30 @@ fetch("famille.json")
             ligne.textContent =
                 personne.name;
 
-ligne.onclick = function(){
 
-    try {
 
-        tree.center(personne.id);
+            ligne.onclick = function(){
 
-        tree.select(personne.id);
+                const noeud =
+                    document.querySelector(
+                        '[data-n-id="' +
+                        personne.id +
+                        '"]'
+                    );
 
-        zone.style.display = "none";
+                if(!noeud){
+                    return;
+                }
 
-        setTimeout(() => {
+                zone.style.display = "none";
 
-            const noeud =
-                document.querySelector(
-                    '[data-n-id="' +
-                    personne.id +
-                    '"]'
-                );
+                noeud.scrollIntoView({
+                    behavior:"smooth",
+                    block:"center",
+                    inline:"center"
+                });
 
-            if(noeud){
+
 
                 const rect =
                     noeud.querySelector("rect");
@@ -321,7 +324,7 @@ ligne.onclick = function(){
                     const ancienStroke =
                         rect.getAttribute("stroke");
 
-                    const ancienneEpaisseur =
+                    const ancienneLargeur =
                         rect.getAttribute("stroke-width");
 
                     rect.setAttribute(
@@ -343,26 +346,28 @@ ligne.onclick = function(){
 
                         rect.setAttribute(
                             "stroke-width",
-                            ancienneEpaisseur || "1"
+                            ancienneLargeur || "1"
                         );
 
                     },3000);
 
                 }
 
-            }
+            };
 
-        },500);
 
-    }
-    catch(error){
 
-        console.error(error);
+            zone.appendChild(ligne);
 
-    }
+        });
 
-};
-            
+    });
+
+})
+
+.catch(error => {
+
+    console.error(error);
 
     document.getElementById("tree").innerHTML =
         "<div style='padding:30px;color:red;text-align:center'>" +
@@ -371,7 +376,8 @@ ligne.onclick = function(){
 
 });
 
-</script> 
+</script>
+
  
 
 
