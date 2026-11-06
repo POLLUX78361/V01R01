@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -20,43 +19,26 @@ body{
 
 header{
     background:linear-gradient(135deg,#2c1810,#5a3e2b);
-    color:#f7f2e8;
+    color:#fff;
     text-align:center;
-    padding:90px 20px;
-    box-shadow:0 4px 15px rgba(0,0,0,.25);
-}
-
-header h1{
-    margin:0;
-    font-size:3.2em;
-}
-
-header p{
-    font-size:1.25em;
+    padding:80px 20px;
 }
 
 nav{
     background:#3b2618;
-    padding:12px;
-    overflow-x:auto;
-    white-space:nowrap;
     text-align:center;
+    padding:12px;
 }
 
 nav a{
-    color:#f7f2e8;
+    color:white;
     text-decoration:none;
-    margin:0 8px;
-    font-weight:bold;
-}
-
-nav a:hover{
-    color:#d4af37;
+    margin:0 10px;
 }
 
 .search-box{
     max-width:700px;
-    margin:25px auto;
+    margin:20px auto;
     padding:0 20px;
 }
 
@@ -66,7 +48,6 @@ nav a:hover{
     border:1px solid #d4af37;
     border-radius:8px;
     font-size:16px;
-    box-sizing:border-box;
 }
 
 #resultats{
@@ -81,29 +62,40 @@ nav a:hover{
 
 .resultat-personne{
     padding:8px;
-    margin:5px 0;
     cursor:pointer;
-    border-radius:4px;
     color:#004a99;
     font-weight:bold;
+    border-radius:5px;
 }
 
 .resultat-personne:hover{
-    background:#f1f1f1;
-    text-decoration:underline;
+    background:#f3f3f3;
 }
 
 #tree{
     width:100%;
     height:900px;
-    border-top:4px solid #d4af37;
+}
+
+/* suppression recherche FamilyTree */
+
+.bft-search,
+.bft-search-holder,
+.bft-search-container,
+.bft-search-box,
+.bft-search-result,
+.bft-search-results,
+.bft-toolbar-search,
+[data-search],
+[data-ctrl-search]{
+    display:none !important;
 }
 
 footer{
     background:#2c1810;
-    color:#f7f2e8;
+    color:white;
     text-align:center;
-    padding:25px;
+    padding:20px;
 }
 
 </style>
@@ -119,15 +111,9 @@ footer{
 
 <nav>
 <a href="index.html">Accueil</a>
-<a href="ancetres.html">Ancêtres</a>
 <a href="arbre.html">Arbre</a>
-<a href="armoiries.html">Armoiries</a>
-<a href="chronologie.html">Chronologie</a>
-<a href="contact.html">Contact</a>
 <a href="documents.html">Documents</a>
 <a href="photos.html">Photos</a>
-<a href="localisation.html">Localisation</a>
-<a href="patronyme.html">Patronyme</a>
 <a href="sources.html">Sources</a>
 </nav>
 
@@ -143,37 +129,26 @@ placeholder="🔍 Rechercher un nom ou prénom...">
 <div id="tree"></div>
 
 <footer>
-© 2026 Famille ANDREY - Site généalogique familial
+© 2026 Famille ANDREY
 </footer>
 
 <script>
 
 fetch("famille.json")
 
-.then(response => {
-
-    if(!response.ok){
-        throw new Error("Impossible de charger famille.json");
-    }
-
-    return response.json();
-
-})
+.then(response => response.json())
 
 .then(data => {
 
     const nodes = data.map(personne => ({
 
         id: personne.id,
-
-        fid: personne.fid || undefined,
-
-        mid: personne.mid || undefined,
+        fid: personne.fid,
+        mid: personne.mid,
 
         name: personne.nom,
 
         naissance: personne.naissance || "",
-
         deces: personne.deces || "",
 
         title:
@@ -183,26 +158,29 @@ fetch("famille.json")
     }));
 
 
+    const tree =
+        new FamilyTree(
+            document.getElementById("tree"),
+            {
 
-    const tree = new FamilyTree(
-        document.getElementById("tree"),
-        {
+                enableSearch:false,
 
-            nodeBinding: {
-                field_0: "name",
-                field_1: "title"
-            },
+                searchFields:[],
 
-            toolbar: {
-                zoom: true,
-                fit: true,
-                expandAll: true
-            },
+                nodeBinding:{
+                    field_0:"name",
+                    field_1:"title"
+                },
 
-            scaleInitial: FamilyTree.match.boundary
+                toolbar:{
+                    zoom:true,
+                    fit:true,
+                    expandAll:true
+                }
 
-        }
-    );
+            }
+        );
+
 
     tree.load(nodes);
 
@@ -228,13 +206,13 @@ fetch("famille.json")
 
     document
     .getElementById("search")
-    .addEventListener("input", function(){
+    .addEventListener("input",function(){
 
         const recherche =
             normaliser(this.value.trim());
 
-        zone.innerHTML = "";
-        zone.style.display = "none";
+        zone.innerHTML="";
+        zone.style.display="none";
 
         if(!recherche){
             return;
@@ -243,17 +221,18 @@ fetch("famille.json")
         const resultat =
             nodes.filter(personne =>
                 normaliser(personne.name)
-                    .includes(recherche)
+                .includes(recherche)
             );
 
-        zone.style.display = "block";
+        zone.style.display="block";
 
-        if(resultat.length === 0){
+        if(resultat.length===0){
 
             zone.innerHTML =
                 "<strong>Aucun résultat trouvé</strong>";
 
             return;
+
         }
 
         zone.innerHTML =
@@ -274,8 +253,6 @@ fetch("famille.json")
             ligne.textContent =
                 personne.name;
 
-
-
             ligne.onclick = function(){
 
                 const noeud =
@@ -287,46 +264,38 @@ fetch("famille.json")
 
                 if(noeud){
 
-                    zone.style.display =
-                        "none";
+                    zone.style.display="none";
 
                     noeud.scrollIntoView({
-                        behavior: "smooth",
-                        block: "center",
-                        inline: "center"
+                        behavior:"smooth",
+                        block:"center"
                     });
 
-                    const cadre =
+                    const rect =
                         noeud.querySelector("rect");
 
-                    if(cadre){
+                    if(rect){
 
-                        const ancienStroke =
-                            cadre.getAttribute("stroke");
-
-                        const ancienneLargeur =
-                            cadre.getAttribute("stroke-width");
-
-                        cadre.setAttribute(
+                        rect.setAttribute(
                             "stroke",
                             "#d4af37"
                         );
 
-                        cadre.setAttribute(
+                        rect.setAttribute(
                             "stroke-width",
                             "4"
                         );
 
                         setTimeout(() => {
 
-                            cadre.setAttribute(
+                            rect.setAttribute(
                                 "stroke",
-                                ancienStroke || "#aeaeae"
+                                "#aeaeae"
                             );
 
-                            cadre.setAttribute(
+                            rect.setAttribute(
                                 "stroke-width",
-                                ancienneLargeur || "1"
+                                "1"
                             );
 
                         },3000);
@@ -337,13 +306,22 @@ fetch("famille.json")
 
             };
 
-
-
             zone.appendChild(ligne);
 
         });
 
     });
+
+
+    setTimeout(() => {
+
+        document
+        .querySelectorAll(
+            '.bft-search,.bft-search-holder,.bft-search-container'
+        )
+        .forEach(e => e.remove());
+
+    },1000);
 
 })
 
@@ -352,7 +330,7 @@ fetch("famille.json")
     console.error(error);
 
     document.getElementById("tree").innerHTML =
-        "<div style='padding:30px;color:red;text-align:center'>" +
+        "<div style='padding:20px;color:red'>" +
         error.message +
         "</div>";
 
