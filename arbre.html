@@ -84,7 +84,14 @@ nav a:hover{
     border-top:4px solid #d4af37;
 }
 
-/* Cache la recherche native FamilyTree */
+footer{
+    background:#2c1810;
+    color:#f7f2e8;
+    text-align:center;
+    padding:25px;
+}
+
+/* Cache la plupart des panneaux de recherche FamilyTree */
 
 .bft-search,
 .bft-search-container,
@@ -94,14 +101,6 @@ nav a:hover{
 .bft-toolbar-search,
 [data-search]{
     display:none !important;
-    visibility:hidden !important;
-}
-
-footer{
-    background:#2c1810;
-    color:#f7f2e8;
-    text-align:center;
-    padding:25px;
 }
 
 </style>
@@ -144,141 +143,3 @@ placeholder="🔍 Rechercher un nom ou prénom...">
 </footer>
 
 <script>
-
-fetch("famille.json")
-
-.then(response => {
-
-    if(!response.ok){
-        throw new Error("Impossible de charger famille.json");
-    }
-
-    return response.json();
-
-})
-
-.then(data => {
-
-    const nodes = data.map(personne => ({
-
-        id: personne.id,
-
-        fid: personne.fid || undefined,
-
-        mid: personne.mid || undefined,
-
-        name: personne.nom,
-
-        title:
-            (personne.naissance || "") +
-            (personne.deces ? " - " + personne.deces : "")
-
-    }));
-
-
-
-    const tree = new FamilyTree(
-        document.getElementById("tree"),
-        {
-
-            nodeBinding: {
-                field_0: "name",
-                field_1: "title"
-            },
-
-            toolbar: {
-                zoom: true,
-                fit: true,
-                expandAll: true
-            },
-
-            scaleInitial: FamilyTree.match.boundary
-
-        }
-    );
-
-    tree.load(nodes);
-
-    tree.fit();
-
-
-
-    function normaliser(texte){
-
-        return (texte || "")
-            .toLowerCase()
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g,"");
-
-    }
-
-
-
-    const zone =
-        document.getElementById("resultats");
-
-
-
-    document
-    .getElementById("search")
-    .addEventListener("input", function(){
-
-        const recherche =
-            normaliser(this.value.trim());
-
-        zone.innerHTML = "";
-        zone.style.display = "none";
-
-        if(!recherche){
-            return;
-        }
-
-        const trouves = nodes.filter(personne =>
-            normaliser(personne.name)
-                .includes(recherche)
-        );
-
-        zone.style.display = "block";
-
-        if(trouves.length === 0){
-
-            zone.innerHTML =
-                "<strong>Aucun résultat trouvé</strong>";
-
-            return;
-
-        }
-
-        zone.innerHTML =
-            "<strong>" +
-            trouves.length +
-            " résultat(s) trouvé(s)</strong><br><br>";
-
-        trouves.forEach(personne => {
-
-            zone.innerHTML +=
-                "• " +
-                personne.name +
-                "<br>";
-
-        });
-
-    });
-
-})
-
-.catch(error => {
-
-    console.error(error);
-
-    document.getElementById("tree").innerHTML =
-        "<div style='padding:30px;color:red;text-align:center'>" +
-        error.message +
-        "</div>";
-
-});
-
-</script>
-
-</body>
-</html>
