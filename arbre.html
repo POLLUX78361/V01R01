@@ -128,108 +128,44 @@ fetch("famille.json")
 
     const nodes = data.map(p => ({
         id: p.id,
-        fid: p.fid && p.fid !== "null" ? p.fid : undefined,
-        mid: p.mid && p.mid !== "null" ? p.mid : undefined,
         name: p.nom,
         titre: (p.naissance || "") +
                (p.deces ? " - " + p.deces : "")
     }));
 
 
-    const familyTree = new FamilyTree(
+    const tree = new FamilyTree(
         document.getElementById("tree"),
         {
             nodeBinding: {
                 field_0: "name",
                 field_1: "titre"
-            },
-
-            toolbar: {
-                zoom: true,
-                fit: true,
-                expandAll: true
-            },
-
-            enableSearch: false,
-            searchFields: [],
-
-            scaleInitial: FamilyTree.match.boundary
+            }
         }
     );
 
-    familyTree.load(nodes);
+    tree.load(nodes);
 
+    const recherche = document.getElementById("search");
 
-    function normalizeText(text) {
-        return (text || "")
-            .toLowerCase()
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "");
-    }
+    recherche.addEventListener("input", function () {
 
+        const texte = this.value.toLowerCase();
 
-    let resultatDiv = document.getElementById("resultats-recherche");
-
-    if (!resultatDiv) {
-
-        resultatDiv = document.createElement("div");
-        resultatDiv.id = "resultats-recherche";
-
-        resultatDiv.style.maxWidth = "700px";
-        resultatDiv.style.margin = "10px auto";
-        resultatDiv.style.padding = "10px";
-        resultatDiv.style.background = "#fff8e7";
-        resultatDiv.style.border = "1px solid #d4af37";
-        resultatDiv.style.borderRadius = "8px";
-        resultatDiv.style.display = "none";
-
-        document
-            .querySelector(".search-box")
-            .appendChild(resultatDiv);
-    }
-
-
-    document.getElementById("search")
-    .addEventListener("input", function() {
-
-        const recherche =
-            normalizeText(this.value.trim());
-
-        resultatDiv.innerHTML = "";
-        resultatDiv.style.display = "none";
-
-        if (recherche === "") {
-            return;
-        }
-
-        const resultats = nodes.filter(personne =>
-            normalizeText(personne.name)
-                .includes(recherche)
+        const resultats = nodes.filter(n =>
+            n.name.toLowerCase().includes(texte)
         );
 
-        resultatDiv.style.display = "block";
+        console.clear();
 
-        if (resultats.length === 0) {
+        console.log(
+            "Résultats trouvés :",
+            resultats.length
+        );
 
-            resultatDiv.innerHTML =
-                "<strong>Aucun résultat trouvé</strong>";
-
-            return;
-        }
-
-        resultatDiv.innerHTML =
-            "<strong>" +
-            resultats.length +
-            " résultat(s) trouvé(s)</strong><br><br>";
-
-        resultats.forEach(personne => {
-
-            resultatDiv.innerHTML +=
-                "• " +
-                personne.name +
-                "<br>";
-
-        });
+        resultats.forEach(r =>
+            console.log(r.name)
+        );
 
     });
 
@@ -237,11 +173,6 @@ fetch("famille.json")
 .catch(error => {
 
     console.error(error);
-
-    document.getElementById("tree").innerHTML =
-        "<div style='padding:30px;color:red;text-align:center'>" +
-        error.message +
-        "</div>";
 
 });
 
