@@ -124,41 +124,27 @@ placeholder="🔍 Rechercher un nom ou prénom...">
 
 fetch("famille.json")
 .then(response => {
-
     if (!response.ok) {
         throw new Error("Impossible de charger famille.json");
     }
-
     return response.json();
-
 })
 .then(data => {
 
     const nodes = data.map(p => ({
-
         id: p.id,
-
-        fid: p.fid && p.fid !== "null"
-            ? p.fid
-            : undefined,
-
-        mid: p.mid && p.mid !== "null"
-            ? p.mid
-            : undefined,
-
+        fid: p.fid && p.fid !== "null" ? p.fid : undefined,
+        mid: p.mid && p.mid !== "null" ? p.mid : undefined,
         name: p.nom,
-
         titre:
             (p.naissance || "") +
             (p.deces ? " - " + p.deces : "")
-
     }));
 
 
     const tree = new FamilyTree(
         document.getElementById("tree"),
         {
-
             nodeBinding: {
                 field_0: "name",
                 field_1: "titre"
@@ -174,7 +160,6 @@ fetch("famille.json")
             searchFields: [],
 
             scaleInitial: FamilyTree.match.boundary
-
         }
     );
 
@@ -182,19 +167,16 @@ fetch("famille.json")
 
 
     function normalizeText(text) {
-
         return String(text || "")
             .toLowerCase()
             .normalize("NFD")
             .replace(/[\u0300-\u036f]/g, "");
-
     }
 
 
-    let resultatDiv = document.createElement("div");
+    const resultatDiv = document.createElement("div");
 
     resultatDiv.id = "resultats-recherche";
-
     resultatDiv.style.maxWidth = "700px";
     resultatDiv.style.margin = "10px auto";
     resultatDiv.style.padding = "10px";
@@ -216,10 +198,8 @@ fetch("famille.json")
                 normalizeText(this.value.trim());
 
             if (!recherche) {
-
                 resultatDiv.style.display = "none";
                 resultatDiv.innerHTML = "";
-
                 return;
             }
 
@@ -236,16 +216,16 @@ fetch("famille.json")
                     "<strong>" +
                     resultats.length +
                     " résultat(s) trouvé(s)</strong><br><br>" +
-                    resultats.map(r => r.name).join("<br>");
+                    resultats.map(r =>
+                        "• " + r.name
+                    ).join("<br>");
 
-            }
-            else {
+            } else {
 
                 resultatDiv.style.display = "block";
 
                 resultatDiv.innerHTML =
                     "<strong>Aucun résultat trouvé</strong>";
-
             }
 
         });
@@ -263,7 +243,6 @@ fetch("famille.json")
 });
 
 </script>
-
 
 
 
