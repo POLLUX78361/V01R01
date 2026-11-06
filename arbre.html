@@ -148,6 +148,10 @@ fetch("famille.json")
 
         name: p.nom,
 
+        naissance: p.naissance || "",
+
+        deces: p.deces || "",
+
         titre:
             (p.naissance || "") +
             (p.deces ? " - " + p.deces : "")
@@ -227,7 +231,7 @@ fetch("famille.json")
 
         const resultats = nodes.filter(node =>
             normalizeText(node.name)
-                .includes(recherche)
+            .includes(recherche)
         );
 
         resultatDiv.style.display = "block";
@@ -243,10 +247,40 @@ fetch("famille.json")
         resultatDiv.innerHTML =
             "<strong>" +
             resultats.length +
-            " résultat(s) trouvé(s)</strong><br><br>" +
-            resultats.map(r =>
-                "• " + r.name
-            ).join("<br>");
+            " résultat(s) trouvé(s)</strong><br><br>";
+
+        resultats.forEach(personne => {
+
+            const ligne =
+                document.createElement("div");
+
+            ligne.style.padding = "8px";
+            ligne.style.cursor = "pointer";
+            ligne.style.borderBottom =
+                "1px solid #ddd";
+
+            ligne.style.color = "#003366";
+
+            ligne.innerHTML =
+                "<strong>" +
+                personne.name +
+                "</strong>";
+
+            ligne.onclick = function () {
+
+                alert(
+                    personne.name +
+                    "\n\nNaissance : " +
+                    personne.naissance +
+                    "\nDécès : " +
+                    personne.deces
+                );
+
+            };
+
+            resultatDiv.appendChild(ligne);
+
+        });
 
     });
 
