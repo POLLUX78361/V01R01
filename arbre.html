@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -18,9 +17,16 @@ body{
     color:#3d342d;
 }
 
+header{
+    background:linear-gradient(135deg,#2c1810,#5a3e2b);
+    color:#f7f2e8;
+    text-align:center;
+    padding:60px 20px;
+}
+
 .search-box{
     max-width:700px;
-    margin:25px auto;
+    margin:20px auto;
     padding:0 20px;
 }
 
@@ -48,11 +54,22 @@ body{
     height:900px;
 }
 
-</style>
+footer{
+    background:#2c1810;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+}
 
+</style>
 </head>
 
 <body>
+
+<header>
+    <h1>Arbre généalogique</h1>
+    <p>Famille ANDREY</p>
+</header>
 
 <div class="search-box">
     <input
@@ -65,31 +82,49 @@ body{
 
 <div id="tree"></div>
 
+<footer>
+© 2026 Famille ANDREY
+</footer>
+
 <script>
 
 fetch("famille.json")
 .then(response => {
+
     if (!response.ok) {
         throw new Error("Impossible de charger famille.json");
     }
+
     return response.json();
+
 })
 .then(data => {
 
     const nodes = data.map(p => ({
+
         id: p.id,
-        fid: p.fid && p.fid !== "null" ? p.fid : undefined,
-        mid: p.mid && p.mid !== "null" ? p.mid : undefined,
+
+        fid: p.fid && p.fid !== "null"
+            ? p.fid
+            : undefined,
+
+        mid: p.mid && p.mid !== "null"
+            ? p.mid
+            : undefined,
+
         name: p.nom,
+
         titre:
             (p.naissance || "") +
             (p.deces ? " - " + p.deces : "")
+
     }));
 
 
-    const arbre = new FamilyTree(
+    var tree = new FamilyTree(
         document.getElementById("tree"),
         {
+
             nodeBinding: {
                 field_0: "name",
                 field_1: "titre"
@@ -99,61 +134,37 @@ fetch("famille.json")
                 zoom: true,
                 fit: true,
                 expandAll: true
-            },
+            }
 
-            searchFields: [],
-            enableSearch: false,
-            showSearch: false
         }
     );
 
-    arbre.load(nodes);
+    tree.load(nodes);
 
 
-    let zoneResultats =
-        document.getElementById("resultats");
-
-    if (!zoneResultats) {
-
-        zoneResultats =
-            document.createElement("div");
-
-        zoneResultats.id = "resultats";
-
-        zoneResultats.style.maxWidth = "700px";
-        zoneResultats.style.margin = "10px auto";
-        zoneResultats.style.padding = "10px";
-        zoneResultats.style.background = "#fff8e7";
-        zoneResultats.style.border = "1px solid #d4af37";
-        zoneResultats.style.borderRadius = "8px";
-        zoneResultats.style.display = "none";
-
-        document
-            .querySelector(".search-box")
-            .after(zoneResultats);
-    }
-
-
-    function normaliser(texte) {
+    function normaliser(texte){
 
         return (texte || "")
             .toLowerCase()
             .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "");
+            .replace(/[\u0300-\u036f]/g,"");
 
     }
 
 
-    document.getElementById("search")
-    .addEventListener("input", function() {
+    const resultatsDiv =
+        document.getElementById("resultats");
 
-        zoneResultats.innerHTML = "";
-        zoneResultats.style.display = "none";
+    document.getElementById("search")
+    .addEventListener("input", function(){
 
         const recherche =
             normaliser(this.value.trim());
 
-        if (!recherche) {
+        resultatsDiv.innerHTML = "";
+        resultatsDiv.style.display = "none";
+
+        if(recherche === ""){
             return;
         }
 
@@ -162,27 +173,25 @@ fetch("famille.json")
                 .includes(recherche)
         );
 
-        zoneResultats.style.display = "block";
+        resultatsDiv.style.display = "block";
 
-        if (resultats.length === 0) {
+        if(resultats.length === 0){
 
-            zoneResultats.innerHTML =
-                "Aucun résultat trouvé";
+            resultatsDiv.innerHTML =
+                "<strong>Aucun résultat trouvé</strong>";
 
             return;
         }
 
-        zoneResultats.innerHTML =
+        resultatsDiv.innerHTML =
             "<strong>" +
             resultats.length +
             " résultat(s) trouvé(s)</strong><br><br>";
 
         resultats.forEach(personne => {
 
-            zoneResultats.innerHTML +=
-                "• " +
-                personne.name +
-                "<br>";
+            resultatsDiv.innerHTML +=
+                "• " + personne.name + "<br>";
 
         });
 
@@ -194,7 +203,7 @@ fetch("famille.json")
     console.error(error);
 
     document.getElementById("tree").innerHTML =
-        "<div style='padding:20px;color:red'>" +
+        "<div style='padding:25px;color:red;text-align:center'>" +
         error.message +
         "</div>";
 
