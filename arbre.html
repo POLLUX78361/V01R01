@@ -119,8 +119,8 @@ placeholder="🔍 Rechercher un nom ou prénom...">
 <footer>
 © 2026 Famille ANDREY - Site généalogique familial
 </footer>
-
- <script>
+    
+<script>
 
 fetch("famille.json")
 .then(response => {
@@ -174,47 +174,37 @@ fetch("famille.json")
     tree.load(nodes);
 
 
-    function normalizeText(str) {
-        return str
+    function normalizeText(text) {
+
+        return text
             .toLowerCase()
             .normalize("NFD")
             .replace(/[\u0300-\u036f]/g, "");
+
     }
 
 
     document.getElementById("search")
     .addEventListener("input", function () {
 
-        const recherche = normalizeText(this.value.trim());
+        const recherche =
+            normalizeText(this.value.trim());
 
-        if (!recherche) {
-            return;
-        }
+        if (!recherche) return;
 
         const personne = nodes.find(node =>
-            normalizeText(node.name).includes(recherche)
+            normalizeText(node.name)
+            .includes(recherche)
         );
 
         if (personne) {
 
-            tree.select(personne.id);
-
-            const nodeElement =
-                document.querySelector(
-                    '[data-n-id="' + personne.id + '"]'
-                );
-
-            if (nodeElement) {
-
-                nodeElement.scrollIntoView({
-                    behavior: "smooth",
-                    block: "center",
-                    inline: "center"
-                });
-
-            }
-
-            console.log("Trouvé :", personne.name);
+            alert(
+                "Trouvé : " +
+                personne.name +
+                "\n\n" +
+                personne.titre
+            );
 
         }
 
@@ -233,5 +223,9 @@ fetch("famille.json")
 });
 
 </script>
+
+
+
+    
 </body>
 </html>
