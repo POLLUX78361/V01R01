@@ -502,7 +502,7 @@ const resultat =
     data.filter(personne =>
         normaliser(
             personne.nom
-        ).startsWith(
+        ).includes(
             recherche
         )
     );
