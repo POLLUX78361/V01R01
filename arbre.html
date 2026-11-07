@@ -435,25 +435,25 @@ if(fratrie.length){
     "</ul>";
 }
 
-    if(enfants.length){
+if(enfants.length){
+
+    html +=
+    "<h3>Enfants</h3><ul>";
+
+    enfants.forEach(e => {
 
         html +=
-        "<h3>Enfants</h3><ul>";
+        '<li><a href="?id=' +
+        e.id +
+        '">' +
+        e.nom +
+        '</a></li>';
 
-        enfants.forEach(e => {
-html +=
-'<li><a href="?id=' +
-e.id +
-'">' +
-e.nom +
-'</a></li>';
-           
+    });
 
-        });
-
-        html +=
-        "</ul>";
-    }
+    html +=
+    "</ul>";
+}
 
     html += `
         <hr>
