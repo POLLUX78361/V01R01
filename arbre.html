@@ -417,15 +417,12 @@ const fratrie =
 
     if(fratrie.length){
 
-        html +=
-        "<h3>Frères et sœurs</h3><ul>";
-
-        fratrie.forEach(f => {
-
-            html +=
-            "<li>" +
-            f.nom +
-            "</li>";
+     html +=
+'<li><a href="?id=' +
+f.id +
+'">' +
+f.nom +
+'</a></li>';  
 
         });
 
@@ -439,11 +436,13 @@ const fratrie =
         "<h3>Enfants</h3><ul>";
 
         enfants.forEach(e => {
-
-            html +=
-            "<li>" +
-            e.nom +
-            "</li>";
+html +=
+'<li><a href="?id=' +
+e.id +
+'">' +
+e.nom +
+'</a></li>';
+           
 
         });
 
