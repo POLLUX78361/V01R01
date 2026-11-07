@@ -415,20 +415,25 @@ const fratrie =
         `;
     }
 
-    if(fratrie.length){
+if(fratrie.length){
 
-     html +=
-'<li><a href="?id=' +
-f.id +
-'">' +
-f.nom +
-'</a></li>';  
+    html +=
+    "<h3>Frères et sœurs</h3><ul>";
 
-        });
+    fratrie.forEach(f => {
 
         html +=
-        "</ul>";
-    }
+        '<li><a href="?id=' +
+        f.id +
+        '">' +
+        f.nom +
+        '</a></li>';
+
+    });
+
+    html +=
+    "</ul>";
+}
 
     if(enfants.length){
 
