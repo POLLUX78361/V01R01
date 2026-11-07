@@ -94,9 +94,52 @@ nav a:hover{
 }
 
 #tree{
-    width:100%;
+    width:calc(100% - 380px);
     height:900px;
     border-top:4px solid #d4af37;
+}
+
+#fiche-personne{
+    position:fixed;
+    top:120px;
+    right:15px;
+    width:350px;
+    max-height:80vh;
+    overflow-y:auto;
+    background:#fffdf8;
+    border:2px solid #d4af37;
+    border-radius:10px;
+    padding:15px;
+    box-shadow:0 0 15px rgba(0,0,0,.20);
+    z-index:9999;
+}
+
+#fiche-personne h2{
+    margin-top:0;
+    color:#3b2618;
+}
+
+#fiche-personne h3{
+    color:#5a3e2b;
+    margin-top:15px;
+    border-bottom:1px solid #d4af37;
+    padding-bottom:5px;
+}
+
+#fiche-personne ul{
+    padding-left:20px;
+}
+
+#fiche-personne li{
+    margin-bottom:5px;
+}
+
+#fiche-personne input{
+    width:100%;
+    padding:8px;
+    border:1px solid #d4af37;
+    border-radius:4px;
+    box-sizing:border-box;
 }
 
 footer{
