@@ -544,6 +544,18 @@ document
             window.location.search
         );
 
+    document
+.getElementById("fermer-fiche")
+.addEventListener(
+    "click",
+    function(){
+
+        document.getElementById(
+            "fiche-personne"
+        ).innerHTML = "";
+
+    }
+);  
     const personneId =
         params.get("id");
 
