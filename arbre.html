@@ -341,16 +341,17 @@ function afficherRattachement(personne) {
         data.find(
             p => p.id == personne.mid
         );
-
-  const fratrie =
+    
+const fratrie =
     data.filter(
         p =>
-            p.id != personne.id &&
+            p.id !== personne.id &&
             personne.fid &&
             personne.mid &&
-            p.fid == personne.fid &&
-            p.mid == personne.mid
+            p.fid === personne.fid &&
+            p.mid === personne.mid
     );
+ 
 
     const enfants =
         data.filter(
