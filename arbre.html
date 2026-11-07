@@ -323,11 +323,12 @@ fetch("famille.json")
 
 function afficherRattachement(personne) {
 
-    const fiche =
-        document.getElementById(
-            "fiche-personne"
-        );
+  const fiche =
+    document.getElementById(
+        "fiche-personne"
+    );
 
+fiche.style.display = "block";
     const pere =
     personne.fid
     ? data.find(
