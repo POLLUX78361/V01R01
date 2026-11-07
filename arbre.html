@@ -522,46 +522,21 @@ const fratrie =
                 resultat.length +
                 " résultat(s)</strong><br><br>";
 
-            resultat.forEach(personne => {
+if(resultat.length > 0){
 
-                const ligne =
-                    document.createElement(
-                        "div"
-                    );
+    focusPersonne(
+        resultat[0].id
+    );
 
-                ligne.className =
-                    "resultat-personne";
+    afficherRattachement(
+        resultat[0]
+    );
 
-                ligne.textContent =
-                    personne.nom;
-
-                ligne.onclick =
-                    function () {
-
-                        zone.style.display =
-                            "none";
-
-                        focusPersonne(
-                            personne.id
-                        );
-
-                        afficherRattachement(
-                            personne
-                        );
-
-                        history.replaceState(
-                            null,
-                            null,
-                            "?id=" +
-                            personne.id
-                        );
-
-                    };
-
-                zone.appendChild(
-                    ligne
-                );
-
+    history.replaceState(
+        null,
+        null,
+        "?id=" +
+        resultat[0].id
             });
 
         }
