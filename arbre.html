@@ -333,13 +333,19 @@ function afficherRattachement(personne) {
         );
 
     const pere =
-        data.find(
-            p => p.id == personne.fid
-        );
+    personne.fid
+    ? data.find(
+        p => p.id === personne.fid
+      )
+    : null;
+    );
 
-    const mere =
-        data.find(
-            p => p.id == personne.mid
+const mere =
+    personne.mid
+    ? data.find(
+        p => p.id === personne.mid
+      )
+    : null;
         );
     
 const fratrie =
