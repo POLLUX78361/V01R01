@@ -146,333 +146,11 @@ placeholder="🔍 Rechercher un nom ou prénom...">
 © 2026 Famille ANDREY - Site généalogique familial
 </footer>
 
-<script>
-
-fetch("famille.json")
-.then(response => {
-
-    if (!response.ok) {
-        throw new Error("Impossible de charger famille.json");
-    }
-
-    return response.json();
-
-})
-.then(data => {
-
-    const nodes = data.map(personne => ({
-
-        id: personne.id,
-        fid: personne.fid || undefined,
-        mid: personne.mid || undefined,
-
-        name: personne.nom,
-
-        naissance: personne.naissance || "",
-        deces: personne.deces || "",
-
-        title:
-            (personne.naissance || "") +
-            (personne.deces
-                ? " - " + personne.deces
-                : "")
-
-    }));
-
-    const tree = new FamilyTree(
-        document.getElementById("tree"),
-        {
-
-            nodeBinding: {
-                field_0: "name",
-                field_1: "title"
-            },
-
-            toolbar: {
-                zoom: true,
-                fit: true,
-                expandAll: true
-            },
-
-            scaleInitial:
-                FamilyTree.match.boundary
-
-        }
-    );
-
-    tree.load(nodes);
-
-    setTimeout(() => {
-        tree.fit();
-    }, 500);
-
-
-    function normaliser(txt) {
-
-        return (txt || "")
-            .toLowerCase()
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "");
-
-    }
-
-
-    function focusPersonne(id) {
-
-        try {
-
-            tree.center(id);
-            tree.select(id);
-
-        } catch (e) {}
-
-        const noeud =
-            document.querySelector(
-                '[data-n-id="' + id + '"]'
-            );
-
-        if (!noeud) return;
-
-        noeud.scrollIntoView({
-            behavior: "smooth",
-            block: "center",
-            inline: "center"
-        });
-
-        const cadre =
-            noeud.querySelector("rect");
-
-        if (!cadre) return;
-
-        const ancienStroke =
-            cadre.getAttribute("stroke");
-
-        const ancienWidth =
-            cadre.getAttribute("stroke-width");
-
-        cadre.setAttribute(
-            "stroke",
-            "#d4af37"
-        );
-
-        cadre.setAttribute(
-            "stroke-width",
-            "5"
-        );
-
-        setTimeout(() => {
-
-            cadre.setAttribute(
-                "stroke",
-                ancienStroke || "#aeaeae"
-            );
-
-            cadre.setAttribute(
-                "stroke-width",
-                ancienWidth || "1"
-            );
-
-        }, 3000);
-
-    }
-
-
-    function afficherRattachement(personne) {
-
-        let fiche =
-            document.getElementById(
-                "fiche-personne"
-            );
-
-        if (!fiche) {
-
-            fiche =
-                document.createElement("div");
-
-            fiche.id =
-                "fiche-personne";
-
-            fiche.style.maxWidth =
-                "700px";
-
-            fiche.style.margin =
-                "20px auto";
-
-            fiche.style.padding =
-                "15px";
-
-            fiche.style.border =
-                "1px solid #d4af37";
-
-            fiche.style.borderRadius =
-                "8px";
-
-            fiche.style.background =
-                "#fff8e7";
-
-            document
-                .getElementById("tree")
-                .before(fiche);
-
-        }
-
-        const pere =
-            data.find(
-                p => p.id == personne.fid
-            );
-
-        const mere =
-            data.find(
-                p => p.id == personne.mid
-            );
-
-        const enfants =
-            data.filter(
-                p =>
-                    p.fid == personne.id ||
-                    p.mid == personne.id
-            );
-
-        const urlDirecte =
-            window.location.origin +
-            window.location.pathname +
-            "?id=" +
-            personne.id;
-
-        let html = `
-            <h2>${personne.nom}</h2>
-
-            <p>
-            <strong>Naissance :</strong>
-            ${personne.naissance || "Inconnue"}
-            </p>
-
-            <p>
-            <strong>Décès :</strong>
-            ${personne.deces || "Inconnu"}
-            </p>
-        `;
-
-        if (pere) {
-
-            html += `
-                <p>
-                <strong>Père :</strong>
-                ${pere.nom}
-                </p>
-            `;
-
-        }
-
-        if (mere) {
-
-            html += `
-                <p>
-                <strong>Mère :</strong>
-                ${mere.nom}
-                </p>
-            `;
-
-        }
-
-        if (enfants.length > 0) {
-
-            html +=
-                "<p><strong>Enfants :</strong></p><ul>";
-
-            enfants.forEach(enfant => {
-
-                html +=
-                    "<li>" +
-                    enfant.nom +
-                    "</li>";
-
-            });
-
-            html += "</ul>";
-
-        }
-
-        html += `
-            <hr>
-
-            <p>
-            <strong>Lien direct :</strong>
-            </p>
-
-            <input
-                type="text"
-                value="${urlDirecte}"
-                readonly
-                style="
-                    width:100%;
-                    padding:8px;
-                    box-sizing:border-box;
-                "
-                onclick="this.select()"
-            >
-        `;
-
-        fiche.innerHTML = html;
-
-    }
-
-
-
-    const zone =
-        document.getElementById(
-            "resultats"
-        );
-
-
-
-    document
-    .getElementById("search")
-    .addEventListener(
-        "input",
-        function () {
-
-            const recherche =
-                normaliser(
-                    this.value.trim()
-                );
-
-            zone.innerHTML = "";
-            zone.style.display = "none";
-
-            if (!recherche) {
                 return;
             }
 
-            const resultat =
-                data.filter(personne =>
-                    normaliser(
-                        personne.nom
-                    ).includes(
-                        recherche
-                    )
-                );
-
-            zone.style.display =
-                "block";
-
-            if (
-                resultat.length === 0
-            ) {
-
-                zone.innerHTML =
-                    "<strong>Aucun résultat trouvé</strong>";
-
-                return;
-
-            }
-
-            zone.innerHTML =
-                "<strong>" +
-                resultat.length +
-                " résultat(s)</strong><br><br>";
-
-            resultat.forEach(personne => {
+            resultat.forEach(
+                personne => {
 
                 const ligne =
                     document.createElement(
@@ -486,34 +164,20 @@ fetch("famille.json")
                     personne.nom;
 
                 ligne.onclick =
-                    function () {
+                    function(){
 
-                        zone.style.display =
-                            "none";
+                    zone.style.display =
+                        "none";
 
-                        focusPersonne(
-                            personne.id
-                        );
-
-                        afficherRattachement(
-                            personne
-                        );
-
-                        history.replaceState(
-                            null,
-                            null,
-                            "?id=" +
-                            personne.id
-                        );
-
-                    };
+                    ouvrirPersonne(
+                        personne.id
+                    );
+                };
 
                 zone.appendChild(
                     ligne
                 );
-
             });
-
         }
     );
 
@@ -524,46 +188,34 @@ fetch("famille.json")
             window.location.search
         );
 
-    const personneId =
+    const id =
         params.get("id");
 
-    if (personneId) {
+    if(id){
 
-        const personne =
-            data.find(
-                p =>
-                p.id == personneId
-            );
+        setTimeout(() => {
 
-        if (personne) {
+            ouvrirPersonne(id);
 
-            setTimeout(() => {
-
-                focusPersonne(
-                    personne.id
-                );
-
-                afficherRattachement(
-                    personne
-                );
-
-            }, 800);
-
-        }
-
+        },800);
     }
 
 })
 .catch(error => {
 
-    console.error(error);
-
     document
     .getElementById("tree")
     .innerHTML =
-        "<div style='padding:30px;text-align:center;color:red'>" +
-        error.message +
-        "</div>";
+
+    "<div style='padding:30px;color:red'>"
+
+    +
+
+    error.message
+
+    +
+
+    "</div>";
 
 });
 
