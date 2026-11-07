@@ -488,22 +488,18 @@ document
                     this.value.trim()
                 );
 
-            zone.innerHTML = "";
-            zone.style.display = "none";
-
             if (!recherche) {
                 return;
             }
-        
-const resultat =
-    data.filter(personne =>
-        normaliser(
-            personne.nom
-        ).includes(
-            recherche
-        )
-    );
-       
+
+            const resultat =
+                data.filter(personne =>
+                    normaliser(
+                        personne.nom
+                    ).includes(
+                        recherche
+                    )
+                );
 
             if (resultat.length === 0) {
                 return;
