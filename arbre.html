@@ -208,7 +208,84 @@ fetch("famille.json")
 
     tree.fit();
 
+const fiche =
+    document.getElementById(
+        "fiche-personne"
+    );
 
+function afficherFiche(personneComplete){
+
+    const pere =
+        data.find(
+            p => p.id == personneComplete.fid
+        );
+
+    const mere =
+        data.find(
+            p => p.id == personneComplete.mid
+        );
+
+    const fratrie =
+        data.filter(
+            p =>
+                p.id != personneComplete.id &&
+                p.fid == personneComplete.fid &&
+                p.mid == personneComplete.mid
+        );
+
+    const enfants =
+        data.filter(
+            p =>
+                p.fid == personneComplete.id ||
+                p.mid == personneComplete.id
+        );
+
+    let html = `
+        <h2>${personneComplete.nom}</h2>
+
+        <p><strong>Naissance :</strong>
+        ${personneComplete.naissance || "?"}</p>
+
+        <p><strong>Décès :</strong>
+        ${personneComplete.deces || "?"}</p>
+    `;
+
+    if(pere || mere){
+        html += "<h3>Parents</h3>";
+    }
+
+    if(pere){
+        html += "👨 " + pere.nom + "<br>";
+    }
+
+    if(mere){
+        html += "👩 " + mere.nom + "<br>";
+    }
+
+    if(fratrie.length){
+
+        html += "<h3>Frères et sœurs</h3><ul>";
+
+        fratrie.forEach(f => {
+            html += "<li>" + f.nom + "</li>";
+        });
+
+        html += "</ul>";
+    }
+
+    if(enfants.length){
+
+        html += "<h3>Enfants</h3><ul>";
+
+        enfants.forEach(e => {
+            html += "<li>" + e.nom + "</li>";
+        });
+
+        html += "</ul>";
+    }
+
+    fiche.innerHTML = html;
+}
 
     function normaliser(txt){
 
