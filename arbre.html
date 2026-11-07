@@ -10,7 +10,7 @@
 <script src="https://balkan.app/js/FamilyTree.js"></script>
 
 <style>
-
+  
 body{
     margin:0;
     font-family:Georgia,serif;
@@ -369,14 +369,16 @@ ligne.onclick = function(){
         );
 
     if(noeud){
+noeud.scrollIntoView({
+    behavior:"smooth",
+    block:"center",
+    inline:"center"
+});
 
-        noeud.scrollIntoView({
-            behavior:"smooth",
-            block:"center",
-            inline:"center"
-        }afficherFiche(
+afficherFiche(
     personneComplete
 );
+       
 
         const cadre =
             noeud.querySelector("rect");
@@ -416,127 +418,9 @@ ligne.onclick = function(){
             },3000);
         }
     }
-
-    const fiche =
-        document.getElementById(
-            "fiche-personne"
-        );
-
-    const pere =
-        data.find(
-            p => p.id == personneComplete.fid
-        );
-
-    const mere =
-        data.find(
-            p => p.id == personneComplete.mid
-        );
-
-    const fratrie =
-        data.filter(
-            p =>
-                p.id != personneComplete.id &&
-                p.fid == personneComplete.fid &&
-                p.mid == personneComplete.mid
-        );
-
-    const enfants =
-        data.filter(
-            p =>
-                p.fid == personneComplete.id ||
-                p.mid == personneComplete.id
-        );
-
-    let html = `
-        <h2>${personneComplete.nom}</h2>
-
-        <p>
-        <strong>Naissance :</strong>
-        ${personneComplete.naissance || "?"}
-        </p>
-
-        <p>
-        <strong>Décès :</strong>
-        ${personneComplete.deces || "?"}
-        </p>
-    `;
-
-    if(pere || mere){
-
-        html +=
-        "<h3>Parents</h3>";
-    }
-
-    if(pere){
-
-        html +=
-        "👨 " +
-        pere.nom +
-        "<br>";
-    }
-
-    if(mere){
-
-        html +=
-        "👩 " +
-        mere.nom +
-        "<br>";
-    }
-
-    if(fratrie.length){
-
-        html +=
-        "<h3>Frères et sœurs</h3><ul>";
-
-        fratrie.forEach(f => {
-
-            html +=
-            "<li>" +
-            f.nom +
-            "</li>";
-
-        });
-
-        html +=
-        "</ul>";
-    }
-
-    if(enfants.length){
-
-        html +=
-        "<h3>Enfants</h3><ul>";
-
-        enfants.forEach(e => {
-
-            html +=
-            "<li>" +
-            e.nom +
-            "</li>";
-
-        });
-
-        html +=
-        "</ul>";
-    }
-
-    html += `
-        <hr>
-
-        <strong>
-        Lien direct
-        </strong>
-
-        <br><br>
-
-        <input
-            type="text"
-            readonly
-            value="${window.location.origin}${window.location.pathname}?id=${personneComplete.id}"
-            onclick="this.select()">
-    `;
-
-    fiche.innerHTML =
-        html;
+afficherFiche(
+    personneComplete
+   );
 };
 
 
