@@ -322,145 +322,138 @@ fetch("famille.json")
     }
 
 
-    function afficherRattachement(personne) {
+function afficherRattachement(personne) {
 
-        let fiche =
-            document.getElementById(
-                "fiche-personne"
-            );
+    const fiche =
+        document.getElementById(
+            "fiche-personne"
+        );
 
-        if (!fiche) {
+    const pere =
+        data.find(
+            p => p.id == personne.fid
+        );
 
-            fiche =
-                document.createElement("div");
+    const mere =
+        data.find(
+            p => p.id == personne.mid
+        );
 
-            fiche.id =
-                "fiche-personne";
+    const fratrie =
+        data.filter(
+            p =>
+                p.id != personne.id &&
+                p.fid == personne.fid &&
+                p.mid == personne.mid
+        );
 
-            fiche.style.maxWidth =
-                "700px";
+    const enfants =
+        data.filter(
+            p =>
+                p.fid == personne.id ||
+                p.mid == personne.id
+        );
 
-            fiche.style.margin =
-                "20px auto";
+    const urlDirecte =
+        window.location.origin +
+        window.location.pathname +
+        "?id=" +
+        personne.id;
 
-            fiche.style.padding =
-                "15px";
+    let html = `
+        <h2>${personne.nom}</h2>
 
-            fiche.style.border =
-                "1px solid #d4af37";
+        <p>
+        <strong>Naissance :</strong>
+        ${personne.naissance || "Inconnue"}
+        </p>
 
-            fiche.style.borderRadius =
-                "8px";
+        <p>
+        <strong>Décès :</strong>
+        ${personne.deces || "Inconnu"}
+        </p>
+    `;
 
-            fiche.style.background =
-                "#fff8e7";
+    if(pere || mere){
 
-            document
-                .getElementById("tree")
-                .before(fiche);
+        html +=
+        "<h3>Parents</h3>";
+    }
 
-        }
-
-        const pere =
-            data.find(
-                p => p.id == personne.fid
-            );
-
-        const mere =
-            data.find(
-                p => p.id == personne.mid
-            );
-
-        const enfants =
-            data.filter(
-                p =>
-                    p.fid == personne.id ||
-                    p.mid == personne.id
-            );
-
-        const urlDirecte =
-            window.location.origin +
-            window.location.pathname +
-            "?id=" +
-            personne.id;
-
-        let html = `
-            <h2>${personne.nom}</h2>
-
-            <p>
-            <strong>Naissance :</strong>
-            ${personne.naissance || "Inconnue"}
-            </p>
-
-            <p>
-            <strong>Décès :</strong>
-            ${personne.deces || "Inconnu"}
-            </p>
-        `;
-
-        if (pere) {
-
-            html += `
-                <p>
-                <strong>Père :</strong>
-                ${pere.nom}
-                </p>
-            `;
-
-        }
-
-        if (mere) {
-
-            html += `
-                <p>
-                <strong>Mère :</strong>
-                ${mere.nom}
-                </p>
-            `;
-
-        }
-
-        if (enfants.length > 0) {
-
-            html +=
-                "<p><strong>Enfants :</strong></p><ul>";
-
-            enfants.forEach(enfant => {
-
-                html +=
-                    "<li>" +
-                    enfant.nom +
-                    "</li>";
-
-            });
-
-            html += "</ul>";
-
-        }
+    if(pere){
 
         html += `
-            <hr>
-
-            <p>
-            <strong>Lien direct :</strong>
-            </p>
-
-            <input
-                type="text"
-                value="${urlDirecte}"
-                readonly
-                style="
-                    width:100%;
-                    padding:8px;
-                    box-sizing:border-box;
-                "
-                onclick="this.select()"
-            >
+        <p>
+        👨 ${pere.nom}
+        </p>
         `;
-
-        fiche.innerHTML = html;
-
     }
+
+    if(mere){
+
+        html += `
+        <p>
+        👩 ${mere.nom}
+        </p>
+        `;
+    }
+
+    if(fratrie.length){
+
+        html +=
+        "<h3>Frères et sœurs</h3><ul>";
+
+        fratrie.forEach(f => {
+
+            html +=
+            "<li>" +
+            f.nom +
+            "</li>";
+
+        });
+
+        html +=
+        "</ul>";
+    }
+
+    if(enfants.length){
+
+        html +=
+        "<h3>Enfants</h3><ul>";
+
+        enfants.forEach(e => {
+
+            html +=
+            "<li>" +
+            e.nom +
+            "</li>";
+
+        });
+
+        html +=
+        "</ul>";
+    }
+
+    html += `
+        <hr>
+
+        <strong>
+        Lien direct
+        </strong>
+
+        <br><br>
+
+        <input
+            type="text"
+            readonly
+            value="${urlDirecte}"
+            onclick="this.select();">
+    `;
+
+    fiche.innerHTML =
+        html;
+
+}
 
 
 
