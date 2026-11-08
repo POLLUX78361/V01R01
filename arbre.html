@@ -95,6 +95,10 @@ nav a:hover{
     opacity:0.95;
     display:none;
 }
+
+#fiche-personne:empty{
+    display:none !important;
+}    
     
 #fermer-fiche{
     display:none;
@@ -356,7 +360,7 @@ function afficherRattachement(personne) {
 
 fiche.style.display = "block";
 
-    doument.getElementById("fermer-fiche")
+    document.getElementById("fermer-fiche")
         .style.display = "block";
 
     const pere =
