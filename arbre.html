@@ -262,7 +262,10 @@ fetch("famille.json")
 
 tree.onNodeClick(function(sender, args){
 
-    const id = args.node.id || args.nodeId;
+    const id =
+        args?.node?.id ||
+        args?.nodeId ||
+        args;
 
     const personne = data.find(
         p => p.id == id
@@ -273,7 +276,7 @@ tree.onNodeClick(function(sender, args){
     }
 
     return false;
-});  
+});
 
     setTimeout(() => {
         tree.fit();
