@@ -507,8 +507,7 @@ if(enfants.length){
 
 }
 
-
-const rechercheInput =
+   const rechercheInput =
     document.getElementById("search");
 
 if (rechercheInput) {
@@ -516,7 +515,6 @@ if (rechercheInput) {
     rechercheInput.addEventListener(
         "input",
         function () {
-   
 
             const recherche =
                 normaliser(
@@ -556,7 +554,9 @@ if (rechercheInput) {
 
         }
     );
- 
+
+}
+
    setTimeout(() => {
 
     tree.fit();
