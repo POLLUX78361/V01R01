@@ -94,20 +94,22 @@ nav a:hover{
     font-size:14px;
     opacity:0.95;
 }
-
-  #fermer-fiche{
+    
+#fermer-fiche{
+    display:none;
     position:fixed;
     top:145px;
     left:calc(50% + 185px);
     z-index:10000;
-    background:#d4af37;
-    color:#2c1810;
     border:none;
-    border-radius:5px;
-    padding:6px 10px;
+    border-radius:50%;
+    width:28px;
+    height:28px;
+    background:#c0392b;
+    color:white;
     cursor:pointer;
-    font-weight:bold;
 }
+  
 
 #fiche-personne h2{
     margin-top:0;
@@ -344,7 +346,7 @@ function afficherRattachement(personne) {
         "fiche-personne"
     );
 
-fiche.style.display = "none";
+fiche.style.display = "block";
     
     function fermerFiche() {
     document.getElementById("fiche-personne").style.display = "none";
