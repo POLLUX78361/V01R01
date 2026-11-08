@@ -558,22 +558,28 @@ if(enfants.length){
 
     
 
-       
- document
-.getElementById("fermer-fiche")
-.addEventListener("click", function () {
+    
+const boutonFermer =
+    document.getElementById("fermer-fiche");
 
- document.getElementById("fiche-personne")
-        .innerHTML = "";
+if (boutonFermer) {
 
-document.getElementById("fiche-personne")
-        .style.display = "none";
+    boutonFermer.addEventListener(
+        "click",
+        function () {
 
-document.getElementById("fermer-fiche")
-        .style.display = "none";  
+            document.getElementById("fiche-personne")
+                    .innerHTML = "";
 
-});
-  
+            document.getElementById("fiche-personne")
+                    .style.display = "none";
+
+            boutonFermer.style.display = "none";
+
+        }
+    );
+
+ )
     const personneId =
         params.get("id");
 
