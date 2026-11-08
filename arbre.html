@@ -261,6 +261,20 @@ fetch("famille.json")
 
     tree.load(nodes);
 
+    tree.onNodeClick(function(sender, args){
+
+    const personne =
+        data.find(
+            p => p.id == args.node.id
+        );
+
+    if(personne){
+        afficherRattachement(personne);
+    }
+
+    return false;
+});
+
     setTimeout(() => {
         tree.fit();
     }, 500);
