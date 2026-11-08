@@ -279,6 +279,8 @@ tree.onNodeClick(function(sender, args){
 
 setTimeout(() => {
 
+    tree.fit();
+
     document.querySelectorAll("input").forEach(el => {
 
         const texte =
@@ -296,6 +298,7 @@ setTimeout(() => {
             } else {
                 el.remove();
             }
+
         }
 
     });
