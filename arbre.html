@@ -278,9 +278,25 @@ tree.onNodeClick(function(sender, args){
     return false;
 });
 
-    setTimeout(() => {
-        tree.fit();
-    }, 500);
+  setTimeout(() => {
+
+    document
+        .querySelectorAll(
+            'input[placeholder*="Search"], input[placeholder*="search"]'
+        )
+        .forEach(el => {
+
+            const parent = el.closest("div");
+
+            if (parent) {
+                parent.style.display = "none";
+            } else {
+                el.style.display = "none";
+            }
+
+        });
+
+}, 1000);
 
 
     function normaliser(txt) {
