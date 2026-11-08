@@ -327,6 +327,10 @@ function afficherRattachement(personne) {
     );
 
 fiche.style.display = "block";
+    
+    function fermerFiche() {
+    document.getElementById("fiche-personne").style.display = "none";
+}
     const pere =
     personne.fid
     ? data.find(
