@@ -624,11 +624,11 @@ if (boutonFermer) {
 
     if (personneId) {
 
-        const personne =
-            data.find(
-                p =>
-                p.id == personneId
-            );
+const personne =
+    data.find(
+        p =>
+        String(p.id) === String(personneId)
+    );      
 
         if (personne) {
 
