@@ -351,9 +351,17 @@ fiche.style.display = "block";
  document.getElementById("fermer-fiche")
         .style.display = "block";   
     
-    function fermerFiche() {
-    document.getElementById("fiche-personne").style.display = "none";
-}
+    document
+.getElementById("fermer-fiche")
+.addEventListener("click", function(){
+
+    document.getElementById("fiche-personne")
+            .style.display = "none";
+
+    document.getElementById("fermer-fiche")
+            .style.display = "none";
+});
+
     const pere =
     personne.fid
     ? data.find(
