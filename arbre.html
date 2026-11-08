@@ -240,7 +240,7 @@ fetch("famille.json")
     }));
 
   const tree = new FamilyTree(
-    .getElementById("tree"),
+    document.getElementById("tree"),
     {
         nodeBinding: {
             field_0: "name",
@@ -297,7 +297,7 @@ fetch("famille.json")
         } catch (e) {}
 
         const noeud =
-            .querySelector(
+            document.querySelector(
                 '[data-n-id="' + id + '"]'
             );
 
@@ -350,13 +350,13 @@ fetch("famille.json")
 function afficherRattachement(personne) {
 
   const fiche =
-    .getElementById(
+    document.getElementById(
         "fiche-personne"
     );
 
 fiche.style.display = "block";
 
-    .getElementById("fermer-fiche")
+    doument.getElementById("fermer-fiche")
         .style.display = "block";
 
     const pere =
@@ -503,7 +503,7 @@ if(enfants.length){
 
 
 
-    .getElementById("search")
+    document.getElementById("search")
     .addEventListener(
         "input",
         function () {
