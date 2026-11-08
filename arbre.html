@@ -277,37 +277,6 @@ tree.onNodeClick(function(sender, args){
 
 });
 
-setTimeout(() => {
-
-    tree.fit();
-
- document.querySelectorAll("input").forEach(el => {
-
-    if (el.id === "search") {
-        return;
-    }
-
-    const texte =
-        (el.placeholder || "").toLowerCase();
-
-    if (
-        texte.includes("search") ||
-        texte.includes("type ?")
-    ) {
-
-        const bloc = el.closest("div");
-
-        if (bloc) {
-            bloc.style.display = "none";
-        } else {
-            el.style.display = "none";
-        }
-
-    }
-
-});  
-
-}, 1500);
 
 
     function normaliser(txt) {
@@ -579,8 +548,39 @@ if(enfants.length){
 
         }
     );
-  
-      
+ 
+   setTimeout(() => {
+
+    tree.fit();
+
+ document.querySelectorAll("input").forEach(el => {
+
+    if (el.id === "search") {
+        return;
+    }
+
+    const texte =
+        (el.placeholder || "").toLowerCase();
+
+    if (
+        texte.includes("search") ||
+        texte.includes("type ?")
+    ) {
+
+        const bloc = el.closest("div");
+
+        if (bloc) {
+            bloc.style.display = "none";
+        } else {
+            el.style.display = "none";
+        }
+
+    }
+
+});  
+
+}, 1500);
+   
 
     const params =
         new URLSearchParams(
