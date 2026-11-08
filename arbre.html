@@ -278,25 +278,30 @@ tree.onNodeClick(function(sender, args){
     return false;
 });
 
-  setTimeout(() => {
+setTimeout(() => {
 
-    document
-        .querySelectorAll(
-            'input[placeholder*="Search"], input[placeholder*="search"]'
-        )
-        .forEach(el => {
+    document.querySelectorAll("input").forEach(el => {
 
-            const parent = el.closest("div");
+        const texte =
+            (el.placeholder || "").toLowerCase();
 
-            if (parent) {
-                parent.style.display = "none";
+        if (
+            texte.includes("search") ||
+            texte.includes("type ?")
+        ) {
+
+            const bloc = el.closest("div");
+
+            if (bloc) {
+                bloc.remove();
             } else {
-                el.style.display = "none";
+                el.remove();
             }
+        }
 
-        });
+    });
 
-}, 1000);
+}, 1500);
 
 
     function normaliser(txt) {
