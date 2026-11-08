@@ -242,26 +242,22 @@ fetch("famille.json")
 
     }));
 
-    const tree = new FamilyTree(
-        document.getElementById("tree"),
-        {
+  const tree = new FamilyTree(
+    document.getElementById("tree"),
+    {
+        nodeBinding: {
+            field_0: "name",
+            field_1: "title"
+        },
 
-            nodeBinding: {
-                field_0: "name",
-                field_1: "title"
-            },
+        toolbar: false,
 
-            toolbar: {
-                zoom: true,
-                fit: true,
-                expandAll: true
-            },
+        enableSearch: false,
 
-            scaleInitial:
-                FamilyTree.match.boundary
-
-        }
-    );
+        scaleInitial:
+            FamilyTree.match.boundary
+    }
+);
 
     tree.load(nodes);
 
