@@ -508,11 +508,15 @@ if(enfants.length){
 }
 
 
+const rechercheInput =
+    document.getElementById("search");
 
-    document.getElementById("search")
-    .addEventListener(
+if (rechercheInput) {
+
+    rechercheInput.addEventListener(
         "input",
         function () {
+   
 
             const recherche =
                 normaliser(
