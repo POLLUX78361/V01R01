@@ -281,29 +281,33 @@ setTimeout(() => {
 
     tree.fit();
 
-    document.querySelectorAll("input").forEach(el => {
+ document.querySelectorAll("input").forEach(el => {
 
-        const texte =
-            (el.placeholder || "").toLowerCase();
+    if (el.id === "search") {
+        return;
+    }
 
-        if (
-            texte.includes("search") ||
-            texte.includes("type ?")
-        ) {
+    const texte =
+        (el.placeholder || "").toLowerCase();
 
-            const bloc = el.closest("div");
+    if (
+        texte.includes("search") ||
+        texte.includes("type ?")
+    ) {
 
-            if (bloc) {
-                bloc.remove();
-            } else {
-                el.remove();
-            }
+        const bloc = el.closest("div");
 
+        if (bloc) {
+            bloc.style.display = "none";
+        } else {
+            el.style.display = "none";
         }
 
-    });
+    }
 
-}, 1500);
+});  
+
+
 
 
     function normaliser(txt) {
