@@ -185,7 +185,7 @@ input[placeholder*="search"]{
 <a href="armoiries.html">Armoiries</a>
 <a href="chronologie.html">Chronologie</a>
 <a href="contact.html">Contact</a>
-<a href="s.html">s</a>
+<a href="documents.html">Documents</a>
 <a href="photos.html">Photos</a>
 <a href="localisation.html">Localisation</a>
 <a href="patronyme.html">Patronyme</a>
@@ -565,11 +565,14 @@ if(enfants.length){
 .getElementById("fermer-fiche")
 .addEventListener("click", function () {
 
-    document.getElementById("fiche-personne")
-            .style.display = "none";
+ document.getElementById("fiche-personne")
+        .innerHTML = "";
 
-    document.getElementById("fermer-fiche")
-            .style.display = "none";
+document.getElementById("fiche-personne")
+        .style.display = "none";
+
+document.getElementById("fermer-fiche")
+        .style.display = "none";  
 
 });
   
