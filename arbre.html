@@ -365,20 +365,20 @@ fiche.style.display = "block";
     document.getElementById("fermer-fiche")
         .style.display = "block";
 
-    const pere =
+ const pere =
     personne.fid
     ? data.find(
-        p => p.id === personne.fid
+        p => String(p.id) === String(personne.fid)
       )
-    : null;
-   
+    : null; 
+
 const mere =
     personne.mid
     ? data.find(
-        p => p.id === personne.mid
+        p => String(p.id) === String(personne.mid)
       )
     : null;
-        
+ 
     
 const fratrie =
     data.filter(
