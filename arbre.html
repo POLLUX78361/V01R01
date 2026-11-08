@@ -268,14 +268,13 @@ tree.onNodeClick(function(sender, args){
         args;
 
     const personne = data.find(
-        p => p.id == id
+        p => String(p.id) === String(id)
     );
 
     if(personne){
         afficherRattachement(personne);
     }
 
-    return false;
 });
 
 setTimeout(() => {
