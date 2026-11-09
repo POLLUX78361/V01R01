@@ -1,28 +1,36 @@
 const fs = require("fs");
 
-const gedcom = fs.readFileSync("famille.ged", "utf8");
+const ged = fs.readFileSync("famille.ged", "utf8");
 
-const lignes = gedcom.split(/\r?\n/);
+const lignes = ged.split(/\r?\n/);
 
 const personnes = [];
 
 let personne = null;
+let contexte = "";
 
 for (const ligne of lignes) {
 
-    const indi = ligne.match(/^0 @([^@]+)@ INDI$/);
+    const individu = ligne.match(/^0 @([^@]+)@ INDI$/);
 
-    if (indi) {
+    if (individu) {
 
-        if (personne) personnes.push(personne);
+        if (personne) {
+            personnes.push(personne);
+        }
 
         personne = {
-            id: indi[1],
+            id: individu[1],
             nom: "",
-            naissance: null,
-            deces: null,
-            fid: null,
-            mid: null
+            sexe: "",
+            naissance: {
+                date: null,
+                lieu: null
+            },
+            deces: {
+                date: null,
+                lieu: null
+            }
         };
 
         continue;
@@ -30,44 +38,56 @@ for (const ligne of lignes) {
 
     if (!personne) continue;
 
-    if (ligne.includes("1 NAME")) {
+    if (ligne.startsWith("1 NAME")) {
 
-        let nom = ligne
+        personne.nom = ligne
             .replace("1 NAME", "")
             .replace(/\//g, "")
             .trim();
-
-        personne.nom = nom;
     }
 
-    if (ligne.includes("1 BIRT")) {
-        personne._birt = true;
-        personne._deat = false;
+    if (ligne.startsWith("1 SEX")) {
+        personne.sexe = ligne.replace("1 SEX", "").trim();
     }
 
-    if (ligne.includes("1 DEAT")) {
-        personne._deat = true;
-        personne._birt = false;
+    if (ligne.startsWith("1 BIRT")) {
+        contexte = "BIRT";
     }
 
-    if (ligne.includes("2 DATE")) {
+    if (ligne.startsWith("1 DEAT")) {
+        contexte = "DEAT";
+    }
 
-        const annee = ligne.match(/(\d{4})/);
+    if (ligne.startsWith("2 DATE")) {
 
-        if (annee) {
+        const date = ligne.replace("2 DATE", "").trim();
 
-            if (personne._birt) {
-                personne.naissance = parseInt(annee[1]);
-            }
+        if (contexte === "BIRT") {
+            personne.naissance.date = date;
+        }
 
-            if (personne._deat) {
-                personne.deces = parseInt(annee[1]);
-            }
+        if (contexte === "DEAT") {
+            personne.deces.date = date;
+        }
+    }
+
+    if (ligne.startsWith("2 PLAC")) {
+
+        const lieu = ligne.replace("2 PLAC", "").trim();
+
+        if (contexte === "BIRT") {
+            personne.naissance.lieu = lieu;
+        }
+
+        if (contexte === "DEAT") {
+            personne.deces.lieu = lieu;
         }
     }
 }
 
-if (personne) personnes.push(personne);
+if (personne) {
+    personnes.push(personne);
+}
 
 fs.writeFileSync(
     "famille.json",
@@ -75,4 +95,4 @@ fs.writeFileSync(
     "utf8"
 );
 
-console.log(`${personnes.length} 
+console.log(`${personnes.length} individus convertis`);
