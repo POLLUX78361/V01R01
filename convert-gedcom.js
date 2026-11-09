@@ -11,28 +11,35 @@ let contexte = "";
 
 for (const ligne of lignes) {
 
-    const individu = ligne.match(/^0 @([^@]+)@ INDI$/);
+    const m = ligne.match(/^0 @([^@]+)@ INDI$/);
 
-    if (individu) {
+    if (m) {
 
         if (personne) {
             personnes.push(personne);
         }
 
         personne = {
-            id: individu[1],
+            id: m[1],
+
             nom: "",
+
             sexe: "",
+
             naissance: {
                 date: null,
                 lieu: null
             },
+
             deces: {
                 date: null,
                 lieu: null
-            }
+            },
+
+            familles: []
         };
 
+        contexte = "";
         continue;
     }
 
@@ -46,21 +53,37 @@ for (const ligne of lignes) {
             .trim();
     }
 
-    if (ligne.startsWith("1 SEX")) {
-        personne.sexe = ligne.replace("1 SEX", "").trim();
+    else if (ligne.startsWith("1 SEX")) {
+
+        personne.sexe = ligne
+            .replace("1 SEX", "")
+            .trim();
     }
 
-    if (ligne.startsWith("1 BIRT")) {
+    else if (ligne.startsWith("1 BIRT")) {
+
         contexte = "BIRT";
     }
 
-    if (ligne.startsWith("1 DEAT")) {
+    else if (ligne.startsWith("1 DEAT")) {
+
         contexte = "DEAT";
     }
 
-    if (ligne.startsWith("2 DATE")) {
+    else if (ligne.startsWith("1 FAMS")) {
 
-        const date = ligne.replace("2 DATE", "").trim();
+        const fam = ligne.match(/@([^@]+)@/);
+
+        if (fam) {
+            personne.familles.push(fam[1]);
+        }
+    }
+
+    else if (ligne.startsWith("2 DATE")) {
+
+        const date = ligne
+            .replace("2 DATE", "")
+            .trim();
 
         if (contexte === "BIRT") {
             personne.naissance.date = date;
@@ -71,9 +94,11 @@ for (const ligne of lignes) {
         }
     }
 
-    if (ligne.startsWith("2 PLAC")) {
+    else if (ligne.startsWith("2 PLAC")) {
 
-        const lieu = ligne.replace("2 PLAC", "").trim();
+        const lieu = ligne
+            .replace("2 PLAC", "")
+            .trim();
 
         if (contexte === "BIRT") {
             personne.naissance.lieu = lieu;
@@ -95,4 +120,6 @@ fs.writeFileSync(
     "utf8"
 );
 
-console.log(`${personnes.length} individus convertis`);
+console.log(
+    `${personnes.length} individus convertis`
+);
