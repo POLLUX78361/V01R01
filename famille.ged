@@ -1,1 +1,4970 @@
+0 HEAD
+1 SOUR FILAE.COM
+2 CORP FILAE
+3 ADDR 1 bis, avenue de la république
+4 POST 75011
+4 CITY Paris
+4 CTRY FRANCE
+2 VERS 2017
+1 GEDC
+2 FORM VERS 5.5
+1 CHAR UTF-8
+1 LANG FRENCH
+0 @I1@ INDI
+1 NAME Eric, Philippe /ANDRE/
+2 SURN ANDRE
+2 GIVN Eric, Philippe
+1 SEX M
+1 BIRT
+2 PLAC Mantes-la-Jolie, Yvelines, Île-de-France, France
+2 DATE 5 nov 1961
+1 DSCR
+1 NOTE @NT118806951@
+1 FAMS @F1@
+1 FAMC @F3@
+0 @I2@ INDI
+1 NAME Françoise /ELOGA/
+2 SURN ELOGA
+2 GIVN Françoise
+1 SEX F
+1 BIRT
+2 PLAC Douala, Littoral, Cameroun
+2 DATE 16 mar 1964
+1 DSCR
+1 FAMS @F1@
+1 FAMS @F2@
+1 FAMC @F6@
+0 @I3@ INDI
+1 NAME Melvyn, Killian /ANDRE/
+2 SURN ANDRE
+2 GIVN Melvyn, Killian
+1 SEX M
+1 BIRT
+2 PLAC Mantes-la-Jolie, Yvelines, Île-de-France, France
+2 DATE 31 may 2002
+1 DSCR
+1 NOTE @NT118806952@
+1 FAMC @F1@
+0 @I4@ INDI
+1 NAME Jade, Sahteene /ANDRE/
+2 SURN ANDRE
+2 GIVN Jade, Sahteene
+1 SEX F
+1 BIRT
+2 PLAC Mantes-la-Jolie, Yvelines, Île-de-France, France
+2 DATE 29 nov 2003
+1 DSCR
+1 NOTE @NT118806953@
+1 FAMC @F1@
+0 @I5@ INDI
+1 NAME Nyobe /LIBAM/
+2 SURN LIBAM
+2 GIVN Nyobe
+1 SEX M
+1 BIRT
+2 PLAC Libamba Makak Cameroun
+2 DATE 30 nov 1952
+1 FAMS @F2@
+0 @I6@ INDI
+1 NAME Joël /LIBAM/
+2 SURN LIBAM
+2 GIVN Joël
+1 SEX M
+1 BIRT
+2 PLAC Douala, Littoral, Cameroun
+2 DATE 7 jul 1990
+1 DSCR
+1 FAMC @F2@
+0 @I7@ INDI
+1 NAME Jean, Claude /ANDRE/
+2 SURN ANDRE
+2 GIVN Jean, Claude
+1 SEX M
+1 BIRT
+2 PLAC (Paris 15 Vaugirard) Paris, Paris, Île-de-France, France
+2 DATE 30 sep 1931
+1 DEAT
+2 PLAC Limay, Yvelines, Île-de-France, France
+2 DATE 27 sep 2024
+1 FAMS @F3@
+1 FAMC @F9@
+0 @I8@ INDI
+1 NAME Martine, Madeleine, Andrée /ANDRE/
+2 SURN ANDRE
+2 GIVN Martine, Madeleine, Andrée
+1 SEX F
+1 BIRT
+2 PLAC Mantes-la-Jolie, Yvelines, Île-de-France, France
+2 DATE 10 mar 1958
+1 DSCR
+1 FAMS @F4@
+1 FAMS @F5@
+1 FAMC @F3@
+0 @I9@ INDI
+1 NAME Simone, Alice /LECHARPENTIER/
+2 SURN LECHARPENTIER
+2 GIVN Simone, Alice
+1 SEX F
+1 BIRT
+2 PLAC Gambais, Yvelines, Île-de-France, France
+2 DATE 16 dec 1935
+1 DEAT
+2 PLAC Magnanville, Yvelines, Île-de-France, France
+2 DATE 16 apr 2017
+1 FAMS @F3@
+1 FAMC @F10@
+0 @I10@ INDI
+1 NAME Shukri /LEPAJA/
+2 SURN LEPAJA
+2 GIVN Shukri
+1 SEX M
+1 BIRT
+2 PLAC Podujevo, Pristina, Kosovo
+2 DATE 28 jun 1948
+1 DSCR
+1 FAMS @F4@
+1 FAMC @F886419497@
+0 @I11@ INDI
+1 NAME Jean, Cyrille /BUDEL/
+2 SURN BUDEL
+2 GIVN Jean, Cyrille
+1 SEX M
+1 BIRT
+2 PLAC La Réunion, La Réunion
+2 DATE 14 apr 1958
+1 DSCR
+1 FAMS @F5@
+0 @I13@ INDI
+1 NAME Joseph /ILOGA/
+2 SURN ILOGA
+2 GIVN Joseph
+1 SEX M
+1 BIRT
+2 PLAC Édéa, Littoral, Cameroun
+2 DATE 25 dec 1924
+1 DEAT
+2 PLAC Douala, Littoral, Cameroun
+2 DATE 16 mar 2015
+1 FAMS @F6@
+0 @I14@ INDI
+1 NAME Jeanne /NGO-KOTBO/
+2 SURN NGO-KOTBO
+2 GIVN Jeanne
+1 SEX F
+1 BIRT
+2 PLAC Cameroun
+2 DATE 1935
+1 DEAT
+2 PLAC Cameroun
+2 DATE 1968
+1 FAMS @F6@
+0 @I22@ INDI
+1 NAME Jacques, Henri, Jean /ANDRE/
+2 SURN ANDRE
+2 GIVN Jacques, Henri, Jean
+1 SEX M
+1 BIRT
+2 PLAC Liffol-le-Grand, Vosges, Grand Est, France
+2 DATE 31 jan 1902
+1 DEAT
+2 PLAC Mantes-la-Jolie, Yvelines, Île-de-France, France
+2 DATE 12 apr 1979
+1 BURI cimetière ancien bd Duhamel
+2 PLAC Mantes-la-Jolie, Yvelines, Île-de-France, France
+1 OCCU Chauffeur aux galeries Lafayette
+1 FAMS @F9@
+1 FAMC @F12@
+0 @I23@ INDI
+1 NAME Germaine /ROUSSELIN/
+2 SURN ROUSSELIN
+2 GIVN Germaine
+1 SEX F
+1 BIRT
+2 PLAC (Paris 08 Élysée) Paris, Paris, Île-de-France, France
+2 DATE 28 apr 1904
+1 DEAT
+2 PLAC Mantes-la-Jolie, Yvelines, Île-de-France, France
+2 DATE 17 mar 1993
+1 BURI cimetière ancien bd Duhamel 
+2 PLAC Mantes-la-Jolie, Yvelines, Île-de-France, France
+1 DSCR 1 m 59
+1 OCCU couturière
+1 FAMS @F9@
+1 FAMC @F30@
+0 @I24@ INDI
+1 NAME Germaine, Andrée /PHILIZOT/
+2 SURN PHILIZOT
+2 GIVN Germaine, Andrée
+1 SEX F
+1 BIRT
+2 PLAC (Paris 18 Buttes-Montmartre) Paris, Paris, Île-de-France, France
+2 DATE 30 mar 1907
+1 DEAT
+2 PLAC Mantes-la-Jolie, Yvelines, Île-de-France, France
+2 DATE 17 mar 1964
+1 BURI Ancien cimetière bd Duhamel
+2 PLAC Mantes-la-Jolie, Yvelines, Île-de-France, France
+1 FAMS @F10@
+0 @I25@ INDI
+1 NAME Pierre, Georges /LECHARPENTIER/
+2 SURN LECHARPENTIER
+2 GIVN Pierre, Georges
+1 SEX M
+1 BIRT
+2 PLAC Mantes-la-Jolie, Yvelines, Île-de-France, France
+2 DATE 04 aug 1904
+1 DEAT
+2 PLAC Louviers, Eure, Normandie, France
+2 DATE 09 jan 1989
+1 BURI Ancien cimetière bd Duhamel
+2 PLAC Mantes-la-Jolie, Yvelines, Île-de-France, France
+1 OCCU agent cie electrique Ouest lumière puis EDF
+1 FAMS @F10@
+1 FAMS @F11@
+0 @I26@ INDI
+1 NAME Raymonde, Andrée /FORFAIT/
+2 SURN FORFAIT
+2 GIVN Raymonde, Andrée
+1 SEX F
+1 BIRT
+2 PLAC Pont-de-l'Arche, Eure, Normandie, France
+2 DATE 21 jan 1906
+1 DEAT
+2 PLAC Pont-de-l'Arche, Eure, Normandie, France
+2 DATE 08 sep 1997
+1 DSCR 1 m 53
+1 OCCU Employée de bureau
+1 FAMS @F11@
+0 @I27@ INDI
+1 NAME Félicien, Nicolas /ANDRE/
+2 SURN ANDRE
+2 GIVN Félicien, Nicolas
+1 SEX M
+1 BIRT
+2 PLAC Oudincourt, Haute-Marne, Grand Est, France
+2 DATE 9 feb 1877
+1 DEAT
+2 PLAC Liffol-le-Grand, Vosges, Grand Est, France
+2 DATE 7 feb 1960
+1 OCCU Sculpteur sur bois
+2 DATE 1901
+1 CONT
+1 FAMS @F12@
+1 FAMC @F15@
+0 @I28@ INDI
+1 NAME Mathilde, Marie, Marguerite /DEBLAIZE/
+2 SURN DEBLAIZE
+2 GIVN Mathilde, Marie, Marguerite
+1 SEX F
+1 BIRT
+2 PLAC Revigny-sur-Ornain, Meuse, Grand Est, France
+2 DATE 29 apr 1876
+1 DEAT
+2 PLAC Liffol-le-Grand, Vosges, Grand Est, France
+2 DATE 15 sep 1950
+1 FAMS @F12@
+1 FAMC @F52@
+0 @I31@ INDI
+1 NAME Geneviève Odette /ANDRE/
+2 NICK Ginette
+2 SURN ANDRE
+2 GIVN Geneviève Odette
+1 SEX F
+1 BIRT
+2 PLAC Liffol-le-Grand, Vosges, Grand Est, France
+2 DATE 14 jul 1908
+1 DEAT
+2 PLAC Vittel, Vosges, Grand Est, France
+2 DATE 24 jan 1995
+1 FAMS @F14@
+1 FAMC @F12@
+0 @I32@ INDI
+1 NAME André /THOMAS/
+2 SURN THOMAS
+2 GIVN André
+1 SEX M
+1 BIRT
+2 PLAC Liffol-le-Grand, Vosges, Grand Est, France
+2 DATE 31 oct 1904
+1 DEAT
+2 PLAC Neufchâteau, Vosges, Grand Est, France
+2 DATE 24 jun 2008
+1 NOTE @NT118806954@
+1 FAMS @F14@
+1 FAMC @F432934230@
+0 @I33@ INDI
+1 NAME François Georges /ANDRE/
+2 SURN ANDRE
+2 GIVN François Georges
+1 SEX M
+1 BIRT
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 17 jan 1838
+1 DEAT
+2 PLAC Liffol-le-Grand, Vosges, Grand Est, France
+2 DATE 11 jun 1922
+1 OCCU Régisseur
+2 DATE 1866
+1 RESI
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE abt 1866
+1 NOTE @NT118806955@
+1 FAMS @F15@
+1 FAMS @F65@
+1 FAMC @F16@
+0 @I34@ INDI
+1 NAME Marie Catherine /MASSENET/
+2 SURN MASSENET
+2 GIVN Marie Catherine
+1 SEX F
+1 BIRT
+2 PLAC Oudincourt, Haute-Marne, Grand Est, France
+2 DATE 10 oct 1843
+1 DEAT
+2 PLAC Oudincourt, Haute-Marne, Grand Est, France
+2 DATE 24 dec 1918
+1 FAMS @F15@
+1 FAMC @F64@
+0 @I35@ INDI
+1 NAME Jean-Claude /ANDRE/
+2 SURN ANDRE
+2 GIVN Jean-Claude
+1 SEX M
+1 BIRT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 16 mar 1805
+1 DEAT
+2 PLAC Bainville-aux-Miroirs, Meurthe-et-Moselle, Grand Est, France
+2 DATE 11 may 1876
+1 NOTE @NT118806956@
+1 FAMS @F16@
+1 FAMS @F19@
+1 FAMC @F20@
+0 @I36@ INDI
+1 NAME Henri, Ernest /ANDRE/
+2 SURN ANDRE
+2 GIVN Henri, Ernest
+1 SEX M
+1 BIRT
+2 PLAC Oudincourt, Haute-Marne, Grand Est, France
+2 DATE 29 oct 1886
+1 DEAT
+2 PLAC Liffol-le-Grand, Vosges, Grand Est, France
+2 DATE 24 jun 1968
+1 OCCU Mouleur en bronze
+1 NOTE @NT118806957@
+1 FAMS @F17@
+1 FAMC @F15@
+0 @I37@ INDI
+1 NAME Lucienne, Maria /BONA/
+2 SURN BONA
+2 GIVN Lucienne, Maria
+1 SEX F
+1 BIRT
+2 PLAC Liffol-le-Grand, Vosges, Grand Est, France
+2 DATE 02 sep 1890
+1 DEAT
+2 PLAC Liffol-le-Grand, Vosges, Grand Est, France
+2 DATE 29 jul 1974
+1 FAMS @F17@
+1 FAMC @F121@
+0 @I38@ INDI
+1 NAME Georges, Louis, Jules /ANDRE/
+2 SURN ANDRE
+2 GIVN Georges, Louis, Jules
+1 SEX M
+1 BIRT
+2 PLAC Liffol-le-Grand, Vosges, Grand Est, France
+2 DATE 13 jul 1926
+1 DEAT
+2 PLAC Neufchâteau, Vosges, Grand Est, France
+2 DATE 24 jan 2003
+1 FAMS @F27@
+1 FAMC @F17@
+0 @I39@ INDI
+1 NAME Joséphine Eugénie /BRAUX/
+2 SURN BRAUX
+2 GIVN Joséphine Eugénie
+1 SEX F
+1 BIRT
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 22 jul 1809
+1 DEAT
+2 PLAC Condes, Haute-Marne, Grand Est, France
+2 DATE 04 jan 1845
+1 FAMS @F16@
+1 FAMC @F18@
+0 @I41@ INDI
+1 NAME Catherine /GUEUDIN/
+2 SURN GUEUDIN
+2 GIVN Catherine
+1 SEX F
+1 BIRT
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 22 feb 1781
+1 DEAT
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 12 sep 1820
+1 FAMS @F18@
+0 @I42@ INDI
+1 NAME Marie Anne /MAILLARD/
+2 SURN MAILLARD
+2 GIVN Marie Anne
+1 SEX F
+1 BIRT
+2 DATE 1799
+1 DEAT
+2 PLAC Bainville-aux-Miroirs, Meurthe-et-Moselle, Grand Est, France
+2 DATE 4 mar 1872
+1 FAMS @F139@
+1 FAMS @F19@
+1 FAMC @F282@
+0 @I43@ INDI
+1 NAME Pierre /ANDRE/
+2 SURN ANDRE
+2 GIVN Pierre
+1 SEX M
+1 OCCU Rentier
+1 BAPM
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 10 nov 1772
+1 DEAT
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 11 apr 1830
+1 RESI
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 1800
+1 NOTE @NT118806958@
+1 FAMS @F20@
+1 FAMS @F379200917@
+1 FAMC @F22@
+0 @I44@ INDI
+1 NAME Marie-Anne /BAILLY/
+2 SURN BAILLY
+2 GIVN Marie-Anne
+1 SEX F
+1 BIRT
+2 PLAC Mazeley, Vosges, Grand Est, France
+2 DATE 12 sep 1778
+1 DEAT
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 08 mar 1872
+1 FAMS @F20@
+1 FAMC @F62@
+0 @I46@ INDI
+1 NAME Jean-Baptiste /ANDRE/
+2 SURN ANDRE
+2 GIVN Jean-Baptiste
+1 SEX M
+1 BIRT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 27 mar 1809
+1 DEAT
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 09 aug 1873
+1 CENS
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 1872
+1 FAMS @F35@
+1 FAMC @F20@
+0 @I47@ INDI
+1 NAME Marie-Magdeleine /ANDRE/
+2 SURN ANDRE
+2 GIVN Marie-Magdeleine
+1 SEX F
+1 BIRT
+2 DATE 28 oct 1813
+1 DEAT
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 15 jul 1837
+1 FAMS @F21@
+1 FAMC @F20@
+0 @I48@ INDI
+1 NAME Jean Amanie /CARNET/
+2 SURN CARNET
+2 GIVN Jean Amanie
+1 SEX M
+1 BIRT
+2 PLAC Portieux, Vosges, Grand Est, France
+2 DATE 16 dec 1811
+1 DEAT
+1 OCCU Tonnelier à Saint Germain
+1 FAMS @F21@
+1 FAMS @F1013507470@
+1 FAMC @F1013499015@
+0 @I49@ INDI
+1 NAME Jean /ANDRE/
+2 SURN ANDRE
+2 GIVN Jean
+1 SEX M
+1 BIRT
+2 PLAC Germonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 27 may 1749
+1 DEAT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 07 may 1806
+1 OCCU Cultivateur
+1 BAPM
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 27 may 1749
+1 FAMS @F22@
+1 FAMS @F58@
+1 FAMC @F23@
+0 @I50@ INDI
+1 NAME Elisabeth /RENAULT/
+2 SURN RENAULT
+2 GIVN Elisabeth
+1 SEX F
+1 BIRT
+2 PLAC Xirocourt, Meurthe-et-Moselle, Grand Est, France
+2 DATE 31 jan 1744
+1 DEAT
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 14 apr 1784
+1 NOTE @NT129664354@
+1 FAMS @F22@
+1 FAMC @F57@
+0 @I51@ INDI
+1 NAME Jean-Claude /ANDRE/
+2 SURN ANDRE
+2 GIVN Jean-Claude
+1 SEX M
+1 BIRT
+2 PLAC Roville-devant-Bayon, Meurthe-et-Moselle, Grand Est, France
+2 DATE 29 dec 1727
+1 OCCU Laboureur
+1 BAPM
+2 PLAC Roville-devant-Bayon, Meurthe-et-Moselle, Grand Est, France
+2 DATE 30 dec 1727
+1 DEAT
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 29 oct 1779
+1 NOTE @NT118806960@
+1 FAMS @F122@
+1 FAMS @F23@
+1 FAMS @F24@
+1 FAMC @F25@
+0 @I52@ INDI
+1 NAME Madeleine /COLLIN/
+2 SURN COLLIN
+2 GIVN Madeleine
+1 SEX F
+1 BIRT
+2 DATE 1727
+1 DEAT
+2 PLAC Gripport, Meurthe-et-Moselle, Grand Est, France
+2 DATE 22 jul 1753
+1 NOTE @NT118806961@
+1 FAMS @F23@
+1 FAMC @F56@
+0 @I53@ INDI
+1 NAME Elisabeth /HOCQUARD/
+2 SURN HOCQUARD
+2 GIVN Elisabeth
+1 SEX F
+1 BIRT
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 14 oct 1728
+1 DEAT
+2 PLAC Germonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 6 jun 1803
+1 NOTE @NT118806962@
+1 FAMS @F24@
+1 FAMS @F1017304260@
+1 FAMC @F1033711166@
+0 @I54@ INDI
+1 NAME André /ANDRE/
+2 SURN ANDRE
+2 GIVN André
+1 SEX M
+1 BAPM
+2 PLAC Tantonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 31 jan 1698
+1 DEAT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 15 dec 1766
+1 OCCU Admoniateur à Roville
+1 RESI
+2 PLAC Germonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 1766
+1 NOTE @NT118806963@
+1 FAMS @F25@
+1 FAMC @F26@
+0 @I55@ INDI
+1 NAME Marguerite /ABRAM/
+2 SURN ABRAM
+2 GIVN Marguerite
+1 SEX F
+1 BIRT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 04 apr 1702
+1 DEAT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 16 may 1739
+1 FAMS @F25@
+1 FAMC @F55@
+0 @I56@ INDI
+1 NAME Marguerite /ANDRE/
+2 SURN ANDRE
+2 GIVN Marguerite
+1 SEX F
+1 BIRT A confirmer
+2 PLAC Bidestroff, Moselle, Grand Est, France
+2 DATE abt 1664
+1 DEAT
+2 PLAC Xermaménil, Meurthe-et-Moselle, Grand Est, France
+2 DATE 01 sep 1746
+1 NOTE @NT127965807@
+1 FAMS @F26@
+1 FAMC @F116@
+0 @I57@ INDI
+1 NAME Marie, Thérèze /VINCENT/
+2 SURN VINCENT
+2 GIVN Marie, Thérèze
+1 SEX F
+1 BIRT
+2 DATE 15 nov 1927
+1 FAMS @F27@
+0 @I58@ INDI
+1 NAME Pierre, Henri, Paul /ANDRE/
+2 SURN ANDRE
+2 GIVN Pierre, Henri, Paul
+1 SEX M
+1 BIRT
+2 PLAC Liffol-le-Grand, Vosges, Grand Est, France
+2 DATE 16 feb 1951
+1 NOTE @NT141717391@
+1 FAMS @F28@
+1 FAMC @F27@
+0 @I59@ INDI
+1 NAME xxxxx /xXXXX/
+2 SURN xXXXX
+2 GIVN xxxxx
+1 SEX F
+1 BIRT
+1 RESI
+1 FAMS @F28@
+0 @I62@ INDI
+1 NAME Ernest, Eugène /ROUSSELIN/
+2 SURN ROUSSELIN
+2 GIVN Ernest, Eugène
+1 SEX M
+1 BIRT
+2 PLAC (Paris 11 Popincourt) Paris, Paris, Île-de-France, France
+2 DATE 19 nov 1866
+1 DSCR
+1 OCCU Domestique
+1 DEAT
+2 PLAC Mantes-la-Jolie, Yvelines, Île-de-France, France
+2 DATE 28 sep 1960
+1 NOTE @NT118806964@
+1 FAMS @F30@
+1 FAMS @F47@
+0 @I71@ INDI
+1 NAME Alexandre, Lucien, Georges /ANDRE/
+2 SURN ANDRE
+2 GIVN Alexandre, Lucien, Georges
+1 SEX M
+1 BIRT
+2 DATE 10 jan 1979
+1 RESI
+1 FAMC @F28@
+0 @I72@ INDI
+1 NAME Marie Rose /ANDRE/
+2 SURN ANDRE
+2 GIVN Marie Rose
+1 SEX F
+1 BIRT
+2 PLAC Germonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 13 may 1738
+1 DEAT
+2 PLAC Épinal, Vosges, Grand Est, France
+2 DATE 14 jun 1815
+1 BAPM
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 14 may 1738
+1 FAMS @F33@
+1 FAMS @F1016959142@
+1 FAMC @F25@
+0 @I73@ INDI
+1 NAME Pierre-Fourier /DROUOT/
+2 SURN DROUOT
+2 GIVN Pierre-Fourier
+1 SEX M
+1 BIRT
+2 PLAC Brémoncourt, Meurthe-et-Moselle, Grand Est, France
+2 DATE 06 jul 1735
+1 OCCU Notaire à Epinal
+1 DEAT
+2 PLAC Épinal, Vosges, Grand Est, France
+2 DATE 02 mar 1809
+1 OCCU Curateur en titre au Marquisat de Bayon
+2 DATE 1764
+1 NOTE @NT118806966@
+1 NOTE @NT128462521@
+1 FAMS @F33@
+1 FAMC @F75@
+0 @I74@ INDI
+1 NAME Marguerite /ANDRE/
+2 SURN ANDRE
+2 GIVN Marguerite
+1 SEX F
+1 BIRT
+2 PLAC Gripport, Meurthe-et-Moselle, Grand Est, France
+2 DATE 04 oct 1750
+1 DEAT
+2 DATE bef 1804
+1 FAMS @F34@
+1 FAMC @F23@
+0 @I75@ INDI
+1 NAME Dominique /FERRI/
+2 SURN FERRI
+2 GIVN Dominique
+1 SEX M
+1 BAPM
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 15 dec 1747
+1 DEAT
+2 DATE aft 1775
+1 NOTE @NT118806967@
+1 FAMS @F34@
+1 FAMC @F103@
+0 @I76@ INDI
+1 NAME Nicolas Henry /ANDRE/
+2 SURN ANDRE
+2 GIVN Nicolas Henry
+1 SEX M
+1 BIRT
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 23 dec 1766
+1 DEAT
+2 PLAC Dieuze, Moselle, Grand Est, France
+2 DATE 06 feb 1828
+1 OCCU Boulanger
+1 FAMS @F110@
+1 FAMC @F24@
+0 @I77@ INDI
+1 NAME Jean-Baptiste /ANDRE/
+2 SURN ANDRE
+2 GIVN Jean-Baptiste
+1 SEX M
+1 BAPM
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 23 jun 1765
+1 DEAT
+2 PLAC Germonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 03 jul 1833
+1 OCCU Maire de Germonville
+1 NOTE @NT118806968@
+1 FAMS @F85@
+1 FAMS @F1008003976@
+1 FAMC @F24@
+0 @I78@ INDI
+1 NAME Marie Anne /ANDRE/
+2 SURN ANDRE
+2 GIVN Marie Anne
+1 SEX F
+1 BIRT
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE abt 1768
+1 DEAT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 31 aug 1783
+1 FAMC @F24@
+0 @I79@ INDI
+1 NAME Marie Anne /MANGENOT/
+2 SURN MANGENOT
+2 GIVN Marie Anne
+1 SEX F
+1 BIRT
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 15 may 1807
+1 DEAT
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 01 jun 1866
+1 FAMS @F35@
+1 FAMC @F82@
+0 @I81@ INDI
+1 NAME Valérie Victorine /ANDRE/
+2 SURN ANDRE
+2 GIVN Valérie Victorine
+1 SEX F
+1 BIRT
+2 PLAC Condes, Haute-Marne, Grand Est, France
+2 DATE 10 jan 1844
+1 DEAT
+2 PLAC Villemomble, Seine-Saint-Denis, Île-de-France, France
+2 DATE 17 feb 1896
+1 NOTE @NT398551186@
+1 FAMC @F16@
+0 @I82@ INDI
+1 NAME Pierre Auguste /ANDRE/
+2 SURN ANDRE
+2 GIVN Pierre Auguste
+1 SEX M
+1 BIRT
+2 PLAC Condes, Haute-Marne, Grand Est, France
+2 DATE 19 sep 1839
+1 DEAT
+2 PLAC Chaumont, Haute-Marne, Grand Est, France
+2 DATE 08 dec 1881
+1 OCCU Manoeuvre
+1 RESI
+2 PLAC Condes, Haute-Marne, Grand Est, France
+2 DATE abt 1862
+1 NOTE @NT118806971@
+1 FAMS @F36@
+1 FAMC @F16@
+0 @I83@ INDI
+1 NAME Marie Augustine /LESEUR/
+2 SURN LESEUR
+2 GIVN Marie Augustine
+1 SEX F
+1 BIRT
+2 PLAC (Laharmand) Jonchery, Haute-Marne, Grand Est, France
+2 DATE 28 mar 1830
+1 DEAT
+2 PLAC Chaumont, Haute-Marne, Grand Est, France
+2 DATE 04 jul 1906
+1 OCCU Couturière
+1 FAMS @F36@
+1 FAMC @F126@
+0 @I84@ INDI
+1 NAME Hector Eugène /ANDRE/
+2 SURN ANDRE
+2 GIVN Hector Eugène
+1 SEX M
+1 BIRT
+2 PLAC Jonchery, Haute-Marne, Grand Est, France
+2 DATE 24 jul 1862
+1 DEAT
+2 PLAC Chaumont, Haute-Marne, Grand Est, France
+2 DATE 18 aug 1900
+1 NOTE @NT118806972@
+1 FAMC @F36@
+0 @I85@ INDI
+1 NAME Alcide Cyprien /ANDRE/
+2 SURN ANDRE
+2 GIVN Alcide Cyprien
+1 SEX M
+1 BIRT
+2 PLAC Jonchery, Haute-Marne, Grand Est, France
+2 DATE 28 jun 1865
+1 DEAT
+2 PLAC Paris, Paris, Île-de-France, France
+2 DATE 21 jan 1930
+1 FAMS @F340453735@
+1 FAMC @F36@
+0 @I86@ INDI
+1 NAME Marie Eugénie /ANDRE/
+2 SURN ANDRE
+2 GIVN Marie Eugénie
+1 SEX F
+1 BIRT
+2 PLAC Chaumont, Haute-Marne, Grand Est, France
+2 DATE 05 apr 1870
+1 DEAT
+2 DATE aft 1906
+1 NOTE @NT118806973@
+1 FAMC @F36@
+0 @I87@ INDI
+1 NAME Philippe Eugène /ANDRE/
+2 SURN ANDRE
+2 GIVN Philippe Eugène
+1 SEX M
+1 BIRT
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 20 jul 1835
+1 DEAT
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 12 sep 1923
+1 OCCU Maréchal des Logis de Gendarmerie
+1 EVEN Distinction militaire
+2 DATE 1882
+1 NOTE @NT118806974@
+1 FAMS @F37@
+1 FAMC @F16@
+0 @I88@ INDI
+1 NAME Catherine Valentine /BRAUX/
+2 SURN BRAUX
+2 GIVN Catherine Valentine
+1 SEX F
+1 BIRT
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 23 mar 1840
+1 DEAT
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 30 aug 1909
+1 FAMS @F37@
+1 FAMC @F903576751@
+0 @I91@ INDI
+1 NAME Valentine Victorine /ANDRE/
+2 SURN ANDRE
+2 GIVN Valentine Victorine
+1 SEX F
+1 BIRT
+2 PLAC Châtel-sur-Moselle, Vosges, Grand Est, France
+2 DATE 1 jun 1866
+1 DEAT
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 21 apr 1867
+1 FAMC @F37@
+0 @I92@ INDI
+1 NAME Joseph Eugène /ANDRE/
+2 SURN ANDRE
+2 GIVN Joseph Eugène
+1 SEX M
+1 BIRT
+2 PLAC Châtel-sur-Moselle, Vosges, Grand Est, France
+2 DATE 27 jan 1868
+1 DEAT
+2 DATE aft 1931
+1 OCCU Chef de bureau à la préfecture de la Meuse
+1 CENS Chef de Foyer
+2 PLAC Bar-le-Duc, Meuse, Grand Est, France
+2 DATE 1931
+1 CENS
+2 PLAC Bar-le-Duc, Meuse, Grand Est, France
+2 DATE 1906
+1 CENS Chef de Foyer
+2 PLAC Bar-le-Duc, Meuse, Grand Est, France
+2 DATE 1921
+1 CENS Chef de Foyer
+2 PLAC Bar-le-Duc, Meuse, Grand Est, France
+2 DATE 1911
+1 NOTE @NT118806975@
+1 FAMS @F39@
+1 FAMC @F37@
+0 @I93@ INDI
+1 NAME Marie Anne Clémentine /BERNARD/
+2 SURN BERNARD
+2 GIVN Marie Anne Clémentine
+1 SEX F
+1 BIRT
+2 PLAC Russ, Bas-Rhin, Grand Est, France
+2 DATE 10 mar 1865
+1 DEAT
+1 OCCU Directrice d'école à Bar Le Duc
+1 NATU
+2 PLAC Russ, Bas-Rhin, Grand Est, France
+2 DATE 1872
+1 NOTE @NT118806976@
+1 FAMS @F39@
+1 FAMC @F40@
+0 @I94@ INDI
+1 NAME Joseph /BERNARD/
+2 SURN BERNARD
+2 GIVN Joseph
+1 SEX M
+1 BIRT
+2 DATE 1838
+1 DEAT
+1 OCCU Garde forestier
+1 FAMS @F40@
+0 @I95@ INDI
+1 NAME Marie Anne /MULLER/
+2 SURN MULLER
+2 GIVN Marie Anne
+1 SEX F
+1 BIRT
+2 DATE 1839
+1 DEAT
+1 FAMS @F40@
+0 @I96@ INDI
+1 NAME Anne Marie Thérèse /ANDRE/
+2 SURN ANDRE
+2 GIVN Anne Marie Thérèse
+1 SEX F
+1 BIRT
+2 PLAC Bar-le-Duc, Meuse, Grand Est, France
+2 DATE 30 dec 1902
+1 DEAT
+2 PLAC Ballainvilliers, Essonne, Île-de-France, France
+2 DATE 28 jun 1981
+1 CENS
+2 PLAC Bar-le-Duc, Meuse, Grand Est, France
+2 DATE 1906
+1 FAMS @F41@
+1 FAMC @F39@
+0 @I97@ INDI
+1 NAME Constant, Victor, Jean Baptiste /SIMON/
+2 SURN SIMON
+2 GIVN Constant, Victor, Jean Baptiste
+1 SEX M
+1 BIRT
+2 DATE 11 may 1900
+1 DEAT
+1 FAMS @F41@
+0 @I100@ INDI
+1 NAME Marie Marguerite Valentine /ANDRE/
+2 SURN ANDRE
+2 GIVN Marie Marguerite Valentine
+1 SEX F
+1 BIRT
+2 PLAC Bar-le-Duc, Meuse, Grand Est, France
+2 DATE 21 apr 1893
+1 DEAT
+2 PLAC Bar-le-Duc, Meuse, Grand Est, France
+2 DATE 18 sep 1993
+1 OCCU Institutrice
+1 FAMS @F42@
+1 FAMC @F39@
+0 @I104@ INDI
+1 NAME Claude Léopold /ANDRE/
+2 SURN ANDRE
+2 GIVN Claude Léopold
+1 SEX M
+1 BIRT
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 11 dec 1833
+1 DEAT
+2 PLAC Condes, Haute-Marne, Grand Est, France
+2 DATE 9 may 1845
+1 FAMC @F16@
+0 @I105@ INDI
+1 NAME Marie Joséphine /ANDRE/
+2 SURN ANDRE
+2 GIVN Marie Joséphine
+1 SEX F
+1 BIRT
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 28 sep 1832
+1 DEAT
+2 PLAC Nancy, Meurthe-et-Moselle, Grand Est, France
+2 DATE 03 jul 1864
+1 FAMS @F44@
+1 FAMC @F16@
+0 @I106@ INDI
+1 NAME Jean François /MUNIER/
+2 SURN MUNIER
+2 GIVN Jean François
+1 SEX M
+1 BIRT
+2 PLAC Virecourt, Meurthe-et-Moselle, Grand Est, France
+2 DATE 28 may 1832
+1 DEAT
+2 PLAC Saint-Mihiel, Meuse, Grand Est, France
+2 DATE 19 may 1893
+1 FAMS @F44@
+1 FAMS @F404584993@
+1 FAMC @F81@
+0 @I114@ INDI
+1 NAME Emilia /ANDRE/
+2 SURN ANDRE
+2 GIVN Emilia
+1 SEX F
+1 BIRT
+2 DATE 1976
+1 FAMC @F28@
+0 @I115@ INDI
+1 NAME Marie, Anna, Isabelle /BUAT/
+2 SURN BUAT
+2 GIVN Marie, Anna, Isabelle
+1 SEX F
+1 BIRT
+2 PLAC (Colombey-les-Deux-Églises) Colombey les Deux Églises, Haute-Marne, Grand Est, France
+2 DATE 24 apr 1864
+1 DEAT
+2 PLAC Mantes-la-Jolie, Yvelines, Île-de-France, France
+2 DATE 14 apr 1939
+1 FAMS @F47@
+1 FAMS @F903392108@
+1 FAMC @F794174361@
+0 @I117@ INDI
+1 NAME Amélie Victoire /DUVAL/
+2 SURN DUVAL
+2 GIVN Amélie Victoire
+1 SEX F
+1 BIRT
+2 PLAC Beaumont-le-Roger, Eure, Normandie, France
+2 DATE 2 jan 1853
+1 DEAT
+1 FAMS @F48@
+1 FAMC @F141@
+0 @I130@ INDI
+1 NAME Mathilde Victorine /MAIGROT/
+2 SURN MAIGROT
+2 GIVN Mathilde Victorine
+1 SEX F
+1 BIRT
+2 PLAC (Marault) Bologne, Haute-Marne, Grand Est, France
+2 DATE 14 jun 1852
+1 DEAT
+2 PLAC Revigny-sur-Ornain, Meuse, Grand Est, France
+2 DATE 18 may 1878
+1 OCCU sans profession
+1 FAMS @F52@
+0 @I137@ INDI
+1 NAME François /ABRAM/
+2 SURN ABRAM
+2 GIVN François
+1 SEX M
+1 BIRT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 14 dec 1660
+1 DEAT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 28 nov 1705
+1 FAMS @F55@
+1 FAMS @F792888407@
+0 @I138@ INDI
+1 NAME Agnès /PERRIN/
+2 SURN PERRIN
+2 GIVN Agnès
+1 SEX F
+1 BIRT
+2 DATE 1661
+1 DEAT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 12 jun 1740
+1 FAMS @F55@
+0 @I139@ INDI
+1 NAME André /ANDRE/
+2 SURN ANDRE
+2 GIVN André
+1 SEX M
+1 BIRT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 05 aug 1731
+1 DEAT
+1 BAPM
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 06 aug 1731
+1 FAMC @F25@
+0 @I140@ INDI
+1 NAME Nicolas /COLLIN/
+2 SURN COLLIN
+2 GIVN Nicolas
+1 SEX M
+1 BIRT
+2 PLAC Dogneville, Vosges, Grand Est, France
+2 DATE 25 apr 1698
+1 DEAT
+2 PLAC Dogneville, Vosges, Grand Est, France
+2 DATE 02 sep 1738
+1 FAMS @F56@
+0 @I141@ INDI
+1 NAME Françoise /PIERRON/
+2 SURN PIERRON
+2 GIVN Françoise
+1 SEX F
+1 BIRT
+2 PLAC Gripport, Meurthe-et-Moselle, Grand Est, France
+2 DATE 16 nov 1703
+1 DEAT
+1 FAMS @F56@
+0 @I143@ INDI
+1 NAME Joseph /RENAULT/
+2 SURN RENAULT
+2 GIVN Joseph
+1 SEX M
+1 DEAT
+2 PLAC Xirocourt, Meurthe-et-Moselle, Grand Est, France
+2 DATE 25 mar 1748
+1 BIRT
+2 PLAC Xirocourt, Meurthe-et-Moselle, Grand Est, France
+2 DATE 22 jan 1715
+1 FAMS @F57@
+0 @I144@ INDI
+1 NAME Marie Françoise /HOCQUARD/
+2 SURN HOCQUARD
+2 GIVN Marie Françoise
+1 SEX F
+1 DEAT
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 18 jan 1766
+1 BIRT
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 7 sep 1720
+1 NOTE @NT582705910@
+1 FAMS @F57@
+1 FAMC @F1033711166@
+0 @I145@ INDI
+1 NAME Marguerite /LUC/
+2 SURN LUC
+2 GIVN Marguerite
+1 SEX F
+1 BAPM
+2 PLAC Badménil-aux-Bois, Vosges, Grand Est, France
+2 DATE 04 may 1754
+1 DEAT
+2 PLAC Houécourt, Vosges, Grand Est, France
+2 DATE 03 feb 1840
+1 FAMS @F58@
+1 FAMS @F60@
+1 FAMS @F791716808@
+1 FAMC @F59@
+0 @I146@ INDI
+1 NAME Florent /LUC/
+2 SURN LUC
+2 GIVN Florent
+1 SEX M
+1 BIRT
+1 DEAT
+1 FAMS @F59@
+0 @I147@ INDI
+1 NAME Madeleine /CHARLES/
+2 SURN CHARLES
+2 GIVN Madeleine
+1 SEX F
+1 BIRT
+1 DEAT
+1 FAMS @F59@
+0 @I148@ INDI
+1 NAME Alexis /MALHORTY/
+2 SURN MALHORTY
+2 GIVN Alexis
+1 SEX M
+1 BIRT
+2 PLAC Hergugney , Vosges, Lorraine, France
+2 DATE 06 feb 1713
+1 DEAT
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 04 may 1781
+1 FAMS @F60@
+1 FAMC @F792490843@
+0 @I151@ INDI
+1 NAME Jean-Baptiste /BAILLY/
+2 SURN BAILLY
+2 GIVN Jean-Baptiste
+1 SEX M
+1 BIRT
+1 DEAT
+1 FAMS @F62@
+0 @I152@ INDI
+1 NAME Marie Magdelaine /MICHEL/
+2 SURN MICHEL
+2 GIVN Marie Magdelaine
+1 SEX F
+1 BIRT
+1 DEAT
+2 DATE bef 1803
+1 FAMS @F62@
+0 @I155@ INDI
+1 NAME Louis /MASSENET/
+2 SURN MASSENET
+2 GIVN Louis
+1 SEX M
+1 BIRT
+2 PLAC Oudincourt, Haute-Marne, Grand Est, France
+2 DATE 30 sep 1803
+1 DEAT Présent au recensement 1876 puis absent à celui de 1881
+2 DATE aft 1876
+1 CONT
+1 OCCU Vigneron
+1 CENS
+2 PLAC Oudincourt, Haute-Marne, Grand Est, France
+2 DATE 1872
+1 FAMS @F64@
+0 @I156@ INDI
+1 NAME Barbe /JARIGE/
+2 SURN JARIGE
+2 GIVN Barbe
+1 SEX F
+1 BIRT
+2 PLAC Oudincourt, Haute-Marne, Grand Est, France
+2 DATE 27 may 1806
+1 DEAT
+2 PLAC Oudincourt, Haute-Marne, Grand Est, France
+2 DATE 20 jan 1871
+1 RESI
+2 PLAC Oudincourt, Haute-Marne, Grand Est, France
+2 DATE abt 1871
+1 OCCU Cultivateur Neveu
+2 DATE 1871
+1 FAMS @F64@
+1 FAMC @F125@
+0 @I157@ INDI
+1 NAME Marie Alix /PILLARD/
+2 SURN PILLARD
+2 GIVN Marie Alix
+1 SEX F
+1 BIRT
+2 PLAC Oudincourt, Haute-Marne, Grand Est, France
+2 DATE 8 mar 1842
+1 DEAT
+2 PLAC Oudincourt, Haute-Marne, Grand Est, France
+2 DATE 21 apr 1872
+1 OCCU Domestique
+2 DATE 1866
+1 CONT
+1 OCCU Maçon Cousin
+2 DATE 1872
+1 FAMS @F65@
+1 FAMC @F71@
+0 @I163@ INDI
+1 NAME Marie /POIRINE/
+2 SURN POIRINE
+2 GIVN Marie
+1 SEX F
+1 BIRT
+1 DEAT
+1 FAMS @F69@
+0 @I167@ INDI
+1 NAME Auguste Ernest /ANDRE/
+2 SURN ANDRE
+2 GIVN Auguste Ernest
+1 SEX M
+1 BIRT
+2 PLAC Oudincourt, Haute-Marne, Grand Est, France
+2 DATE 13 jan 1867
+1 DEAT
+2 PLAC Joinville, Haute-Marne, Grand Est, France
+2 DATE 29 jun 1931
+1 CENS
+2 PLAC Joinville, Haute-Marne, Grand Est, France
+2 DATE 1906
+1 CENS Rue du collège p38/60  uniquement Auguste Ernest ANDRE
+2 PLAC Joinville, Haute-Marne, Grand Est, France
+2 DATE 1931
+1 NOTE @NT118806977@
+1 FAMS @F307@
+1 FAMC @F65@
+0 @I168@ INDI
+1 NAME Nicolas /PILLARD/
+2 SURN PILLARD
+2 GIVN Nicolas
+1 SEX M
+1 BIRT
+2 PLAC Oudincourt, Haute-Marne, Grand Est, France
+2 DATE 02 mar 1804
+1 DEAT
+2 PLAC Oudincourt, Haute-Marne, Grand Est, France
+2 DATE 20 dec 1859
+1 OCCU Maréchal ferrant
+1 FAMS @F71@
+0 @I169@ INDI
+1 NAME Marie Anne /JARIGE/
+2 SURN JARIGE
+2 GIVN Marie Anne
+1 SEX F
+1 BIRT
+2 DATE 1808
+1 DEAT
+1 FAMS @F71@
+1 FAMC @F125@
+0 @I170@ INDI
+1 NAME Pierre /ANDRE/
+2 SURN ANDRE
+2 GIVN Pierre
+1 SEX M
+1 BIRT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 11 jun 1807
+1 DEAT
+2 PLAC Nancy, Meurthe-et-Moselle, Grand Est, France
+2 DATE 15 sep 1868
+1 NOTE @NT118806978@
+1 FAMS @F72@
+1 FAMC @F20@
+0 @I171@ INDI
+1 NAME Marguerite /COLSON/
+2 SURN COLSON
+2 GIVN Marguerite
+1 SEX F
+1 BIRT
+2 PLAC Nancy, Meurthe-et-Moselle, Grand Est, France
+2 DATE 07 apr 1798
+1 DEAT
+2 PLAC Nancy, Meurthe-et-Moselle, Grand Est, France
+2 DATE 28 feb 1875
+1 FAMS @F72@
+1 FAMC @F73@
+0 @I172@ INDI
+1 NAME Dominique /COLSON/
+2 SURN COLSON
+2 GIVN Dominique
+1 SEX M
+1 BIRT
+2 PLAC Nancy, Meurthe-et-Moselle, Grand Est, France
+2 DATE 17 apr 1771
+1 DEAT
+2 PLAC Tanconville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 24 sep 1816
+1 FAMS @F73@
+0 @I173@ INDI
+1 NAME Rose /SIRY/
+2 SURN SIRY
+2 GIVN Rose
+1 SEX F
+1 BAPM
+2 PLAC Jaulzy, Oise, Hauts-de-France, France
+2 DATE 05 jul 1770
+1 DEAT
+2 DATE bef 1815
+1 FAMS @F73@
+1 FAMC @F902497803@
+0 @I177@ INDI
+1 NAME Pierre /DROUOT/
+2 SURN DROUOT
+2 GIVN Pierre
+1 SEX M
+1 BIRT
+1 DEAT
+1 FAMS @F75@
+0 @I178@ INDI
+1 NAME Marie /PERRIN/
+2 SURN PERRIN
+2 GIVN Marie
+1 SEX F
+1 BIRT
+1 DEAT
+1 FAMS @F75@
+0 @I184@ INDI
+1 NAME André /ANDRE/
+2 SURN ANDRE
+2 GIVN André
+1 SEX M
+1 BIRT
+2 PLAC Cerniat, Gruyère, Canton de Fribourg, Suisse
+2 DATE 4 jul 1661
+1 DEAT
+2 PLAC Bayon, Meurthe-et-Moselle, Grand Est, France
+2 DATE 15 jan 1734
+1 NOTE @NT127965808@
+1 FAMS @F26@
+1 FAMC @F78@
+0 @I185@ INDI
+1 NAME Marguerite /ANDRE/
+2 SURN ANDRE
+2 GIVN Marguerite
+1 SEX F
+1 BIRT
+2 PLAC Tantonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 16 feb 1704
+1 DEAT
+1 NOTE @NT118806979@
+1 FAMC @F26@
+0 @I186@ INDI
+1 NAME Claude /ANDRE/
+2 SURN ANDRE
+2 GIVN Claude
+1 SEX M
+1 BIRT
+2 PLAC Cerniat, Gruyère, Canton de Fribourg, Suisse
+2 DATE 29 apr 1618
+1 DEAT
+1 FAMS @F78@
+1 FAMC @F79@
+0 @I187@ INDI
+1 NAME Barbille /TISSOT/
+2 SURN TISSOT
+2 GIVN Barbille
+1 SEX F
+1 BIRT
+2 PLAC Crésuz, Gruyère, Canton de Fribourg, Suisse
+1 DEAT
+1 FAMS @F78@
+0 @I188@ INDI
+1 NAME Pierre /ANDREY/
+2 SURN ANDREY
+2 GIVN Pierre
+1 SEX M
+1 BIRT
+2 DATE 1589
+1 DEAT
+2 DATE 1644
+1 FAMS @F79@
+1 FAMC @F80@
+0 @I189@ INDI
+1 NAME Jean /ANDREY/
+2 SURN ANDREY
+2 GIVN Jean
+1 SEX M
+1 BIRT
+1 DEAT
+2 DATE 1625
+1 FAMS @F80@
+1 FAMC @F117@
+0 @I190@ INDI
+1 NAME Inconnu /Inconnu/
+2 SURN Inconnu
+2 GIVN Inconnu
+1 SEX F
+1 BIRT
+1 DEAT
+1 FAMS @F80@
+0 @I192@ INDI
+1 NAME Etienne /MUNIER/
+2 SURN MUNIER
+2 GIVN Etienne
+1 SEX M
+1 BIRT
+2 PLAC Virecourt, Meurthe-et-Moselle, Grand Est, France
+2 DATE 19 may 1788
+1 DEAT
+1 FAMS @F81@
+0 @I193@ INDI
+1 NAME Marie Catherine /ADAM/
+2 SURN ADAM
+2 GIVN Marie Catherine
+1 SEX F
+1 BIRT
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 20 sep 1791
+1 DEAT
+1 FAMS @F81@
+0 @I194@ INDI
+1 NAME Jean Nicolas /MANGENOT/
+2 SURN MANGENOT
+2 GIVN Jean Nicolas
+1 SEX M
+1 BIRT
+2 DATE 7 oct 1781
+1 DEAT
+1 FAMS @F82@
+0 @I195@ INDI
+1 NAME Reine /MALGLAIVE/
+2 SURN MALGLAIVE
+2 GIVN Reine
+1 SEX F
+1 BIRT
+2 PLAC Seranville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 27 apr 1778
+1 DEAT
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 26 mar 1831
+1 FAMS @F82@
+0 @I198@ INDI
+1 NAME Marie Catherine Gertrude /GERARDIN/
+2 SURN GERARDIN
+2 GIVN Marie Catherine Gertrude
+1 SEX F
+1 BIRT
+2 PLAC Remiremont, Vosges, Grand Est, France
+2 DATE 15 jan 1765
+1 DEAT
+2 PLAC Germonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 06 may 1844
+1 FAMS @F85@
+1 FAMC @F86@
+0 @I199@ INDI
+1 NAME Jean Baptiste /GERARDIN/
+2 SURN GERARDIN
+2 GIVN Jean Baptiste
+1 SEX M
+1 DEAT
+1 BAPM
+2 PLAC Remiremont, Vosges, Grand Est, France
+2 DATE 30 apr 1739
+1 FAMS @F86@
+0 @I200@ INDI
+1 NAME Marie Marguerite /BAGRE/
+2 SURN BAGRE
+2 GIVN Marie Marguerite
+1 SEX F
+1 BAPM
+2 PLAC Remiremont, Vosges, Grand Est, France
+2 DATE 23 feb 1733
+1 DEAT
+2 PLAC Remiremont, Vosges, Grand Est, France
+2 DATE 10 sep 1769
+1 FAMS @F86@
+0 @I201@ INDI
+1 NAME André /ANDRE/
+2 SURN ANDRE
+2 GIVN André
+1 SEX M
+1 BAPM
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 30 aug 1791
+1 DEAT
+2 PLAC Rugney, Vosges, Grand Est, France
+2 DATE 22 jul 1862
+1 OCCU cultivateur
+2 DATE 1834
+1 FAMS @F87@
+1 FAMS @F90@
+1 FAMC @F85@
+0 @I202@ INDI
+1 NAME Rose, Elisabeth /MAYER/
+2 SURN MAYER
+2 GIVN Rose, Elisabeth
+1 SEX F
+1 BAPM
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 11 mar 1792
+1 DEAT
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 23 apr 1841
+1 OCCU sans profession
+1 NOTE @NT118806980@
+1 FAMS @F87@
+1 FAMS @F89@
+1 FAMC @F88@
+0 @I203@ INDI
+1 NAME Jean Georges /MAYER/
+2 SURN MAYER
+2 GIVN Jean Georges
+1 SEX M
+1 BIRT
+2 PLAC Hanviller, Moselle, Grand Est, France
+2 DATE abt 1763
+1 DEAT
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 2 feb 1820
+1 OCCU Cultivateur
+1 FAMS @F88@
+0 @I204@ INDI
+1 NAME Elisabeth /VETHIER/
+2 SURN VETHIER
+2 GIVN Elisabeth
+1 SEX F
+1 BIRT
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE abt 1768
+1 DEAT
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 31 oct 1833
+1 FAMS @F88@
+0 @I205@ INDI
+1 NAME Antoine /JANOT/
+2 SURN JANOT
+2 GIVN Antoine
+1 SEX M
+1 BIRT
+2 DATE 1771
+1 DEAT
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 9 apr 1833
+1 FAMS @F89@
+0 @I206@ INDI
+1 NAME Marie Catherine /LECLAIRE/
+2 SURN LECLAIRE
+2 GIVN Marie Catherine
+1 SEX F
+1 BIRT
+2 PLAC Rugney, Vosges, Grand Est, France
+2 DATE 22 dec 1800
+1 DEAT
+2 PLAC Rugney, Vosges, Grand Est, France
+2 DATE 19 apr 1871
+1 FAMS @F90@
+1 FAMC @F91@
+0 @I207@ INDI
+1 NAME Jean Claude /LECLAIRE/
+2 SURN LECLAIRE
+2 GIVN Jean Claude
+1 SEX M
+1 BIRT
+1 DEAT
+1 FAMS @F91@
+0 @I208@ INDI
+1 NAME Catherine /CHARDEL/
+2 SURN CHARDEL
+2 GIVN Catherine
+1 SEX F
+1 BIRT
+1 DEAT
+1 FAMS @F91@
+0 @I209@ INDI
+1 NAME Jean Claude /BARBIER/
+2 SURN BARBIER
+2 GIVN Jean Claude
+1 SEX M
+1 BIRT
+2 PLAC Diarville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 21 mar 1722
+1 DEAT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 06 jul 1758
+1 FAMS @F92@
+0 @I210@ INDI
+1 NAME Libaire /ABRAM/
+2 SURN ABRAM
+2 GIVN Libaire
+1 SEX F
+1 BIRT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 6 oct 1732
+1 DEAT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 14 feb 1785
+1 FAMS @F92@
+1 FAMS @F108@
+1 FAMS @F1007958789@
+0 @I211@ INDI
+1 NAME Etienne Nicolas /ANDRE/
+2 SURN ANDRE
+2 GIVN Etienne Nicolas
+1 SEX M
+1 BIRT
+2 PLAC Germonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 3 apr 1790
+1 DEAT
+2 PLAC Germonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 1 aug 1791
+1 BAPM
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 03 apr 1790
+1 NOTE @NT118806981@
+1 FAMC @F85@
+0 @I212@ INDI
+1 NAME Elisabeth Napoléone /ANDRE/
+2 SURN ANDRE
+2 GIVN Elisabeth Napoléone
+1 SEX F
+1 BIRT 28 Nivose X12
+2 PLAC Germonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 19 jan 1804
+1 DEAT
+1 FAMS @F93@
+1 FAMC @F85@
+0 @I213@ INDI
+1 NAME Jean Nicolas /FERY/
+2 SURN FERY
+2 GIVN Jean Nicolas
+1 SEX M
+1 BIRT
+2 DATE 1803
+1 DEAT
+1 FAMS @F93@
+1 FAMC @F94@
+0 @I214@ INDI
+1 NAME Sébastien /FERY/
+2 SURN FERY
+2 GIVN Sébastien
+1 SEX M
+1 BIRT
+1 DEAT
+1 FAMS @F94@
+0 @I215@ INDI
+1 NAME Françoise /LAURENT/
+2 SURN LAURENT
+2 GIVN Françoise
+1 SEX F
+1 BIRT
+1 DEAT
+1 FAMS @F94@
+0 @I216@ INDI
+1 NAME Marie Catherine /ANDRE/
+2 SURN ANDRE
+2 GIVN Marie Catherine
+1 SEX F
+1 BIRT
+2 PLAC Germonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 7 feb 1800
+1 DEAT
+2 PLAC Germonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 17 jan 1853
+1 FAMS @F95@
+1 FAMC @F85@
+0 @I217@ INDI
+1 NAME Joseph /COLINMAIRE/
+2 SURN COLINMAIRE
+2 GIVN Joseph
+1 SEX M
+1 BIRT
+2 PLAC Frizon, Vosges, Grand Est, France
+2 DATE 21 sep 1798
+1 DEAT
+1 FAMS @F95@
+1 FAMS @F1036604920@
+1 FAMC @F96@
+0 @I218@ INDI
+1 NAME Joseph /COLINMAIRE/
+2 SURN COLINMAIRE
+2 GIVN Joseph
+1 SEX M
+1 BIRT
+2 PLAC Frizon, Vosges, Grand Est, France
+2 DATE 8 may 1762
+1 DEAT
+2 PLAC Frizon, Vosges, Grand Est, France
+2 DATE 10 may 1838
+1 FAMS @F96@
+0 @I219@ INDI
+1 NAME Marguerite /VUILLAUME/
+2 SURN VUILLAUME
+2 GIVN Marguerite
+1 SEX F
+1 BAPM
+2 PLAC Uxegney, Vosges, Grand Est, France
+2 DATE 10 dec 1767
+1 DEAT
+1 FAMS @F96@
+0 @I220@ INDI
+1 NAME Claude /ANDRE/
+2 SURN ANDRE
+2 GIVN Claude
+1 SEX M
+1 BIRT
+2 PLAC Tantonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 21 feb 1696
+1 DEAT
+1 BAPM
+2 PLAC Tantonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 22 feb 1696
+1 NOTE @NT118806982@
+1 FAMC @F26@
+0 @I221@ INDI
+1 NAME Jean /ANDRE/
+2 SURN ANDRE
+2 GIVN Jean
+1 SEX M
+1 BIRT
+2 PLAC Tantonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 26 apr 1702
+1 DEAT
+2 DATE bet 1758 and 1771
+1 BAPM
+2 PLAC Tantonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 27 apr 1702
+1 NOTE @NT118806983@
+1 FAMS @F97@
+1 FAMC @F26@
+0 @I222@ INDI
+1 NAME Jean /ANDREY/
+2 SURN ANDREY
+2 GIVN Jean
+1 SEX M
+1 BIRT
+2 PLAC Tantonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 7 sep 1700
+1 DEAT A confirmer
+2 PLAC Xermaménil, Meurthe-et-Moselle, Grand Est, France
+2 DATE 29 sep 1754
+1 NOTE @NT584758064@
+1 FAMC @F26@
+0 @I223@ INDI
+1 NAME Philippe /ANDRE/
+2 SURN ANDRE
+2 GIVN Philippe
+1 SEX M
+1 BIRT
+2 PLAC Tantonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 07 apr 1705
+1 DEAT
+1 NOTE @NT118806985@
+1 FAMC @F26@
+0 @I224@ INDI
+1 NAME François /ANDRE/
+2 SURN ANDRE
+2 GIVN François
+1 SEX M
+1 BAPM
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 17 feb 1769
+1 BIRT
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 17 feb 1769
+1 DEAT
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 12 mar 1770
+1 FAMC @F24@
+0 @I225@ INDI
+1 NAME Elisabeth Thérèse /ANDRE/
+2 SURN ANDRE
+2 GIVN Elisabeth Thérèse
+1 SEX F
+1 BAPM
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 23 jul 1763
+1 DEAT
+2 PLAC Germonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 17 feb 1836
+1 FAMS @F101@
+1 FAMC @F24@
+0 @I226@ INDI
+1 NAME Joseph /ANDRE/
+2 SURN ANDRE
+2 GIVN Joseph
+1 SEX M
+1 BIRT
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 05 jan 1775
+1 DEAT
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 22 jan 1775
+1 BAPM
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 05 jan 1775
+1 FAMC @F22@
+0 @I227@ INDI
+1 NAME Marguerite /ANDRE/
+2 SURN ANDRE
+2 GIVN Marguerite
+1 SEX F
+1 BIRT
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 19 aug 1771
+1 DEAT
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 27 aug 1771
+1 FAMC @F22@
+0 @I228@ INDI
+1 NAME Marie Charlotte /ANDRE/
+2 SURN ANDRE
+2 GIVN Marie Charlotte
+1 SEX F
+1 BIRT
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 18 may 1773
+1 DEAT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 27 aug 1783
+1 FAMC @F24@
+0 @I229@ INDI
+1 NAME Jean-Claude /ANDRE/
+2 SURN ANDRE
+2 GIVN Jean-Claude
+1 SEX M
+1 BAPM
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 29 nov 1769
+1 DEAT Présent au décès de sa mère 
+2 DATE aft 1784
+1 NOTE @NT130365800@
+1 FAMC @F22@
+0 @I230@ INDI
+1 NAME Anne Marie /DROUOT/
+2 SURN DROUOT
+2 GIVN Anne Marie
+1 SEX F
+1 BIRT
+2 PLAC Brémoncourt, Meurthe-et-Moselle, Grand Est, France
+2 DATE 10 sep 1705
+1 DEAT
+2 PLAC Xermaménil, Meurthe-et-Moselle, Grand Est, France
+2 DATE 11 mar 1771
+1 FAMS @F97@
+1 FAMC @F98@
+0 @I231@ INDI
+1 NAME Toussaint /DROUOT/
+2 SURN DROUOT
+2 GIVN Toussaint
+1 SEX M
+1 BIRT
+2 PLAC Haudonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 4 mar 1666
+1 DEAT
+2 PLAC Froville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 12 jan 1753
+1 FAMS @F98@
+0 @I232@ INDI
+1 NAME Louise /LEMOUTON/
+2 SURN LEMOUTON
+2 GIVN Louise
+1 SEX F
+1 BIRT
+2 PLAC Goin, Moselle, Grand Est, France
+2 DATE 1664
+1 DEAT
+2 PLAC Froville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 16 mar 1744
+1 FAMS @F98@
+0 @I237@ INDI
+1 NAME Antoine Julien /ANDRE/
+2 SURN ANDRE
+2 GIVN Antoine Julien
+1 SEX M
+1 BIRT
+2 PLAC Oudincourt, Haute-Marne, Grand Est, France
+2 DATE 19 jul 1870
+1 DEAT
+2 PLAC Manois, Haute-Marne, Grand Est, France
+2 DATE 24 oct 1871
+1 FAMC @F65@
+0 @I238@ INDI
+1 NAME Marie Adelaide /ANDRE/
+2 SURN ANDRE
+2 GIVN Marie Adelaide
+1 SEX F
+1 BIRT
+2 PLAC Oudincourt, Haute-Marne, Grand Est, France
+2 DATE 01 nov 1868
+1 DEAT
+2 PLAC (Paris 05 Panthéon) Paris, Paris, Île-de-France, France
+2 DATE 15 jan 1911
+1 NOTE @NT118806987@
+1 FAMC @F65@
+0 @I239@ INDI
+1 NAME François /BARBIER/
+2 SURN BARBIER
+2 GIVN François
+1 SEX M
+1 DEAT
+2 PLAC Germonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 09 jan 1815
+1 BIRT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 05 aug 1753
+1 FAMS @F101@
+1 FAMC @F92@
+0 @I240@ INDI
+1 NAME Thérèse /ANDRE/
+2 SURN ANDRE
+2 GIVN Thérèse
+1 SEX F
+1 BIRT
+2 PLAC Germonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 4 mar 1733
+1 DEAT
+2 PLAC Germonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 26 dec 1813
+1 BAPM
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 04 mar 1733
+1 FAMS @F102@
+1 FAMC @F25@
+0 @I241@ INDI
+1 NAME Claude Nicolas /FERRI/
+2 SURN FERRI
+2 GIVN Claude Nicolas
+1 SEX M
+1 BIRT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 20 dec 1738
+1 DEAT
+2 PLAC Germonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 23 feb 1796
+1 OCCU Laboureur
+1 FAMS @F102@
+1 FAMC @F103@
+0 @I242@ INDI
+1 NAME Nicolas /FERRI/
+2 SURN FERRI
+2 GIVN Nicolas
+1 SEX M
+1 BIRT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 4 mar 1715
+1 DEAT
+1 FAMS @F103@
+0 @I243@ INDI
+1 NAME Jeanne /CUNIN/
+2 SURN CUNIN
+2 GIVN Jeanne
+1 SEX F
+1 BIRT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 2 jul 1717
+1 DEAT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 20 jun 1778
+1 FAMS @F103@
+0 @I244@ INDI
+1 NAME Marie Marguerite /ANDRE/
+2 SURN ANDRE
+2 GIVN Marie Marguerite
+1 SEX F
+1 BIRT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 17 jun 1811
+1 DEAT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 3 sep 1811
+1 FAMC @F20@
+0 @I245@ INDI
+1 NAME Joseph /ANDRE/
+2 SURN ANDRE
+2 GIVN Joseph
+1 SEX M
+1 BIRT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 14 aug 1735
+1 DEAT
+1 BAPM
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 15 aug 1735
+1 FAMC @F25@
+0 @I246@ INDI
+1 NAME Jean Pierre /ANDRE/
+2 SURN ANDRE
+2 GIVN Jean Pierre
+1 SEX M
+1 BIRT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 08 mar 1804
+1 DEAT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 24 may 1804
+1 FAMC @F20@
+0 @I247@ INDI
+1 NAME François /ANDRE/
+2 SURN ANDRE
+2 GIVN François
+1 SEX M
+1 BIRT
+2 PLAC Germonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 8 jul 1734
+1 DEAT
+1 BAPM
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 09 jul 1734
+1 FAMC @F25@
+0 @I248@ INDI
+1 NAME Anne Marie /ANDRE/
+2 SURN ANDRE
+2 GIVN Anne Marie
+1 SEX F
+1 BIRT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 08 sep 1736
+1 DEAT
+1 BAPM
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 08 sep 1736
+1 FAMC @F25@
+0 @I262@ INDI
+1 NAME Marie Elisabeth /LAMY GRAINVILLE/
+2 SURN LAMY GRAINVILLE
+2 GIVN Marie Elisabeth
+1 SEX F
+1 BIRT
+2 PLAC Vaucouleurs, Meuse, Grand Est, France
+2 DATE abt 1770
+1 DEAT
+2 PLAC Vaucouleurs, Meuse, Grand Est, France
+2 DATE 4 mar 1837
+1 NOTE @NT582288356@
+1 FAMS @F110@
+1 FAMC @F111@
+0 @I263@ INDI
+1 NAME Ambroise /LAMY GRAINVILLE/
+2 SURN LAMY GRAINVILLE
+2 GIVN Ambroise
+1 SEX M
+1 BIRT
+1 DEAT
+2 DATE bef 1830
+1 FAMS @F111@
+0 @I264@ INDI
+1 NAME Marie Madeleine /DELEAU/
+2 SURN DELEAU
+2 GIVN Marie Madeleine
+1 SEX F
+1 BIRT
+1 DEAT
+2 DATE bef 1830
+1 FAMS @F111@
+0 @I280@ INDI
+1 NAME Claude /ANDRE/
+2 SURN ANDRE
+2 GIVN Claude
+1 SEX M
+1 BIRT A confirmer
+2 DATE abt 1617
+1 DEAT
+2 PLAC Bidestroff, Moselle, Grand Est, France
+2 DATE 23 oct 1709
+1 FAMS @F116@
+0 @I281@ INDI
+1 NAME Catherine /SANARY/
+2 SURN SANARY
+2 GIVN Catherine
+1 SEX F
+1 BIRT
+2 PLAC Bidestroff, Moselle, Grand Est, France
+2 DATE 1630
+1 DEAT
+1 FAMS @F116@
+0 @I282@ INDI
+1 NAME Catherine /GALLEY/
+2 SURN GALLEY
+2 GIVN Catherine
+1 SEX F
+1 BIRT
+1 DEAT
+2 DATE mar 1623
+1 FAMS @F79@
+0 @I283@ INDI
+1 NAME  /ANDREY/
+2 SURN ANDREY
+1 SEX M
+1 BIRT
+2 DATE aft 1560
+1 DEAT
+1 FAMS @F117@
+0 @I284@ INDI
+1 NAME Loys /ANDREY/
+2 SURN ANDREY
+2 GIVN Loys
+1 SEX M
+1 BIRT
+2 DATE 1647
+1 DEAT
+2 DATE 1647
+1 FAMC @F78@
+0 @I285@ INDI
+1 NAME Michel /ANDREY/
+2 SURN ANDREY
+2 GIVN Michel
+1 SEX M
+1 BIRT
+2 DATE 1650
+1 DEAT
+1 FAMC @F78@
+0 @I286@ INDI
+1 NAME Francois /ANDREY/
+2 SURN ANDREY
+2 GIVN Francois
+1 SEX M
+1 BIRT
+2 DATE 1653
+1 DEAT
+2 DATE 1653
+1 FAMC @F78@
+0 @I288@ INDI
+1 NAME Joseph /ANDREY/
+2 SURN ANDREY
+2 GIVN Joseph
+1 SEX M
+1 BIRT
+2 DATE 1656
+1 DEAT
+2 DATE 1656
+1 FAMC @F78@
+0 @I289@ INDI
+1 NAME Claudine /ANDREY/
+2 SURN ANDREY
+2 GIVN Claudine
+1 SEX F
+1 BIRT
+2 DATE 1659
+1 DEAT
+1 FAMC @F78@
+0 @I296@ INDI
+1 NAME Inconnu /INCONNU/
+2 SURN INCONNU
+2 GIVN Inconnu
+1 SEX F
+1 BIRT
+1 DEAT
+1 FAMS @F117@
+0 @I305@ INDI
+1 NAME Anne-Marie, Lucienne /ANDRE/
+2 SURN ANDRE
+2 GIVN Anne-Marie, Lucienne
+1 SEX F
+1 BIRT
+2 PLAC Liffol-le-Grand, Vosges, Grand Est, France
+2 DATE 08 may 1952
+1 DEAT
+2 PLAC Perpignan, Pyrénées-Orientales, Occitanie, France
+2 DATE 04 feb 2006
+1 FAMC @F27@
+0 @I306@ INDI
+1 NAME Alexandre /ANDRE/
+2 SURN ANDRE
+2 GIVN Alexandre
+1 SEX M
+1 BIRT
+2 DATE 1989
+1 FAMC @F28@
+0 @I307@ INDI
+1 NAME Jules, Nicolas, Emile /BONA/
+2 SURN BONA
+2 GIVN Jules, Nicolas, Emile
+1 SEX M
+1 BIRT
+2 PLAC Vesaignes-sous-Lafauche, Haute-Marne, Grand Est, France
+2 DATE 28 dec 1859
+1 DEAT
+2 PLAC Liffol-le-Grand, Vosges, Grand Est, France
+2 DATE 01 oct 1925
+1 OCCU menuisier
+2 DATE 1925
+1 FAMS @F121@
+0 @I308@ INDI
+1 NAME Marthe, Clémence /HYERLES/
+2 SURN HYERLES
+2 GIVN Marthe, Clémence
+1 SEX F
+1 BIRT
+2 PLAC Liffol-le-Grand, Vosges, Grand Est, France
+2 DATE 2 nov 1864
+1 DEAT
+2 PLAC Liffol-le-Grand, Vosges, Grand Est, France
+2 DATE 10 dec 1960
+1 FAMS @F121@
+0 @I309@ INDI
+1 NAME Anne /LOCOUR/
+2 SURN LOCOUR
+2 GIVN Anne
+1 SEX F
+1 BIRT
+1 DEAT
+2 DATE bef 1761
+1 FAMS @F122@
+0 @I325@ INDI
+1 NAME Jean Henry /LESEUR/
+2 SURN LESEUR
+2 GIVN Jean Henry
+1 SEX M
+1 OCCU Propriétaire
+1 BIRT
+2 PLAC Jonchery, Haute-Marne, Grand Est, France
+2 DATE 18 dec 1784
+1 DEAT
+2 PLAC Jonchery, Haute-Marne, Grand Est, France
+2 DATE 1 aug 1854
+1 FAMS @F126@
+1 FAMC @F1038376347@
+0 @I326@ INDI
+1 NAME Catherine Anne /LHABITANT/
+2 SURN LHABITANT
+2 GIVN Catherine Anne
+1 SEX F
+1 BIRT
+2 DATE 1798
+1 DEAT
+2 PLAC (Laharmand) Jonchery, Haute-Marne, Grand Est, France
+2 DATE 1854
+1 OCCU Sans profession
+1 FAMS @F126@
+0 @I348@ INDI
+1 NAME Barbe /MARCHAL/
+2 SURN MARCHAL
+2 GIVN Barbe
+1 SEX F
+1 BIRT
+2 DATE 1796
+1 DEAT
+1 FAMS @F136@
+0 @I349@ INDI
+1 NAME Elisabeth /MATHIEU/
+2 SURN MATHIEU
+2 GIVN Elisabeth
+1 SEX F
+1 BIRT
+1 DEAT
+1 FAMS @F137@
+0 @I351@ INDI
+1 NAME Joseph /OLIVIER/
+2 SURN OLIVIER
+2 GIVN Joseph
+1 SEX M
+1 BIRT
+2 PLAC Bainville-aux-Miroirs, Meurthe-et-Moselle, Grand Est, France
+2 DATE 1792
+1 FAMS @F139@
+0 @I355@ INDI
+1 NAME Bazile Theodore /DUVAL/
+2 SURN DUVAL
+2 GIVN Bazile Theodore
+1 SEX M
+1 BIRT
+2 DATE 1819
+1 DEAT
+1 FAMS @F141@
+0 @I356@ INDI
+1 NAME Victoire Vitaline /PILET/
+2 SURN PILET
+2 GIVN Victoire Vitaline
+1 SEX F
+1 BIRT
+2 DATE 1817
+1 DEAT
+1 FAMS @F141@
+0 @I357@ INDI
+1 NAME Pierre Basile /DUVAL/
+2 SURN DUVAL
+2 GIVN Pierre Basile
+1 SEX M
+1 BIRT
+1 DEAT
+1 FAMC @F141@
+0 @I369@ INDI
+1 NAME Marie Joseph Victor /DEBLAIZE/
+2 SURN DEBLAIZE
+2 GIVN Marie Joseph Victor
+1 SEX M
+1 BIRT
+2 PLAC (Marault) Bologne, Haute-Marne, Grand Est, France
+2 DATE 05 jan 1845
+1 OCCU Chef de station à la Cie des Chemins de Fer de l'Est
+1 DEAT
+2 PLAC Mantes-la-Jolie, Yvelines, Île-de-France, France
+2 DATE 06 nov 1924
+1 FAMS @F52@
+0 @I389@ INDI
+1 NAME Jacques /ANDREY/
+2 SURN ANDREY
+2 GIVN Jacques
+1 SEX M
+1 BIRT
+2 DATE 1620
+1 DEAT
+1 FAMS @F151@
+1 FAMC @F150@
+0 @I390@ INDI
+1 NAME Marie /ANDREY/
+2 SURN ANDREY
+2 GIVN Marie
+1 SEX F
+1 BIRT
+2 DATE 1622
+1 DEAT
+1 FAMC @F150@
+0 @I391@ INDI
+1 NAME Antoine /ANDREY/
+2 SURN ANDREY
+2 GIVN Antoine
+1 SEX M
+1 BIRT
+2 DATE 1624
+1 DEAT
+1 FAMS @F152@
+1 FAMC @F150@
+0 @I392@ INDI
+1 NAME Claudine /ANDREY/
+2 SURN ANDREY
+2 GIVN Claudine
+1 SEX F
+1 BIRT
+2 DATE 1629
+1 DEAT
+1 FAMC @F150@
+0 @I394@ INDI
+1 NAME Anne /MARADAN/
+2 SURN MARADAN
+2 GIVN Anne
+1 SEX F
+1 BIRT
+1 DEAT
+1 FAMS @F151@
+0 @I395@ INDI
+1 NAME Claude /ANDREY/
+2 SURN ANDREY
+2 GIVN Claude
+1 SEX M
+1 BIRT
+2 DATE 1651
+1 DEAT
+1 FAMC @F151@
+0 @I396@ INDI
+1 NAME Marguerite /ANDREY/
+2 SURN ANDREY
+2 GIVN Marguerite
+1 SEX F
+1 BIRT
+2 DATE 1654
+1 DEAT
+1 FAMC @F151@
+0 @I465@ INDI
+1 NAME André /ANDREY/
+2 SURN ANDREY
+2 GIVN André
+1 SEX M
+1 BIRT
+2 DATE 1646
+1 DEAT
+1 FAMC @F175@
+0 @I466@ INDI
+1 NAME François /ANDREY/
+2 SURN ANDREY
+2 GIVN François
+1 SEX M
+1 BIRT
+2 DATE 1660
+1 DEAT
+1 FAMC @F175@
+0 @I561@ INDI
+1 NAME Jean Claude /GOGUEL/
+2 SURN GOGUEL
+2 GIVN Jean Claude
+1 SEX M
+1 BIRT
+1 DEAT
+1 FAMS @F207@
+0 @I654@ INDI
+1 NAME Sidonie /PERNET/
+2 SURN PERNET
+2 GIVN Sidonie
+1 SEX F
+1 BIRT
+2 DATE 1860
+1 DEAT
+1 FAMS @F237@
+0 @I665@ INDI
+1 NAME Marie /MARQUIS/
+2 SURN MARQUIS
+2 GIVN Marie
+1 SEX F
+1 BIRT
+1 FAMS @F246@
+0 @I671@ INDI
+1 NAME Inconnu /INCONNU/
+2 SURN INCONNU
+2 GIVN Inconnu
+1 SEX F
+1 BIRT
+1 FAMS @F248@
+0 @I710@ INDI
+1 NAME Jean /GIRARDET/
+2 SURN GIRARDET
+2 GIVN Jean
+1 SEX M
+1 BIRT
+1 DEAT
+2 DATE 1650
+1 FAMS @F264@
+0 @I713@ INDI
+1 NAME Claude /HOCQUARD/
+2 SURN HOCQUARD
+2 GIVN Claude
+1 SEX M
+1 BIRT
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 8 sep 1686
+1 DEAT
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 30 jun 1750
+1 FAMS @F1033711166@
+0 @I714@ INDI
+1 NAME Anne /TROMPETTE/
+2 SURN TROMPETTE
+2 GIVN Anne
+1 SEX F
+1 BIRT
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 27 mar 1688
+1 DEAT
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 30 nov 1749
+1 FAMS @F1033711166@
+0 @I719@ INDI
+1 NAME Joseph /ANDRE/
+2 SURN ANDRE
+2 GIVN Joseph
+1 SEX M
+1 BIRT
+2 PLAC Dieuze, Moselle, Grand Est, France
+2 DATE 6 apr 1808
+1 DEAT
+2 PLAC (Verdun-sur-Meuse) Verdun, Meuse, Grand Est, France
+2 DATE 26 mar 1875
+1 RESI
+2 PLAC Dieuze, Moselle, Grand Est, France
+2 DATE abt 1838
+1 EVEN Distinction militaire
+2 DATE 1858
+1 NATU
+2 PLAC Dieuze, Moselle, Grand Est, France
+2 DATE 1872
+1 NOTE @NT580252508@
+1 FAMS @F343332151@
+1 FAMS @F1028980222@
+1 FAMC @F110@
+0 @I720@ INDI
+1 NAME Thérèse Elisabeth /ANDRE/
+2 SURN ANDRE
+2 GIVN Thérèse Elisabeth
+1 SEX F
+1 BIRT
+2 PLAC Dieuze, Moselle, Grand Est, France
+2 DATE 09 mar 1802
+1 DEAT
+1 FAMC @F110@
+0 @I721@ INDI
+1 NAME Nicolas /ANDRE/
+2 SURN ANDRE
+2 GIVN Nicolas
+1 SEX M
+1 BIRT
+2 PLAC Dieuze, Moselle, Grand Est, France
+2 DATE 29 sep 1813
+1 DEAT
+1 FAMC @F110@
+0 @I722@ INDI
+1 NAME Joseph Hyacinthe /ANDRE/
+2 SURN ANDRE
+2 GIVN Joseph Hyacinthe
+1 SEX M
+1 BIRT
+2 PLAC Dieuze, Moselle, Grand Est, France
+2 DATE 30 dec 1805
+1 DEAT
+2 PLAC Saint-Mihiel, Meuse, Grand Est, France
+2 DATE 30 oct 1882
+1 EVEN Distinction - Personne nommée ou promue dans l'Ordre de la Légion d'honneur
+1 NOTE @NT120152093@
+1 FAMS @F267@
+1 FAMC @F110@
+0 @I723@ INDI
+1 NAME Marguerite Thérèse /ANDRE/
+2 SURN ANDRE
+2 GIVN Marguerite Thérèse
+1 SEX F
+1 BIRT
+2 DATE abt 1801
+1 DEAT
+2 PLAC Dieuze, Moselle, Grand Est, France
+2 DATE 30 jul 1808
+1 FAMC @F110@
+0 @I724@ INDI
+1 NAME Anne Catherine /GILLE/
+2 SURN GILLE
+2 GIVN Anne Catherine
+1 SEX F
+1 BIRT
+2 PLAC Ornes, Meuse, Grand Est, France
+2 DATE 11 jan 1817
+1 DEAT
+2 DATE aft 1886
+1 FAMS @F267@
+1 FAMC @F268@
+0 @I725@ INDI
+1 NAME Jean Pierre /GILLE/
+2 SURN GILLE
+2 GIVN Jean Pierre
+1 SEX M
+1 BIRT
+2 DATE 1791
+1 DEAT
+2 PLAC Ornes, Meuse, Grand Est, France
+2 DATE 04 sep 1832
+1 FAMS @F268@
+0 @I726@ INDI
+1 NAME Marie /WANESSON/
+2 SURN WANESSON
+2 GIVN Marie
+1 SEX F
+1 BIRT
+2 PLAC Bonzée, Meuse, Grand Est, France
+2 DATE 09 may 1795
+1 DEAT
+2 PLAC Ornes, Meuse, Grand Est, France
+2 DATE 08 sep 1832
+1 FAMS @F268@
+0 @I727@ INDI
+1 NAME Nicolas Alfred /ANDRE/
+2 SURN ANDRE
+2 GIVN Nicolas Alfred
+1 SEX M
+1 BIRT
+2 PLAC Bonzée, Meuse, Grand Est, France
+2 DATE 20 jun 1842
+1 DEAT
+2 PLAC Bonzée, Meuse, Grand Est, France
+2 DATE 29 aug 1842
+1 FAMC @F267@
+0 @I738@ INDI
+1 NAME Simon /BARTHABURU/
+2 SURN BARTHABURU
+2 GIVN Simon
+1 SEX M
+1 BIRT
+2 DATE 1821
+1 DEAT
+1 OCCU Cultivateur Métayer
+1 FAMS @F275@
+0 @I739@ INDI
+1 NAME Marie /UZAURE/
+2 SURN UZAURE
+2 GIVN Marie
+1 SEX F
+1 BIRT
+2 DATE 1841
+1 DEAT
+2 DATE bef 1895
+1 OCCU Ménagère
+1 FAMS @F275@
+0 @I758@ INDI
+1 NAME François /MAILLARD/
+2 SURN MAILLARD
+2 GIVN François
+1 SEX M
+1 BIRT
+2 DATE 1756
+1 DEAT
+2 PLAC Lemainville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 20 jun 1814
+1 FAMS @F282@
+0 @I759@ INDI
+1 NAME Anne Marie /GRANCOLAS/
+2 SURN GRANCOLAS
+2 GIVN Anne Marie
+1 SEX F
+1 BIRT
+2 PLAC Le Val-d'Ajol, Vosges, Grand Est, France
+2 DATE 11 jan 1755
+1 DEAT
+1 FAMS @F282@
+0 @I764@ INDI
+1 NAME Charlotte Catherine /COUTELLIER/
+2 SURN COUTELLIER
+2 GIVN Charlotte Catherine
+1 SEX F
+1 BIRT
+2 PLAC Pomponne, Seine-et-Marne, Île-de-France, France
+2 DATE 8 jan 1828
+1 DEAT
+1 OCCU sans profession
+1 FAMS @F285@
+0 @I775@ INDI
+1 NAME Anne  Justine /ANDRE/
+2 SURN ANDRE
+2 GIVN Anne  Justine
+1 SEX F
+1 BIRT
+2 PLAC Manheulles, Meuse, Grand Est, France
+2 DATE 15 apr 1837
+1 DEAT
+2 DATE aft 1890
+1 FAMS @F343314405@
+1 FAMC @F267@
+0 @I776@ INDI
+1 NAME Marie Joséphine /ANDRE/
+2 SURN ANDRE
+2 GIVN Marie Joséphine
+1 SEX F
+1 BIRT
+2 PLAC Les Trois-Domaines, Meuse, Grand Est, France
+2 DATE 19 nov 1848
+1 DEAT
+2 PLAC Nancy, Meurthe-et-Moselle, Grand Est, France
+2 DATE 29 mar 1886
+1 NOTE @NT118806995@
+1 FAMC @F267@
+0 @I777@ INDI
+1 NAME Ambroise Henry /ANDRE/
+2 SURN ANDRE
+2 GIVN Ambroise Henry
+1 SEX M
+1 BIRT
+2 PLAC Nancy, Meurthe-et-Moselle, Grand Est, France
+2 DATE 10 sep 1798
+1 FAMC @F110@
+0 @I778@ INDI
+1 NAME Nicolas /ANDRE/
+2 SURN ANDRE
+2 GIVN Nicolas
+1 SEX M
+1 BIRT
+2 PLAC Nancy, Meurthe-et-Moselle, Grand Est, France
+2 DATE 27 sep 1799
+1 DEAT
+2 PLAC Nancy, Meurthe-et-Moselle, Grand Est, France
+2 DATE 30 sep 1800
+1 FAMC @F110@
+0 @I779@ INDI
+1 NAME Jean-Claude /ANDRE/
+2 SURN ANDRE
+2 GIVN Jean-Claude
+1 SEX M
+1 BIRT
+2 PLAC Gripport, Meurthe-et-Moselle, Grand Est, France
+2 DATE 18 jun 1762
+1 DEAT
+1 BAPM
+2 PLAC Meurthe-et-Moselle, Grand Est, France
+2 DATE 19 jun 1762
+1 FAMC @F24@
+0 @I780@ INDI
+1 NAME Anne Thèrése /ANDRE/
+2 SURN ANDRE
+2 GIVN Anne Thèrése
+1 SEX F
+1 BIRT
+2 PLAC Gripport, Meurthe-et-Moselle, Grand Est, France
+2 DATE 10 may 1753
+1 DEAT
+1 FAMC @F23@
+0 @I781@ INDI
+1 NAME Joseph /ANDRE/
+2 SURN ANDRE
+2 GIVN Joseph
+1 SEX M
+1 BIRT
+2 PLAC Gripport, Meurthe-et-Moselle, Grand Est, France
+2 DATE 20 nov 1751
+1 DEAT
+1 FAMC @F23@
+0 @I782@ INDI
+1 NAME Agnès /ANDRE/
+2 SURN ANDRE
+2 GIVN Agnès
+1 SEX F
+1 BIRT
+2 PLAC Roville-devant-Bayon, Meurthe-et-Moselle, Grand Est, France
+2 DATE 21 jan 1730
+1 DEAT
+1 BAPM
+2 PLAC Roville-devant-Bayon, Meurthe-et-Moselle, Grand Est, France
+2 DATE 21 jan 1730
+1 NOTE @NT118806996@
+1 FAMC @F25@
+0 @I783@ INDI
+1 NAME Marguerite /ANDRE/
+2 SURN ANDRE
+2 GIVN Marguerite
+1 SEX F
+1 BIRT
+2 PLAC Roville-devant-Bayon, Meurthe-et-Moselle, Grand Est, France
+2 DATE 22 apr 1726
+1 DEAT
+1 NOTE @NT118806997@
+1 FAMC @F25@
+0 @I810@ INDI
+1 NAME Marie /BARTHABURU/
+2 SURN BARTHABURU
+2 GIVN Marie
+1 SEX F
+1 BIRT
+2 PLAC Chéraute, Pyrénées-Atlantiques, Nouvelle-Aquitaine, France
+2 DATE 29 sep 1862
+1 DEAT
+1 NOTE @NT118807004@
+1 FAMC @F275@
+0 @I812@ INDI
+1 NAME Rose Angéline /Chollet/
+2 SURN Chollet
+2 GIVN Rose Angéline
+1 SEX F
+1 BIRT
+1 DEAT
+1 FAMS @F295@
+0 @I867@ INDI
+1 NAME Marie Clémentine /HOECHSTETTER/
+2 SURN HOECHSTETTER
+2 GIVN Marie Clémentine
+1 SEX F
+1 BIRT
+2 PLAC Fontaines-sur-Marne, Haute-Marne, Grand Est, France
+2 DATE 16 jun 1863
+1 DEAT
+2 PLAC Joinville, Haute-Marne, Grand Est, France
+2 DATE bet 1926 and 1931
+1 CENS Présente à l'adresse suivante : Rue du moulin  p41/64
+2 PLAC Joinville, Haute-Marne, Grand Est, France
+2 DATE 1926
+1 FAMS @F307@
+1 FAMC @F308@
+0 @I868@ INDI
+1 NAME Georges Marius Henri /ANDRE/
+2 SURN ANDRE
+2 GIVN Georges Marius Henri
+1 SEX M
+1 BIRT
+2 PLAC Fontaines-sur-Marne, Haute-Marne, Grand Est, France
+2 DATE 16 mar 1900
+1 DEAT
+2 PLAC Joinville, Haute-Marne, Grand Est, France
+2 DATE 8 may 1963
+1 FAMS @F309@
+1 FAMC @F307@
+0 @I869@ INDI
+1 NAME Marie Emérentine Lucienne /ANDRE/
+2 SURN ANDRE
+2 GIVN Marie Emérentine Lucienne
+1 SEX F
+1 DEAT
+2 PLAC Joinville, Haute-Marne, Grand Est, France
+2 DATE 26 dec 1958
+1 BIRT
+2 PLAC Fontaines-sur-Marne, Haute-Marne, Grand Est, France
+2 DATE 03 oct 1897
+1 FAMS @F325@
+1 FAMC @F307@
+0 @I870@ INDI
+1 NAME Louis René /ANDRE/
+2 SURN ANDRE
+2 GIVN Louis René
+1 SEX M
+1 BIRT
+2 PLAC Fontaines-sur-Marne, Haute-Marne, Grand Est, France
+2 DATE 31 may 1889
+1 DEAT
+2 PLAC Fontaines-sur-Marne, Haute-Marne, Grand Est, France
+2 DATE 06 oct 1891
+1 FAMC @F307@
+0 @I871@ INDI
+1 NAME Michel /HOECHSTETTER/
+2 SURN HOECHSTETTER
+2 GIVN Michel
+1 SEX M
+1 BIRT
+2 PLAC Hatten, Bas-Rhin, Grand Est, France
+2 DATE 14 apr 1840
+1 DEAT
+2 PLAC Fontaines-sur-Marne, Haute-Marne, Grand Est, France
+2 DATE 14 dec 1876
+1 FAMS @F308@
+0 @I872@ INDI
+1 NAME Marie Marcelline /BRIOLAT/
+2 SURN BRIOLAT
+2 GIVN Marie Marcelline
+1 SEX F
+1 BIRT
+2 PLAC Avrainville, Essonne, Île-de-France, France
+2 DATE 4 sep 1842
+1 DEAT
+2 DATE aft 1891
+1 FAMS @F308@
+0 @I873@ INDI
+1 NAME Rolande Louise Geneviève /CARTERET/
+2 SURN CARTERET
+2 GIVN Rolande Louise Geneviève
+1 SEX F
+1 BIRT
+2 PLAC Guindrecourt-aux-Ormes, Haute-Marne, Grand Est, France
+2 DATE 26 mar 1911
+1 DEAT Centre Médico Chirurgical 17 avenue des Etats-Unis 52 CHAUMONT
+2 PLAC Chaumont, Haute-Marne, Grand Est, France
+2 DATE 30 aug 1987
+1 FAMS @F309@
+1 FAMC @F792239176@
+0 @I874@ INDI
+1 NAME Michel Ernest Emile /ANDRE/
+2 SURN ANDRE
+2 GIVN Michel Ernest Emile
+1 SEX M
+1 BIRT
+2 PLAC Joinville, Haute-Marne, Grand Est, France
+2 DATE 06 apr 1933
+1 DEAT
+2 PLAC Joinville, Haute-Marne, Grand Est, France
+2 DATE 26 jun 2003
+1 NOTE @NT118807005@
+1 FAMS @F352948870@
+1 FAMC @F309@
+0 @I907@ INDI
+1 NAME Georges /PICARD/
+2 SURN PICARD
+2 GIVN Georges
+1 SEX M
+1 BIRT
+2 PLAC Vigneulles-lès-Hattonchâtel, Meuse, Grand Est, France
+2 DATE 29 mar 1892
+1 CENS Chef de Foyer
+2 PLAC Joinville, Haute-Marne, Grand Est, France
+2 DATE 1921
+1 CENS Chef de Foyer
+2 PLAC Joinville, Haute-Marne, Grand Est, France
+2 DATE 1931
+1 DEAT
+2 PLAC Joinville, Haute-Marne, Grand Est, France
+2 DATE 25 may 1965
+1 FAMS @F325@
+1 FAMC @F1015934551@
+0 @I911@ INDI
+1 NAME Andre /ANDRE/
+2 SURN ANDRE
+2 GIVN Andre
+1 SEX M
+1 BIRT
+2 PLAC Tantonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 31 jan 1694
+1 DEAT
+1 FAMC @F26@
+0 @I880244279@ INDI
+1 NAME Catherine Sidonie /ANDRE/
+2 SURN ANDRE
+2 GIVN Catherine Sidonie
+1 SEX F
+1 BIRT
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 04 mar 1839
+1 DEAT
+2 PLAC Oriocourt, Moselle, Grand Est, France
+2 DATE 04 jun 1896
+1 OCCU religieuse
+2 DATE 1896
+1 NOTE @NT118809159@
+1 FAMC @F35@
+0 @I880244547@ INDI
+1 NAME Marie Juliette Isabelle /CUISIN/
+2 SURN CUISIN
+2 GIVN Marie Juliette Isabelle
+1 SEX F
+1 BIRT
+2 PLAC Brousseval, Haute-Marne, Grand Est, France
+2 DATE 21 sep 1864
+1 DEAT
+2 PLAC Paris, Île-de-France, France
+2 DATE 20 feb 1955
+1 NOTE @NT118809166@
+1 FAMS @F340453735@
+1 FAMC @F340453761@
+0 @I880244577@ INDI
+1 NAME Maurice Jules Pierre /ANDRE/
+2 SURN ANDRE
+2 GIVN Maurice Jules Pierre
+1 SEX M
+1 BIRT
+2 PLAC Bar-le-Duc, Meuse, Grand Est, France
+2 DATE 23 apr 1896
+1 DEAT
+2 PLAC Paris, Île-de-France, France
+2 DATE 18 apr 1966
+1 NOTE @NT118809168@
+1 FAMC @F340453735@
+0 @I880244613@ INDI
+1 NAME Jules /CUISIN/
+2 SURN CUISIN
+2 GIVN Jules
+1 SEX M
+1 BIRT
+2 PLAC Les Grandes-Chapelles, Aube, Grand Est, France
+2 DATE 28 jun 1833
+1 DEAT
+2 PLAC Brousseval, Haute-Marne, Grand Est, France
+2 DATE 02 sep 1901
+1 NOTE @NT118809172@
+1 FAMS @F340453761@
+0 @I880244644@ INDI
+1 NAME Clemence /BARBARANT/
+2 SURN BARBARANT
+2 GIVN Clemence
+1 SEX F
+1 BIRT
+2 PLAC Wassy, Haute-Marne, Grand Est, France
+2 DATE 15 may 1842
+1 DEAT
+2 DATE 1918
+1 NOTE @NT118809175@
+1 FAMS @F340453761@
+0 @I887709549@ INDI
+1 NAME Charles Alexandre /MARTIN/
+2 SURN MARTIN
+2 GIVN Charles Alexandre
+1 SEX M
+1 BIRT
+2 PLAC Tilly-sur-Meuse, Meuse, Grand Est, France
+2 DATE 04 apr 1810
+1 DEAT
+2 PLAC Saint-Mihiel, Meuse, Grand Est, France
+2 DATE 1 jun 1890
+1 NOTE @NT120160535@
+1 FAMS @F343314405@
+0 @I887713585@ INDI
+1 NAME Anne Hyacinthe /ANDRE/
+2 SURN ANDRE
+2 GIVN Anne Hyacinthe
+1 SEX M
+1 BIRT
+2 DATE abt 1843
+1 DEAT
+2 PLAC Ligny-en-Barrois, Meuse, Grand Est, France
+2 DATE 18 jul 1855
+1 FAMC @F267@
+0 @I887755173@ INDI
+1 NAME Jeanne Marie Perrine /MONNERIE/
+2 SURN MONNERIE
+2 GIVN Jeanne Marie Perrine
+1 SEX F
+1 BIRT
+2 PLAC Vitré, Ille-et-Vilaine, Bretagne, France
+2 DATE 16 jul 1819
+1 DEAT
+2 PLAC Vitré, Ille-et-Vilaine, Bretagne, France
+2 DATE 16 oct 1856
+1 FAMS @F343332151@
+1 FAMC @F343332217@
+0 @I887755307@ INDI
+1 NAME Pierre /MONNERIE/
+2 SURN MONNERIE
+2 GIVN Pierre
+1 SEX M
+1 BIRT
+1 DEAT
+2 PLAC Vitré, Ille-et-Vilaine, Bretagne, France
+2 DATE 06 feb 1828
+1 FAMS @F343332217@
+0 @I887755321@ INDI
+1 NAME Jeanne Marie /CARRE/
+2 SURN CARRE
+2 GIVN Jeanne Marie
+1 SEX F
+1 BIRT
+1 DEAT
+1 FAMS @F343332217@
+0 @I887814706@ INDI
+1 NAME Pierre /LAMBERT/
+2 SURN LAMBERT
+2 GIVN Pierre
+1 SEX M
+1 BIRT
+2 PLAC Boinville-en-Woëvre, Meuse, Grand Est, France
+2 DATE 11 mar 1783
+1 DEAT
+2 PLAC (Verdun-sur-Meuse) Verdun, Meuse, Grand Est, France
+2 DATE 24 jun 1854
+1 FAMS @F343356316@
+0 @I887814730@ INDI
+1 NAME Marie Jeanne /JOURDAIN/
+2 SURN JOURDAIN
+2 GIVN Marie Jeanne
+1 SEX F
+1 BIRT
+2 DATE 02 nov 1781
+1 DEAT
+2 PLAC (Verdun-sur-Meuse) Verdun, Meuse, Grand Est, France
+2 DATE 21 jul 1854
+1 BAPM
+2 PLAC (Verdun-sur-Meuse) Verdun, Meuse, Grand Est, France
+2 DATE 03 nov 1781
+1 FAMS @F343356316@
+0 @I902077815@ INDI
+1 NAME Marie Félicie Georgette /ANDRE/
+2 SURN ANDRE
+2 GIVN Marie Félicie Georgette
+1 SEX F
+1 BIRT
+2 PLAC (Sommeville) Chevillon, Haute-Marne, Grand Est, France
+2 DATE 30 nov 1892
+1 DEAT
+2 PLAC Joinville, Haute-Marne, Grand Est, France
+2 DATE 19 may 1962
+1 NOTE @NT123516557@
+1 FAMS @F348978089@
+1 FAMC @F307@
+0 @I902082362@ INDI
+1 NAME Victor Lucien /DIMEY/
+2 SURN DIMEY
+2 GIVN Victor Lucien
+1 SEX M
+1 BIRT
+2 PLAC Joinville, Haute-Marne, Grand Est, France
+2 DATE 09 jul 1887
+1 DEAT
+2 PLAC Joinville, Haute-Marne, Grand Est, France
+2 DATE 01 sep 1937
+1 FAMS @F348978089@
+1 FAMC @F350118944@
+0 @I905014113@ INDI
+1 NAME Louis Pierre /DIMEY/
+2 SURN DIMEY
+2 GIVN Louis Pierre
+1 SEX M
+1 BIRT
+2 PLAC Châteauvillain, Haute-Marne, Grand Est, France
+2 DATE 1860
+1 DEAT
+1 OCCU Boucher
+2 DATE 1886
+1 CENS
+2 PLAC Châteauvillain, Haute-Marne, Grand Est, France
+2 DATE 1872
+1 FAMS @F350118944@
+0 @I905014126@ INDI
+1 NAME Julie  Augustine Rosalie /MARTIN/
+2 SURN MARTIN
+2 GIVN Julie  Augustine Rosalie
+1 SEX F
+1 BIRT
+2 PLAC Osne-le-Val, Haute-Marne, Grand Est, France
+2 DATE 27 nov 1861
+1 DEAT
+2 PLAC Joinville, Haute-Marne, Grand Est, France
+2 DATE 29 jun 1924
+1 FAMS @F350118944@
+0 @I912155336@ INDI
+1 NAME Huguette Marie /GRANDJEAN/
+2 SURN GRANDJEAN
+2 GIVN Huguette Marie
+1 SEX F
+1 BIRT
+2 PLAC Domblain, Haute-Marne, Grand Est, France
+2 DATE 09 sep 1934
+1 DEAT
+2 PLAC Joinville, Haute-Marne, Grand Est, France
+2 DATE 11 mar 2000
+1 FAMS @F352948870@
+0 @I919523863@ INDI
+1 NAME Vincent /ANDRE/
+2 SURN ANDRE
+2 GIVN Vincent
+1 SEX M
+1 BIRT
+2 PLAC Bayon, Meurthe-et-Moselle, Grand Est, France
+2 DATE 24 dec 1708
+1 DEAT
+2 PLAC Bayon, Meurthe-et-Moselle, Grand Est, France
+2 DATE 29 aug 1710
+1 FAMC @F26@
+0 @I919527915@ INDI
+1 NAME Therese /ANDREY/
+2 SURN ANDREY
+2 GIVN Therese
+1 SEX F
+1 BIRT
+2 PLAC Bayon, Meurthe-et-Moselle, Grand Est, France
+2 DATE 18 jul 1706
+1 DEAT D'après les infos de l'IA, il s'agirait de soeur Françoise-Thérèse  qui aurait vécu à la maison Sainte-Elisabeth rue des Tiercelins à Nancy.
+2 PLAC Nancy, Meurthe-et-Moselle, Grand Est, France
+2 DATE 1745
+1 CONT Son état de santé se serait détérioré en 1742 et mise au repos puis décédée en 1745 (pas d'acte décès établi et inhumée sur place).  
+1 FAMC @F26@
+0 @I919639143@ INDI
+1 NAME Marie /ANDRE/
+2 SURN ANDRE
+2 GIVN Marie
+1 SEX M
+1 BIRT
+2 PLAC Bayon, Meurthe-et-Moselle, Grand Est, France
+2 DATE 15 aug 1710
+1 DEAT
+1 FAMC @F26@
+0 @I922433514@ INDI
+1 NAME Jeanne /Andre/
+2 SURN Andre
+2 GIVN Jeanne
+1 SEX F
+1 BIRT
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 24 nov 1798
+1 DEAT
+1 FAMC @F85@
+0 @I930137958@ INDI
+1 NAME Marianne /ANDRE/
+2 SURN ANDRE
+2 GIVN Marianne
+1 SEX M
+1 DEAT
+1 BIRT
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 03 apr 1770
+1 NOTE @NT130365813@
+1 FAMC @F24@
+0 @I978599308@ INDI
+1 NAME Anne Marie Joseph /LAROCHE/
+2 SURN LAROCHE
+2 GIVN Anne Marie Joseph
+1 SEX F
+1 BIRT
+2 PLAC Mirecourt, Vosges, Grand Est, France
+2 DATE 14 may 1775
+1 DEAT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 24 aug 1802
+1 FAMS @F379200917@
+1 FAMC @F379200947@
+0 @I978599377@ INDI
+1 NAME Joseph /LAROCHE/
+2 SURN LAROCHE
+2 GIVN Joseph
+1 SEX M
+1 BIRT
+2 PLAC Portieux, Vosges, Grand Est, France
+2 DATE 19 jun 1741
+1 DEAT
+2 PLAC Mirecourt, Vosges, Grand Est, France
+2 DATE 18 mar 1800
+1 FAMS @F379200947@
+0 @I978599402@ INDI
+1 NAME Marie Therese /BERTRAND/
+2 SURN BERTRAND
+2 GIVN Marie Therese
+1 SEX F
+1 BIRT
+2 PLAC Mirecourt, Vosges, Grand Est, France
+2 DATE 29 jan 1748
+1 DEAT
+2 PLAC Mirecourt, Vosges, Grand Est, France
+2 DATE 27 jul 1787
+1 BAPM
+2 PLAC Mirecourt, Vosges, Grand Est, France
+2 DATE 30 jan 1748
+1 FAMS @F379200947@
+1 FAMS @F1035658328@
+0 @I978601637@ INDI
+1 NAME Jean /ANDRE/
+2 SURN ANDRE
+2 GIVN Jean
+1 SEX M
+1 BIRT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 11 oct 1801
+1 DEAT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 11 oct 1801
+1 FAMC @F379200917@
+0 @I978601701@ INDI
+1 NAME Jean /ANDRE/
+2 SURN ANDRE
+2 GIVN Jean
+1 SEX M
+1 BIRT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 19 aug 1802
+1 DEAT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 19 aug 1802
+1 FAMC @F379200917@
+0 @I1042756979@ INDI
+1 NAME Marie Anne /ALBERT/
+2 SURN ALBERT
+2 GIVN Marie Anne
+1 SEX F
+1 BIRT
+2 DATE 1837
+1 DEAT
+2 DATE aft 1893
+1 FAMS @F404584993@
+0 @I1114620440@ INDI
+1 NAME Jules Henri /THOMAS/
+2 SURN THOMAS
+2 GIVN Jules Henri
+1 SEX M
+1 FAMS @F432934230@
+0 @I1114620441@ INDI
+1 NAME Julia /COLLOT/
+2 SURN COLLOT
+2 GIVN Julia
+1 SEX F
+1 FAMS @F432934230@
+0 @I1120579105@ INDI
+1 NAME Ange /ANDRE/
+2 SURN ANDRE
+2 GIVN Ange
+1 SEX M
+1 BIRT
+1 FAMC @F352948870@
+0 @I1120579110@ INDI
+1 NAME Xx /ANDRE/
+2 SURN ANDRE
+2 GIVN Xx
+1 SEX M
+1 BIRT
+1 DEAT
+1 FAMC @F352948870@
+0 @I2017282312@ INDI
+1 NAME Dominique /RAOULX/
+2 SURN RAOULX
+2 GIVN Dominique
+1 SEX M
+1 BIRT
+2 PLAC Houécourt, Vosges, Grand Est, France
+2 DATE 08 apr 1750
+1 DEAT
+2 PLAC Houécourt, Vosges, Grand Est, France
+2 DATE 05 feb 1833
+1 FAMS @F791716808@
+0 @I2018152140@ INDI
+1 NAME Gisele Fernande /ANDRE/
+2 SURN ANDRE
+2 GIVN Gisele Fernande
+1 SEX F
+1 BIRT
+2 PLAC Liffol-le-Grand, Vosges, Grand Est, France
+2 DATE 24 feb 1920
+1 DEAT
+2 PLAC Nancy, Meurthe-et-Moselle, Grand Est, France
+2 DATE 30 jun 1972
+1 FAMS @F792062847@
+1 FAMC @F17@
+0 @I2018152179@ INDI
+1 NAME Georges Jules /GENOT/
+2 SURN GENOT
+2 GIVN Georges Jules
+1 SEX M
+1 BIRT
+2 PLAC Sommedieue, Meuse, Grand Est, France
+2 DATE 04 dec 1913
+1 DEAT
+2 PLAC Neufchâteau, Vosges, Grand Est, France
+2 DATE 06 dec 1982
+1 FAMS @F792062847@
+0 @I2018592417@ INDI
+1 NAME Paul Theophile Emile /CARTERET/
+2 SURN CARTERET
+2 GIVN Paul Theophile Emile
+1 SEX M
+1 BIRT
+2 PLAC Mathons, Haute-Marne, Grand Est, France
+2 DATE 25 may 1867
+1 DEAT
+1 FAMS @F792239176@
+0 @I2018594523@ INDI
+1 NAME Marie Hermence /GUÉRIN/
+2 SURN GUÉRIN
+2 GIVN Marie Hermence
+1 SEX F
+1 BIRT
+2 PLAC Wassy, Haute-Marne, Grand Est, France
+2 DATE 01 sep 1870
+1 DEAT
+1 FAMS @F792239176@
+0 @I2019236937@ INDI
+1 NAME Claude /MALHORTY/
+2 SURN MALHORTY
+2 GIVN Claude
+1 SEX M
+1 BIRT
+2 PLAC Vomécourt Sur Madon , Vosges, Lorraine, France
+2 DATE 04 jul 1667
+1 DEAT
+2 PLAC Hergugney , Vosges, Lorraine, France
+2 DATE 02 oct 1747
+1 FAMS @F792490843@
+0 @I2019236939@ INDI
+1 NAME Marguerite /MARIE/
+2 SURN MARIE
+2 GIVN Marguerite
+1 SEX F
+1 BIRT
+2 PLAC Bainville Aux Miroirs , Meurthe et Moselle, Lorraine, France
+2 DATE 1670
+1 DEAT
+2 DATE bef 1738
+1 FAMS @F792490843@
+0 @I2020184284@ INDI
+1 NAME Jeanne Marie /Mangin/
+2 SURN Mangin
+2 GIVN Jeanne Marie
+1 SEX F
+1 BIRT
+1 DEAT
+1 FAMS @F792888407@
+0 @I2023046989@ INDI
+1 NAME Marie Florine /RICHARD/
+2 SURN RICHARD
+2 GIVN Marie Florine
+1 SEX F
+0 @I2023442727@ INDI
+1 NAME Claude-Celestin /BUAT/
+2 SURN BUAT
+2 GIVN Claude-Celestin
+1 SEX M
+1 FAMS @F794174361@
+0 @I2023442728@ INDI
+1 NAME Marguerite-Anastasie /PIOT/
+2 SURN PIOT
+2 GIVN Marguerite-Anastasie
+1 SEX F
+1 FAMS @F794174361@
+0 @I2023443083@ INDI
+1 NAME Marianne /Barthaburu/
+2 SURN Barthaburu
+2 GIVN Marianne
+1 SEX F
+1 BIRT
+2 PLAC Chéraute, Pyrénées-Atlantiques, Nouvelle-Aquitaine, France
+2 DATE 22 apr 1864
+1 DEAT
+2 PLAC Guernes, Yvelines, Île-de-France, France
+2 DATE 30 oct 1906
+1 RESI
+2 PLAC Mantes-la-Jolie, Yvelines, Île-de-France, France
+1 FAMS @F30@
+0 @I2244539487@ INDI
+1 NAME Magdelaine /ANDRE/
+2 SURN ANDRE
+2 GIVN Magdelaine
+1 SEX F
+1 BIRT
+2 PLAC Maizières-lès-Vic, Moselle, Grand Est, France
+2 DATE 03 jan 1691
+1 FAMC @F26@
+0 @I2259562807@ INDI
+1 NAME Hanit /LEPAJA/
+2 SURN LEPAJA
+2 GIVN Hanit
+1 SEX M
+1 BIRT
+1 DEAT
+1 FAMS @F886419497@
+0 @I2259562830@ INDI
+1 NAME Feride /STATOFCI/
+2 SURN STATOFCI
+2 GIVN Feride
+1 SEX F
+1 BIRT
+1 DEAT
+1 FAMS @F886419497@
+0 @I2299812735@ INDI
+1 NAME Marguerite /SIRY/
+2 SURN SIRY
+2 GIVN Marguerite
+1 SEX F
+1 BIRT
+1 FAMS @F902497803@
+0 @I2302009499@ INDI
+1 NAME Charles, François /ANQUETIL/
+2 SURN ANQUETIL
+2 GIVN Charles, François
+1 SEX M
+1 BAPM
+2 PLAC Huisnes-sur-Mer, Manche, Normandie, France
+2 DATE 17 oct 1857
+1 RESI
+2 PLAC Paris, Île-de-France, France
+1 DEAT
+2 PLAC Paris, Paris, Île-de-France, France
+2 DATE 10 aug 1902
+1 FAMS @F903392108@
+0 @I2302457175@ INDI
+1 NAME Joseph Erasme Gaspard /BRAUX/
+2 SURN BRAUX
+2 GIVN Joseph Erasme Gaspard
+1 SEX M
+1 BIRT
+2 DATE 15 feb 1816
+1 DEAT
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 13 mar 1897
+1 FAMS @F903576751@
+0 @I2302458436@ INDI
+1 NAME Marguerite /MATHIEU/
+2 SURN MATHIEU
+2 GIVN Marguerite
+1 SEX F
+0 @I2322470808@ INDI
+1 NAME Jean /ANDREY/
+2 SURN ANDREY
+2 GIVN Jean
+1 SEX M
+1 BIRT
+2 PLAC Cerniat, Gruyère, Canton de Fribourg, Suisse
+2 DATE 1654
+1 DEAT
+2 PLAC Xermaménil, Meurthe-et-Moselle, Grand Est, France
+2 DATE aft 1688
+1 FAMC @F78@
+0 @I2563780731@ INDI
+1 NAME Dominique /PERNOT/
+2 SURN PERNOT
+2 GIVN Dominique
+1 SEX M
+1 BIRT
+2 DATE abt 1743
+1 RESI
+2 PLAC Germonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 1783
+1 DEAT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 27 oct 1783
+1 FAMS @F1007786548@
+0 @I2564255211@ INDI
+1 NAME Joseph /GEORGIN/
+2 SURN GEORGIN
+2 GIVN Joseph
+1 SEX M
+1 BIRT
+1 FAMS @F1007958789@
+0 @I2564256101@ INDI
+1 NAME Thérèse /BARBIER/
+2 SURN BARBIER
+2 GIVN Thérèse
+1 SEX F
+1 BIRT
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 20 jan 1755
+1 DEAT
+2 DATE 1788
+1 FAMS @F1007959930@
+1 FAMS @F1008003976@
+1 FAMC @F92@
+0 @I2564258199@ INDI
+1 NAME Dominique /PERNOT/
+2 SURN PERNOT
+2 GIVN Dominique
+1 SEX M
+1 BIRT
+2 PLAC Germonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 1743
+1 DEAT
+2 DATE 17 oct 1785
+1 FAMS @F1007959930@
+0 @I2577626463@ INDI
+1 NAME Jean Baptiste /CARNET/
+2 SURN CARNET
+2 GIVN Jean Baptiste
+1 SEX M
+1 BIRT
+2 DATE 1780
+1 DEAT
+2 PLAC Portieux, Vosges, Grand Est, France
+2 DATE 03 jan 1855
+1 FAMS @F1013499015@
+0 @I2577626492@ INDI
+1 NAME Marie Rose /FLORENTIN/
+2 SURN FLORENTIN
+2 GIVN Marie Rose
+1 SEX F
+1 BIRT
+2 DATE 1784
+1 DEAT
+2 PLAC Portieux, Vosges, Grand Est, France
+2 DATE 29 aug 1854
+1 FAMS @F1013499015@
+0 @I2577640565@ INDI
+1 NAME Marie Jeanne /DODIN/
+2 SURN DODIN
+2 GIVN Marie Jeanne
+1 SEX F
+0 @I2577648007@ INDI
+1 NAME Rosalie /CUNY/
+2 SURN CUNY
+2 GIVN Rosalie
+1 SEX F
+1 BIRT
+2 DATE 22 dec 1812
+1 FAMS @F1013507470@
+0 @I2583878647@ INDI
+1 NAME Joseph /PICARD/
+2 SURN PICARD
+2 GIVN Joseph
+1 SEX M
+1 BIRT
+2 PLAC Bruley, Meurthe-et-Moselle, Grand Est, France
+2 DATE 30 jun 1867
+1 DEAT
+1 FAMS @F1015934551@
+1 FAMS @F1015934679@
+0 @I2583878959@ INDI
+1 NAME Marie Victorine /PERNET/
+2 SURN PERNET
+2 GIVN Marie Victorine
+1 SEX F
+1 BIRT
+2 PLAC (Viéville-sous-les-Côtes) Vigneulles-lès-Hattonchâtel, Meuse, Grand Est, France
+2 DATE 26 may 1868
+1 FAMS @F1015934679@
+0 @I2583879491@ INDI
+1 NAME Pierre /PICQUART/
+2 SURN PICQUART
+2 GIVN Pierre
+1 SEX M
+1 FAMS @F1015934897@
+0 @I2583879492@ INDI
+1 NAME Antoinette /MICHEL/
+2 SURN MICHEL
+2 GIVN Antoinette
+1 SEX F
+1 FAMS @F1015934897@
+0 @I2587286073@ INDI
+1 NAME Dominique /REGNAULD/
+2 SURN REGNAULD
+2 GIVN Dominique
+1 SEX M
+1 BIRT
+1 DEAT
+2 DATE bef 1761
+1 FAMS @F1017304260@
+0 @I2616415644@ INDI
+1 NAME Jeanne /LAMBERT/
+2 SURN LAMBERT
+2 GIVN Jeanne
+1 SEX F
+1 BIRT
+2 PLAC (Verdun-sur-Meuse) Verdun, Meuse, Grand Est, France
+2 DATE 11 aug 1815
+1 DEAT
+2 PLAC (Verdun-sur-Meuse) Verdun, Meuse, Grand Est, France
+2 DATE 08 feb 1897
+1 FAMS @F1028980222@
+1 FAMC @F343356316@
+0 @I2633796625@ INDI
+1 NAME Jean-Claude /ANDRE/
+2 SURN ANDRE
+2 GIVN Jean-Claude
+1 SEX M
+1 BIRT
+2 DATE jun 1797
+1 DEAT
+2 PLAC Germonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 06 sep 1797
+1 FAMC @F85@
+0 @I2633803512@ INDI
+1 NAME Therese /ANDRE/
+2 SURN ANDRE
+2 GIVN Therese
+1 SEX F
+1 BIRT
+2 PLAC Germonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 01 apr 1794
+1 DEAT
+2 PLAC Germonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 18 aug 1794
+1 FAMC @F85@
+0 @I2635180271@ INDI
+1 NAME Marie Barbe /CORNU/
+2 SURN CORNU
+2 GIVN Marie Barbe
+1 SEX F
+1 BIRT
+2 PLAC Évaux-et-Ménil, Vosges, Grand Est, France
+2 DATE 6 mar 1816
+1 DEAT
+1 FAMS @F1036604920@
+0 @I2635184201@ INDI
+1 NAME Catherine /ROBERT/
+2 SURN ROBERT
+2 GIVN Catherine
+1 SEX F
+1 BIRT
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 28 jun 1817
+1 DEAT
+1 FAMS @F903576751@
+0 @I2639475919@ INDI
+1 NAME Henry /LESEUR/
+2 SURN LESEUR
+2 GIVN Henry
+1 SEX M
+1 FAMS @F1038376347@
+0 @I2639475920@ INDI
+1 NAME Marie Anne /BRIOT/
+2 SURN BRIOT
+2 GIVN Marie Anne
+1 SEX F
+1 FAMS @F1038376347@
+0 @I2639478592@ INDI
+1 NAME Leopold /BRAUX/
+2 SURN BRAUX
+2 GIVN Leopold
+1 SEX M
+1 BIRT
+2 PLAC Ubexy, Vosges, Grand Est, France
+2 DATE 10 sep 1788
+1 DEAT
+2 DATE aft 1853
+1 FAMS @F18@
+1 FAMS @F1039006958@
+0 @I2639478631@ INDI
+1 NAME Jean /GEUDIN/
+2 SURN GEUDIN
+2 GIVN Jean
+1 SEX M
+1 FAMS @F1038377456@
+0 @I2639478632@ INDI
+1 NAME Anne /MALHACHE/
+2 SURN MALHACHE
+2 GIVN Anne
+1 SEX F
+1 FAMS @F1038377456@
+0 @I2641010535@ INDI
+1 NAME Marie /MISSENARD/
+2 SURN MISSENARD
+2 GIVN Marie
+1 SEX F
+1 BIRT
+2 PLAC Belleau, Meurthe-et-Moselle, Grand Est, France
+2 DATE 05 dec 1797
+1 DEAT
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 10 oct 1853
+1 FAMS @F1039006958@
+0 @I2893457622@ INDI
+1 NAME André /ANDREY/
+2 SURN ANDREY
+2 GIVN André
+1 SEX M
+1 BIRT
+2 PLAC Cerniat, Gruyère, Canton de Fribourg, Suisse
+1 DEAT
+1 NOTE @NT647126618@
+1 FAMC @F79@
+0 @F116@ FAM
+1 HUSB @I280@
+1 WIFE @I281@
+1 CHIL @I56@
+1 MARR A confirmer
+2 PLAC Bidestroff, Moselle, Grand Est, France
+2 DATE 20 mar 1650
+0 @F117@ FAM
+1 HUSB @I283@
+1 WIFE @I296@
+1 CHIL @I189@
+1 MARR
+0 @F121@ FAM
+1 HUSB @I307@
+1 WIFE @I308@
+1 CHIL @I37@
+1 MARR
+2 PLAC Liffol-le-Grand, Vosges, Grand Est, France
+2 DATE 12 may 1884
+0 @F122@ FAM
+1 HUSB @I51@
+1 WIFE @I309@
+1 MARR
+2 DATE aft 1753
+1 EVEN
+0 @F125@ FAM
+1 CHIL @I156@
+1 CHIL @I169@
+0 @F126@ FAM
+1 HUSB @I325@
+1 WIFE @I326@
+1 CHIL @I83@
+1 MARR
+2 PLAC (Laharmand) Jonchery, Haute-Marne, Grand Est, France
+2 DATE 8 jan 1813
+0 @F134@ FAM
+0 @F136@ FAM
+1 WIFE @I348@
+1 MARR
+0 @F137@ FAM
+1 WIFE @I349@
+1 MARR
+0 @F139@ FAM
+1 HUSB @I351@
+1 WIFE @I42@
+1 MARR
+2 PLAC Lemainville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 26 jun 1822
+0 @F141@ FAM
+1 HUSB @I355@
+1 WIFE @I356@
+1 CHIL @I117@
+1 CHIL @I357@
+1 MARR
+0 @F144@ FAM
+0 @F148@ FAM
+0 @F150@ FAM
+1 CHIL @I389@
+1 CHIL @I390@
+1 CHIL @I391@
+1 CHIL @I392@
+0 @F151@ FAM
+1 HUSB @I389@
+1 WIFE @I394@
+1 CHIL @I395@
+1 CHIL @I396@
+1 MARR
+0 @F152@ FAM
+1 HUSB @I391@
+1 MARR
+0 @F167@ FAM
+0 @F175@ FAM
+1 CHIL @I465@
+1 CHIL @I466@
+0 @F185@ FAM
+0 @F186@ FAM
+0 @F190@ FAM
+0 @F196@ FAM
+0 @F204@ FAM
+0 @F207@ FAM
+1 HUSB @I561@
+1 MARR
+0 @F209@ FAM
+0 @F1@ FAM
+1 HUSB @I1@
+1 WIFE @I2@
+1 CHIL @I3@
+1 CHIL @I4@
+1 MARR
+2 PLAC Mantes-la-Jolie, Yvelines, Île-de-France, France
+2 DATE 31 mar 2001
+0 @F2@ FAM
+1 HUSB @I5@
+1 WIFE @I2@
+1 CHIL @I6@
+1 EVEN
+0 @F3@ FAM
+1 HUSB @I7@
+1 WIFE @I9@
+1 CHIL @I1@
+1 CHIL @I8@
+1 MARR
+2 PLAC Gambais, Yvelines, Île-de-France, France
+2 DATE 07 jan 1957
+0 @F4@ FAM
+1 HUSB @I10@
+1 WIFE @I8@
+1 MARR
+2 PLAC Limay, Yvelines, Île-de-France, France
+2 DATE 16 jul 1983
+1 DIV
+0 @F5@ FAM
+1 HUSB @I11@
+1 WIFE @I8@
+1 MARR
+2 DATE 2003
+0 @F6@ FAM
+1 HUSB @I13@
+1 WIFE @I14@
+1 CHIL @I2@
+1 MARR
+2 PLAC Cameroun
+0 @F9@ FAM
+1 HUSB @I22@
+1 WIFE @I23@
+1 CHIL @I7@
+1 MARR
+2 PLAC Mantes-la-Jolie, Yvelines, Île-de-France, France
+2 DATE 8 aug 1925
+0 @F10@ FAM
+1 HUSB @I25@
+1 WIFE @I24@
+1 CHIL @I9@
+1 MARR
+2 PLAC Mantes-la-Jolie, Yvelines, Île-de-France, France
+2 DATE 25 sep 1933
+1 EVEN
+0 @F11@ FAM
+1 HUSB @I25@
+1 WIFE @I26@
+1 MARR
+2 PLAC Pont-de-l'Arche, Eure, Normandie, France
+2 DATE 11 aug 1966
+0 @F12@ FAM
+1 HUSB @I27@
+1 WIFE @I28@
+1 CHIL @I22@
+1 CHIL @I31@
+1 MARR
+2 PLAC Ruppes, Vosges, Grand Est, France
+2 DATE 10 apr 1901
+0 @F14@ FAM
+1 HUSB @I32@
+1 WIFE @I31@
+1 MARR
+2 PLAC Liffol-le-Grand, Vosges, Grand Est, France
+2 DATE 7 apr 1929
+0 @F15@ FAM
+1 HUSB @I33@
+1 WIFE @I34@
+1 CHIL @I27@
+1 CHIL @I36@
+1 MARR
+2 PLAC Oudincourt, Haute-Marne, Grand Est, France
+2 DATE 02 mar 1874
+0 @F16@ FAM
+1 HUSB @I35@
+1 WIFE @I39@
+1 CHIL @I33@
+1 CHIL @I81@
+1 CHIL @I82@
+1 CHIL @I87@
+1 CHIL @I104@
+1 CHIL @I105@
+1 MARR
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 18 oct 1831
+0 @F17@ FAM
+1 HUSB @I36@
+1 WIFE @I37@
+1 CHIL @I38@
+1 CHIL @I2018152140@
+1 MARR
+2 PLAC Liffol-le-Grand, Vosges, Grand Est, France
+2 DATE 22 apr 1911
+0 @F18@ FAM
+1 HUSB @I2639478592@
+1 WIFE @I41@
+1 CHIL @I39@
+1 MARR
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 24 aug 1808
+0 @F19@ FAM
+1 HUSB @I35@
+1 WIFE @I42@
+1 MARR
+2 PLAC Bainville-aux-Miroirs, Meurthe-et-Moselle, Grand Est, France
+2 DATE 19 jan 1853
+1 NOTE @NT118807006@
+0 @F20@ FAM
+1 HUSB @I43@
+1 WIFE @I44@
+1 CHIL @I35@
+1 CHIL @I46@
+1 CHIL @I47@
+1 CHIL @I170@
+1 CHIL @I244@
+1 CHIL @I246@
+1 MARR
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 26 apr 1803
+0 @F21@ FAM
+1 HUSB @I48@
+1 WIFE @I47@
+1 MARR
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 23 nov 1836
+0 @F22@ FAM
+1 HUSB @I49@
+1 WIFE @I50@
+1 CHIL @I43@
+1 CHIL @I226@
+1 CHIL @I227@
+1 CHIL @I229@
+1 MARR
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 17 nov 1767
+1 NOTE @NT118807007@
+0 @F23@ FAM
+1 HUSB @I51@
+1 WIFE @I52@
+1 CHIL @I49@
+1 CHIL @I74@
+1 CHIL @I780@
+1 CHIL @I781@
+1 MARR
+2 PLAC Gripport, Meurthe-et-Moselle, Grand Est, France
+2 DATE 29 aug 1747
+1 EVEN
+1 NOTE @NT118807008@
+0 @F24@ FAM
+1 HUSB @I51@
+1 WIFE @I53@
+1 CHIL @I76@
+1 CHIL @I77@
+1 CHIL @I78@
+1 CHIL @I224@
+1 CHIL @I225@
+1 CHIL @I228@
+1 CHIL @I779@
+1 CHIL @I930137958@
+1 MARR
+2 PLAC Sommerviller, Meurthe-et-Moselle, Grand Est, France
+2 DATE 21 sep 1761
+0 @F25@ FAM
+1 HUSB @I54@
+1 WIFE @I55@
+1 CHIL @I51@
+1 CHIL @I72@
+1 CHIL @I139@
+1 CHIL @I240@
+1 CHIL @I245@
+1 CHIL @I247@
+1 CHIL @I248@
+1 CHIL @I782@
+1 CHIL @I783@
+1 MARR
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 30 jan 1725
+0 @F26@ FAM
+1 HUSB @I184@
+1 WIFE @I56@
+1 CHIL @I54@
+1 CHIL @I185@
+1 CHIL @I220@
+1 CHIL @I221@
+1 CHIL @I222@
+1 CHIL @I223@
+1 CHIL @I911@
+1 CHIL @I919523863@
+1 CHIL @I919527915@
+1 CHIL @I919639143@
+1 CHIL @I2244539487@
+1 MARR
+2 PLAC Aboncourt, Moselle, Grand Est, France
+2 DATE 05 feb 1688
+1 NOTE @NT118807009@
+0 @F27@ FAM
+1 HUSB @I38@
+1 WIFE @I57@
+1 CHIL @I58@
+1 CHIL @I305@
+1 MARR
+2 PLAC Saint-Germain-du-Bois, Saône-et-Loire, Bourgogne-Franche-Comté, France
+2 DATE 30 apr 1949
+0 @F28@ FAM
+1 HUSB @I58@
+1 WIFE @I59@
+1 CHIL @I71@
+1 CHIL @I114@
+1 CHIL @I306@
+1 MARR
+0 @F30@ FAM
+1 HUSB @I62@
+1 WIFE @I2023443083@
+1 CHIL @I23@
+1 MARR
+2 PLAC (Paris 08 Élysée) Paris, Paris, Île-de-France, France
+2 DATE 25 feb 1895
+0 @F33@ FAM
+1 HUSB @I73@
+1 WIFE @I72@
+1 MARR
+2 PLAC Xermaménil, Meurthe-et-Moselle, Grand Est, France
+2 DATE 07 feb 1764
+0 @F34@ FAM
+1 HUSB @I75@
+1 WIFE @I74@
+1 MARR
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 14 may 1771
+0 @F35@ FAM
+1 HUSB @I46@
+1 WIFE @I79@
+1 CHIL @I880244279@
+1 MARR
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 29 aug 1838
+0 @F36@ FAM
+1 HUSB @I82@
+1 WIFE @I83@
+1 CHIL @I84@
+1 CHIL @I85@
+1 CHIL @I86@
+1 MARR
+2 PLAC Jonchery, Haute-Marne, Grand Est, France
+2 DATE 03 feb 1862
+0 @F37@ FAM
+1 HUSB @I87@
+1 WIFE @I88@
+1 CHIL @I91@
+1 CHIL @I92@
+1 MARR
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 30 mar 1864
+0 @F39@ FAM
+1 HUSB @I92@
+1 WIFE @I93@
+1 CHIL @I96@
+1 CHIL @I100@
+1 MARR
+2 PLAC Bar-le-Duc, Meuse, Grand Est, France
+2 DATE 24 oct 1891
+1 MARB
+2 PLAC Bar-le-Duc, Meuse, Grand Est, France
+2 DATE 11 oct 1891
+0 @F40@ FAM
+1 HUSB @I94@
+1 WIFE @I95@
+1 CHIL @I93@
+1 MARR
+0 @F41@ FAM
+1 HUSB @I97@
+1 WIFE @I96@
+1 MARR
+2 PLAC Bar-le-Duc, Meuse, Grand Est, France
+2 DATE 17 nov 1928
+0 @F42@ FAM
+1 WIFE @I100@
+1 MARR
+2 PLAC Bar-le-Duc, Meuse, Grand Est, France
+2 DATE 06 apr 1920
+0 @F44@ FAM
+1 HUSB @I106@
+1 WIFE @I105@
+1 MARR
+2 PLAC Nancy, Meurthe-et-Moselle, Grand Est, France
+2 DATE 21 apr 1858
+0 @F47@ FAM
+1 HUSB @I62@
+1 WIFE @I115@
+1 MARR
+2 PLAC (Paris 16 Passy) Paris, Paris, Île-de-France, France
+2 DATE 19 may 1908
+0 @F48@ FAM
+1 WIFE @I117@
+1 MARR
+2 PLAC Beaumont-le-Roger, Eure, Normandie, France
+2 DATE 12 jul 1873
+0 @F52@ FAM
+1 HUSB @I369@
+1 WIFE @I130@
+1 CHIL @I28@
+1 MARR
+2 PLAC (Marault) Bologne, Haute-Marne, Grand Est, France
+2 DATE 17 feb 1873
+0 @F53@ FAM
+0 @F55@ FAM
+1 HUSB @I137@
+1 WIFE @I138@
+1 CHIL @I55@
+1 MARR
+2 PLAC (Thaon-les-Vosges) Capavenir Vosges, Vosges, Grand Est, France
+2 DATE 09 may 1690
+0 @F56@ FAM
+1 HUSB @I140@
+1 WIFE @I141@
+1 CHIL @I52@
+1 MARR
+2 PLAC Dogneville, Vosges, Grand Est, France
+2 DATE 07 nov 1724
+0 @F57@ FAM
+1 HUSB @I143@
+1 WIFE @I144@
+1 CHIL @I50@
+1 MARR
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 09 feb 1740
+0 @F58@ FAM
+1 HUSB @I49@
+1 WIFE @I145@
+1 MARR
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 17 aug 1784
+0 @F59@ FAM
+1 HUSB @I146@
+1 WIFE @I147@
+1 CHIL @I145@
+1 MARR
+2 PLAC Badménil-aux-Bois, Vosges, Grand Est, France
+0 @F60@ FAM
+1 HUSB @I148@
+1 WIFE @I145@
+1 MARR
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 20 feb 1781
+0 @F62@ FAM
+1 HUSB @I151@
+1 WIFE @I152@
+1 CHIL @I44@
+1 MARR
+2 PLAC Viménil, Vosges, Grand Est, France
+2 DATE 23 nov 1773
+0 @F64@ FAM
+1 HUSB @I155@
+1 WIFE @I156@
+1 CHIL @I34@
+1 MARR
+2 PLAC Oudincourt, Haute-Marne, Grand Est, France
+2 DATE 03 feb 1834
+0 @F65@ FAM
+1 HUSB @I33@
+1 WIFE @I157@
+1 CHIL @I167@
+1 CHIL @I237@
+1 CHIL @I238@
+1 MARR
+2 PLAC Oudincourt, Haute-Marne, Grand Est, France
+2 DATE 30 jul 1866
+0 @F69@ FAM
+1 WIFE @I163@
+1 MARR
+0 @F71@ FAM
+1 HUSB @I168@
+1 WIFE @I169@
+1 CHIL @I157@
+1 MARR
+2 PLAC Oudincourt, Haute-Marne, Grand Est, France
+2 DATE 09 jan 1832
+0 @F72@ FAM
+1 HUSB @I170@
+1 WIFE @I171@
+1 MARR
+2 PLAC Nancy, Meurthe-et-Moselle, Grand Est, France
+2 DATE 17 nov 1845
+0 @F73@ FAM
+1 HUSB @I172@
+1 WIFE @I173@
+1 CHIL @I171@
+1 MARR
+2 PLAC Nancy, Meurthe-et-Moselle, Grand Est, France
+2 DATE 04 jan 1792
+0 @F75@ FAM
+1 HUSB @I177@
+1 WIFE @I178@
+1 CHIL @I73@
+1 MARR
+2 PLAC Essegney, Vosges, Grand Est, France
+2 DATE 20 feb 1730
+0 @F78@ FAM
+1 HUSB @I186@
+1 WIFE @I187@
+1 CHIL @I184@
+1 CHIL @I284@
+1 CHIL @I285@
+1 CHIL @I286@
+1 CHIL @I288@
+1 CHIL @I289@
+1 CHIL @I2322470808@
+1 MARR
+2 PLAC Cerniat, Gruyère, Canton de Fribourg, Suisse
+0 @F79@ FAM
+1 HUSB @I188@
+1 WIFE @I282@
+1 CHIL @I186@
+1 CHIL @I2893457622@
+1 MARR
+0 @F80@ FAM
+1 HUSB @I189@
+1 WIFE @I190@
+1 CHIL @I188@
+1 MARR
+0 @F81@ FAM
+1 HUSB @I192@
+1 WIFE @I193@
+1 CHIL @I106@
+1 MARR
+2 PLAC Virecourt, Meurthe-et-Moselle, Grand Est, France
+2 DATE 8 nov 1815
+0 @F82@ FAM
+1 HUSB @I194@
+1 WIFE @I195@
+1 CHIL @I79@
+1 MARR
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 28 jan 1801
+0 @F85@ FAM
+1 HUSB @I198@
+1 WIFE @I77@
+1 CHIL @I201@
+1 CHIL @I211@
+1 CHIL @I212@
+1 CHIL @I216@
+1 CHIL @I922433514@
+1 CHIL @I2633796625@
+1 CHIL @I2633803512@
+1 MARR
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 10 feb 1789
+1 NOTE @NT118807011@
+0 @F86@ FAM
+1 HUSB @I199@
+1 WIFE @I200@
+1 CHIL @I198@
+1 MARR
+2 PLAC Remiremont, Vosges, Grand Est, France
+2 DATE 08 jul 1761
+0 @F87@ FAM
+1 HUSB @I201@
+1 WIFE @I202@
+1 MARR
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 09 apr 1834
+1 EVEN
+1 NOTE @NT118807012@
+0 @F88@ FAM
+1 HUSB @I203@
+1 WIFE @I204@
+1 CHIL @I202@
+1 MARR
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 20 dec 1791
+0 @F89@ FAM
+1 HUSB @I205@
+1 WIFE @I202@
+1 MARR
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 11 jan 1815
+0 @F90@ FAM
+1 HUSB @I201@
+1 WIFE @I206@
+1 MARR
+2 PLAC Rugney, Vosges, Grand Est, France
+2 DATE 01 sep 1841
+1 EVEN
+0 @F91@ FAM
+1 HUSB @I207@
+1 WIFE @I208@
+1 CHIL @I206@
+1 MARR
+0 @F92@ FAM
+1 HUSB @I209@
+1 WIFE @I210@
+1 CHIL @I239@
+1 CHIL @I2564256101@
+1 MARR
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 16 feb 1751
+0 @F93@ FAM
+1 HUSB @I213@
+1 WIFE @I212@
+1 MARR
+2 PLAC Germonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 14 feb 1827
+0 @F94@ FAM
+1 HUSB @I214@
+1 WIFE @I215@
+1 CHIL @I213@
+1 MARR
+0 @F95@ FAM
+1 HUSB @I217@
+1 WIFE @I216@
+1 MARR
+2 PLAC Germonville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 23 apr 1833
+0 @F96@ FAM
+1 HUSB @I218@
+1 WIFE @I219@
+1 CHIL @I217@
+1 MARR
+2 PLAC Frizon, Vosges, Grand Est, France
+2 DATE 21 jan 1794
+0 @F97@ FAM
+1 HUSB @I221@
+1 WIFE @I230@
+1 MARR
+2 PLAC Froville, Meurthe-et-Moselle, Grand Est, France
+2 DATE 07 feb 1735
+1 NOTE @NT118807013@
+0 @F98@ FAM
+1 HUSB @I231@
+1 WIFE @I232@
+1 CHIL @I230@
+1 MARR
+2 PLAC Goin, Moselle, Grand Est, France
+2 DATE 27 feb 1685
+0 @F101@ FAM
+1 HUSB @I239@
+1 WIFE @I225@
+1 MARR
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 18 jan 1785
+0 @F102@ FAM
+1 HUSB @I241@
+1 WIFE @I240@
+1 MARR
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 16 nov 1762
+1 MARB
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 15 nov 1762
+0 @F103@ FAM
+1 HUSB @I242@
+1 WIFE @I243@
+1 CHIL @I75@
+1 CHIL @I241@
+1 MARR
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 28 jan 1738
+0 @F108@ FAM
+1 WIFE @I210@
+1 EVEN
+0 @F110@ FAM
+1 HUSB @I76@
+1 WIFE @I262@
+1 CHIL @I719@
+1 CHIL @I720@
+1 CHIL @I721@
+1 CHIL @I722@
+1 CHIL @I723@
+1 CHIL @I777@
+1 CHIL @I778@
+1 MARR
+2 PLAC Vaucouleurs, Meuse, Grand Est, France
+2 DATE 13 may 1797
+0 @F111@ FAM
+1 HUSB @I263@
+1 WIFE @I264@
+1 CHIL @I262@
+1 MARR
+0 @F221@ FAM
+0 @F224@ FAM
+0 @F226@ FAM
+0 @F237@ FAM
+1 WIFE @I654@
+1 MARR
+2 DATE 1898
+0 @F246@ FAM
+1 WIFE @I665@
+1 MARR
+0 @F248@ FAM
+1 WIFE @I671@
+1 MARR
+1 DIV
+0 @F264@ FAM
+1 HUSB @I710@
+1 MARR
+0 @F267@ FAM
+1 HUSB @I722@
+1 WIFE @I724@
+1 CHIL @I727@
+1 CHIL @I775@
+1 CHIL @I776@
+1 CHIL @I887713585@
+1 MARR
+2 PLAC Bonzée, Meuse, Grand Est, France
+2 DATE 16 may 1836
+0 @F268@ FAM
+1 HUSB @I725@
+1 WIFE @I726@
+1 CHIL @I724@
+1 MARR
+2 PLAC Ornes, Meuse, Grand Est, France
+2 DATE 21 mar 1816
+0 @F275@ FAM
+1 HUSB @I738@
+1 WIFE @I739@
+1 CHIL @I810@
+1 MARR
+2 PLAC Chéraute, Pyrénées-Atlantiques, Nouvelle-Aquitaine, France
+2 DATE 9 nov 1862
+1 NOTE @NT118807014@
+0 @F282@ FAM
+1 HUSB @I758@
+1 WIFE @I759@
+1 CHIL @I42@
+1 MARR
+0 @F285@ FAM
+1 WIFE @I764@
+1 MARR
+2 PLAC (Paris 02 Bourse) Paris, Paris, Île-de-France, France
+2 DATE 10 feb 1855
+0 @F295@ FAM
+1 WIFE @I812@
+1 MARR
+0 @F307@ FAM
+1 HUSB @I167@
+1 WIFE @I867@
+1 CHIL @I868@
+1 CHIL @I869@
+1 CHIL @I870@
+1 CHIL @I902077815@
+1 MARR
+2 PLAC Fontaines-sur-Marne, Haute-Marne, Grand Est, France
+2 DATE 03 nov 1891
+0 @F308@ FAM
+1 HUSB @I871@
+1 WIFE @I872@
+1 CHIL @I867@
+1 MARR
+2 PLAC Fontaines-sur-Marne, Haute-Marne, Grand Est, France
+2 DATE 20 oct 1863
+0 @F309@ FAM
+1 HUSB @I868@
+1 WIFE @I873@
+1 CHIL @I874@
+1 MARR
+2 DATE bef 1931
+0 @F325@ FAM
+1 HUSB @I907@
+1 WIFE @I869@
+1 MARR
+2 PLAC Joinville, Haute-Marne, Grand Est, France
+2 DATE 18 sep 1920
+0 @F340453735@ FAM
+1 HUSB @I85@
+1 WIFE @I880244547@
+1 CHIL @I880244577@
+1 MARR
+2 PLAC Brousseval, Haute-Marne, Grand Est, France
+2 DATE 02 oct 1893
+1 MARB
+2 PLAC Brousseval, Haute-Marne, Grand Est, France
+2 DATE 24 sep 1893
+0 @F340453761@ FAM
+1 HUSB @I880244613@
+1 WIFE @I880244644@
+1 CHIL @I880244547@
+1 MARR
+2 PLAC Wassy, Haute-Marne, Grand Est, France
+2 DATE 1 nov 1861
+0 @F343314405@ FAM
+1 HUSB @I887709549@
+1 WIFE @I775@
+1 MARR
+2 PLAC (Verdun-sur-Meuse) Verdun, Meuse, Grand Est, France
+2 DATE 23 aug 1865
+1 MARB
+2 PLAC (Verdun-sur-Meuse) Verdun, Meuse, Grand Est, France
+2 DATE 20 aug 1865
+0 @F343332151@ FAM
+1 HUSB @I719@
+1 WIFE @I887755173@
+1 MARR
+2 PLAC Vitré, Ille-et-Vilaine, Bretagne, France
+2 DATE 23 jun 1838
+0 @F343332217@ FAM
+1 HUSB @I887755307@
+1 WIFE @I887755321@
+1 CHIL @I887755173@
+0 @F343356316@ FAM
+1 HUSB @I887814706@
+1 WIFE @I887814730@
+1 CHIL @I2616415644@
+1 MARR
+2 PLAC (Verdun-sur-Meuse) Verdun, Meuse, Grand Est, France
+2 DATE 24 feb 1808
+0 @F348978089@ FAM
+1 HUSB @I902077815@
+1 WIFE @I902082362@
+1 MARR
+2 PLAC Joinville, Haute-Marne, Grand Est, France
+2 DATE 25 jan 1913
+0 @F350118944@ FAM
+1 HUSB @I905014113@
+1 WIFE @I905014126@
+1 CHIL @I902082362@
+1 MARR
+2 PLAC Osne-le-Val, Haute-Marne, Grand Est, France
+2 DATE 26 jan 1886
+0 @F352948870@ FAM
+1 HUSB @I874@
+1 WIFE @I912155336@
+1 CHIL @I1120579105@
+1 CHIL @I1120579110@
+1 MARR
+2 PLAC Joinville, Haute-Marne, Grand Est, France
+2 DATE 07 apr 1956
+0 @F379200917@ FAM
+1 HUSB @I43@
+1 WIFE @I978599308@
+1 CHIL @I978601637@
+1 CHIL @I978601701@
+1 MARR
+2 PLAC Mirecourt, Vosges, Grand Est, France
+2 DATE 09 feb 1800
+0 @F379200947@ FAM
+1 HUSB @I978599377@
+1 WIFE @I978599402@
+1 CHIL @I978599308@
+1 MARR
+2 PLAC Mirecourt, Vosges, Grand Est, France
+2 DATE 19 jan 1768
+0 @F404584993@ FAM
+1 HUSB @I106@
+1 WIFE @I1042756979@
+0 @F432934230@ FAM
+1 HUSB @I1114620440@
+1 WIFE @I1114620441@
+1 CHIL @I32@
+0 @F791716808@ FAM
+1 HUSB @I2017282312@
+1 WIFE @I145@
+1 MARR
+2 PLAC Xaronval, Vosges, Grand Est, France
+2 DATE 28 aug 1811
+0 @F792062847@ FAM
+1 HUSB @I2018152179@
+1 WIFE @I2018152140@
+1 MARR
+2 PLAC Liffol-le-Grand, Vosges, Grand Est, France
+2 DATE 04 may 1940
+0 @F792239176@ FAM
+1 HUSB @I2018592417@
+1 WIFE @I2018594523@
+1 CHIL @I873@
+1 MARR
+2 PLAC Guindrecourt-aux-Ormes, Haute-Marne, Grand Est, France
+2 DATE 13 oct 1894
+0 @F792490843@ FAM
+1 HUSB @I2019236937@
+1 WIFE @I2019236939@
+1 CHIL @I148@
+1 MARR
+2 PLAC Bainville-aux-Miroirs, Meurthe-et-Moselle, Grand Est, France
+2 DATE 23 nov 1700
+0 @F792888407@ FAM
+1 HUSB @I137@
+1 WIFE @I2020184284@
+1 MARR
+2 DATE 24 jan 1687
+0 @F794174361@ FAM
+1 HUSB @I2023442727@
+1 WIFE @I2023442728@
+1 CHIL @I115@
+0 @F886419497@ FAM
+1 HUSB @I2259562807@
+1 WIFE @I2259562830@
+1 CHIL @I10@
+0 @F902497803@ FAM
+1 WIFE @I2299812735@
+1 CHIL @I173@
+0 @F903392108@ FAM
+1 HUSB @I2302009499@
+1 WIFE @I115@
+1 MARR
+2 PLAC Paris, Paris, Île-de-France, France
+2 DATE 31 aug 1889
+0 @F903576751@ FAM
+1 HUSB @I2302457175@
+1 WIFE @I2635184201@
+1 CHIL @I88@
+1 MARR
+2 PLAC Saint-Germain, Meurthe-et-Moselle, Grand Est, France
+2 DATE 16 jan 1839
+0 @F1007786548@ FAM
+1 HUSB @I2563780731@
+1 MARR
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 27 feb 1781
+0 @F1007958789@ FAM
+1 HUSB @I2564255211@
+1 WIFE @I210@
+1 MARR
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 21 feb 1759
+0 @F1007959930@ FAM
+1 HUSB @I2564258199@
+1 WIFE @I2564256101@
+1 MARR
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 27 feb 1781
+0 @F1008003976@ FAM
+1 HUSB @I77@
+1 WIFE @I2564256101@
+1 MARR
+2 PLAC Hergugney, Vosges, Grand Est, France
+2 DATE 05 sep 1786
+0 @F1013499015@ FAM
+1 HUSB @I2577626463@
+1 WIFE @I2577626492@
+1 CHIL @I48@
+1 MARR
+2 PLAC Portieux, Vosges, Grand Est, France
+2 DATE 19 apr 1809
+0 @F1013507470@ FAM
+1 HUSB @I48@
+1 WIFE @I2577648007@
+1 MARR
+2 PLAC Portieux, Vosges, Grand Est, France
+2 DATE 23 nov 1842
+0 @F1015934551@ FAM
+1 HUSB @I2583878647@
+1 CHIL @I907@
+0 @F1015934679@ FAM
+1 HUSB @I2583878647@
+1 WIFE @I2583878959@
+1 MARR
+2 PLAC Vigneulles-lès-Hattonchâtel, Meuse, Grand Est, France
+2 DATE 13 nov 1889
+0 @F1015934897@ FAM
+1 HUSB @I2583879491@
+1 WIFE @I2583879492@
+0 @F1016959142@ FAM
+1 WIFE @I72@
+1 MARR
+2 PLAC Xermaménil, Meurthe-et-Moselle, Grand Est, France
+2 DATE 07 feb 1764
+0 @F1017304260@ FAM
+1 HUSB @I2587286073@
+1 WIFE @I53@
+1 MARR
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 21 nov 1747
+0 @F1028980222@ FAM
+1 HUSB @I719@
+1 WIFE @I2616415644@
+1 MARR
+2 PLAC (Verdun-sur-Meuse) Verdun, Meuse, Grand Est, France
+2 DATE 24 aug 1858
+1 MARB
+2 PLAC Ligny-en-Barrois, Meuse, Grand Est, France
+2 DATE 25 jul 1858
+0 @F1033711166@ FAM
+1 HUSB @I713@
+1 WIFE @I714@
+1 CHIL @I53@
+1 CHIL @I144@
+1 MARR
+2 PLAC Chamagne, Vosges, Grand Est, France
+2 DATE 22 may 1708
+0 @F1035658328@ FAM
+1 WIFE @I978599402@
+1 MARB
+2 PLAC Mirecourt, Vosges, Grand Est, France
+2 DATE 18 jan 1768
+0 @F1036604920@ FAM
+1 HUSB @I217@
+1 WIFE @I2635180271@
+1 MARR
+2 PLAC Évaux-et-Ménil, Vosges, Grand Est, France
+2 DATE 27 jul 1853
+0 @F1038376347@ FAM
+1 HUSB @I2639475919@
+1 WIFE @I2639475920@
+1 CHIL @I325@
+0 @F1038377456@ FAM
+1 HUSB @I2639478631@
+1 WIFE @I2639478632@
+0 @F1039006958@ FAM
+1 HUSB @I2639478592@
+1 WIFE @I2641010535@
+1 MARR
+2 PLAC Faulx, Meurthe-et-Moselle, Grand Est, France
+2 DATE 28 nov 1821
+0 @NT118807006@ NOTE
+1 CONC Pas d'enfant
+0 @NT118807007@ NOTE
+1 CONC Archives départementales des Vosges (88)
+1 CONT Chamagne
+1 CONT 28/35
+0 @NT118807008@ NOTE
+1 CONC Archives départementales de la Meurthe et moselle (54)
+1 CONT Gripport
+1 CONT 359 et 360/644
+0 @NT118807009@ NOTE
+1 CONC Archives départementales de la Moselle (57)
+1 CONT Aboncourt st Bernard
+1 CONT 33/136
+0 @NT118807011@ NOTE
+1 CONC Archives départementales desVosges (88
+1 CONT Hergugney
+1 CONT 11 et 12/25
+0 @NT118807012@ NOTE
+1 CONC Mariage  Archives départementales des Vosges
+1 CONT année 1834   Chamagne page 7 et 8/24
+0 @NT118807013@ NOTE
+1 CONC Archives départementales de Meurthe et Moselle (54)
+1 CONT Roville
+1 CONT 90/701
+0 @NT118807014@ NOTE
+1 CONC Archives départementales des Pyrénées (64)
+1 CONT page 638/1183
+0 @NT118806951@ NOTE
+1 CONC Né à 12 heures vingt minutes
+0 @NT118806952@ NOTE
+1 CONC Né à 18 heures 31 minutes
+0 @NT118806953@ NOTE
+1 CONC Née à 01 heure 12 minutes
+0 @NT118806954@ NOTE
+1 CONC a verifier liffol le grand 31/10/1904 No 71
+1 CONT mariage avec genevieve odette André le 08/04/1929 à Liffol le grand (voir s'il s'agit de Ginette André)
+0 @NT118806955@ NOTE
+1 CONC Archives départementales en ligne de la Haute Marne
+1 CONT Acte de mariage page 263/437
+1 CONT Recensement de la population d'Oudincourt en 1906
+0 @NT118806956@ NOTE
+1 CONC Archives départementales des Vosges (88)
+1 CONT Hergugney
+1 CONT 3/30 Naissance
+0 @NT118806957@ NOTE
+1 CONC Archives départementales en ligne de l ahaute Marne (52)
+1 CONT Acte de naissance page 32/154
+0 @NT118806958@ NOTE
+1 CONC Archives départementales Des Vosges (88)
+1 CONT Chamagne
+1 CONT 18/20
+0 @NT129664354@ NOTE
+1 CONC Archives Départementales de Meurthe et Moselle
+1 CONT Naissance 328/380
+0 @NT118806960@ NOTE
+1 CONC Archives départementales de Meurthe et Moselle (54)
+1 CONT Roville devant Bayon
+1 CONT 88/688
+0 @NT118806961@ NOTE
+1 CONC 2 enfants
+0 @NT118806962@ NOTE
+1 CONC 3 enfants
+0 @NT118806963@ NOTE
+1 CONC Archives départementales de Meurthe et Moselle (54)
+1 CONT Tantonville
+1 CONT 131/458 naissance
+1 CONT parrain Jean André Admoniateur à Tantonville
+0 @NT127965807@ NOTE
+1 CONC Archives départementales de Meurthe et Moselle (54)
+1 CONT Décès 68/618
+0 @NT141717391@ NOTE
+1 CONC Montbéliard 25
+0 @NT118806964@ NOTE
+1 CONC Fils majeur non reconnu de Marie Ernestine ROUSSELIN
+1 CONT Archives de Paris (11)
+1 CONT Page 13/31
+0 @NT118806966@ NOTE
+1 CONC Pierre-Fourrier DROUOT Praticien. Pourvu le 20 août 1766 de lettres patentes pour
+1 CONT l’office de notaire royal et tabellion de Jean-Sébastien
+1 CONT MICHEL, démissionnaire. Il prêta serment le 18 septembre.
+1 CONT Il prêta serment le 19 avril 1775 pour une charge de greffier
+1 CONT (B_PRO98 et 7B159).
+1 CONT
+1 CONT
+0 @NT128462521@ NOTE
+1 CONC Archives départementales de Meurthe et Moselle (54)
+1 CONT Mariage : 34/618
+0 @NT118806967@ NOTE
+1 CONC de Bralleville
+0 @NT118806968@ NOTE
+1 CONC Archives départementales des Vosges (88)
+1 CONT Décès : No 4     472/652
+0 @NT398551186@ NOTE
+1 CONC Célibataire
+0 @NT118806971@ NOTE
+1 CONC Décédé à l'hospice civil de Chaumont
+0 @NT118806972@ NOTE
+1 CONC Naissance : No 3 66/71 (Laharmand)
+1 CONT Décès : No 160 36/56 (Chaumont)
+1 CONT Célibataire
+1 CONT Profession : Relieur
+0 @NT118806973@ NOTE
+1 CONC Naissance : No 66 17/56 (Chaumont)
+1 CONT Célibataire
+1 CONT Profession : Blanchisseuse
+1 CONT Recensement 1906 Chaumont page 159/217
+1 CONT Rien trouvé concernant son décès  jusqu'en 1942 à Chaumont
+0 @NT118806974@ NOTE
+1 CONC Décoré de la médaille militaire de la médaille d'Italie et de la médaille de 1870-1871
+0 @NT118806975@ NOTE
+1 CONC Officier de l'instruction publique
+1 CONT Médaille d'or de la société nationale d'encouragement au Bien
+1 CONT Médaille d'or du souvenir Français
+1 CONT Médaille de la Mutualité
+1 CONT
+0 @NT118806976@ NOTE
+1 CONC Officier d'académie
+1 CONT Médaille de la mutualité
+0 @NT582705910@ NOTE
+1 CONC Sa soeur Elisabeth Hocquart s'et mariée avec 
+0 @NT118806977@ NOTE
+1 CONC Archives départementale de la Haute Marne (52)
+1 CONT Acte de naissance page 270/437
+1 CONT Soldat au 7ème régiment des Dragons de Luneville
+1 CONT Recensement 1901 Fontaines sur Marne
+0 @NT118806978@ NOTE
+1 CONC Témoin : grand oncle paternel Jean Baptiste ANDRE
+1 CONT Archivbes départementales des Vosges (88)
+1 CONT Hergugney
+1 CONT 8/14 naissance
+0 @NT127965808@ NOTE
+1 CONC Archives départementales de Meurthe et Moselle
+1 CONT Décès 125/662
+0 @NT118806979@ NOTE
+1 CONC Archives départementales de Meurthe et Moselle (54)
+1 CONT Tantonville
+1 CONT 146/458 naissance
+1 CONT
+0 @NT118806980@ NOTE
+1 CONC Archives départementales des Vosges
+1 CONT Chamagne
+1 CONT 8/34 décès
+0 @NT118806981@ NOTE
+1 CONC Archives départementales des Vosges (88)
+1 CONT Hergugney
+1 CONT 24/25
+0 @NT118806982@ NOTE
+1 CONC Archives départementales de Meurthe et Moselle (54)
+1 CONT Tantonville
+1 CONT 124 et 128/458 naissance
+0 @NT118806983@ NOTE
+1 CONC Archives départementales de Meurthe et Moselle (54)
+1 CONT Tantonville
+1 CONT 145/458 naissance
+1 CONT Sans enfant
+0 @NT584758064@ NOTE
+1 CONC Célibataire
+0 @NT118806985@ NOTE
+1 CONC Archives départementales de Meurthe et Moselle (54)
+1 CONT Tantonville
+1 CONT 148/458 naissance
+0 @NT130365800@ NOTE
+1 CONC Archives départementales des Vosges
+1 CONT Naissance :     30/31
+0 @NT118806987@ NOTE
+1 CONC Célibataire 
+0 @NT582288356@ NOTE
+1 CONC Non trouvé entre 1768 et 1771 à Vaucouleurs 
+0 @NT580252508@ NOTE
+1 CONC pas d'enfant 
+1 CONT Recensement population VITRE  rue St Croix en 1946 (209/480)  et 1851 (139/291)
+0 @NT120152093@ NOTE
+1 CONC Chevalier de la légion d'honneur
+1 CONT Maréchal des logis en retraite
+0 @NT118806995@ NOTE
+1 CONC Célibataire
+0 @NT118806996@ NOTE
+1 CONC Archives départementales de la Meurthe et Moselle (54)
+1 CONT Roville devant Bayon
+1 CONT 95/688
+1 CONT
+0 @NT118806997@ NOTE
+1 CONC Archives départementales de la Meurthe et Moselle (54)
+1 CONT Roville devant Bayon
+1 CONT 81/688
+1 CONT
+0 @NT118807004@ NOTE
+1 CONC Reconnue lors du mariage le 09/11/1862
+1 CONT Archives départementales des Pyrenées (64)
+1 CONT période 1751-1879 naissance page 913/1512
+0 @NT118807005@ NOTE
+1 CONC domicilié a Breuil sur marne en 1963
+0 @NT118809159@ NOTE
+1 CONC Naissance à Saint-Germain : N° 3 page 303/636 
+1 CONT
+1 CONT Profession : Religieuse
+0 @NT118809166@ NOTE
+1 CONC Naissance : No 16 247/387 (Brousseval)
+0 @NT118809168@ NOTE
+1 CONC Naissance : No 135 36/356 (Bar-le-duc)
+1 CONT Décès : No 498 22/41 (Paris 11)
+1 CONT Célibataire
+1 CONT Profession : Lithographe
+1 CONT A vécu au 5 rue Gassendi PARIS 14ème  de 1926 jusqu'à  son décès chez Madame  Veuve Alice  LEMOUZY née FONTANIER le 22/07/1882 à Colombes et décédée le 16/06/1970 à PARIS 13ème( époux mort en 1918)
+0 @NT118809172@ NOTE
+1 CONC Naissance : No 13 223/252 (Les grandes chapelles)
+1 CONT Décès : No 13 205/228 (Brousseval)
+1 CONT Profession : Charcutier
+0 @NT118809175@ NOTE
+1 CONC Naissance : No 26 170/304 (Wassy)
+0 @NT120160535@ NOTE
+1 CONC Acte de Mariage  Verdun No 36 101/374
+0 @NT123516557@ NOTE
+1 CONC Archives Départementales de la Haute Marne (52)
+1 CONT Naissance No 10 29/97 (Sommerville)
+1 CONT Mariage No 3 71/256 (Joinville)
+0 @NT130365813@ NOTE
+1 CONC Archives départementales des Vosges
+1 CONT Naissance :     6/15
+0 @NT647126618@ NOTE
+1 CONC A creuser parrain lors naissance en 1661 d'André ANDRE
+0 TRLR
 
