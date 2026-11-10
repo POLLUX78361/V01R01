@@ -1,3 +1,5 @@
+console.log("VERSION TEST 10/11/2026");
+
 const fs = require("fs");
 
 const ged = fs.readFileSync("famille.ged", "utf8");
