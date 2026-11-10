@@ -332,7 +332,37 @@ Rechercher
 
 </div>
 
+<div class="info">
 
+<h3>🔍 Recherche généalogique</h3>
+
+<p>
+Rechercher une personne parmi les 319 individus de la base familiale.
+</p>
+
+<input
+    type="text"
+    id="recherche"
+    placeholder="Nom ou prénom..."
+    style="
+        padding:12px;
+        width:350px;
+        border-radius:8px;
+        border:1px solid #ccc;
+    "
+>
+
+<a href="#" class="btn" onclick="chercherPersonne();return false;">
+Rechercher
+</a>
+
+<div id="resultatGenealogie" style="margin-top:20px;"></div>
+
+</div>
+
+
+
+    
 
     
 <div class="citation">
@@ -487,6 +517,146 @@ function chercherPersonne(){
 }
 
 </script>
+
+<script>
+
+let personnes = [];
+
+fetch("famille.json")
+.then(response => response.json())
+.then(data => {
+
+    personnes = data;
+
+    console.log(
+        personnes.length + " personnes chargées"
+    );
+
+})
+.catch(error => {
+
+    console.error(error);
+
+    document.getElementById(
+        "resultatGenealogie"
+    ).innerHTML =
+    "<p><strong>Impossible de charger famille.json</strong></p>";
+
+});
+
+function nomPersonne(id){
+
+    const p = personnes.find(
+        personne => personne.id === id
+    );
+
+    return p ? p.nom : id;
+}
+
+function creerListe(ids){
+
+    if(!ids || ids.length === 0){
+
+        return "<p>Aucune information</p>";
+    }
+
+    return `
+        <ul>
+            ${
+                ids.map(id =>
+                    `<li>${nomPersonne(id)}</li>`
+                ).join("")
+            }
+        </ul>
+    `;
+}
+
+function chercherPersonne(){
+
+    const texte =
+        document
+        .getElementById("recherche")
+        .value
+        .trim()
+        .toLowerCase();
+
+    if(!texte){
+        return;
+    }
+
+    const personne = personnes.find(p =>
+        p.nom &&
+        p.nom.toLowerCase().includes(texte)
+    );
+
+    if(!personne){
+
+        document.getElementById(
+            "resultatGenealogie"
+        ).innerHTML =
+            "<p><strong>Aucune personne trouvée.</strong></p>";
+
+        return;
+    }
+
+    document.getElementById(
+        "resultatGenealogie"
+    ).innerHTML = `
+
+        <hr>
+
+        <h3>${personne.nom}</h3>
+
+        <p>
+            <strong>Sexe :</strong>
+            ${personne.sexe || "-"}
+        </p>
+
+        <p>
+            <strong>Naissance :</strong>
+            ${personne.naissance?.date || "-"}
+            ${personne.naissance?.lieu
+                ? " à " + personne.naissance.lieu
+                : ""
+            }
+        </p>
+
+        <p>
+            <strong>Décès :</strong>
+            ${personne.deces?.date || "-"}
+            ${personne.deces?.lieu
+                ? " à " + personne.deces.lieu
+                : ""
+            }
+        </p>
+
+        <h4>Parents</h4>
+        ${creerListe(personne.parents)}
+
+        <h4>Conjoints</h4>
+        ${creerListe(personne.spouses)}
+
+        <h4>Enfants</h4>
+        ${creerListe(personne.children)}
+
+        <h4>Frères et sœurs</h4>
+        ${creerListe(personne.siblings)}
+
+        <h4>Mariages</h4>
+
+        <p>
+            ${
+                personne.marriages
+                    ? personne.marriages.length
+                    : 0
+            } mariage(s)
+        </p>
+    `;
+}
+
+</script>
+
+    
 
 </body>
 
