@@ -334,6 +334,15 @@ const statistiques = {
     ).length
 };
 
+console.log("Personnes :", personnes.length);
+console.log("Familles :", familles.length);
+console.log("Remariages :", remariages.length);
+
+console.log(
+    "Première famille :",
+    familles[0]
+);
+
 console.log(statistiques);
 
 /* ==========================
