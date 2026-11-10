@@ -10,15 +10,11 @@ let personne = null;
 let famille = null;
 let contexte = "";
 
-/*
-==================================================
-PARSING GEDCOM
-==================================================
-*/
+/* ==========================
+   PARSING GEDCOM
+========================== */
 
 for (const ligne of lignes) {
-
-    // -------- PERSONNE --------
 
     let m = ligne.match(/^0 @([^@]+)@ INDI$/);
 
@@ -47,8 +43,6 @@ for (const ligne of lignes) {
         continue;
     }
 
-    // -------- FAMILLE --------
-
     m = ligne.match(/^0 @([^@]+)@ FAM$/);
 
     if (m) {
@@ -75,11 +69,9 @@ for (const ligne of lignes) {
         continue;
     }
 
-    /*
-    ==========================================
-    PERSONNES
-    ==========================================
-    */
+    /* ==========================
+       INDIVIDUS
+    ========================== */
 
     if (personne) {
 
@@ -119,7 +111,9 @@ for (const ligne of lignes) {
 
         else if (ligne.startsWith("2 DATE")) {
 
-            const date = ligne.replace("2 DATE", "").trim();
+            const date = ligne
+                .replace("2 DATE", "")
+                .trim();
 
             if (contexte === "BIRT") {
                 personne.naissance.date = date;
@@ -132,7 +126,9 @@ for (const ligne of lignes) {
 
         else if (ligne.startsWith("2 PLAC")) {
 
-            const lieu = ligne.replace("2 PLAC", "").trim();
+            const lieu = ligne
+                .replace("2 PLAC", "")
+                .trim();
 
             if (contexte === "BIRT") {
                 personne.naissance.lieu = lieu;
@@ -144,11 +140,9 @@ for (const ligne of lignes) {
         }
     }
 
-    /*
-    ==========================================
-    FAMILLES
-    ==========================================
-    */
+    /* ==========================
+       FAMILLES
+    ========================== */
 
     if (famille) {
 
@@ -183,8 +177,9 @@ for (const ligne of lignes) {
             ligne.startsWith("2 DATE")
         ) {
 
-            famille.marriageDate =
-                ligne.replace("2 DATE", "").trim();
+            famille.marriageDate = ligne
+                .replace("2 DATE", "")
+                .trim();
         }
 
         else if (
@@ -192,26 +187,23 @@ for (const ligne of lignes) {
             ligne.startsWith("2 PLAC")
         ) {
 
-            famille.marriagePlace =
-                ligne.replace("2 PLAC", "").trim();
+            famille.marriagePlace = ligne
+                .replace("2 PLAC", "")
+                .trim();
         }
     }
 }
 
-/*
-==================================================
-FIN DE FICHIER
-==================================================
-*/
+/* ==========================
+   FIN DE FICHIER
+========================== */
 
 if (personne) personnes.push(personne);
 if (famille) familles.push(famille);
 
-/*
-==================================================
-INDEX
-==================================================
-*/
+/* ==========================
+   INDEXATION
+========================== */
 
 const personsById = {};
 
@@ -226,26 +218,24 @@ personnes.forEach(p => {
     personsById[p.id] = p;
 });
 
-/*
-==================================================
-LIENS FAMILIAUX
-==================================================
-*/
+/* ==========================
+   RELATIONS FAMILIALES
+========================== */
 
 familles.forEach(fam => {
 
     const husband = personsById[fam.husband];
     const wife = personsById[fam.wife];
 
-    // Conjoints
-
     if (husband && wife) {
 
-        if (!husband.spouses.includes(wife.id))
+        if (!husband.spouses.includes(wife.id)) {
             husband.spouses.push(wife.id);
+        }
 
-        if (!wife.spouses.includes(husband.id))
+        if (!wife.spouses.includes(husband.id)) {
             wife.spouses.push(husband.id);
+        }
 
         husband.marriages.push({
             spouseId: wife.id,
@@ -260,8 +250,6 @@ familles.forEach(fam => {
         });
     }
 
-    // Parents / enfants
-
     fam.children.forEach(childId => {
 
         const child = personsById[childId];
@@ -270,31 +258,35 @@ familles.forEach(fam => {
 
         if (husband) {
 
-            child.parents.push(husband.id);
+            if (!child.parents.includes(husband.id)) {
+                child.parents.push(husband.id);
+            }
 
-            if (!husband.children.includes(child.id))
+            if (!husband.children.includes(child.id)) {
                 husband.children.push(child.id);
+            }
         }
 
         if (wife) {
 
-            child.parents.push(wife.id);
+            if (!child.parents.includes(wife.id)) {
+                child.parents.push(wife.id);
+            }
 
-            if (!wife.children.includes(child.id))
+            if (!wife.children.includes(child.id)) {
                 wife.children.push(child.id);
+            }
         }
     });
 });
 
-/*
-==================================================
-FRATRIES
-==================================================
-*/
+/* ==========================
+   FRATRIES
+========================== */
 
 Object.values(personsById).forEach(person => {
 
-    const freresSoeurs = new Set();
+    const siblings = new Set();
 
     person.parents.forEach(parentId => {
 
@@ -305,19 +297,17 @@ Object.values(personsById).forEach(person => {
         parent.children.forEach(childId => {
 
             if (childId !== person.id) {
-                freresSoeurs.add(childId);
+                siblings.add(childId);
             }
         });
     });
 
-    person.siblings = [...freresSoeurs];
+    person.siblings = [...siblings];
 });
 
-/*
-==================================================
-REMARIAGES
-==================================================
-*/
+/* ==========================
+   REMARIAGES
+========================== */
 
 const remariages = Object.values(personsById)
     .filter(p => p.spouses.length > 1)
@@ -327,32 +317,28 @@ const remariages = Object.values(personsById)
         nbConjoints: p.spouses.length
     }));
 
-/*
-==================================================
-STATISTIQUES
-==================================================
-*/
+/* ==========================
+   STATISTIQUES
+========================== */
 
 const statistiques = {
 
     individus: personnes.length,
+
     familles: familles.length,
 
     remariages: remariages.length,
 
-    couples:
-        familles.filter(
-            f => f.husband && f.wife
-        ).length
+    couples: familles.filter(
+        f => f.husband && f.wife
+    ).length
 };
 
 console.log(statistiques);
 
-/*
-==================================================
-EXPORTS
-==================================================
-*/
+/* ==========================
+   EXPORTS
+========================== */
 
 fs.writeFileSync(
     "famille.json",
@@ -378,11 +364,9 @@ fs.writeFileSync(
     "utf8"
 );
 
-/*
-==================================================
-RÉSUMÉ
-==================================================
-*/
+/* ==========================
+   RÉSUMÉ
+========================== */
 
 console.log(
     `${personnes.length} individus convertis`
@@ -395,3 +379,8 @@ console.log(
 console.log(
     `${remariages.length} remariages détectés`
 );
+
+console.log("famille.json généré");
+console.log("familles.json généré");
+console.log("remariages.json généré");
+console.log("statistiques.json généré");
