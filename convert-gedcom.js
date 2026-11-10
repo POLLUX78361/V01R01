@@ -345,6 +345,8 @@ console.log(
 
 console.log(statistiques);
 
+console.log("Avant export famille.json");
+
 /* ==========================
    EXPORTS
 ========================== */
@@ -355,11 +357,16 @@ fs.writeFileSync(
     "utf8"
 );
 
+console.log("famille.json OK");
+
 fs.writeFileSync(
     "familles.json",
     JSON.stringify(familles, null, 2),
     "utf8"
 );
+
+console.log("familles.json OK");
+
 
 fs.writeFileSync(
     "remariages.json",
@@ -367,11 +374,19 @@ fs.writeFileSync(
     "utf8"
 );
 
+console.log("Avant export remariages.json");
+
 fs.writeFileSync(
     "statistiques.json",
     JSON.stringify(statistiques, null, 2),
     "utf8"
 );
+
+console.log("Avant export statistiques.json");
+
+Console.log("statistiques.json OK");
+
+console.log("=== FIN DU PROGRAMME ===");
 
 /* ==========================
    RÉSUMÉ
